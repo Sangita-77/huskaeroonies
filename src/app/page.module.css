@@ -202,9 +202,16 @@
     transform: rotate(-54deg);
 }
 
-.Book{background: #ffffff ; width: 300px; height: 200px;}
+.book{background: #ffffff ; width: 200px; height: 100px;}
+.book1{position: absolute;}
 
 
+.SnowFall{background: #fd09093a;
+    width: 25vw;
+    height: 13vw;
+    position: absolute;
+    top: 31vw;
+    left: 7vw;}
 
 
 
