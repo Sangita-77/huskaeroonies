@@ -203,15 +203,6 @@
 }
 
 
-
-/* @-webkit-keyframes flow {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 750px;
-  }
-} */
 @keyframes flow {
   0% {
     background-position: 0 0;
@@ -224,11 +215,12 @@
   }
 }
 
-/* @keyframes flow {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 750px;
-  }
-} */
+/* Sample Read Start */
+.sampleReadBanner {
+  background-image: url("../app/Images/SampleRaedBanner.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 34.8vw;
+}
+/* Sample Read End */
