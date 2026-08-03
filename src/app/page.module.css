@@ -195,12 +195,24 @@
   box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
   -webkit-mask: url("../app/Images/River1.svg") center / contain no-repeat;
   mask: url("../app/Images/River1.svg") center / contain no-repeat;
-    width: 208px;
-    height: 783px;
-    top: 989px;
-    left: 745px;
+    width: 13.09379vw;
+    height: 50.3vw;
+    top: 60.893vw;
+    left: 46.5vw;
     transform: rotate(-54deg);
 }
+
+.book{background: #ffffff ; width: 200px; height: 100px;}
+.book1{position: absolute;}
+
+
+.SnowFall{background: #fd09093a;
+    width: 25vw;
+    height: 13vw;
+    position: absolute;
+    top: 31vw;
+    left: 7vw;}
+
 
 
 @keyframes flow {
