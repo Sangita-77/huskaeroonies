@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import styles from "../page.module.css";
+import Header from "../Components/header";
 
 const EMPTY_PAGES = [];
 
@@ -90,6 +92,11 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
   const firstVisiblePage = Math.min(currentPage + 1, images.length);
   const secondVisiblePage = Math.min(currentPage + 2, images.length);
   return (
+    <>
+    <Header/>
+      <section className={styles.sampleReadBanner}>
+        
+      </section>
     <div className="flipbook-wrapper">
       <h2 className="book-title">
         {bookNames[activeBook] || `Book ${activeBook + 1}`}
@@ -131,5 +138,6 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
         </div>
       )}
     </div>
+    </>
   );
 }

@@ -1,8 +1,7 @@
 .scope { min-height: 100vh; color: #f8fafc; font-family: Arial, Helvetica, sans-serif; background: radial-gradient(circle at top, rgba(24, 163, 173, .18), transparent 35%), linear-gradient(135deg, #041d20, #07131a 60%, #01070a); }
 .scope * { box-sizing: border-box; }
 .scope button { font: inherit; }
-.scope :global(.app-shell) { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
-.scope :global(.flipbook-wrapper) { width: min(96vw, 1120px); display: grid; gap: 18px; justify-items: center; }
+.scope :global(.flipbook-wrapper) {display: grid; gap: 18px; justify-items: center; }
 .scope :global(.book-title) { margin: 0; font-size: clamp(1.4rem, 3vw, 2rem); }
 .scope :global(.book-carousel) { width: min(115%, 1200px); display: grid; grid-template-columns: 58px minmax(0, 1fr) 58px; align-items: center; gap: 16px; }
 .scope :global(.book-carousel-arrow), .scope :global(.nav-btn) { border: 0; cursor: pointer; color: #fff; font-weight: 700; background: linear-gradient(135deg, #00c3d5, #0f6b8a); box-shadow: 0 6px 18px rgba(0, 132, 153, .35); }
