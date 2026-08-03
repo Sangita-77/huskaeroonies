@@ -6,20 +6,30 @@ import Header from "../Components/header";
 
 const EMPTY_PAGES = [];
 
-export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, bookNames = EMPTY_PAGES, }) {
+export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, bookNames = EMPTY_PAGES, initialBook = 0 }) {
   const bookCollections = useMemo(() => {
     const validBooks = Array.isArray(books)
       ? books.filter(Array.isArray).map((book) => book.filter(Boolean)).filter((book) => book.length)
       : [];
     return validBooks.length ? validBooks : [pages.filter(Boolean)];
   }, [books, pages]);
-  const [activeBook, setActiveBook] = useState(0);
+  const [activeBook, setActiveBook] = useState(() => Math.max(0, Math.min(initialBook, bookCollections.length - 1)));
   const images = bookCollections[activeBook] ?? [];
   const bookElement = useRef(null);
   const pageFlip = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [ready, setReady] = useState(false);
   const [showBuyPrompt, setShowBuyPrompt] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    setActiveBook(Math.max(0, Math.min(initialBook, bookCollections.length - 1)));
+  }, [initialBook, bookCollections.length]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setShowIntro(false), 1000);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -94,10 +104,10 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
   return (
     <>
     <Header/>
-      <section className={styles.sampleReadBanner}>
+      <section className={`${styles.sampleReadBanner} ${showIntro ? styles.sampleReadBannerIntro : styles.sampleReadBannerSettled}`}>
         
       </section>
-    <div className="flipbook-wrapper">
+    <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible}`}>
       <h2 className="book-title">
         {bookNames[activeBook] || `Book ${activeBook + 1}`}
       </h2>
