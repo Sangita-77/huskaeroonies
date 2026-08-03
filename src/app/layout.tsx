@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import { Potta_One } from "next/font/google";
 import "./globals.css";
+import "./flip-book/flip-book.module.css";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-const pottaOne = Potta_One({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-potta-one",
-});
 
 export const metadata: Metadata = {
   icons: {
@@ -29,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={pottaOne.variable}>
+    <html lang="en">
       <body>{children}</body>
     </html>
   );
