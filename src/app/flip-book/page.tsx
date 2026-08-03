@@ -2,14 +2,14 @@ import FlipBook from '../components/FlipBook';
 import styles from "./flip-book.module.css";
 
 const book1 = [
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_6.JPG',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_10.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_12.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_16.JPG',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_17.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_19.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_27.JPG',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_6_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_8.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_10.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_12_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_19_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_27_resize.jpg',
+  // 'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_19.jpg',
+  // 'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_27.JPG',
 ];
 
 const book2 = [
