@@ -1,6 +1,7 @@
 import FlipBook from '../Components/FlipBook';
 import styles from "./flip-book.module.css";
 
+
 const book1 = [
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_6_resize.jpg',
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_8.jpg',
@@ -13,14 +14,14 @@ const book1 = [
 ];
 
 const book2 = [
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book2/Big_race_page_2.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book2/Big_race_page_7.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book2/Big_Race_page_9.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book2/Big_Race_page_10.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book2/Big_Race_page_12.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book2/Big_Race_page_14.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book2/Big_Race_page_16.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book2/Big_race_page_18.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_race_page_2_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Bigrace_page_7_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_Race_page_9_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_Race_page_10_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big _Race_page_12_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big Race_page14_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_race_page_16_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_race_page_18_resize.jpg',
 ];
 
 const book3 = [
