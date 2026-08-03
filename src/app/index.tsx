@@ -53,10 +53,10 @@ export default function Home() {
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
       <Image src={Bridge} alt="Book Map" priority className={styles.Bridge} />
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
-      <div className="Book1 book"><a href="#">Book 1</a></div>
-      <div className="Book2 book"><a href="#">Book 2</a></div>
-      <div className="Book3 book"><a href="#">Book 3</a></div>
-      <div className="Book4 book"><a href="#">Book 4</a></div>
+      <div className="book1 book"><a href="/flip-book?book=1">Book 1</a></div>
+      <div className="book2 book"><a href="/flip-book?book=2">Book 2</a></div>
+      <div className="book3 book"><a href="/flip-book?book=3">Book 3</a></div>
+      <div className="book4 book"><a href="/flip-book?book=4">Book 4</a></div>
     </div>
       <svg width="0" height="0">
     <filter id="turbulence" x="0" y="0">

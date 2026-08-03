@@ -1,4 +1,4 @@
-import FlipBook from '../components/FlipBook';
+import FlipBook from '../Components/FlipBook';
 import styles from "./flip-book.module.css";
 
 const book1 = [
@@ -6,10 +6,10 @@ const book1 = [
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_8.jpg',
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_10.jpg',
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_12_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_16.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page _17.jpg',
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_19_resize.jpg',
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_27_resize.jpg',
-  // 'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_19.jpg',
-  // 'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book1/Snow_Day_page_27.JPG',
 ];
 
 const book2 = [
@@ -37,18 +37,25 @@ const book3 = [
 const bookNames = [
   'Book 1: Snow Day',
   'Book 2: Husky Storybook',
-  'Book 3: Shivji Chronicles'
+  'Book 3: Shivji Chronicles',
+  'Book 4: Storybook Preview'
 ];
 
 
-const books = [book1, book2, book3];
+// Book 4 uses the available preview artwork until its dedicated pages are added.
+const book4 = [...book3];
+const books = [book1, book2, book3, book4];
 
-export default function Home() {
+export default async function Home({ searchParams }: { searchParams: Promise<{ book?: string }> }) {
+  const params = await searchParams;
+  const requestedBook = Number(params.book);
+  const initialBook = Number.isInteger(requestedBook) && requestedBook > 0 ? requestedBook - 1 : 0;
+
   return (
     <div className={styles.scope}>
     <main className="app-shell">
       {/* <FlipBook books={books} /> */}
-      <FlipBook books={books} bookNames={bookNames} />
+      <FlipBook books={books} bookNames={bookNames} initialBook={initialBook} />
     </main>
     </div>
   );
