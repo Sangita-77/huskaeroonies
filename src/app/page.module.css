@@ -1,142 +1,234 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+.page{
+    width: 100%;
+}
+.MapHolder {
+  height: 100vh;
+  overflow: auto;
+  cursor: grab;
+  scrollbar-width: none;     
+  -ms-overflow-style: none; 
+  position: relative;  
+}
 
-  --text-primary: #000;
-  --text-secondary: #666;
+.MapHolder::-webkit-scrollbar {
+  display: none;              
+}
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+.MapHolder:active {
+  cursor: grabbing;
+}
 
+.MapImage {
+  width: 138vw;
+  height: auto;
+  max-width: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  margin-bottom: -5px;
+}
+
+ .header {
+    z-index: 50;
+    background: linear-gradient(0deg, #029ffc00 2%, #029ffcf5 36%);
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    margin-bottom: -7.3vw;
+} 
+
+.headercontainer {
+    justify-content: end;
+    align-items: center;
+    max-width: 1200px;
+    height: 118px;
+    margin: 0 auto;
+    padding: 0px 10px 36px 10px;
+    display: flex;
+}
+
+.nav {
   display: flex;
-  flex: 1;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
 }
 
-.main {
+.navList {
   display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
+  gap: 80px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: end;
+}
+
+.navItvw {
+  margin: 0;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.navList .navLink:hover { text-shadow: 0 0 23px #000000; transition: .5s; }
+.navList .active { text-shadow: 0 0 23px #000000; }
+/* .DashboradNav{height: 200px; background: #029FFC; width: 100%; position: relative; z-index: 9;} */
+/* .DashboradNav::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5vw;
+  background-image: url(../app/Images/BlueWave.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: -4vw;
+  z-index: 0;
+} */
+
+/* #box {
+  width: 535px;
+  height:  888px;
+  position: relative;
+  margin: auto;
+  border: 2px solid #000;
+  overflow: hidden;
+      box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
+  background: url(https://images.unsplash.com/photo-1585129891066-83969119de8c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=932&q=80);
+} */
+.river svg{position: absolute;}
+.river{
+  filter: url(#turbulence);
+  background: radial-gradient(
+        1.5vw 6.28571vw at 1.95vw,
+        rgba(96, 219, 213, 0) 50%,
+        rgba(240, 13, 13, 0) 50%,
+        rgb(44, 189, 39) 50%,
+        rgba(211, 8, 8, 0) 55%
+      )
+      40vw 0,
+    radial-gradient(
+        1.5vw 10.28571vw at -0.45vw,
+        rgba(255, 255, 255, 0) 50%,
+        rgb(255, 255, 255) 15%,
+        rgba(255, 0, 0, 0) 55%,
+        rgba(238, 10, 10, 0) 55%
+      )
+      1.5vw 5.5vw,
+    radial-gradient(
+        2.3vw 4.57143vw at 2.99vw,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(223, 0, 0, 0) 55%,
+        rgba(255, 255, 255, 0) 55%
+      )
+      0 0,
+    radial-gradient(
+        2.3vw 4.57143vw at -0.69vw,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0) 55%,
+        rgba(255, 255, 255, 0) 55%
+      )
+      7.3vw 4vw,
+    radial-gradient(
+        3.5vw 6.28571vw at 4.55vw,
+        rgba(187, 240, 241, 0) 50%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0) 55%,
+        rgba(255, 255, 255, 0) 55%
+      )
+      0 0,
+    radial-gradient(
+        3.5vw 6.28571vw at -1.05vw,
+        rgba(5, 68, 31, 0.329) 50%,
+        rgba(25, 153, 21, 0) 50%,
+        rgb(255, 255, 255) 60%,
+        rgba(126, 2, 2, 0) 55%
+      )
+      3.5vw 5.5vw,
+   radial-gradient(#045e34, #299be7);
+    
+  background-size: 1.5vw 11vw, 3vw 11vw, 2.3vw 8vw, 2.3vw 8vw, 3.5vw 11vw,
+    3.5vw 14vw, 100% 100%;
+  background-repeat: repeat;
+  position: absolute;
+  opacity: 0.5;
+}
+/* .river--1 {
+  width: 7.5%;
+  left: 51%;
+  top: 26.5%;
+  height: 13.75%;
+  transform: rotate(-52deg);
+  -webkit-animation: flow 5s infinite linear;
+  animation: flow 5s infinite linear;
+  mix-blend-mode: luminosity
+} */
+.Bridge{position: absolute;     top: 52vw;
+    left: 36.9vw; -webkit-user-drag: none; user-select: none;     width: 29vw;
+    height: 37vw;
+} 
+.river--2 {
+  /* top: 40.3vw;
+  left: 33vw; */
+  -webkit-animation: flow 5s infinite linear;
+  animation: flow 10s infinite linear;
+  box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
+  -webkit-mask: url("../app/Images/River.svg") center / contain no-repeat;
+  mask: url("../app/Images/River.svg") center / contain no-repeat;
+  /* width: 42.4vw;
+  height: 57.4vw; */
+    top: 9.6vw;
+    left: 25.9vw;
+    width: 29.3vw;
+    height: 93vw;
+      transform: rotate(34deg);
+}
+.river--3 {
+  -webkit-animation: flow 5s infinite linear;
+  animation: flow 10s infinite linear;
+  box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
+  -webkit-mask: url("../app/Images/River1.svg") center / contain no-repeat;
+  mask: url("../app/Images/River1.svg") center / contain no-repeat;
+    width: 208px;
+    height: 783px;
+    top: 989px;
+    left: 745px;
+    transform: rotate(-54deg);
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
-}
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+
+/* @-webkit-keyframes flow {
+  0% {
+    background-position: 0 0;
   }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  100% {
+    background-position: 0 750px;
   }
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+} */
+@keyframes flow {
+  0% {
+    background-position: 0 0;
   }
-
-  .intro {
-    gap: 16px;
+  50% {
+    background-position: 0 363px;
   }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+  100% {
+    background-position: 0 750px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+/* @keyframes flow {
+  0% {
+    background-position: 0 0;
   }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  100% {
+    background-position: 0 750px;
   }
-}
+} */
