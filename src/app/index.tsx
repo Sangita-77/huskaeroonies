@@ -85,9 +85,23 @@ export default function Home() {
         ))}
       </div>
       <div className={styles.FireAnimation} aria-hidden="true">
-        {fireParticles.map((particle) => (
-          <span key={particle.id} className={styles.particle} style={particle.style} />
-        ))}
+        <div className={styles.fire}>
+          <div className={styles.fireLeft}>
+            <div className={styles.mainFire} />
+            <div className={styles.particleFire} />
+          </div>
+          <div className={styles.fireCenter}>
+            <div className={styles.mainFire} />
+            <div className={styles.particleFire} />
+          </div>
+          <div className={styles.fireRight}>
+            <div className={styles.mainFire} />
+            <div className={styles.particleFire} />
+          </div>
+          <div className={styles.fireBottom}>
+            <div className={styles.mainFire} />
+          </div>
+        </div>
       </div>
       <Image src={Bridge} alt="Book Map" priority className={styles.Bridge} />
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
