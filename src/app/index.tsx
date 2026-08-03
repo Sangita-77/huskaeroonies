@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import Image from "next/image";
 import Map from "./Images/homeBanner.webp";
 import Bridge from "./Images/bridge.webp";
@@ -9,6 +9,22 @@ import Header from "./Components/header";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const snowflakes = useMemo(() => Array.from({ length: 350 }, (_, index) => {
+    const isMedium = index >= 250 && index < 300;
+    const isLarge = index >= 300;
+    return {
+      id: index,
+      size: isLarge ? styles.snowflakeLarge : isMedium ? styles.snowflakeMedium : "",
+      style: {
+        "--snow-left": `${(index * 47) % 120 - 10}%`,
+        "--snow-drift": `${8 + (index * 13) % 24}px`,
+        "--snow-duration": `${7 + (index * 17) % 12}s`,
+        "--snow-delay": `-${(index * 29) % 19}s`,
+        "--snow-opacity": `${45 + (index * 11) % 50}%`,
+        "--snow-blur": `${(index % 3) - 1}px`,
+      } as React.CSSProperties,
+    };
+  }), []);
 
   let isDown = false;
   let startX = 0;
@@ -55,7 +71,11 @@ export default function Home() {
       {/* <div className={`${styles.book} ${styles["book2"]}`}><a href="/flip-book?book=2">Book 2</a></div>
       <div className={`${styles.book} ${styles["book3"]}`}><a href="/flip-book?book=3">Book 3</a></div>
       <div className={`${styles.book} ${styles["book4"]}`}><a href="/flip-book?book=4">Book 4</a></div> */}
-      <div className={styles.SnowFall}></div>
+      <div className={styles.SnowFall} aria-hidden="true">
+        {snowflakes.map((snowflake) => (
+          <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>
+        ))}
+      </div>
       <Image src={Bridge} alt="Book Map" priority className={styles.Bridge} />
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
     </div>

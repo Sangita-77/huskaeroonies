@@ -206,12 +206,45 @@
 .book1{position: absolute;}
 
 
-.SnowFall{background: #fd09093a;
-    width: 25vw;
-    height: 13vw;
-    position: absolute;
-    top: 31vw;
-    left: 7vw;}
+.SnowFall {
+  width: 25vw;
+  height: 13vw;
+  position: absolute;
+  top: 31vw;
+  left: 7vw;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.snowflake {
+  position: absolute;
+  top: -8vh;
+  left: var(--snow-left);
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 1;
+  opacity: var(--snow-opacity);
+  filter: blur(var(--snow-blur)) drop-shadow(0 0 2px rgba(255,255,255,.55));
+  animation: snowfall var(--snow-duration) linear var(--snow-delay) infinite, snowFlicker 2.8s ease-in-out var(--snow-delay) infinite;
+}
+
+.snowflakeMedium { font-size: 1.5em; }
+.snowflakeLarge { font-size: 2.25em; }
+
+@keyframes snowfall {
+  from { transform: translate3d(0, 0, 0) rotate(0deg); }
+  to { transform: translate3d(var(--snow-drift), 140vh, 0) rotate(360deg); }
+}
+
+@keyframes snowFlicker {
+  0%, 100% { opacity: var(--snow-opacity); }
+  50% { opacity: .2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snowflake { animation: none; }
+}
 
 
 
