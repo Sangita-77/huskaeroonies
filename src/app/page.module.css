@@ -211,12 +211,20 @@
     background-repeat: no-repeat;margin-left: 1vw; display: flex;}
 .book a{text-decoration: none; color: #151B58; font-size: 1vw;}
 .book1{top: 41vw; left: 31vw;}
+.book2{top: 41vw; left: 31vw;}
 .book1::before{ content: "";
     background: url("../app/Images/PawBlue.svg") no-repeat;
     width: 2vw;
     height: 2vw;
     position: absolute;
     left: 1vw;}
+
+
+
+
+
+
+
 
 
 
@@ -303,8 +311,8 @@
   position: absolute;
   bottom: 0;
   left: var(--fire-left);
-  width: 5em;
-  height: 5em;
+  width: 2vw;
+  height: 2vw;
   border-radius: 50%;
   background-image: radial-gradient(rgb(255, 80, 0) 20%, rgba(255, 80, 0, 0) 70%);
   mix-blend-mode: screen;
