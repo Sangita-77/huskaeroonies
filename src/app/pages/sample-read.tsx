@@ -7,7 +7,6 @@ export default function SamplePage() {
     <Header/>
     <main>
       <section className={styles.sampleReadBanner}>
-        
       </section>
     </main>
     </>
