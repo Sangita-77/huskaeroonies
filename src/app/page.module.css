@@ -202,8 +202,8 @@
     transform: rotate(-54deg);
 }
 
-.book{background: #ffffff ; width: 200px; height: 100px;}
-.book1{position: absolute;}
+.book{background: #fff; width: 11vw; height: 5.5vw; border-radius: .7vw; position: absolute; 	animation: float 6s ease-in-out infinite;}
+.book1{top: 41vw; left: 31vw;}
 
 
 .SnowFall{background: #fd09093a;
@@ -211,8 +211,23 @@
     height: 13vw;
     position: absolute;
     top: 31vw;
-    left: 7vw;}
+    left: 7vw; }
 
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
 
 
 @keyframes flow {

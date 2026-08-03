@@ -51,11 +51,11 @@ export default function Home() {
     >
       <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
-      <div className={`${styles.book} ${styles["book1"]}`}><a href="/flip-book?book=1">Book 1</a></div>
       {/* <div className={`${styles.book} ${styles["book2"]}`}><a href="/flip-book?book=2">Book 2</a></div>
       <div className={`${styles.book} ${styles["book3"]}`}><a href="/flip-book?book=3">Book 3</a></div>
       <div className={`${styles.book} ${styles["book4"]}`}><a href="/flip-book?book=4">Book 4</a></div> */}
       <div className={styles.SnowFall}></div>
+      <div className={`${styles.book} ${styles["book1"]}`}><a href="/flip-book?book=1">Book 1</a></div>
       <Image src={Bridge} alt="Book Map" priority className={styles.Bridge} />
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
     </div>
