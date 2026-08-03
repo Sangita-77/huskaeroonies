@@ -26,6 +26,14 @@ export default function Home() {
     };
   }), []);
 
+  const fireParticles = useMemo(() => Array.from({ length: 50 }, (_, index) => ({
+    id: index,
+    style: {
+      "--fire-delay": `${(index * 0.04).toFixed(2)}s`,
+      "--fire-left": `${(index * 100) / 49}%`,
+    } as React.CSSProperties,
+  })), []);
+
   let isDown = false;
   let startX = 0;
   let startY = 0;
@@ -76,7 +84,11 @@ export default function Home() {
           <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>
         ))}
       </div>
-      <div className={styles.FireAnimation}></div>
+      <div className={styles.FireAnimation} aria-hidden="true">
+        {fireParticles.map((particle) => (
+          <span key={particle.id} className={styles.particle} style={particle.style} />
+        ))}
+      </div>
       <Image src={Bridge} alt="Book Map" priority className={styles.Bridge} />
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
     </div>

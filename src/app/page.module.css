@@ -267,7 +267,49 @@
 
 /* Fire animation start */
 
+/* .FireAnimation {
+  position: absolute;
+  top: 66vw;
+  left: 67.5vw;
+  width: 10em;
+  height: 12em;
+  font-size: 20px;
+  filter: blur(0.02em);
+  -webkit-filter: blur(0.02em);
+  pointer-events: none;
+  z-index: 4;
+} */
+
 .FireAnimation{background: #f8090942; width: 3.4vw; height: 3vw; position: absolute; top: 66vw; left: 67.5vw;}
+
+
+.particle {
+  position: absolute;
+  bottom: 0;
+  left: var(--fire-left);
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  background-image: radial-gradient(rgb(255, 80, 0) 20%, rgba(255, 80, 0, 0) 70%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  animation: fireRise 1s ease-in infinite;
+  animation-delay: var(--fire-delay);
+}
+
+@keyframes fireRise {
+  from {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10em) scale(0);
+  }
+}
 
 /* Fire animation end */
 
