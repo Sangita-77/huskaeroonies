@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from "../page.module.css";
 import Header from "../Components/header";
+import Footer from "../Components/footer";
 
 const EMPTY_PAGES = [];
 
@@ -151,6 +152,7 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
         </div>
       )}
     </div>
+<Footer />
     </>
   );
 }
