@@ -1,6 +1,5 @@
-.scope { min-height: 100vh; color: #f8fafc; background: radial-gradient(circle at top, rgba(24, 163, 173, .18), transparent 35%), linear-gradient(135deg, #041d20, #07131a 60%, #01070a); }
-.scope * { box-sizing: border-box; }
-.scope button { font: inherit; }
+.scope {background: #FDEBA3; position: relative;}
+.scope::after{content: ""; background: url("../Images/WaveSampleRead.webp"); position: absolute;}
 .scope :global(.flipbook-wrapper) {display: grid; gap: 18px; justify-items: center; }
 .scope :global(.book-title) { margin: 0; font-size: clamp(1.4rem, 3vw, 2rem); }
 .scope :global(.book-carousel) { width: min(115%, 1200px); display: grid; grid-template-columns: 58px minmax(0, 1fr) 58px; align-items: center; gap: 16px; }
