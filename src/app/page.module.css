@@ -565,7 +565,7 @@ position: relative;
   background-image: url("../app/Images/SampleRaedBanner.webp");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   height: 32.8vw;
   transition: height .8s ease, background-size .8s ease;
   position: relative;
@@ -585,13 +585,15 @@ position: relative;
   .sampleReadBanner, .flipbookVisible { transition: none; }
 }
 
-.sampleReadBanner .Sbook{position: absolute; background: #fff; color: #000000; border: 2px solid transparent; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
-.sampleReadBanner .Sbook1{top: 10vw; left: 20vw;}
-.sampleReadBanner .Sbook2{top: 10vw; left: 10vw;}
-.sampleReadBanner .Sbook.isActive {
-  border-color: #ffb703;
-  box-shadow: 0 0.6vw 1.7vw rgba(255, 183, 3, 0.45);
-}
+.sampleReadBanner .Sbook{position: absolute; background: #fff; color: #000000; transition: transform .25s ease, box-shadow .25s ease; height: 3.5vw;
+    width: 9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .7vw; cursor: pointer;}
+.sampleReadBanner .Sbook1{top: 8vw; left: 28vw; }
+.sampleReadBanner .Sbook2{top: 10vw; left: 70vw;}
+.sampleReadBanner .Sbook.isActive {box-shadow: inset 0 0 1vw #008eff; color: #000000; }
 /* Sample Read End */
 
 
