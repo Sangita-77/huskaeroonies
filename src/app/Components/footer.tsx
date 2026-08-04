@@ -133,6 +133,14 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+    <div>
+
+    </div>
+    <footer >
+      <div>
+        Footer
+      </div>
+    </footer>
     </>
   );
 }

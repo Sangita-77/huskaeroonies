@@ -2,14 +2,97 @@
 
 import { useMemo, useRef } from "react";
 import Image from "next/image";
-import Map from "./Images/huskierooniesMaster.svg";
+import Map from "./Images/Banner.webp";
 import Bridge from "./Images/bridge.svg";
+import Cloud1 from "./Images/cloud1.webp";
+import Cloud2 from "./Images/cloud2.webp";
+import Cloud3 from "./Images/cloud3.webp";
 import styles from "./page.module.css";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+  // const clouds = useMemo(() => [
+  //   {
+  //     id: 1,
+  //     image: Cloud1,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "10.2vw",
+  //       "--cloud-delay": "0s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+  //   {
+  //     id: 2,
+  //     image: Cloud2,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "12.4vw",
+  //       "--cloud-delay": "4s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+  //   {
+  //     id: 3,
+  //     image: Cloud3,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "8vw",
+  //       "--cloud-delay": "8s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+  //   {
+  //     id: 4,
+  //     image: Cloud1,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "11vw",
+  //       "--cloud-delay": "12s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+  //   {
+  //     id: 5,
+  //     image: Cloud2,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "14vw",
+  //       "--cloud-delay": "16s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+  //   {
+  //     id: 6,
+  //     image: Cloud3,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "8vw",
+  //       "--cloud-delay": "20s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+
+  // ], []);
+
+
+  const clouds = useMemo(
+  () => [
+    { id: 1, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "10vw", "--cloud-delay": "-0s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 2, image: Cloud2, style: { "--cloud-left": "-20vw", "--cloud-top": "12vw", "--cloud-delay": "-4s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 3, image: Cloud3, style: { "--cloud-left": "-20vw", "--cloud-top": "8vw", "--cloud-delay": "-10s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 4, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "11vw", "--cloud-delay": "-16s", "--cloud-duration": "40s" } as React.CSSProperties },
+    // { id: 5, image: Cloud2, style: { "--cloud-left": "-20vw", "--cloud-top": "14vw", "--cloud-delay": "-16s", "--cloud-duration": "40s" } as React.CSSProperties },
+    // { id: 6, image: Cloud3, style: { "--cloud-left": "-20vw", "--cloud-top": "18vw", "--cloud-delay": "-20s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 7, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "13vw", "--cloud-delay": "-24s", "--cloud-duration": "40s" } as React.CSSProperties },
+    // { id: 8, image: Cloud2, style: { "--cloud-left": "-20vw", "--cloud-top": "7vw", "--cloud-delay": "-28s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 9, image: Cloud3, style: { "--cloud-left": "-20vw", "--cloud-top": "10vw", "--cloud-delay": "-32s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 10, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "18vw", "--cloud-delay": "-36s", "--cloud-duration": "40s" } as React.CSSProperties },
+  ],
+  []
+);
   const snowflakes = useMemo(() => Array.from({ length: 350 }, (_, index) => {
     const isMedium = index >= 250 && index < 300;
     const isLarge = index >= 300;
@@ -26,14 +109,6 @@ export default function Home() {
       } as React.CSSProperties,
     };
   }), []);
-
-  const fireParticles = useMemo(() => Array.from({ length: 50 }, (_, index) => ({
-    id: index,
-    style: {
-      "--fire-delay": `${(index * 0.04).toFixed(2)}s`,
-      "--fire-left": `${(index * 100) / 49}%`,
-    } as React.CSSProperties,
-  })), []);
 
   let isDown = false;
   let startX = 0;
@@ -66,6 +141,7 @@ export default function Home() {
   return (
     <>
     <Header/>
+    <main>
     <div
       ref={containerRef}
       className={styles.MapHolder}
@@ -74,17 +150,25 @@ export default function Home() {
       onMouseUp={stopDragging}
       onMouseLeave={stopDragging}
     >
-      <div className={`${styles.cloud} ${styles["cloud1"]}`}></div>
-      <div className={`${styles.cloud} ${styles["cloud2"]}`}></div>
-      <div className={`${styles.cloud} ${styles["cloud3"]}`}></div>
-      <div className={`${styles.cloud} ${styles["cloud4"]}`}></div>
-      <div className={`${styles.cloud} ${styles["cloud5"]}`}></div>
+      <div className={styles.frontCloudLayer} aria-hidden="true">
+        <div className={styles.cloud} style={clouds[0].style}>
+          <Image src={clouds[0].image} alt="cloud" className={styles.cloudImage} priority />
+        </div>
+      </div>
+      <div className={styles.cloudRow} aria-hidden="true">
+        {clouds.slice(1).map((cloud) => (
+          <div key={cloud.id} className={styles.cloud} style={cloud.style}>
+            <Image src={cloud.image} alt="cloud" className={styles.cloudImage} priority={false} />
+          </div>
+        ))}
+      </div>
       <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
-      {/*  <div className={`${styles.book} ${styles["book3"]}`}><a href="/flip-book?book=3">Book 3</a></div>
-      <div className={`${styles.book} ${styles["book4"]}`}><a href="/flip-book?book=4">Book 4</a></div> */}
+      {/**/}
       <div className={`${styles.book} ${styles["book1"]}`}><a href="/flip-book?book=1">Snow Day</a></div>
       <div className={`${styles.book} ${styles["book2"]}`}><a href="/flip-book?book=2">Big Race</a></div>
+      <div className={`${styles.book} ${styles["book3"]}`}><a href="#">Neighborhood Pups</a></div>
+      <div className={`${styles.book} ${styles["book4"]}`}><a href="#">Camping Day</a></div> 
       <div className={styles.SnowFall} aria-hidden="true">
         {snowflakes.map((snowflake) => (
           <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>
@@ -109,7 +193,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Image src={Bridge} alt="Book Map" priority className={styles.Bridge} />
+      <Image src={Bridge} alt="Bridge" priority className={styles.Bridge} />
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
     </div>
       <svg width="0" height="0">
@@ -118,6 +202,7 @@ export default function Home() {
       <feDisplacementMap scale="60" in="SourceGraphic"></feDisplacementMap>
     </filter>
   </svg>
+  </main>
   <Footer/>
     </>
   );
