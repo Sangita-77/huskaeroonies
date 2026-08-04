@@ -220,6 +220,52 @@
 .book1::before{ background: url("../app/Images/PawBlue.svg") no-repeat; left: 1vw;}
 .book2::before{background: url("../app/Images/PawGreen.svg") no-repeat; right: 1vw;}
 
+/* cloud animation start */
+
+.cloudRow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  left: var(--cloud-left);
+  top: var(--cloud-top);
+  animation: cloudPass var(--cloud-duration) ease-in-out infinite;
+  animation-delay: var(--cloud-delay);
+}
+
+.cloudImage {
+  width: 16vw;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0.5vw 0.8vw rgba(255, 255, 255, 0.15));
+}
+
+@keyframes cloudPass {
+  0% {
+    transform: translateX(-18vw) translateY(0.4vw);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(16vw) translateY(-1vw);
+    opacity: 0;
+  }
+}
+
+/* cloud animation end */
+
+
+
 /* Hill_BG Start */
 /* Hill_BG End */
 

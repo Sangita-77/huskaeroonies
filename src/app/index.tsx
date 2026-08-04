@@ -4,12 +4,70 @@ import { useMemo, useRef } from "react";
 import Image from "next/image";
 import Map from "./Images/Banner.webp";
 import Bridge from "./Images/bridge.svg";
+import Cloud1 from "./Images/cloud1.webp";
+import Cloud2 from "./Images/cloud2.webp";
+import Cloud3 from "./Images/cloud3.webp";
 import styles from "./page.module.css";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const clouds = useMemo(() => [
+    {
+      id: 1,
+      image: Cloud1,
+      style: {
+        "--cloud-left": "4vw",
+        "--cloud-top": "10.2vw",
+        "--cloud-delay": "0s",
+        "--cloud-duration": "20s",
+      } as React.CSSProperties,
+    },
+    {
+      id: 2,
+      image: Cloud2,
+      style: {
+        "--cloud-left": "29vw",
+        "--cloud-top": "12.4vw",
+        "--cloud-delay": "2.6s",
+        "--cloud-duration": "30s",
+      } as React.CSSProperties,
+    },
+    {
+      id: 3,
+      image: Cloud3,
+      style: {
+        "--cloud-left": "58vw",
+        "--cloud-top": "8vw",
+        "--cloud-delay": "4.8s",
+        "--cloud-duration": "60s",
+      } as React.CSSProperties,
+    },
+
+    {
+      id: 4,
+      image: Cloud1,
+      style: {
+        "--cloud-left": "75vw",
+        "--cloud-top": "11vw",
+        "--cloud-delay": "2s",
+        "--cloud-duration": "60s",
+      } as React.CSSProperties,
+    },
+
+    // {
+    //   id: 5,
+    //   image: Cloud2,
+    //   style: {
+    //     "--cloud-left": "4vw",
+    //     "--cloud-top": "6vw",
+    //     "--cloud-delay": "2s",
+    //     "--cloud-duration": "60s",
+    //   } as React.CSSProperties,
+    // },
+  ], []);
+
   const snowflakes = useMemo(() => Array.from({ length: 350 }, (_, index) => {
     const isMedium = index >= 250 && index < 300;
     const isLarge = index >= 300;
@@ -75,11 +133,13 @@ export default function Home() {
       onMouseUp={stopDragging}
       onMouseLeave={stopDragging}
     >
-      <div className={`${styles.cloud} ${styles["cloud1"]}`}></div>
-      <div className={`${styles.cloud} ${styles["cloud2"]}`}></div>
-      <div className={`${styles.cloud} ${styles["cloud3"]}`}></div>
-      <div className={`${styles.cloud} ${styles["cloud4"]}`}></div>
-      <div className={`${styles.cloud} ${styles["cloud5"]}`}></div>
+      <div className={styles.cloudRow} aria-hidden="true">
+        {clouds.map((cloud) => (
+          <div key={cloud.id} className={styles.cloud} style={cloud.style}>
+            <Image src={cloud.image} alt="cloud" className={styles.cloudImage} priority={cloud.id === 1} />
+          </div>
+        ))}
+      </div>
       <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
       {/**/}
