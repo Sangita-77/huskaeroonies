@@ -150,10 +150,15 @@ export default function Home() {
       onMouseUp={stopDragging}
       onMouseLeave={stopDragging}
     >
+      <div className={styles.frontCloudLayer} aria-hidden="true">
+        <div className={styles.cloud} style={clouds[0].style}>
+          <Image src={clouds[0].image} alt="cloud" className={styles.cloudImage} priority />
+        </div>
+      </div>
       <div className={styles.cloudRow} aria-hidden="true">
-        {clouds.map((cloud) => (
+        {clouds.slice(1).map((cloud) => (
           <div key={cloud.id} className={styles.cloud} style={cloud.style}>
-            <Image src={cloud.image} alt="cloud" className={styles.cloudImage} priority={cloud.id === 1} />
+            <Image src={cloud.image} alt="cloud" className={styles.cloudImage} priority={false} />
           </div>
         ))}
       </div>

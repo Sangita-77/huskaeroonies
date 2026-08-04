@@ -230,12 +230,20 @@
 
 /* cloud animation start */
 
+.frontCloudLayer,
 .cloudRow {
   position: absolute;
   inset: 0;
-  z-index: 0;
   pointer-events: none;
   overflow: hidden;
+}
+
+.frontCloudLayer {
+  z-index: 2;
+}
+
+.cloudRow {
+  z-index: 0;
 }
 
 .cloud {
