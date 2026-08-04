@@ -10,6 +10,7 @@ import Cloud3 from "./Images/cloud3.webp";
 import styles from "./page.module.css";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
+import BannerLogo from "./Images/BannerLogo.png";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -193,6 +194,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Image src={BannerLogo} alt="Bridge" priority className={styles.BannerLogo} />
+      <div className={styles.Welcome}>Welcome to Huskyville!</div>
       <Image src={Bridge} alt="Bridge" priority className={styles.Bridge} />
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
     </div>
