@@ -26,6 +26,8 @@
   user-select: none;
   -webkit-user-drag: none;
   margin-top: 7vw;
+  position: relative;
+  z-index: 1;
 }
 
  .header {
@@ -231,16 +233,18 @@
 .cloudRow {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 0;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .cloud {
   position: absolute;
   left: var(--cloud-left);
   top: var(--cloud-top);
-  animation: cloudPass var(--cloud-duration) ease-in-out infinite;
+  animation: cloudPass var(--cloud-duration) linear infinite;
   animation-delay: var(--cloud-delay);
+  will-change: transform, opacity;
 }
 
 .cloudImage {
@@ -253,17 +257,17 @@
 
 @keyframes cloudPass {
   0% {
-    transform: translateX(-18vw) translateY(0.4vw);
+    transform: translateX(-22vw) translateY(0.4vw);
     opacity: 0;
   }
-  12% {
-    opacity: 1;
+  8% {
+    opacity: 0.9;
   }
-  75% {
-    opacity: 1;
+  84% {
+    opacity: 0.9;
   }
   100% {
-    transform: translateX(16vw) translateY(-1vw);
+    transform: translateX(130vw) translateY(-1vw);
     opacity: 0;
   }
 }
