@@ -13,61 +13,86 @@ import Footer from "./Components/footer";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const clouds = useMemo(() => [
-    {
-      id: 1,
-      image: Cloud1,
-      style: {
-        "--cloud-left": "4vw",
-        "--cloud-top": "10.2vw",
-        "--cloud-delay": "0s",
-        "--cloud-duration": "20s",
-      } as React.CSSProperties,
-    },
-    {
-      id: 2,
-      image: Cloud2,
-      style: {
-        "--cloud-left": "29vw",
-        "--cloud-top": "12.4vw",
-        "--cloud-delay": "2.6s",
-        "--cloud-duration": "30s",
-      } as React.CSSProperties,
-    },
-    {
-      id: 3,
-      image: Cloud3,
-      style: {
-        "--cloud-left": "58vw",
-        "--cloud-top": "8vw",
-        "--cloud-delay": "4.8s",
-        "--cloud-duration": "60s",
-      } as React.CSSProperties,
-    },
+  // const clouds = useMemo(() => [
+  //   {
+  //     id: 1,
+  //     image: Cloud1,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "10.2vw",
+  //       "--cloud-delay": "0s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+  //   {
+  //     id: 2,
+  //     image: Cloud2,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "12.4vw",
+  //       "--cloud-delay": "4s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+  //   {
+  //     id: 3,
+  //     image: Cloud3,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "8vw",
+  //       "--cloud-delay": "8s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+  //   {
+  //     id: 4,
+  //     image: Cloud1,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "11vw",
+  //       "--cloud-delay": "12s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+  //   {
+  //     id: 5,
+  //     image: Cloud2,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "14vw",
+  //       "--cloud-delay": "16s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
+  //   {
+  //     id: 6,
+  //     image: Cloud3,
+  //     style: {
+  //       "--cloud-left": "-20vw",
+  //       "--cloud-top": "8vw",
+  //       "--cloud-delay": "20s",
+  //       "--cloud-duration": "40s",
+  //     } as React.CSSProperties,
+  //   },
 
-    {
-      id: 4,
-      image: Cloud1,
-      style: {
-        "--cloud-left": "75vw",
-        "--cloud-top": "11vw",
-        "--cloud-delay": "2s",
-        "--cloud-duration": "60s",
-      } as React.CSSProperties,
-    },
+  // ], []);
 
-    // {
-    //   id: 5,
-    //   image: Cloud2,
-    //   style: {
-    //     "--cloud-left": "4vw",
-    //     "--cloud-top": "6vw",
-    //     "--cloud-delay": "2s",
-    //     "--cloud-duration": "60s",
-    //   } as React.CSSProperties,
-    // },
-  ], []);
 
+  const clouds = useMemo(
+  () => [
+    { id: 1, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "10vw", "--cloud-delay": "-0s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 2, image: Cloud2, style: { "--cloud-left": "-20vw", "--cloud-top": "12vw", "--cloud-delay": "-4s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 3, image: Cloud3, style: { "--cloud-left": "-20vw", "--cloud-top": "8vw", "--cloud-delay": "-8s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 4, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "11vw", "--cloud-delay": "-12s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 5, image: Cloud2, style: { "--cloud-left": "-20vw", "--cloud-top": "14vw", "--cloud-delay": "-16s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 6, image: Cloud3, style: { "--cloud-left": "-20vw", "--cloud-top": "18vw", "--cloud-delay": "-20s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 7, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "13vw", "--cloud-delay": "-24s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 8, image: Cloud2, style: { "--cloud-left": "-20vw", "--cloud-top": "7vw", "--cloud-delay": "-28s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 9, image: Cloud3, style: { "--cloud-left": "-20vw", "--cloud-top": "10vw", "--cloud-delay": "-32s", "--cloud-duration": "40s" } as React.CSSProperties },
+    { id: 10, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "18vw", "--cloud-delay": "-36s", "--cloud-duration": "40s" } as React.CSSProperties },
+  ],
+  []
+);
   const snowflakes = useMemo(() => Array.from({ length: 350 }, (_, index) => {
     const isMedium = index >= 250 && index < 300;
     const isLarge = index >= 300;
@@ -125,10 +150,15 @@ export default function Home() {
       onMouseUp={stopDragging}
       onMouseLeave={stopDragging}
     >
+      <div className={styles.frontCloudLayer} aria-hidden="true">
+        <div className={styles.cloud} style={clouds[0].style}>
+          <Image src={clouds[0].image} alt="cloud" className={styles.cloudImage} priority />
+        </div>
+      </div>
       <div className={styles.cloudRow} aria-hidden="true">
-        {clouds.map((cloud) => (
+        {clouds.slice(1).map((cloud) => (
           <div key={cloud.id} className={styles.cloud} style={cloud.style}>
-            <Image src={cloud.image} alt="cloud" className={styles.cloudImage} priority={cloud.id === 1} />
+            <Image src={cloud.image} alt="cloud" className={styles.cloudImage} priority={false} />
           </div>
         ))}
       </div>

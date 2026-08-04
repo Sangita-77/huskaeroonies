@@ -26,6 +26,9 @@
   user-select: none;
   -webkit-user-drag: none;
   margin-top: 1vw;
+  z-index: 1;
+position: relative;
+
 }
 
  .header {
@@ -102,8 +105,8 @@
       box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
   background: url(https://images.unsplash.com/photo-1585129891066-83969119de8c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=932&q=80);
 } */
-.river svg{position: absolute;}
-.river{
+.river svg{position: absolute; }
+.river{z-index: 99;
   filter: url(#turbulence);
   background: radial-gradient(
         1.5vw 6.28571vw at 1.95vw,
@@ -171,7 +174,7 @@
   animation: flow 5s infinite linear;
   mix-blend-mode: luminosity
 } */
-.Bridge{position: absolute; -webkit-user-drag: none; user-select: none;
+.Bridge{z-index: 99; position: absolute; -webkit-user-drag: none; user-select: none;
     width: 33.2vw;
     height: 52vw;
     position: absolute;
@@ -207,7 +210,7 @@
     transform: rotate(-54deg);
 }
 
-.book{background: #fff; width: 8vw; height: 4.5vw; border-radius: .7vw; position: absolute; 	animation: float 6s ease-in-out infinite; display: flex; justify-content: center; align-items: center;}
+.book{z-index: 99;background: #fff; width: 8vw; height: 4.5vw; border-radius: .7vw; position: absolute; 	animation: float 6s ease-in-out infinite; display: flex; justify-content: center; align-items: center;}
 .book a::before{content: "";
     background: url("../app/Images/Book.gif");
     width: 3vw;
@@ -232,19 +235,29 @@
 
 /* cloud animation start */
 
+.frontCloudLayer,
 .cloudRow {
   position: absolute;
   inset: 0;
-  z-index: 2;
   pointer-events: none;
+  overflow: hidden;
+}
+
+.frontCloudLayer {
+  z-index: 2;
+}
+
+.cloudRow {
+  z-index: 0;
 }
 
 .cloud {
   position: absolute;
   left: var(--cloud-left);
   top: var(--cloud-top);
-  animation: cloudPass var(--cloud-duration) ease-in-out infinite;
+  animation: cloudPass var(--cloud-duration) linear infinite;
   animation-delay: var(--cloud-delay);
+  will-change: transform, opacity;
 }
 
 .cloudImage {
@@ -257,17 +270,17 @@
 
 @keyframes cloudPass {
   0% {
-    transform: translateX(-18vw) translateY(0.4vw);
+    transform: translateX(-22vw) translateY(0.4vw);
     opacity: 0;
   }
-  12% {
-    opacity: 1;
+  8% {
+    opacity: 0.9;
   }
-  75% {
-    opacity: 1;
+  84% {
+    opacity: 0.9;
   }
   100% {
-    transform: translateX(16vw) translateY(-1vw);
+    transform: translateX(130vw) translateY(-1vw);
     opacity: 0;
   }
 }
@@ -562,9 +575,13 @@
   .sampleReadBanner, .flipbookVisible { transition: none; }
 }
 
-.sampleReadBanner .Sbook{position: absolute; background: #fff; color: #000000;}
+.sampleReadBanner .Sbook{position: absolute; background: #fff; color: #000000; border: 2px solid transparent; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
 .sampleReadBanner .Sbook1{top: 10vw; left: 20vw;}
 .sampleReadBanner .Sbook2{top: 10vw; left: 10vw;}
+.sampleReadBanner .Sbook.isActive {
+  border-color: #ffb703;
+  box-shadow: 0 0.6vw 1.7vw rgba(255, 183, 3, 0.45);
+}
 /* Sample Read End */
 
 
