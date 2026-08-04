@@ -554,9 +554,13 @@
   .sampleReadBanner, .flipbookVisible { transition: none; }
 }
 
-.sampleReadBanner .Sbook{position: absolute; background: #fff; color: #000000;}
+.sampleReadBanner .Sbook{position: absolute; background: #fff; color: #000000; border: 2px solid transparent; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
 .sampleReadBanner .Sbook1{top: 10vw; left: 20vw;}
 .sampleReadBanner .Sbook2{top: 10vw; left: 10vw;}
+.sampleReadBanner .Sbook.isActive {
+  border-color: #ffb703;
+  box-shadow: 0 0.6vw 1.7vw rgba(255, 183, 3, 0.45);
+}
 /* Sample Read End */
 
 
