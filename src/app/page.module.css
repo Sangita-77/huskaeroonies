@@ -169,9 +169,12 @@
   animation: flow 5s infinite linear;
   mix-blend-mode: luminosity
 } */
-.Bridge{position: absolute;     top: 52vw;
-    left: 36.9vw; -webkit-user-drag: none; user-select: none;     width: 29vw;
-    height: 37vw;
+.Bridge{position: absolute; -webkit-user-drag: none; user-select: none;
+    width: 33.2vw;
+    height: 52vw;
+    position: absolute;
+    top: 47vw;
+    left: 25.9vw;
 } 
 .river--2 {
   /* top: 40.3vw;
