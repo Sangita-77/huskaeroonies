@@ -299,26 +299,6 @@
   height: 10vw;
   pointer-events: none;
   z-index: 4;
-<<<<<<< HEAD
-} */
-
-.FireAnimation{background: #f8090942; width: 3.4vw; height: 3vw; position: absolute; top: 66vw; left: 67.5vw;}
-
-
-.particle {
-  position: absolute;
-  bottom: 0;
-  left: var(--fire-left);
-  width: 2vw;
-  height: 2vw;
-  border-radius: 50%;
-  background-image: radial-gradient(rgb(255, 80, 0) 20%, rgba(255, 80, 0, 0) 70%);
-  mix-blend-mode: screen;
-  opacity: 0;
-  animation: fireRise 1s ease-in infinite;
-  animation-delay: var(--fire-delay);
-=======
->>>>>>> 25921cda719f3f57222d346f3737bbe4fd1d3fb9
 }
 
 .fire {
