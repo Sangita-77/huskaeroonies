@@ -1,9 +1,7 @@
-.page{
-    width: 100%;
-}
-.MapHolder svg{display: none;}
+
+/* .MapHolder svg{display: none;} */
 .MapHolder {
-  height: 100vh;
+  height: 147vh;
   overflow: auto;
   cursor: grab;
   scrollbar-width: none;     
@@ -33,7 +31,7 @@ position: relative;
 }
 
  .header {
-    z-index: 199;
+    z-index: 2000;
     background: linear-gradient(0deg, #029ffc00 2%, #029ffcf5 36%);
     width: 100%;
     position: sticky;
@@ -555,12 +553,16 @@ position: relative;
 
 /* Fire animation end */
 
-
+/* Dog Animated Start */
+.heroVideoContainer{position: relative;}
+.heroVideoContainer .GirlDog{z-index: 999; width: 18vw; position: absolute; top: -25vw; left: 1vw;}
+.heroVideoContainer .BoyDog{z-index: 999; width: 18vw; position: absolute; top: -25vw; right: 1vw;}
+/* Dog Animated End */
 
 
 /* Sample Read Start */
 .sampleReadBanner {
-  background-image: url("../app/Images/SampleRaedBanner.svg");
+  background-image: url("../app/Images/SampleRaedBanner.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

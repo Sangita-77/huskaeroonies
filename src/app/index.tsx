@@ -205,6 +205,26 @@ export default function Home() {
       <feDisplacementMap scale="60" in="SourceGraphic"></feDisplacementMap>
     </filter>
   </svg>
+    <div className={styles.heroVideoContainer}>
+      <video
+          className={styles.GirlDog}
+          autoPlay
+          muted
+          loop
+          playsInline
+          >
+          <source src="/GirlDog.webm" type="video/webm" />
+        </video>
+              <video
+          className={styles.BoyDog}
+          autoPlay
+          muted
+          loop
+          playsInline
+          >
+          <source src="/BoyDog.webm" type="video/webm" />
+        </video>
+  </div>
   </main>
   <Footer/>
     </>
