@@ -105,7 +105,10 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
     <>
     <Header/>
       <section className={`${styles.sampleReadBanner} ${showIntro ? styles.sampleReadBannerIntro : styles.sampleReadBannerSettled}`}>
-        
+        <div className={`${styles.Sbook} ${styles["Sbook1"]}`}>Snow Day</div>
+        <div className={`${styles.Sbook} ${styles["Sbook2"]}`}>Big Race</div>
+        {/* <div className={`${styles.Sbook} ${styles["Sbook3"]}`}>Book3</div>
+        <div className={`${styles.Sbook} ${styles["Sbook4"]}`}>Book4</div> */}
       </section>
     <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible}`}>
       <h2 className="book-title">
