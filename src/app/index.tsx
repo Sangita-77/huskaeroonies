@@ -27,14 +27,6 @@ export default function Home() {
     };
   }), []);
 
-  const fireParticles = useMemo(() => Array.from({ length: 50 }, (_, index) => ({
-    id: index,
-    style: {
-      "--fire-delay": `${(index * 0.04).toFixed(2)}s`,
-      "--fire-left": `${(index * 100) / 49}%`,
-    } as React.CSSProperties,
-  })), []);
-
   let isDown = false;
   let startX = 0;
   let startY = 0;
@@ -85,8 +77,8 @@ export default function Home() {
       {/**/}
       <div className={`${styles.book} ${styles["book1"]}`}><a href="/flip-book?book=1">Snow Day</a></div>
       <div className={`${styles.book} ${styles["book2"]}`}><a href="/flip-book?book=2">Big Race</a></div>
-      {/* <div className={`${styles.book} ${styles["book3"]}`}><a href="#">Neighborhood Pups</a></div> */}
-      {/* <div className={`${styles.book} ${styles["book4"]}`}><a href="#">Camping Day</a></div>  */}
+      <div className={`${styles.book} ${styles["book3"]}`}><a href="#">Neighborhood Pups</a></div>
+      <div className={`${styles.book} ${styles["book4"]}`}><a href="#">Camping Day</a></div> 
       <div className={styles.SnowFall} aria-hidden="true">
         {snowflakes.map((snowflake) => (
           <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>

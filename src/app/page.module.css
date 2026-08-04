@@ -206,17 +206,23 @@
     transform: rotate(-54deg);
 }
 
-.book{background: #fff; width: 11vw; height: 5.5vw; border-radius: .7vw; position: absolute; 	animation: float 6s ease-in-out infinite; display: flex; justify-content: center; align-items: center;}
+.book{background: #fff; width: 14vw; height: 6.5vw; border-radius: .7vw; position: absolute; 	animation: float 6s ease-in-out infinite; display: flex; justify-content: center; align-items: center;}
 .book a::before{content: "";
     background: url("../app/Images/Book.gif");
-    width: 4vw;
+    width: 7vw;
     height: 3vw;
     background-size: contain;
-    background-repeat: no-repeat;margin-left: 1vw; display: flex;}
-.book a{text-decoration: none; color: #151B58; font-size: 1vw;}
+    background-repeat: no-repeat;margin-left: 3.5vw; display: flex;}
+.book a{text-decoration: none; color: #151B58; font-size: 1vw; text-align: center;}
 .book::before{content: ""; width: 2vw; height: 2vw; position: absolute;}
 .book1{top: 34vw; left: 31vw;}
 .book2{top: 35vw; left: 79vw;}
+
+.book3, .book4 {top: 54vw; left: 25vw; background: #746b6b; animation: float 0s ease-in-out infinite;}
+.book3 a::before, .book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 3vw; opacity: .5;}
+.book3 a, .book4 a{opacity: .5;}
+.book4{top: 61vw; left: 79vw;}
+.book4 a::before{margin-left: 2.1vw;}
 .book1::before{ background: url("../app/Images/PawBlue.svg") no-repeat; left: 1vw;}
 .book2::before{background: url("../app/Images/PawGreen.svg") no-repeat; right: 1vw;}
 
