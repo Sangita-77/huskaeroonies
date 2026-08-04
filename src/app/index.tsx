@@ -6,6 +6,7 @@ import Map from "./Images/huskierooniesMaster.svg";
 import Bridge from "./Images/bridge.svg";
 import styles from "./page.module.css";
 import Header from "./Components/header";
+import Footer from "./Components/footer";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -80,7 +81,7 @@ export default function Home() {
       <div className={`${styles.cloud} ${styles["cloud5"]}`}></div>
       <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
-        {/*  <div className={`${styles.book} ${styles["book3"]}`}><a href="/flip-book?book=3">Book 3</a></div>
+      {/*  <div className={`${styles.book} ${styles["book3"]}`}><a href="/flip-book?book=3">Book 3</a></div>
       <div className={`${styles.book} ${styles["book4"]}`}><a href="/flip-book?book=4">Book 4</a></div> */}
       <div className={`${styles.book} ${styles["book1"]}`}><a href="/flip-book?book=1">Snow Day</a></div>
       <div className={`${styles.book} ${styles["book2"]}`}><a href="/flip-book?book=2">Big Race</a></div>
@@ -117,6 +118,7 @@ export default function Home() {
       <feDisplacementMap scale="60" in="SourceGraphic"></feDisplacementMap>
     </filter>
   </svg>
+  <Footer/>
     </>
   );
 }
