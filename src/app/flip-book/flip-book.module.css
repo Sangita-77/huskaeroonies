@@ -24,3 +24,10 @@
 .scope :global(.modal-actions .primary) { color: #1c0f00; background: #ffb64d; }
 .scope :global(.modal-actions .secondary) { color: #e8fbff; border: 1px solid rgba(255,255,255,.18); background: transparent; }
 @media (max-width: 640px) { .scope :global(.app-shell) { padding: 16px; } .scope :global(.book-carousel) { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 6px; } .scope :global(.book-carousel-arrow) { width: 40px; height: 40px; font-size: 2.35rem; } }
+
+
+
+/* -------- Flip book page ----------  */
+.scope :global(.flipbook-wrapper) {padding: 4vw 0 16vw; position: relative; background: url("../Images/samplereadBg.webp") #fdeba3 no-repeat center; background-size: contain;}
+.scope :global(.SampleBeforewave) {position: relative; position: absolute; top: 0; left: 0;}
+.scope :global(.SampleBeforewave img) {z-index: 99; width: 99vw; height: auto; position: absolute; top: -3.6vw; left: 0;}

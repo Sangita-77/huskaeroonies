@@ -36,3 +36,5 @@ font-size: 1vw; position: relative; padding: 0.7vw 1vw; text-align: left; cursor
 .footerTopSection .footerTopSectionContainer .row {display: flex;}
 .footerTopSection .footerTopSectionContainer .row .footerTopCol {flex: 0 0 25%; text-align: center;}
 .footerTopSection .footerTopSectionContainer .row .footerTopCol h4 {color: #fff; font-size: 1vw; font-weight: 500; margin-top: 0.5vw;}
+
+

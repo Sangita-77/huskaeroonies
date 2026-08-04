@@ -4,6 +4,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from "../page.module.css";
 import Header from "../Components/header";
 import Footer from "../Components/footer";
+import Image from "next/image";
+import sampleReadWave from "../Images/sampleReadWave.webp";
 
 const EMPTY_PAGES = [];
 
@@ -112,6 +114,9 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
         <div className={`${styles.Sbook} ${styles["Sbook4"]}`}>Book4</div> */}
       </section>
     <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible}`}>
+      <div className="SampleBeforewave">
+          <Image src={sampleReadWave} alt="Wave" />
+        </div>
       <h2 className="book-title">
         {bookNames[activeBook] || `Book ${activeBook + 1}`}
       </h2>
