@@ -31,3 +31,7 @@
 .scope :global(.flipbook-wrapper) {padding: 4vw 0 16vw; position: relative; background: url("../Images/samplereadBg.webp") #fdeba3 no-repeat center; background-size: contain;}
 .scope :global(.SampleBeforewave) {position: relative; position: absolute; top: 0; left: 0;}
 .scope :global(.SampleBeforewave img) {z-index: 99; width: 99vw; height: auto; position: absolute; top: -3.6vw; left: 0;}
+.scope :global(.book-carousel-dots) {gap: 30px;}
+.scope :global(.book-carousel-dots button) {background: #151b584d; width: 14px; height: 14px;}
+.scope :global(.book-carousel-dots button.is-active) {background: #151B58; width: 22px; height: 22px;}
+/* .scope :global(.flipbook-wrapper .book-meta) {} */
