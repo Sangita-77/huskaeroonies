@@ -2,7 +2,7 @@
 
 import { useMemo, useRef } from "react";
 import Image from "next/image";
-import Map from "./Images/huskierooniesMaster.svg";
+import Map from "./Images/Banner.webp";
 import Bridge from "./Images/bridge.svg";
 import styles from "./page.module.css";
 import Header from "./Components/header";
@@ -82,10 +82,11 @@ export default function Home() {
       <div className={`${styles.cloud} ${styles["cloud5"]}`}></div>
       <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
-      {/*  <div className={`${styles.book} ${styles["book3"]}`}><a href="/flip-book?book=3">Book 3</a></div>
-      <div className={`${styles.book} ${styles["book4"]}`}><a href="/flip-book?book=4">Book 4</a></div> */}
+      {/**/}
       <div className={`${styles.book} ${styles["book1"]}`}><a href="/flip-book?book=1">Snow Day</a></div>
       <div className={`${styles.book} ${styles["book2"]}`}><a href="/flip-book?book=2">Big Race</a></div>
+      {/* <div className={`${styles.book} ${styles["book3"]}`}><a href="#">Neighborhood Pups</a></div> */}
+      {/* <div className={`${styles.book} ${styles["book4"]}`}><a href="#">Camping Day</a></div>  */}
       <div className={styles.SnowFall} aria-hidden="true">
         {snowflakes.map((snowflake) => (
           <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>
@@ -110,7 +111,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Image src={Bridge} alt="Book Map" priority className={styles.Bridge} />
+      <Image src={Bridge} alt="Bridge" priority className={styles.Bridge} />
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
     </div>
       <svg width="0" height="0">

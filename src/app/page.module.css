@@ -8,6 +8,7 @@
   scrollbar-width: none;     
   -ms-overflow-style: none; 
   position: relative;  
+  background: linear-gradient(0deg, rgb(255 255 255) 0%, rgb(2 159 252) 85%);
 }
 
 .MapHolder::-webkit-scrollbar {
@@ -24,7 +25,7 @@
   max-width: none;
   user-select: none;
   -webkit-user-drag: none;
-  margin-bottom: -5px;
+  margin-top: 7vw;
 }
 
  .header {
@@ -173,7 +174,7 @@
     width: 33.2vw;
     height: 52vw;
     position: absolute;
-    top: 47vw;
+    top: 39vw;
     left: 25.9vw;
 } 
 .river--2 {
@@ -186,7 +187,7 @@
   mask: url("../app/Images/River.svg") center / contain no-repeat;
   /* width: 42.4vw;
   height: 57.4vw; */
-    top: 9.6vw;
+    top: 1.6vw;
     left: 25.9vw;
     width: 29.3vw;
     height: 93.1vw;
@@ -200,7 +201,7 @@
   mask: url("../app/Images/River1.svg") center / contain no-repeat;
     width: 13.09379vw;
     height: 50.3vw;
-    top: 60.893vw;
+    top: 52.893vw;
     left: 46.5vw;
     transform: rotate(-54deg);
 }
@@ -213,28 +214,27 @@
     background-size: contain;
     background-repeat: no-repeat;margin-left: 1vw; display: flex;}
 .book a{text-decoration: none; color: #151B58; font-size: 1vw;}
-.book1{top: 41vw; left: 31vw;}
-.book2{top: 43vw; left: 79vw;}
-.book1::before{ content: "";
-    background: url("../app/Images/PawBlue.svg") no-repeat;
-    width: 2vw;
-    height: 2vw;
+.book::before{content: ""; width: 2vw; height: 2vw; position: absolute;}
+.book1{top: 34vw; left: 31vw;}
+.book2{top: 35vw; left: 79vw;}
+.book1::before{ background: url("../app/Images/PawBlue.svg") no-repeat; left: 1vw;}
+.book2::before{background: url("../app/Images/PawGreen.svg") no-repeat; right: 1vw;}
+
+/* Hill_BG Start */
+/* Hill_BG End */
+
+
+
+
+
+
+
+
+.SnowFall { pointer-events: none; z-index: 3;     width: 29vw;
+    height: 12vw;
     position: absolute;
-    left: 1vw;}
-
-
-/* Cloude Start */
-
-/* Cloude End */
-
-
-
-
-
-
-
-
-.SnowFall { pointer-events: none; z-index: 3; width: 30vw; height: 13vw; position: absolute; top: 31vw; left: 5vw; overflow: hidden; } 
+    top: 25vw;
+    left: 5vw; overflow: hidden; } 
 .snowflake {
   position: absolute;
   top: -8vh;
@@ -298,10 +298,8 @@
 
 .FireAnimation {
   position: absolute;
-  top: 66vw;
+  top: 58vw;
   left: 67.5vw;
-  width: 8vw;
-  height: 10vw;
   pointer-events: none;
   z-index: 4;
 }
