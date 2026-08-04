@@ -66,6 +66,7 @@ export default function Home() {
   return (
     <>
     <Header/>
+    <main>
     <div
       ref={containerRef}
       className={styles.MapHolder}
@@ -118,6 +119,7 @@ export default function Home() {
       <feDisplacementMap scale="60" in="SourceGraphic"></feDisplacementMap>
     </filter>
   </svg>
+  </main>
   <Footer/>
     </>
   );
