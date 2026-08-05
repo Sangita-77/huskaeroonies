@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // basePath: "/dev/huskaeroonies",
 };
 
 export default nextConfig;
