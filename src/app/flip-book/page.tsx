@@ -24,28 +24,28 @@ const book2 = [
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_race_page_18_resize.jpg',
 ];
 
-const book3 = [
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/hanumanji.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/hanumanji2.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/monkey.png',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/oroking.png',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/shivji.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/tawk.png',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/ui-screensort.png',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/admin_list.png',
-];
+// const book3 = [
+//   'https://dreamlogodesign.net/dev/animationsite/animationHtml/hanumanji.jpg',
+//   'https://dreamlogodesign.net/dev/animationsite/animationHtml/hanumanji2.jpg',
+//   'https://dreamlogodesign.net/dev/animationsite/animationHtml/monkey.png',
+//   'https://dreamlogodesign.net/dev/animationsite/animationHtml/oroking.png',
+//   'https://dreamlogodesign.net/dev/animationsite/animationHtml/shivji.jpg',
+//   'https://dreamlogodesign.net/dev/animationsite/animationHtml/tawk.png',
+//   'https://dreamlogodesign.net/dev/animationsite/animationHtml/ui-screensort.png',
+//   'https://dreamlogodesign.net/dev/animationsite/animationHtml/admin_list.png',
+// ];
 
 const bookNames = [
   'Book 1: Snow Day',
   'Book 2: Husky Storybook',
-  'Book 3: Shivji Chronicles',
-  'Book 4: Storybook Preview'
+  // 'Book 3: Shivji Chronicles',
+  // 'Book 4: Storybook Preview'
 ];
 
 
 // Book 4 uses the available preview artwork until its dedicated pages are added.
-const book4 = [...book3];
-const books = [book1, book2, book3, book4];
+const book4 = [...book2];
+const books = [book1, book2];
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ book?: string }> }) {
   const params = await searchParams;

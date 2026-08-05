@@ -67,8 +67,8 @@ export default function Footer() {
 
               <div className={styles.footerBottomLeft}>
                 <div className={styles.footerLogoWrap}>
-                  <a href="/"><Image src={Footerlogo} alt="Footer Logo" /></a>
-                  <a href="/"><Image src={FooterDogs} alt="Footer Dogs" /></a>
+                  <a href="/dev/huskaeroonies"><Image src={Footerlogo} alt="Footer Logo" /></a>
+                  <a href="/dev/huskaeroonies"><Image src={FooterDogs} alt="Footer Dogs" /></a>
                 </div>
               </div>
 

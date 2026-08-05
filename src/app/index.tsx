@@ -141,7 +141,7 @@ export default function Home() {
 
   return (
     <>
-    <Header/>
+     <Header logo={false} />
     <main>
     <div
       ref={containerRef}
@@ -166,7 +166,9 @@ export default function Home() {
       <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
       {/**/}
+      {/* <div className={`${styles.book} ${styles["book1"]}`}><a href="/dev/huskaeroonies/flip-book?book=1">Snow Day</a></div> */}
       <div className={`${styles.book} ${styles["book1"]}`}><a href="/flip-book?book=1">Snow Day</a></div>
+      {/* <div className={`${styles.book} ${styles["book2"]}`}><a href="/dev/huskaeroonies/flip-book?book=2">Big Race</a></div> */}
       <div className={`${styles.book} ${styles["book2"]}`}><a href="/flip-book?book=2">Big Race</a></div>
       <div className={`${styles.book} ${styles["book3"]}`}><a href="#">Neighborhood Pups</a></div>
       <div className={`${styles.book} ${styles["book4"]}`}><a href="#">Camping Day</a></div> 
