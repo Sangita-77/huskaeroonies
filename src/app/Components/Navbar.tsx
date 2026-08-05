@@ -4,12 +4,21 @@ import { usePathname } from "next/navigation";
 import { ROUTES } from "@/constants/routes";
 import styles from "../page.module.css";
 
+// const links = [
+//   // { title: "Book", href: ROUTES.BOOK },
+//   { title: "Book", href: "#" },
+//   { title: "Meet The Husks", href: "#" },
+//   { title: "For Parents", href: "#" },
+//   { title: "About Us", href: "#" },
+//   { title: "Baby Shower Cart", href: "#" },
+// ];
+
 const links = [
-  { title: "Book", href: ROUTES.BOOK },
-  { title: "Meet The Husks", href: ROUTES.HOME },
-  { title: "For Parents", href: ROUTES.FORPARENTS },
-  { title: "About Us", href: ROUTES.ABOUTUS },
-  { title: "Baby Shower Cart", href: ROUTES.CART },
+  { title: "Book", href: "#book" },
+  { title: "Meet The Husks", href: "#meet-the-husks" },
+  { title: "For Parents", href: "#for-parents" },
+  { title: "About Us", href: "#about-us" },
+  { title: "Baby Shower Cart", href: "#baby-shower-cart" },
 ];
 
 export default function Navbar() {

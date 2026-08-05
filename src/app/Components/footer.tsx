@@ -14,15 +14,15 @@ import FavoriteIcon from "../Images/favorite-icon01.svg";
 import ProfileIcon from "../Images/profile-icon01.svg";
 
 const exploreLinks = [
-  { title: "All Books", href: ROUTES.AllBOOKS },
-  { title: "New Releases", href: ROUTES.NEWRELEASES },
-  { title: "Book Collections", href: ROUTES.BOOKCOLLECTIONS },
+  { title: "All Books", href: "#book" },
+  { title: "New Releases", href: "#new-releases" },
+  { title: "Book Collections", href: "#book-collections" },
 ];
 
 const parentLinks = [
-  { title: "Why Huskeroonies", href: ROUTES.WHYHUSKEROONIES },
-  { title: "Parent Resources", href: ROUTES.PARENTRESOURCES },
-  { title: "FAQs", href: ROUTES.FAQS },
+  { title: "Why Huskeroonies", href: "#why-huskaeroonies" },
+  { title: "Parent Resources", href: "#parent-resources" },
+  { title: "FAQs", href: "#faqs" },
 ];
 
 export default function Footer() {
