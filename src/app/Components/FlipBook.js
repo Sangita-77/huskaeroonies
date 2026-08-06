@@ -104,6 +104,7 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
 
   const firstVisiblePage = Math.min(currentPage + 1, images.length);
   const secondVisiblePage = Math.min(currentPage + 2, images.length);
+  
   return (
     <>
      <Header logo={true} />
@@ -140,11 +141,11 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
         <button className="book-carousel-arrow" onClick={() => switchBook(1)} aria-label="Next book">›</button>
       </div>
 
-      <div className="book-meta">
+      {/* <div className="book-meta">
         <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}>Previous</button>
         <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
         <button className="nav-btn" onClick={goNext} disabled={!ready}>Next</button>
-      </div>
+      </div> */}
       <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
       </div>

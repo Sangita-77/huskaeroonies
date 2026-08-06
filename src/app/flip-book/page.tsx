@@ -37,7 +37,7 @@ const book2 = [
 
 const bookNames = [
   'Book 1: Snow Day',
-  'Book 2: Husky Storybook',
+  'Book 2: Big Race',
   // 'Book 3: Shivji Chronicles',
   // 'Book 4: Storybook Preview'
 ];

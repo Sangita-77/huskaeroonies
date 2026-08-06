@@ -28,7 +28,7 @@
 
 
 /* -------- Flip book page ----------  */
-.scope :global(.flipbook-wrapper) {padding: 4vw 0 16vw; position: relative; background: url("../Images/samplereadBg.webp") #fdeba3 no-repeat center; background-size: contain;}
+.scope :global(.flipbook-wrapper) {padding: 4vw 0 16vw; position: relative; background: url("../Images/samplereadBg.webp") #fdeba3 no-repeat center; background-size: contain; margin-top: -11vw;}
 .scope :global(.SampleBeforewave) {position: relative; position: absolute; top: 0; left: 0;}
 .scope :global(.SampleBeforewave img) {z-index: 99; width: 99vw; height: auto; position: absolute; top: -3.6vw; left: 0;}
 .scope :global(.book-carousel-dots) {gap: 30px;}
