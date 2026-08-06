@@ -1,6 +1,6 @@
 import styles from "../footer.module.css";
 import Image from "next/image";
-import Footerlogo from "../Images/footerLogo.svg";
+import Footerlogo from "../Images/bannerLogo.svg";
 import FooterDogs from "../Images/footerDogs.webp";
 import FooterBeforewave from "../Images/footer-before.webp";
 import FooterTopBeforewave from "../Images/footer-topbefore.webp";

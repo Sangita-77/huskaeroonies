@@ -232,9 +232,9 @@ position: relative;
 .book1::before{ background: url("../app/Images/PawBlue.svg") no-repeat; left: .5vw; background-size: contain;}
 .book2::before{background: url("../app/Images/PawGreen.svg") no-repeat; right: .5vw; background-size: contain;}
 
-.BannerLogo{position: absolute; left: 34vw; top: 5.5vw; width: 27vw; height: 10vw;}
+.BannerLogo{position: absolute; left: 34vw; top: 5.5vw; width: 27vw; height: 8vw;}
 .Welcome{position: absolute;
-    top: 13.8vw;
+    top: 12.8vw;
     left: 40vw;
     z-index: 999;
     font-size: 1.3vw;

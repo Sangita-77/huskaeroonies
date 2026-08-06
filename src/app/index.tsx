@@ -10,7 +10,7 @@ import Cloud3 from "./Images/cloud3.webp";
 import styles from "./page.module.css";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
-import BannerLogo from "./Images/BannerLogo.png";
+import BannerLogo from "./Images/bannerLogo.svg";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
