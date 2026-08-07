@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Potta_One } from "next/font/google";
 import "./globals.css";
+// import DevToolsBlocker from "./DevToolsBlocker";
 // import "./flip-book/flip-book.module.css";
 
 // const geistSans = Geist({
@@ -31,7 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={pottaOne.variable}>
-      <body>{children}</body>
+      <body>
+        {/* <DevToolsBlocker /> */}
+        {children}
+      </body>
     </html>
   );
 }

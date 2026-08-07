@@ -224,6 +224,41 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .book1{top: 29vw; left: 31vw;}
 .book2{top: 30vw; left: 78vw;}
 
+/* ....................... Paw print div....................... */
+
+.book1Paw, .book2Paw {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.3vw;
+  background: rgba(255, 0, 0, 0.9);
+  z-index: 300;
+  pointer-events: none;
+}
+
+.book1Paw.show, .book2Paw.show {
+  display: flex;
+}
+
+.book1Paw::before {
+  content: "Loading Snow Day";
+}
+
+.book2Paw::before {
+  content: "Loading Big Race";
+}
+
+/* .............Paw print div............. */
+
 .book3, .book4 {top: 46vw; left: 28vw; background: #746b6b; animation: float 0s ease-in-out infinite; width: 11vw;}
 .book3 a::before, .book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 2vw; opacity: .5;     margin-left: 3.5vw;}
 .book3 a, .book4 a{opacity: .5;}
