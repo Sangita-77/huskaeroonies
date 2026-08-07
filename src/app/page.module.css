@@ -302,32 +302,41 @@ position: relative;
 
 
 
-
-
-
-.SnowFall {pointer-events: none;
-    z-index: 3;
+  /* pointer-events: none; */
+    /* z-index: 3;
     width: 34vw;
     height: 17vw;
     position: absolute;
     top: 17vw;
     left: 4vw;
     overflow: hidden;
-    border-radius: 100%;} 
+    border-radius: 100%;}  */
+
+
+.SnowFall {
+  pointer-events: none;
+    z-index: 3;
+    border-radius: 73%;
+    width: 35vw;
+    height: 62vw;
+    position: absolute;
+    top: -5vw;
+    left: 3vw;
+    overflow: hidden;}
 .snowflake {
   position: absolute;
   top: -8vh;
   left: var(--snow-left);
-  color: #ffffff;
-  font-size: 1vw;
-  line-height: 1;
+  color: var(--snow-color, #ffffff);
+  font-size: -0.1vw;
+  line-height: 0;
   opacity: var(--snow-opacity);
-  filter: blur(var(--snow-blur)) drop-shadow(0 0 2px rgba(255,255,255,.55));
+  filter: blur(var(--snow-blur)) drop-shadow(0 0 2px currentColor);
   animation: snowfall var(--snow-duration) linear var(--snow-delay) infinite, snowFlicker 2.8s ease-in-out var(--snow-delay) infinite;
 }
 
 .snowflakeMedium { font-size: 1.5em; }
-.snowflakeLarge { font-size: 2.25em; }
+.snowflakeLarge { font-size: 2.5em; }
 
 @keyframes snowfall {
   from { transform: translate3d(0, 0, 0) rotate(0deg); }
