@@ -151,6 +151,20 @@ export default function Home() {
       onMouseUp={stopDragging}
       onMouseLeave={stopDragging}
     >
+
+      {/* Flying birds (decorative) */}
+      <div className="bird-container bird-container-one">
+        <div className="bird bird-one" aria-hidden="true"></div>
+      </div>
+      <div className="bird-container bird-container-two">
+        <div className="bird bird-two" aria-hidden="true"></div>
+      </div>
+      <div className="bird-container bird-container-three">
+        <div className="bird bird-three" aria-hidden="true"></div>
+      </div>
+      <div className="bird-container bird-container-four">
+        <div className="bird bird-four" aria-hidden="true"></div>
+      </div>
       <div className={styles.frontCloudLayer} aria-hidden="true">
         <div className={styles.cloud} style={clouds[0].style}>
           <Image src={clouds[0].image} alt="cloud" className={styles.cloudImage} priority />
@@ -215,7 +229,7 @@ export default function Home() {
           loop
           playsInline
           >
-          <source src="/GirlDog.webm" type="video/webm" />
+          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/girlDog.webm" type="video/webm" />
         </video>
               <video
           className={styles.BoyDog}
@@ -224,7 +238,7 @@ export default function Home() {
           loop
           playsInline
           >
-          <source src="/BoyDog.webm" type="video/webm" />
+          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/boyDog.webm" type="video/webm" />
         </video>
   </div>
   </main>
