@@ -94,27 +94,9 @@ export default function Home() {
   ],
   []
 );
-  const snowColors = [
-    "#ffffff",
-    "#ffffff",
-    "#ffffff",
-    "#ffffff",
-    "#ffffff",
-    "#1be758",
-    "#a10ce6",
-    "#e68312",
-    "#fa2525",
-    "#599eda",
-    "#599eda",
-    "#599eda",
-    "#599eda",
-    "#599eda",
-  ];
-
   const snowflakes = useMemo(() => Array.from({ length: 350 }, (_, index) => {
     const isMedium = index >= 250 && index < 300;
     const isLarge = index >= 300;
-    const snowColor = snowColors[index % snowColors.length];
     return {
       id: index,
       size: isLarge ? styles.snowflakeLarge : isMedium ? styles.snowflakeMedium : "",
@@ -125,7 +107,6 @@ export default function Home() {
         "--snow-delay": `-${(index * 29) % 19}s`,
         "--snow-opacity": `${45 + (index * 11) % 50}%`,
         "--snow-blur": `${(index % 3) - 1}px`,
-        "--snow-color": snowColor,
       } as React.CSSProperties,
     };
   }), []);
@@ -170,6 +151,20 @@ export default function Home() {
       onMouseUp={stopDragging}
       onMouseLeave={stopDragging}
     >
+
+      {/* Flying birds (decorative) */}
+      <div className="bird-container bird-container-one">
+        <div className="bird bird-one" aria-hidden="true"></div>
+      </div>
+      <div className="bird-container bird-container-two">
+        <div className="bird bird-two" aria-hidden="true"></div>
+      </div>
+      <div className="bird-container bird-container-three">
+        <div className="bird bird-three" aria-hidden="true"></div>
+      </div>
+      <div className="bird-container bird-container-four">
+        <div className="bird bird-four" aria-hidden="true"></div>
+      </div>
       <div className={styles.frontCloudLayer} aria-hidden="true">
         <div className={styles.cloud} style={clouds[0].style}>
           <Image src={clouds[0].image} alt="cloud" className={styles.cloudImage} priority />
@@ -193,7 +188,6 @@ export default function Home() {
       <div className={`${styles.book} ${styles["book4"]}`}><a href="#">Camping Day</a></div> 
       <div className={styles.SnowFall} aria-hidden="true">
         {snowflakes.map((snowflake) => (
-          // <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>.</span>
           <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>
         ))}
       </div>
@@ -235,7 +229,7 @@ export default function Home() {
           loop
           playsInline
           >
-          <source src="/GirlDog.webm" type="video/webm" />
+          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/girlDog.webm" type="video/webm" />
         </video>
               <video
           className={styles.BoyDog}
@@ -244,7 +238,7 @@ export default function Home() {
           loop
           playsInline
           >
-          <source src="/BoyDog.webm" type="video/webm" />
+          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/boyDog.webm" type="video/webm" />
         </video>
   </div>
   </main>
