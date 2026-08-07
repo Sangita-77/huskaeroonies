@@ -94,27 +94,9 @@ export default function Home() {
   ],
   []
 );
-  const snowColors = [
-    "#ffffff",
-    "#ffffff",
-    "#ffffff",
-    "#ffffff",
-    "#ffffff",
-    "#1be758",
-    "#a10ce6",
-    "#e68312",
-    "#fa2525",
-    "#599eda",
-    "#599eda",
-    "#599eda",
-    "#599eda",
-    "#599eda",
-  ];
-
   const snowflakes = useMemo(() => Array.from({ length: 350 }, (_, index) => {
     const isMedium = index >= 250 && index < 300;
     const isLarge = index >= 300;
-    const snowColor = snowColors[index % snowColors.length];
     return {
       id: index,
       size: isLarge ? styles.snowflakeLarge : isMedium ? styles.snowflakeMedium : "",
@@ -125,7 +107,6 @@ export default function Home() {
         "--snow-delay": `-${(index * 29) % 19}s`,
         "--snow-opacity": `${45 + (index * 11) % 50}%`,
         "--snow-blur": `${(index % 3) - 1}px`,
-        "--snow-color": snowColor,
       } as React.CSSProperties,
     };
   }), []);
@@ -193,7 +174,6 @@ export default function Home() {
       <div className={`${styles.book} ${styles["book4"]}`}><a href="#">Camping Day</a></div> 
       <div className={styles.SnowFall} aria-hidden="true">
         {snowflakes.map((snowflake) => (
-          // <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>.</span>
           <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>
         ))}
       </div>
