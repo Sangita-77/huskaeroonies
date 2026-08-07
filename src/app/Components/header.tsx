@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import Image from "next/image";
-import Logo from "../Images/logo.svg";
+import Logo from "../Images/bannerLogo.svg";
 import styles from "../page.module.css";
 
 export default function Header({ logo = true }) {

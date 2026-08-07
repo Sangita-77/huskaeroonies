@@ -24,10 +24,10 @@
   max-width: none;
   user-select: none;
   -webkit-user-drag: none;
-  margin-top: 1vw;
+  margin-top: -4vw;
   z-index: 1;
 position: relative;
-
+filter: contrast(1.05) saturate(1.04) brightness(1.03);
 }
 
  .header {
@@ -49,7 +49,7 @@ position: relative;
     display: flex;
     gap: 16vw;
 }
-
+.headercontainer img{width: 17vw; padding-top: 1.2vw;}
 .nav {
   display: flex;
   align-items: center;
@@ -306,37 +306,39 @@ position: relative;
 
 
 .SnowFall {pointer-events: none;
+pointer-events: none;
     z-index: 3;
+    border-radius: 100%;
     width: 34vw;
-    height: 17vw;
+    height: 14vw;
     position: absolute;
-    top: 17vw;
+    top: 19vw;
     left: 4vw;
     overflow: hidden;
-    border-radius: 100%;} 
+  } 
+
 .snowflake {
   position: absolute;
-  top: -8vh;
   left: var(--snow-left);
   color: #ffffff;
   font-size: 1vw;
   line-height: 1;
   opacity: var(--snow-opacity);
-  filter: blur(var(--snow-blur)) drop-shadow(0 0 2px rgba(255,255,255,.55));
+  /* filter: blur(var(--snow-blur)) drop-shadow(1px 2px rgb(255, 255, 255)); */
   animation: snowfall var(--snow-duration) linear var(--snow-delay) infinite, snowFlicker 2.8s ease-in-out var(--snow-delay) infinite;
 }
 
-.snowflakeMedium { font-size: 1.5em; }
-.snowflakeLarge { font-size: 2.25em; }
+.snowflakeMedium { font-size: 1vw; }
+.snowflakeLarge { font-size: 2vw; }
 
 @keyframes snowfall {
-  from { transform: translate3d(0, 0, 0) rotate(0deg); }
-  to { transform: translate3d(var(--snow-drift), 40vw, 0) rotate(10deg); }
+  from { transform: translate3d(0, 0, 0) rotate(10deg); }
+  to { transform: translate3d(var(--snow-drift), 20vw, 0) rotate(10deg); }
 }
 
 @keyframes snowFlicker {
   0%, 5% { opacity: var(--snow-opacity); }
-  50% { opacity: .1; }
+  50% { opacity: .01; }
 }
 
 @media (prefers-reduced-motion: reduce) {
