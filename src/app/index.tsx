@@ -191,7 +191,11 @@ export default function Home() {
           <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>
         ))}
       </div>
+      
       <div className={styles.FireAnimation} aria-hidden="true">
+    <div className={styles.smoke_holder}>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
         <div className={styles.fire}>
           <div className={styles.fireLeft}>
             <div className={styles.mainFire} />

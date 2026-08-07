@@ -2,30 +2,35 @@
 .scope::after{content: ""; background: url("../Images/WaveSampleRead.webp"); position: absolute;}
 .scope :global(.flipbook-wrapper) {display: grid; gap: 1vw; justify-items: center; }
 .scope :global(.book-title) { margin: 0; font-size: 1.7vw; }
-.scope :global(.book-carousel) { width: 75vw; display: grid; grid-template-columns: 2vw minmax(0, 1fr) 2vw; align-items: center; gap: 1vw; height: 40vw;}
+.scope :global(.book-carousel) { width: 1200px; display: grid; grid-template-columns: 2vw minmax(0, 1fr) 2vw; align-items: center; gap: 1vw; height: 640px;  position: relative;}
+
+.scope :global(.book-carousel)::before{content: ""; background: url("../Images/books.webp") center no-repeat;width: 1200px;
+height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; right: 0; background-size: contain;} 
+
 .scope :global(.book-carousel-arrow), .scope :global(.nav-btn) { border: 0; cursor: pointer; color: #fff; font-weight: 700; background: linear-gradient(135deg, #00c3d5, #0f6b8a); box-shadow: 0 6px 18px rgba(0, 132, 153, .35); }
 .scope :global(.book-carousel-arrow) { width: 52px; height: 52px; padding: 0 0 5px; border: 1px solid rgba(130, 237, 255, .48); border-radius: 50%; font-size: 3rem; line-height: 1; }
 .scope :global(.pageflip-stage) { width: 100%; display: grid; place-items: center;}
 
 /* .scope :global(.pageflip-book) { width: 100%; } */
-.scope :global(.pageflip-page){ overflow: hidden; background: #1B77CB; padding: 1vw; width: 100%; height: 100%; border-radius: 2vw; }
+.scope :global(.pageflip-page){ overflow: hidden; background: #1b76cb00; width: 100%; height: 100%; }
 .scope :global(.pageflip-content) {display: flex;  justify-content: center; align-items: center; height: 100%; width: 100%; }
 
-.scope :global(.pageflip-content img) {display: flex; justify-content: center; align-items: center; object-fit: contain; height: 100%; border: solid 1vw #ffffff; width: 100%; background: #fff; border-radius: 2vw;}
-
+.scope :global(.pageflip-content img) {display: flex; justify-content: center; align-items: center; object-fit: contain; height: 100%;  width: 100%; background: #fff; border-radius: 20px;}
 .scope :global(.page-number) {position: absolute; z-index: 2; bottom: 12px; color: rgba(20, 29, 32, 0); font-size: .78rem; }
 .scope :global(.nav-btn) { padding: 9px 29px; border-radius: 100px; }
 .scope :global(.nav-btn:disabled), .scope :global(.book-carousel-arrow:disabled) { opacity: .45; cursor: not-allowed; }
 .scope :global(.page-count) { color: #d9f7fb; }
 .scope :global(.book-carousel-dots button) { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(217, 247, 251, .42); }
-.scope :global(.modal-backdrop) { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(1, 4, 8, .72); }
-.scope :global(.modal-card) { width: min(90vw, 420px); padding: 24px 22px; text-align: center; border: 1px solid rgba(96, 205, 226, .24); border-radius: 18px; background: linear-gradient(180deg, #101f27, #081015); }
-.scope :global(.modal-card p) { color: #d0edf5; line-height: 1.55; }
+
+.scope :global(.modal-backdrop) { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0, 0, 0, 0.596); }
+.scope :global(.modal-card) { width: min(100vw, 450px); padding: 24px 22px; text-align: center; border: 2px solid rgba(96, 204, 226, 0.966); border-radius: 18px; background: linear-gradient(180deg, #01a6ff, #001d30); }
+.scope :global(.modal-card p) { color: #d0edf5; line-height: 1.55; font-size: 15px; padding-bottom: 20px;}
+.scope :global(.modal-card h2){font-size: 22px; padding-bottom: 10px; color: #000000;}
+.scope :global(.modal-actions){gap: 20px; display: flex; justify-content: center;}
 .scope :global(.modal-actions button) { padding: 10px 16px; border: 0; border-radius: 10px; cursor: pointer; }
 .scope :global(.modal-actions .primary) { color: #1c0f00; background: #ffb64d; }
-.scope :global(.modal-actions .secondary) { color: #e8fbff; border: 1px solid rgba(255,255,255,.18); background: transparent; }
+.scope :global(.modal-actions .secondary) { color: #000000; border: 1px solid rgba(255,255,255,.18); background: #fff; }
 @media (max-width: 340px) { .scope :global(.app-shell) { padding: 16px; } .scope :global(.book-carousel) { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 6px; } .scope :global(.book-carousel-arrow) { width: 40px; height: 40px; font-size: 2.35rem; } }
-
 
 
 /* -------- Flip book page ----------  */
