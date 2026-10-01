@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 ////////////////////////////////////////
 import Image from "next/image";
 import Map from "./Images/Banner.webp";
+import MobileMap from "./Images/MobileMap.webp";
 import Bridge from "./Images/bridge.svg";
 import Cloud1 from "./Images/cloud1.webp";
 import Cloud2 from "./Images/cloud2.webp";
@@ -92,15 +93,12 @@ export default function Home() {
     };
   }, []);
 
-  const handleBookClick = (bookNumber: 1 | 2, href: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    if (activePaw) return;
-
-    setActivePaw(bookNumber === 1 ? "book1" : "book2");
-    timeoutRef.current = window.setTimeout(() => {
-      router.push(href);
-    }, 2000);
-  };
+const handleBookClick = (bookNumber: 1 | 2, href: string) =>
+    (e: React.MouseEvent) => { e.preventDefault();
+        if (activePaw) return; const paw = bookNumber === 1 ? "book1" : "book2"; 
+          const delay = bookNumber === 1 ? 10000 : 9000; setActivePaw(paw); 
+          timeoutRef.current = window.setTimeout(() => { router.push(href); },
+    delay); };
   //............................pawprint end ................................
   return (
     <>
@@ -143,8 +141,8 @@ export default function Home() {
       <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
       {/**/}
+      
       {/* /////////////////////////////////////// */}
-
       {/* <div className={`${styles.book} ${styles["book1"]}`}><a href="/dev/huskaeroonies/flip-book?book=1">Snow Day</a></div> */}
       <div className={`${styles.book} ${styles["book1"]}`}>
         <a href="/flip-book?book=1" onClick={handleBookClick(1, "/flip-book?book=1")}>Snow Day</a>
@@ -153,8 +151,8 @@ export default function Home() {
       <div className={`${styles.book} ${styles["book2"]}`}>
         <a href="/flip-book?book=2" onClick={handleBookClick(2, "/flip-book?book=2")}>Big Race</a>
       </div>
-
       {/* /////////////////////////////////////////// */}
+      
       <div className={`${styles.book} ${styles["book3"]}`}><a href="#">Neighborhood Pups</a></div>
       <div className={`${styles.book} ${styles["book4"]}`}><a href="#">Camping Day</a></div> 
       <div className={styles.SnowFall} aria-hidden="true">
@@ -186,13 +184,43 @@ export default function Home() {
         </div>
       </div>
       {/* ////////////////////////// */}
-      <div className={`${styles.book1Paw} ${activePaw === "book1" ? styles.show : ""}`}></div>
-      <div className={`${styles.book2Paw} ${activePaw === "book2" ? styles.show : ""}`}></div>
+      <div className={`${styles.book1Paw} ${activePaw === "book1" ? styles.show : ""}`}>
+      {/* <div className={styles.book1Paw}> */}
+
+        <video
+          className={styles.Paw_Pink}
+          autoPlay
+          muted
+          loop
+          playsInline
+          >
+          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/Paw_pink.webm" type="video/webm" />
+        </video>
+      </div>
+      <div className={`${styles.book2Paw} ${activePaw === "book2" ? styles.show : ""}`}>
+        <video
+          className={styles.Paw_Blue}
+          autoPlay
+          muted
+          loop
+          playsInline
+          >
+          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/Paw_Blue.webm" type="video/webm" />
+        </video>
+      </div>
       {/* /////////////////////////// */}
       <Image src={BannerLogo} alt="Bridge" priority className={styles.BannerLogo} />
       <div className={styles.Welcome}>Welcome to Huskyville!</div>
       <Image src={Bridge} alt="Bridge" priority className={styles.Bridge} />
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
+      {/* <Image src={Map} alt="Book Map" priority className={`${styles.MapImage} ${styles.desktopMap}`} /> */}
+
+      <Image
+        src={MobileMap}
+        alt="Book Map"
+        priority
+        className={styles.mobileMap}
+      />
     </div>
       <svg width="0" height="0">
     <filter id="turbulence" x="0" y="0">

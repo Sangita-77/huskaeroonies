@@ -42,13 +42,13 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
       if (cancelled || !bookElement.current) return;
 
       const instance = new PageFlip(bookElement.current, {
-        width: 460,
-        height: 521,
+        width: 457.5,
+        height: 522,
         size: 'stretch',
         minWidth: 300,
-        maxWidth: 460,
-        minHeight: 521,
-        maxHeight: 521,
+        maxWidth: 457.5,
+        minHeight: 522,
+        maxHeight: 522,
         drawShadow: true,
         flippingTime: 900,
         usePortrait: true,

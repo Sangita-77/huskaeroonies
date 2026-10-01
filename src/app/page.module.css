@@ -7,7 +7,24 @@
   scrollbar-width: none;     
   -ms-overflow-style: none; 
   position: relative;  
-  background: linear-gradient(0deg, rgb(255 255 255) 0%, rgb(2 159 252) 85%);
+  background: linear-gradient(355deg, #ffffff 65%, #029ffc 85%);
+  background-size: 100% 150%;
+  animation: gradientWave 10s ease-in-out infinite;
+}
+
+
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 20%;
+  }
+
+  50% {
+    background-position: 0% 40%;
+  }
+
+  100% {
+    background-position: 0% 20%;
+  }
 }
 
 .MapHolder::-webkit-scrollbar {
@@ -17,6 +34,9 @@
 .MapHolder:active {
   cursor: grabbing;
 }
+
+.MapImage { display: block; }
+.mobileMap { display: none; width: 100vw; margin-top: -4vw;}
 
 .MapImage {
   width: 138vw;
@@ -30,35 +50,37 @@ position: relative;
 filter: contrast(1.05) saturate(1.04) brightness(1.03);
 }
 
- .header {
+.header {
     z-index: 2000;
     background: linear-gradient(0deg, #029ffc00 2%, #029ffcf5 36%);
     width: 100%;
     position: sticky;
     top: 0px;
-    margin-bottom: -7.3vw;
+    margin-bottom: -9.3vw;
 } 
 
 .headercontainer {
     justify-content: center;
     align-items: center;
     max-width: 92%;
-    height: 118px;
+    height: 9.4vw;
     margin: 0 auto;
-    padding: 0 10px 36px;
+    padding: 0 .65vw 3.25vw;
     display: flex;
     gap: 16vw;
 }
-.headercontainer img{width: 17vw; padding-top: 1.2vw;}
-.nav {
-  display: flex;
-  align-items: center;
-}
+
+
+
+
+
+.headercontainer img{width: 17vw; padding-top: 1.2vw; object-fit: contain; height: 6vw;}
+.nav { display: flex; align-items: center; }
 
 .navList {
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 5vw;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -71,39 +93,30 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 .navLink {
   text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
+  color: #151B58;
+  font-size: 1.2vw;
   font-weight: 500;
   transition: color 0.3s ease;
 }
+.headercontainer .nav{background: #d7e8f9;
+    padding: .6vw 2vw;
+    border-radius: 4vw;
+    border: solid .13vw #fff;}
 
 .navList .navLink:hover { text-shadow: 0 0 23px #000000; transition: .5s; }
 .navList .active { text-shadow: 0 0 23px #000000; }
-/* .DashboradNav{height: 200px; background: #029FFC; width: 100%; position: relative; z-index: 9;} */
-/* .DashboradNav::before{
-  content: "";
-  display: block;
-  width: 100%;
-  height: 5vw;
-  background-image: url(../app/Images/BlueWave.webp);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  position: absolute;
-  top: -4vw;
-  z-index: 0;
-} */
+/* Hide desktop menu */ 
+/* Mobile Burger */
+.burger { display: none;  width: 42px; height: 42px; padding: 8px; border: none; background: transparent; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; position: relative; z-index: 1002;}
+.burger span { display: block; width: 25px; height: 2px; background: currentColor; transition: transform 0.3s ease, opacity 0.3s ease;}
+/* Burger → X */
+.burgerOpen span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burgerOpen span:nth-child(2) { opacity: 0; }
+.burgerOpen span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* #box {
-  width: 535px;
-  height:  888px;
-  position: relative;
-  margin: auto;
-  border: 2px solid #000;
-  overflow: hidden;
-      box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
-  background: url(https://images.unsplash.com/photo-1585129891066-83969119de8c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=932&q=80);
-} */
+/* Full Screen Mobile Menu */
+.mobileMenu { display: none; }
+
 .river svg{position: absolute; }
 .river{z-index: 99;
   filter: url(#turbulence);
@@ -209,71 +222,38 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
     transform: rotate(-54deg);
 }
 
-.book{z-index: 99;background: #fff; width: 8vw; height: 4.5vw; border-radius: .7vw; position: absolute; 	animation: float 6s ease-in-out infinite; display: flex; justify-content: center; align-items: center;}
+.book{z-index: 99;background: #fff; width: 10vw; height: 6.5vw; border-radius: 1.5vw; position: absolute; 	animation: float 6s ease-in-out infinite; display: flex; justify-content: center; align-items: center; padding: .1vw; box-shadow: 0 0 .7vw .2vw #2bbfff;
+}
 .book a::before{content: "";
     background: url("../app/Images/Book.gif");
     width: 3vw;
-    height: 2.4vw;
-    margin-left: 1.5vw;
+    height: 2.8vw;
+    margin-bottom: -.5vw;
     display: flex;
-    margin-bottom: -.3vw;
     background-size: contain;
     background-repeat: no-repeat;}
-.book a{text-decoration: none; color: #151B58; font-size: .9vw; text-align: center;}
+.book a{text-decoration: none; color: #151B58; font-size: 1.5vw; text-align: center; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; border: solid .2vw #151B58; border-radius: 1.5vw;}
 .book::before{content: ""; width: 1.5vw; height: 1.5vw; position: absolute; background-size: contain;}
 .book1{top: 29vw; left: 31vw;}
 .book2{top: 30vw; left: 78vw;}
 
 /* ....................... Paw print div....................... */
-
-.book1Paw, .book2Paw {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 10vw;
-  height: 10vw;
-  border-radius: 50%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.3vw;
-  background: rgba(255, 0, 0, 0.9);
-  z-index: 300;
-  pointer-events: none;
-}
-
-.book1Paw.show, .book2Paw.show {
-  display: flex;
-}
-
-.book1Paw::before {
-  content: "Loading Snow Day";
-}
-
-.book2Paw::before {
-  content: "Loading Big Race";
-}
-
+.Paw_Blue{ height: 42vw; width: 49vw; }
+.Paw_Pink{ z-index: 100; height: 45vw; width: 36vw;}
+.book1Paw{top: 32vw; left: 22vw;} 
+.book2Paw{ top: 35vw; left: 22vw;} 
+.book1Paw , .book2Paw{ display: none; position: absolute; z-index: 100;} 
+.book1Paw.show, .book2Paw.show { display: flex; }
 /* .............Paw print div............. */
 
-.book3, .book4 {top: 46vw; left: 28vw; background: #746b6b; animation: float 0s ease-in-out infinite; width: 11vw;}
-.book3 a::before, .book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 2vw; opacity: .5;     margin-left: 3.5vw;}
-.book3 a, .book4 a{opacity: .5;}
+.book3, .book4 {top: 46vw; left: 28vw; background: #746b6be3; animation: float 0s ease-in-out infinite; width: 11vw; box-shadow: none;}
+.book3 a::before, .book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 2vw; opacity: .5;}
+.book3 a, .book4 a{opacity: .5; font-size: 1.1vw;}
 .book4{top: 50vw; left: 77vw;}
-.book4 a::before{margin-left: 2.1vw;}
-.book1::before{ background: url("../app/Images/PawBlue.svg") no-repeat; left: .5vw; background-size: contain;}
-.book2::before{background: url("../app/Images/PawGreen.svg") no-repeat; right: .5vw; background-size: contain;}
-
-.BannerLogo{position: absolute; left: 34vw; top: 7.5vw; width: 27vw; height: 8vw; z-index: 9;}
-.Welcome{position: absolute;
-    top: 13.8vw;
-    left: 40vw;
-    z-index: 999;
-    font-size: 1.3vw;
-    text-shadow: 0px 0px 6px #000; color: #fff;}
+.book1::before{    width: 8.5vw; height: 2.5vw; position: absolute; top: 1.3vw; background: url("../app/Images/ICE_ICON.svg") no-repeat; left: .5vw; background-size: contain;}
+.book2::before{width: 2.5vw; height: 2.5vw; right: 1.1vw; top: 1vw; background: url("../app/Images/FLAG.svg") no-repeat; right: .5vw; background-size: contain;} 
+.BannerLogo{z-index: 9; width: 36vw; height: 9vw; position: absolute; top: 9.5vw; left: 31vw;}
+.Welcome{z-index: 999; text-shadow: 0 0 20px #000000; color: #fff; font-size: 2.1vw; position: absolute; top: 16.8vw; left: 39vw;}
 /* cloud animation start */
 
 .frontCloudLayer,
@@ -381,15 +361,12 @@ pointer-events: none;
 
 @keyframes float {
 	0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
 	}
 	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
 		transform: translatey(-20px);
 	}
 	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
 	}
 }
@@ -838,4 +815,76 @@ pointer-events: none;
 
 
 
+@media (max-width: 768px) {
+/*.........Header Start.........*/
+.nav { display: flex; justify-content: flex-end; align-items: center;}
+.headercontainer .nav{ background: transparent; border: 0;}
+.headercontainer {justify-content: end; height: auto; margin: 0 auto; max-width: 100%;}
+/* Hide desktop navigation */
+.navList { display: none; } 
+/* Show burger */
+.burger { display: flex; color: white;}
+/* Full screen menu */
+.mobileMenu {display: flex; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; min-height: 100dvh; background-color: #151B58; z-index: 1000; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(-10px);
+transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; background-image:url(../app/Images/FooterPaw.png);}
+/* Open menu */
+.mobileMenuOpen { opacity: 1; visibility: visible; transform: translateY(0);}
+/* Menu list */
+.mobileNavList { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 35px; list-style: none; margin: 0; }
+.mobileNavItem { list-style: none;}
+.mobileNavLink {display: block; text-decoration: none; color: white; font-size: 28px; font-weight: 500; text-align: center; padding: 10px 10px; transition: opacity 0.2s ease; letter-spacing: 5px;}
+.mobileNavLink:hover { opacity: 0.6; }
+.MapImage { display: none; }
+.mobileMap { display: block; }
+.header {margin-bottom: -14.3vw;}
+/*.........Header End.........*/
+
+/*.........Banner Start.........*/
+.MapHolder{height: 100vh;}
+.BannerLogo{width: 65vw; height: 18vw; top: 23.5vw; left: 17vw;}
+.Welcome{font-size: 4.5vw; position: absolute; top: 38.8vw; left: 30vw;}
+/* .SnowFall{} */
+.river--2 {
+  -webkit-animation: flow 5s infinite linear;
+  animation: flow 10s infinite linear;
+  box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
+  -webkit-mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat;
+  mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat;
+  top: 301.6vw;
+  left: 25.9vw;
+  width: 29.3vw;
+  height: 93.1vw;
+  transform: rotate(-50deg);
+  display: none;
+}
+.river--3 {
+  -webkit-animation: flow 5s infinite linear;
+  animation: flow 10s infinite linear;
+  box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
+  -webkit-mask: url("../app/Images/RiverMobile2.svg") center / contain no-repeat;
+  mask: url("../app/Images/RiverMobile2.svg") center / contain no-repeat;
+    bottom: 0vw;
+    left: 25.9vw;
+    width: 29.3vw;
+    height: 93.1vw;
+      transform: rotate(-50deg);
+      display: none;
+}
+.heroVideoContainer .GirlDog, .heroVideoContainer .BoyDog{ width: 35vw; top: -42vw; }
+
+/*.........Banner End.........*/
+}
+
+
+
+/* =========================  
+   Small Phones
+========================= */
+
+@media (max-width: 480px) {
+  .mobileNavList { gap: 20px; }
+  .mobileNavLink { font-size: 24px; letter-spacing: 3px;}
+}
+
+  /* Header End */
 

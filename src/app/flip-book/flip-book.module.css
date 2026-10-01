@@ -11,9 +11,20 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.book-carousel-arrow) { width: 52px; height: 52px; padding: 0 0 5px; border: 1px solid rgba(130, 237, 255, .48); border-radius: 50%; font-size: 3rem; line-height: 1; }
 .scope :global(.pageflip-stage) { width: 100%; display: grid; place-items: center;}
 
-/* .scope :global(.pageflip-book) { width: 100%; } */
-.scope :global(.pageflip-page){ overflow: hidden; background: #1b76cb00; width: 100%; height: 100%; }
-.scope :global(.pageflip-content) {display: flex;  justify-content: center; align-items: center; height: 100%; width: 100%; }
+.scope :global(.pageflip-book) { width: 100%; position: relative; }
+.scope :global(.pageflip-content) {display: flex;  justify-content: center; align-items: center; height: 100%; width: 100%;   perspective: 1200px;}
+.scope :global(.pageflip-page){background: #1b76cb00; width: 100%; height: 100%; perspective: 1200px;}
+/* .scope :global(.pageflip-page.--right) {
+  transform-origin: left center;
+  transform: perspective(1000px) rotateY(-15deg);
+}
+
+.scope :global(.pageflip-page.--left) {
+  transform-origin: right center;
+  transform: perspective(1000px) rotateY(15deg);
+} */
+.scope :global(.pageflip-page.--right)::after{content: ""; background: #00000070; width: 0px; height: 90%; position: absolute; top: 5%; left: 3%; box-shadow: 14px 0px 35px 10px #00000059; border-radius: 15px; }
+.scope :global(.pageflip-page.--left)::after{content: ""; background: #00000070; width: 0px; height: 90%; position: absolute; top: 5%; right: 3%; box-shadow: -14px 0px 35px 10px #00000059; border-radius: 15px; }
 
 .scope :global(.pageflip-content img) {display: flex; justify-content: center; align-items: center; object-fit: contain; height: 100%;  width: 100%; background: #fff; border-radius: 20px;}
 .scope :global(.page-number) {position: absolute; z-index: 2; bottom: 12px; color: rgba(20, 29, 32, 0); font-size: .78rem; }
@@ -21,7 +32,6 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.nav-btn:disabled), .scope :global(.book-carousel-arrow:disabled) { opacity: .45; cursor: not-allowed; }
 .scope :global(.page-count) { color: #d9f7fb; }
 .scope :global(.book-carousel-dots button) { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(217, 247, 251, .42); }
-
 .scope :global(.modal-backdrop) { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0, 0, 0, 0.596); }
 .scope :global(.modal-card) { width: min(100vw, 450px); padding: 24px 22px; text-align: center; border: 2px solid rgba(96, 204, 226, 0.966); border-radius: 18px; background: linear-gradient(180deg, #01a6ff, #001d30); }
 .scope :global(.modal-card p) { color: #d0edf5; line-height: 1.55; font-size: 15px; padding-bottom: 20px;}
@@ -42,4 +52,4 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.book-carousel-dots button.is-active) {background: #151B58; width: 22px; height: 22px;}
 .scope :global(.flipbook-wrapper .book-meta) {margin-bottom: 2vw; margin-top: 2vw;}
 .scope :global(.flipbook-wrapper .book-meta .nav-btn) {font-family: var(--font-heading); font-weight: 500; font-size: 17px;}
-.scope :global(.flipbook-wrapper .book-meta .page-count) {color: #000;}
+.scope :global(.flipbook-wrapper .book-meta .page-count) {color: #000; }
