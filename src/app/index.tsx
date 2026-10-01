@@ -7,6 +7,8 @@ import Image from "next/image";
 import Map from "./Images/Banner.webp";
 import MobileMap from "./Images/MobileMap.webp";
 import Bridge from "./Images/bridge.svg";
+import Bridge1 from "./Images/bridge1.svg";
+import Bridge2 from "./Images/bridge2.svg";
 import Cloud1 from "./Images/cloud1.webp";
 import Cloud2 from "./Images/cloud2.webp";
 import Cloud3 from "./Images/cloud3.webp";
@@ -212,6 +214,10 @@ const handleBookClick = (bookNumber: 1 | 2, href: string) =>
       <Image src={BannerLogo} alt="Bridge" priority className={styles.BannerLogo} />
       <div className={styles.Welcome}>Welcome to Huskyville!</div>
       <Image src={Bridge} alt="Bridge" priority className={styles.Bridge} />
+
+      <Image src={Bridge1} alt="Bridge1" priority className={styles.mobileBridge1} />
+      <Image src={Bridge2} alt="Bridge2" priority className={styles.mobileBridge2} />
+
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
       {/* <Image src={Map} alt="Book Map" priority className={`${styles.MapImage} ${styles.desktopMap}`} /> */}
 

@@ -42,23 +42,26 @@ font-size: 1vw; position: relative; padding: 0.7vw 1vw; text-align: left; cursor
 @media (max-width: 768px) {
    .footerTopSection .footerTopbeforeWave img{width: 100vw;} 
    .footerTopSection .footerTopSectionContainer .row .footerTopCol img{width: 12vw; height: 12vw;}
-   .footerTopSection .footerTopSectionContainer .row .footerTopCol h4 {font-size: 4vw;}
+   .footerTopSection .footerTopSectionContainer .row .footerTopCol h4 {font-size: 3vw;}
    .footerWrap .footerBottom {padding-bottom: 8vw;}
-   .footerWrap .footerBottom .row {display: block;}
-   .footerWrap .footerBottom .row .footerBottomLeft{flex: 0 0 100%; width: 100%;}
-   .footerWrap .footerBottom .row .footerBottomRight{flex: 0 0 100%; width: 100%;}
-   .footerWrap .footerBottom .row .footerBottomCenter{flex: 0 0 100%; width: 100%;}
-   .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap a img{width: 65vw; height: auto;}
-   .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap a:last-child img {margin-top: -5vw;}
-   .footerWrap {padding-top: 11vw;}
+   .footerWrap .footerBottom .row {display: grid;}
+   .footerWrap .footerBottom .row .footerBottomLeft{flex: 0 0 100%; width: 100%; order: 3;}
+   .footerWrap .footerBottom .row .footerBottomRight{flex: 0 0 100%; width: 100%; order: 1;}
+   .footerWrap .footerBottom .row .footerBottomCenter{flex: 0 0 100%; width: 100%; order: 2;}
+   .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap {padding-top: 10vw;}
+   .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap a img{width: 77.95vw; height: auto;}
+   /* .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap a:last-child img {margin-top: -5vw;} */
+   .footerWrap {padding-top: 7vw; padding-bottom: 11vw;background: url("../app/Images/mobile-footerbg.webp") no-repeat center; background-size: cover; }
 
-   .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol h3 {font-size: 6vw; letter-spacing: 1px;}
-   .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li {font-size: 4vw; letter-spacing: 1px;}
+   .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol h3 {font-size: 4.1vw; letter-spacing: 1px; margin-bottom: 3vw;}
+   .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li {font-size: 3vw; letter-spacing: 1px; margin-bottom: 2.8vw;}
    .footerWrap .footerBottom .row .footerBottomRight {padding-left: 0;}
    .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap {padding: 4.5vw 3.4vw;}
-   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap h3 {font-size: 6vw; letter-spacing: 1px;}
-   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap p {font-size: 4vw; letter-spacing: 1px;}
-   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form input {width: 45vw; height: 9vw; border-radius: 2vw; padding: 2vw 3vw;}
-   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button {width: 15.5vw; height: 9vw; border-radius: 2vw; padding: 1vw 2vw; font-size: 3vw;}
-   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button::after {width: 16px; height: 13px; right: 1.5vw; background-size: cover;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap h3 {font-size: 4vw; letter-spacing: 1px; margin-bottom: 1.7vw;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap p {font-size: 3vw; letter-spacing: 1px; margin-bottom: 3.4vw;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form input {width: 54vw; height: 9vw; border-radius: 1vw; padding: 2vw 3vw;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button {width: 20.5vw; height: 9vw; border-radius: 1vw; padding: 1vw 4vw; font-size: 3.5vw;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button::after {width: 16px; height: 13px; right: 3.5vw; background-size: cover;}
+
+   .footerWrap .footerWrapcontainer .copyrightText {padding-top: 4vw;}
 }

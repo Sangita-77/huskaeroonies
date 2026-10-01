@@ -193,6 +193,9 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
     top: 33vw;
     left: 25.9vw;
 } 
+.mobileBridge1 {display: none;}
+.mobileBridge2 {display: none;}
+
 .river--2 {
   /* top: 40.3vw;
   left: 33vw; */
@@ -249,7 +252,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .book3, .book4 {top: 46vw; left: 28vw; background: #746b6be3; animation: float 0s ease-in-out infinite; width: 11vw; box-shadow: none;}
 .book3 a::before, .book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 2vw; opacity: .5;}
 .book3 a, .book4 a{opacity: .5; font-size: 1.1vw;}
-.book4{top: 50vw; left: 77vw;}
+.book4 {top: 50vw; left: 77vw;}
 .book1::before{    width: 8.5vw; height: 2.5vw; position: absolute; top: 1.3vw; background: url("../app/Images/ICE_ICON.svg") no-repeat; left: .5vw; background-size: contain;}
 .book2::before{width: 2.5vw; height: 2.5vw; right: 1.1vw; top: 1vw; background: url("../app/Images/FLAG.svg") no-repeat; right: .5vw; background-size: contain;} 
 .BannerLogo{z-index: 9; width: 36vw; height: 9vw; position: absolute; top: 9.5vw; left: 31vw;}
@@ -820,22 +823,27 @@ pointer-events: none;
 .nav { display: flex; justify-content: flex-end; align-items: center;}
 .headercontainer .nav{ background: transparent; border: 0;}
 .headercontainer {justify-content: end; height: auto; margin: 0 auto; max-width: 100%;}
+
 /* Hide desktop navigation */
 .navList { display: none; } 
+
 /* Show burger */
 .burger { display: flex; color: white;}
+
 /* Full screen menu */
 .mobileMenu {display: flex; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; min-height: 100dvh; background-color: #151B58; z-index: 1000; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(-10px);
 transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; background-image:url(../app/Images/FooterPaw.png);}
+
 /* Open menu */
 .mobileMenuOpen { opacity: 1; visibility: visible; transform: translateY(0);}
+
 /* Menu list */
 .mobileNavList { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 35px; list-style: none; margin: 0; }
 .mobileNavItem { list-style: none;}
 .mobileNavLink {display: block; text-decoration: none; color: white; font-size: 28px; font-weight: 500; text-align: center; padding: 10px 10px; transition: opacity 0.2s ease; letter-spacing: 5px;}
 .mobileNavLink:hover { opacity: 0.6; }
 .MapImage { display: none; }
-.mobileMap { display: block; }
+.mobileMap { display: block; height: unset;}
 .header {margin-bottom: -14.3vw;}
 /*.........Header End.........*/
 
@@ -843,36 +851,39 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .MapHolder{height: 100vh;}
 .BannerLogo{width: 65vw; height: 18vw; top: 23.5vw; left: 17vw;}
 .Welcome{font-size: 4.5vw; position: absolute; top: 38.8vw; left: 30vw;}
+
 /* .SnowFall{} */
-.river--2 {
-  -webkit-animation: flow 5s infinite linear;
-  animation: flow 10s infinite linear;
-  box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
-  -webkit-mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat;
-  mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat;
-  top: 301.6vw;
-  left: 25.9vw;
-  width: 29.3vw;
-  height: 93.1vw;
-  transform: rotate(-50deg);
-  display: none;
-}
-.river--3 {
-  -webkit-animation: flow 5s infinite linear;
-  animation: flow 10s infinite linear;
-  box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
-  -webkit-mask: url("../app/Images/RiverMobile2.svg") center / contain no-repeat;
-  mask: url("../app/Images/RiverMobile2.svg") center / contain no-repeat;
-    bottom: 0vw;
-    left: 25.9vw;
-    width: 29.3vw;
-    height: 93.1vw;
-      transform: rotate(-50deg);
-      display: none;
-}
+.river--2 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat; mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat; top: 301.6vw; left: 25.9vw; width: 29.3vw; height: 93.1vw; transform: rotate(-50deg); display: none; }
+.river--3 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile2.svg") center / contain no-repeat; mask: url("../app/Images/RiverMobile2.svg") center / contain no-repeat; bottom: 0vw; left: 25.9vw; width: 29.3vw; height: 93.1vw; transform: rotate(-50deg); display: none; }
 .heroVideoContainer .GirlDog, .heroVideoContainer .BoyDog{ width: 35vw; top: -42vw; }
 
 /*.........Banner End.........*/
+
+/* .Bridge {display: none;} */
+.Bridge {display: none;}
+.mobileBridge1 {display: block; z-index: 99; position: absolute; -webkit-user-drag: none; user-select: none; position: absolute; width: 34.2vw; height: 29vw; top: 175vw; left: 39.9vw; rotate: 7deg;}
+.mobileBridge2 {display: block; z-index: 99; position: absolute; -webkit-user-drag: none; user-select: none; position: absolute; width: 44.2vw;; height: 25vw; top: 382vw; left: 16.9vw; rotate: -18deg;}
+
+.book {width: 35.64vw; height: 16.67vw;}
+.book a {font-size: 3.08vw;}
+.book a::before {width: 7.18vw; height: 7.18vw;}
+.book1 {top: 268vw; left: 60vw;}
+.book1::before {width: 29.5vw; height: 6.5vw; top: 3.3vw; left: 4.5vw;}
+.book2 {top: 334vw; left: 44vw;}
+.book2::before {width: 4.5vw; height: 4.5vw; top: 3vw; right: 3.5vw;}
+.book3 {top: 144vw; left: 33vw;}
+.book4 {top: 89vw; left: 54vw;}
+
+.SnowFall {width: 84vw; height: 29vw; top: 260vw; left: 9vw;}
+.FireAnimation {top: 85.8vw; left: 44.5vw;}
+
+@keyframes smokie {
+  25%, 75% {left: 10px; top: 0;}
+  50% {left: 10px; top: -5;}
+  90% {opacity: 1;}
+  100% { top: -20px; left: 10px; filter: blur(4px); opacity: 0; transform: scale(6); }
+}
+
 }
 
 
