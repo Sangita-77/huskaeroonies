@@ -42,23 +42,22 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
       if (cancelled || !bookElement.current) return;
 
       const instance = new PageFlip(bookElement.current, {
-        width: 460,
-        height: 570,
+        width: 457.5,
+        height: 522,
         size: 'stretch',
-        minWidth: 315,
-        maxWidth: 520,
-        minHeight: 390,
-        maxHeight: 650,
+        minWidth: 300,
+        maxWidth: 457.5,
+        minHeight: 522,
+        maxHeight: 522,
         drawShadow: true,
         flippingTime: 900,
-        usePortrait: false,
+        usePortrait: true,
         autoSize: true,
         maxShadowOpacity: 0.55,
         showCover: false,
         mobileScrollSupport: false,
         swipeDistance: 24,
       });
-
       instance.on('flip', (event) => {
         setCurrentPage(Number(event.data));
         setShowBuyPrompt(false);
@@ -104,10 +103,13 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
 
   const firstVisiblePage = Math.min(currentPage + 1, images.length);
   const secondVisiblePage = Math.min(currentPage + 2, images.length);
+  
   return (
     <>
-    <Header/>
+     <Header logo={true} />
       <section className={`${styles.sampleReadBanner} ${showIntro ? styles.sampleReadBannerIntro : styles.sampleReadBannerSettled}`}>
+        {/* <div onClick={() => { window.location.href = "/dev/huskaeroonies/flip-book?book=1"; }} className={`${styles.Sbook} ${styles["Sbook1"]} ${activeBook === 0 ? styles.isActive : ""}`}>Snow Day</div>
+        <div onClick={() => { window.location.href = "/dev/huskaeroonies/flip-book?book=2"; }} className={`${styles.Sbook} ${styles["Sbook2"]} ${activeBook === 1 ? styles.isActive : ""}`}>Big Race</div> */}
         <div onClick={() => { window.location.href = "/flip-book?book=1"; }} className={`${styles.Sbook} ${styles["Sbook1"]} ${activeBook === 0 ? styles.isActive : ""}`}>Snow Day</div>
         <div onClick={() => { window.location.href = "/flip-book?book=2"; }} className={`${styles.Sbook} ${styles["Sbook2"]} ${activeBook === 1 ? styles.isActive : ""}`}>Big Race</div>
         {/* <div className={`${styles.Sbook} ${styles["Sbook3"]}`}>Book3</div>
@@ -143,9 +145,9 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
         <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
         <button className="nav-btn" onClick={goNext} disabled={!ready}>Next</button>
       </div>
-      <div className="book-carousel-dots" aria-label="Book selection">
+      {/* <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
-      </div>
+      </div> */}
 
       {showBuyPrompt && (
         <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="buy-plan-title">

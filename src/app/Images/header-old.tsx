@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import Image from "next/image";
-import Logo from "../Images/bannerLogo.svg";
+import Logo from "../Images/logo.svg";
 import styles from "../page.module.css";
 
 export default function Header({ logo = true }) {
@@ -8,7 +8,6 @@ export default function Header({ logo = true }) {
     <header className={styles.header}>
       <div className={styles.headercontainer}>
         {logo && (
-          // <a href="/dev/huskaeroonies">
           <a href="/">
             <Image
               src={Logo}

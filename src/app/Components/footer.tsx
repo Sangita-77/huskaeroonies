@@ -1,6 +1,6 @@
 import styles from "../footer.module.css";
 import Image from "next/image";
-import Footerlogo from "../Images/footerLogo.svg";
+import Footerlogo from "../Images/bannerLogo.svg";
 import FooterDogs from "../Images/footerDogs.webp";
 import FooterBeforewave from "../Images/footer-before.webp";
 import FooterTopBeforewave from "../Images/footer-topbefore.webp";
@@ -14,15 +14,15 @@ import FavoriteIcon from "../Images/favorite-icon01.svg";
 import ProfileIcon from "../Images/profile-icon01.svg";
 
 const exploreLinks = [
-  { title: "All Books", href: ROUTES.AllBOOKS },
-  { title: "New Releases", href: ROUTES.NEWRELEASES },
-  { title: "Book Collections", href: ROUTES.BOOKCOLLECTIONS },
+  { title: "All Books", href: "#book" },
+  { title: "New Releases", href: "#new-releases" },
+  { title: "Book Collections", href: "#book-collections" },
 ];
 
 const parentLinks = [
-  { title: "Why Huskeroonies", href: ROUTES.WHYHUSKEROONIES },
-  { title: "Parent Resources", href: ROUTES.PARENTRESOURCES },
-  { title: "FAQs", href: ROUTES.FAQS },
+  { title: "Why Huskeroonies", href: "#why-huskaeroonies" },
+  { title: "Parent Resources", href: "#parent-resources" },
+  { title: "FAQs", href: "#faqs" },
 ];
 
 export default function Footer() {
@@ -67,8 +67,8 @@ export default function Footer() {
 
               <div className={styles.footerBottomLeft}>
                 <div className={styles.footerLogoWrap}>
-                  <a href="/"><Image src={Footerlogo} alt="Footer Logo" /></a>
-                  <a href="/"><Image src={FooterDogs} alt="Footer Dogs" /></a>
+                  <a href="/dev/huskaeroonies"><Image src={Footerlogo} alt="Footer Logo" /></a>
+                  <a href="/dev/huskaeroonies"><Image src={FooterDogs} alt="Footer Dogs" /></a>
                 </div>
               </div>
 

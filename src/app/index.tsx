@@ -1,8 +1,11 @@
 "use client";
-
-import { useMemo, useRef } from "react";
+///////////////////////////////////////
+import { useMemo, useRef, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+////////////////////////////////////////
 import Image from "next/image";
 import Map from "./Images/Banner.webp";
+import MobileMap from "./Images/MobileMap.webp";
 import Bridge from "./Images/bridge.svg";
 import Cloud1 from "./Images/cloud1.webp";
 import Cloud2 from "./Images/cloud2.webp";
@@ -10,73 +13,10 @@ import Cloud3 from "./Images/cloud3.webp";
 import styles from "./page.module.css";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
-import BannerLogo from "./Images/BannerLogo.png";
+import BannerLogo from "./Images/bannerLogo.svg";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
-  // const clouds = useMemo(() => [
-  //   {
-  //     id: 1,
-  //     image: Cloud1,
-  //     style: {
-  //       "--cloud-left": "-20vw",
-  //       "--cloud-top": "10.2vw",
-  //       "--cloud-delay": "0s",
-  //       "--cloud-duration": "40s",
-  //     } as React.CSSProperties,
-  //   },
-  //   {
-  //     id: 2,
-  //     image: Cloud2,
-  //     style: {
-  //       "--cloud-left": "-20vw",
-  //       "--cloud-top": "12.4vw",
-  //       "--cloud-delay": "4s",
-  //       "--cloud-duration": "40s",
-  //     } as React.CSSProperties,
-  //   },
-  //   {
-  //     id: 3,
-  //     image: Cloud3,
-  //     style: {
-  //       "--cloud-left": "-20vw",
-  //       "--cloud-top": "8vw",
-  //       "--cloud-delay": "8s",
-  //       "--cloud-duration": "40s",
-  //     } as React.CSSProperties,
-  //   },
-  //   {
-  //     id: 4,
-  //     image: Cloud1,
-  //     style: {
-  //       "--cloud-left": "-20vw",
-  //       "--cloud-top": "11vw",
-  //       "--cloud-delay": "12s",
-  //       "--cloud-duration": "40s",
-  //     } as React.CSSProperties,
-  //   },
-  //   {
-  //     id: 5,
-  //     image: Cloud2,
-  //     style: {
-  //       "--cloud-left": "-20vw",
-  //       "--cloud-top": "14vw",
-  //       "--cloud-delay": "16s",
-  //       "--cloud-duration": "40s",
-  //     } as React.CSSProperties,
-  //   },
-  //   {
-  //     id: 6,
-  //     image: Cloud3,
-  //     style: {
-  //       "--cloud-left": "-20vw",
-  //       "--cloud-top": "8vw",
-  //       "--cloud-delay": "20s",
-  //       "--cloud-duration": "40s",
-  //     } as React.CSSProperties,
-  //   },
-
-  // ], []);
 
 
   const clouds = useMemo(
@@ -139,9 +79,30 @@ export default function Home() {
     isDown = false;
   };
 
+  // ..................PawPRINT....................
+
+  const router = useRouter();
+  const timeoutRef = useRef<number | null>(null);
+  const [activePaw, setActivePaw] = useState<"book1" | "book2" | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+const handleBookClick = (bookNumber: 1 | 2, href: string) =>
+    (e: React.MouseEvent) => { e.preventDefault();
+        if (activePaw) return; const paw = bookNumber === 1 ? "book1" : "book2"; 
+          const delay = bookNumber === 1 ? 10000 : 9000; setActivePaw(paw); 
+          timeoutRef.current = window.setTimeout(() => { router.push(href); },
+    delay); };
+  //............................pawprint end ................................
   return (
     <>
-    <Header/>
+     <Header logo={false} />
     <main>
     <div
       ref={containerRef}
@@ -151,6 +112,20 @@ export default function Home() {
       onMouseUp={stopDragging}
       onMouseLeave={stopDragging}
     >
+
+      {/* Flying birds (decorative) */}
+      <div className="bird-container bird-container-one">
+        <div className="bird bird-one" aria-hidden="true"></div>
+      </div>
+      <div className="bird-container bird-container-two">
+        <div className="bird bird-two" aria-hidden="true"></div>
+      </div>
+      <div className="bird-container bird-container-three">
+        <div className="bird bird-three" aria-hidden="true"></div>
+      </div>
+      <div className="bird-container bird-container-four">
+        <div className="bird bird-four" aria-hidden="true"></div>
+      </div>
       <div className={styles.frontCloudLayer} aria-hidden="true">
         <div className={styles.cloud} style={clouds[0].style}>
           <Image src={clouds[0].image} alt="cloud" className={styles.cloudImage} priority />
@@ -166,8 +141,18 @@ export default function Home() {
       <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
       {/**/}
-      <div className={`${styles.book} ${styles["book1"]}`}><a href="/flip-book?book=1">Snow Day</a></div>
-      <div className={`${styles.book} ${styles["book2"]}`}><a href="/flip-book?book=2">Big Race</a></div>
+      
+      {/* /////////////////////////////////////// */}
+      {/* <div className={`${styles.book} ${styles["book1"]}`}><a href="/dev/huskaeroonies/flip-book?book=1">Snow Day</a></div> */}
+      <div className={`${styles.book} ${styles["book1"]}`}>
+        <a href="/flip-book?book=1" onClick={handleBookClick(1, "/flip-book?book=1")}>Snow Day</a>
+      </div>
+      {/* <div className={`${styles.book} ${styles["book2"]}`}><a href="/dev/huskaeroonies/flip-book?book=2">Big Race</a></div> */}
+      <div className={`${styles.book} ${styles["book2"]}`}>
+        <a href="/flip-book?book=2" onClick={handleBookClick(2, "/flip-book?book=2")}>Big Race</a>
+      </div>
+      {/* /////////////////////////////////////////// */}
+      
       <div className={`${styles.book} ${styles["book3"]}`}><a href="#">Neighborhood Pups</a></div>
       <div className={`${styles.book} ${styles["book4"]}`}><a href="#">Camping Day</a></div> 
       <div className={styles.SnowFall} aria-hidden="true">
@@ -175,7 +160,11 @@ export default function Home() {
           <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>
         ))}
       </div>
+      
       <div className={styles.FireAnimation} aria-hidden="true">
+    <div className={styles.smoke_holder}>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
         <div className={styles.fire}>
           <div className={styles.fireLeft}>
             <div className={styles.mainFire} />
@@ -194,10 +183,44 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* ////////////////////////// */}
+      <div className={`${styles.book1Paw} ${activePaw === "book1" ? styles.show : ""}`}>
+      {/* <div className={styles.book1Paw}> */}
+
+        <video
+          className={styles.Paw_Pink}
+          autoPlay
+          muted
+          loop
+          playsInline
+          >
+          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/Paw_pink.webm" type="video/webm" />
+        </video>
+      </div>
+      <div className={`${styles.book2Paw} ${activePaw === "book2" ? styles.show : ""}`}>
+        <video
+          className={styles.Paw_Blue}
+          autoPlay
+          muted
+          loop
+          playsInline
+          >
+          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/Paw_Blue.webm" type="video/webm" />
+        </video>
+      </div>
+      {/* /////////////////////////// */}
       <Image src={BannerLogo} alt="Bridge" priority className={styles.BannerLogo} />
       <div className={styles.Welcome}>Welcome to Huskyville!</div>
       <Image src={Bridge} alt="Bridge" priority className={styles.Bridge} />
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
+      {/* <Image src={Map} alt="Book Map" priority className={`${styles.MapImage} ${styles.desktopMap}`} /> */}
+
+      <Image
+        src={MobileMap}
+        alt="Book Map"
+        priority
+        className={styles.mobileMap}
+      />
     </div>
       <svg width="0" height="0">
     <filter id="turbulence" x="0" y="0">
@@ -213,7 +236,7 @@ export default function Home() {
           loop
           playsInline
           >
-          <source src="/GirlDog.webm" type="video/webm" />
+          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/girlDog.webm" type="video/webm" />
         </video>
               <video
           className={styles.BoyDog}
@@ -222,7 +245,7 @@ export default function Home() {
           loop
           playsInline
           >
-          <source src="/BoyDog.webm" type="video/webm" />
+          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/boyDog.webm" type="video/webm" />
         </video>
   </div>
   </main>

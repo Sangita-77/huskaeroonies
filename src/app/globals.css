@@ -4,12 +4,12 @@
   margin: 0;
 }
 :root {
-  --font-heading: var(--font-potta-one);
+  --font-heading: var(--font-starlight);
 }
 
 .heading {
   font-family: var(--font-heading);
 }
 body{
-    font-family: var(--font-heading);
+      font-family: var(--font-starlight), sans-serif; letter-spacing: .08vw; user-select: none;
 }
