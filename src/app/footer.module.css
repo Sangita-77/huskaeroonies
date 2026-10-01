@@ -42,10 +42,23 @@ font-size: 1vw; position: relative; padding: 0.7vw 1vw; text-align: left; cursor
 @media (max-width: 768px) {
    .footerTopSection .footerTopbeforeWave img{width: 100vw;} 
    .footerTopSection .footerTopSectionContainer .row .footerTopCol img{width: 12vw; height: 12vw;}
-   .footerTopSection .footerTopSectionContainer .row .footerTopCol h4 {font-size: 3vw;}
+   .footerTopSection .footerTopSectionContainer .row .footerTopCol h4 {font-size: 4vw;}
+   .footerWrap .footerBottom {padding-bottom: 8vw;}
    .footerWrap .footerBottom .row {display: block;}
    .footerWrap .footerBottom .row .footerBottomLeft{flex: 0 0 100%; width: 100%;}
    .footerWrap .footerBottom .row .footerBottomRight{flex: 0 0 100%; width: 100%;}
    .footerWrap .footerBottom .row .footerBottomCenter{flex: 0 0 100%; width: 100%;}
-   .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap a img{width: 100%;}
+   .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap a img{width: 65vw; height: auto;}
+   .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap a:last-child img {margin-top: -5vw;}
+   .footerWrap {padding-top: 11vw;}
+
+   .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol h3 {font-size: 6vw; letter-spacing: 1px;}
+   .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li {font-size: 4vw; letter-spacing: 1px;}
+   .footerWrap .footerBottom .row .footerBottomRight {padding-left: 0;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap {padding: 4.5vw 3.4vw;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap h3 {font-size: 6vw; letter-spacing: 1px;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap p {font-size: 4vw; letter-spacing: 1px;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form input {width: 45vw; height: 9vw; border-radius: 2vw; padding: 2vw 3vw;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button {width: 15.5vw; height: 9vw; border-radius: 2vw; padding: 1vw 2vw; font-size: 3vw;}
+   .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button::after {width: 16px; height: 13px; right: 1.5vw; background-size: cover;}
 }
