@@ -45,13 +45,13 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
         width: 457.5,
         height: 522,
         size: 'stretch',
-        minWidth: 300,
+        minWidth: 140,
         maxWidth: 457.5,
-        minHeight: 522,
+        minHeight: 160,
         maxHeight: 522,
         drawShadow: true,
         flippingTime: 900,
-        usePortrait: true,
+        usePortrait: false,
         autoSize: true,
         maxShadowOpacity: 0.55,
         showCover: false,
@@ -123,7 +123,7 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
         {bookNames[activeBook] || `Book ${activeBook + 1}`}
       </h2>
       <div className="book-carousel">
-        <button className="book-carousel-arrow" onClick={() => switchBook(-1)} aria-label="Previous book">‹</button>
+        <button className="book-carousel-arrow bookLeftBtn" onClick={() => switchBook(-1)} aria-label="Previous book">‹</button>
         <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick}>
         <div className="pageflip-book" ref={bookElement} key={activeBook}>
           {images.map((image, index) => (
@@ -137,7 +137,7 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
           ))}
         </div>
       </div>
-        <button className="book-carousel-arrow" onClick={() => switchBook(1)} aria-label="Next book">›</button>
+        <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">›</button>
       </div>
 
       <div className="book-meta">

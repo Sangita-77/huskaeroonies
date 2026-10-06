@@ -823,6 +823,8 @@ pointer-events: none;
 .nav { display: flex; justify-content: flex-end; align-items: center;}
 .headercontainer .nav{ background: transparent; border: 0;}
 .headercontainer {justify-content: end; height: auto; margin: 0 auto; max-width: 100%;}
+.headercontainer > a {margin: 0 auto 0 10px;}
+.headercontainer > a img {width: 41vw; height: auto;}
 
 /* Hide desktop navigation */
 .navList { display: none; } 
@@ -883,6 +885,14 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
   90% {opacity: 1;}
   100% { top: -20px; left: 10px; filter: blur(4px); opacity: 0; transform: scale(6); }
 }
+
+.sampleReadBanner {background-image: url("../app/Images/mobileflipbookbanner.webp"); height: 388vw; max-height: 388vw;}
+
+.sampleReadBanner .Sbook {} 
+.sampleReadBanner .Sbook1 {top: 221vw; left: 28vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
+.sampleReadBanner .Sbook2 {top: 318vw; left: 55vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
+.sampleReadBanner .Sbook::before {content: ""; width: 6.18vw; height: 6.18vw; background: url("./Images/BookBlack.svg"); background-size: contain; position: absolute; top: 2.4vw;}
+
 
 }
 
