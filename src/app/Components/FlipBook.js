@@ -103,10 +103,10 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
 
   const firstVisiblePage = Math.min(currentPage + 1, images.length);
   const secondVisiblePage = Math.min(currentPage + 2, images.length);
-  
+
   return (
     <>
-     <Header logo={true} />
+      <Header logo={true} />
       <section className={`${styles.sampleReadBanner} ${showIntro ? styles.sampleReadBannerIntro : styles.sampleReadBannerSettled}`}>
         {/* <div onClick={() => { window.location.href = "/dev/huskaeroonies/flip-book?book=1"; }} className={`${styles.Sbook} ${styles["Sbook1"]} ${activeBook === 0 ? styles.isActive : ""}`}>Snow Day</div>
         <div onClick={() => { window.location.href = "/dev/huskaeroonies/flip-book?book=2"; }} className={`${styles.Sbook} ${styles["Sbook2"]} ${activeBook === 1 ? styles.isActive : ""}`}>Big Race</div> */}
@@ -115,39 +115,40 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
         {/* <div className={`${styles.Sbook} ${styles["Sbook3"]}`}>Book3</div>
         <div className={`${styles.Sbook} ${styles["Sbook4"]}`}>Book4</div> */}
       </section>
-    <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible}`}>
-      <div className="SampleBeforewave">
+      <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible}`}>
+        <div className="SampleBeforewave">
           <Image src={sampleReadWave} alt="Wave" />
         </div>
-      <h2 className="book-title">
-        {bookNames[activeBook] || `Book ${activeBook + 1}`}
-      </h2>
-      <div className="book-carousel">
-        <button className="book-carousel-arrow bookLeftBtn" onClick={() => switchBook(-1)} aria-label="Previous book">‹</button>
-        <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick}>
-        <div className="pageflip-book" ref={bookElement} key={activeBook}>
-          {images.map((image, index) => (
-            <article className="pageflip-page" key={`${image}-${index}`}>
-              <div className="pageflip-content">
-                <div className="page-loader" />
-                <img src={image} alt={`Book page ${index + 1}`} decoding="async" />
-                <span className="page-number">{index + 1}</span>
-              </div>
-            </article>
-          ))}
+        <h2 className="book-title">
+          {bookNames[activeBook] || `Book ${activeBook + 1}`}
+        </h2>
+        <div className="book-carousel">
+          <button className="book-carousel-arrow bookLeftBtn" onClick={() => switchBook(-1)} aria-label="Previous book">‹</button>
+          <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick}>
+            <div className="pageflip-book" ref={bookElement} key={activeBook}>
+              {images.map((image, index) => (
+                <article className="pageflip-page" key={`${image}-${index}`}>
+                  <div className="pageflip-content">
+                    <div className="page-loader" />
+                    <img src={image} alt={`Book page ${index + 1}`} decoding="async" />
+                    <span className="page-number">{index + 1}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">›</button>
         </div>
-      </div>
-        <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">›</button>
-      </div>
 
-      <div className="book-meta">
-        <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}>Previous</button>
-        <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
-        <button className="nav-btn" onClick={goNext} disabled={!ready}>Next</button>
-      </div>
-      {/* <div className="book-carousel-dots" aria-label="Book selection">
+        <div className="book-meta">
+          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}>Previous</button>
+          <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
+          <button className="nav-btn" onClick={goNext} disabled={!ready}>Next</button>
+        </div>
+        {/* <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
       </div> */}
+      </div>
 
       {showBuyPrompt && (
         <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="buy-plan-title">
@@ -158,8 +159,7 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
           </div>
         </div>
       )}
-    </div>
-<Footer />
+      <Footer />
     </>
   );
 }
