@@ -36,8 +36,15 @@
 }
 
 .MapImage { display: block; }
-.mobileMap { display: none; width: 100vw; margin-top: -4vw; z-index: 0; position: relative;}
-.mobileMapOverlay{z-index: 96; position: absolute; top: 0;}
+.mobileMap {
+  display: none;
+  width: 100vw;
+  height: auto;
+  margin-top: -4vw;
+  z-index: 0;
+  position: relative;
+}
+.mobileMapOverlay { z-index: 96; position: absolute; top: 0; }
 .MapImage {
   width: 138vw;
   height: auto; 
@@ -849,15 +856,20 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .mobileNavLink {display: block; text-decoration: none; color: white; font-size: 28px; font-weight: 500; text-align: center; padding: 10px 10px; transition: opacity 0.2s ease; letter-spacing: 5px;}
 .mobileNavLink:hover { opacity: 0.6; }
 .MapImage { display: none; }
-.mobileMap { display: block; height: unset;}
+.mobileMap { display: block; width: 100vw; max-width: 100%; height: auto; }
+
 .header {margin-bottom: -14.3vw;}
 /*.........Header End.........*/
 
 /*.........Banner Start.........*/
-.MapHolder{height: 100vh;
-width: 100%;
-overflow-x: hidden;
-overflow-y: scroll;}
+  .MapHolder {
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+  }
 .BannerLogo{width: 65vw; height: 18vw; top: 23.5vw; left: 17vw; z-index: 99;}
 .Welcome{font-size: 4.5vw; position: absolute; top: 38.8vw; left: 30vw;}
 
