@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Map from "./Images/Banner.webp";
 import MobileMap from "./Images/MobileMap.webp";
+import MobileMapOverlay from "./Images/MobileMapOverlay.webp";
 import Bridge from "./Images/bridge.svg";
 import Bridge1 from "./Images/bridge1.svg";
 import Bridge2 from "./Images/bridge2.svg";
@@ -142,6 +143,7 @@ const handleBookClick = (bookNumber: 1 | 2, href: string) =>
       </div>
       <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
+      <div className={`${styles.river} ${styles["river--4"]}`}></div>
       {/**/}
       
       {/* /////////////////////////////////////// */}
@@ -221,12 +223,8 @@ const handleBookClick = (bookNumber: 1 | 2, href: string) =>
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
       {/* <Image src={Map} alt="Book Map" priority className={`${styles.MapImage} ${styles.desktopMap}`} /> */}
 
-      <Image
-        src={MobileMap}
-        alt="Book Map"
-        priority
-        className={styles.mobileMap}
-      />
+      <Image src={MobileMap} alt="Book Map" priority className={styles.mobileMap} />
+      <Image src={MobileMapOverlay} alt="Book Map" priority className={`${styles.mobileMap} ${styles.mobileMapOverlay}`} />
     </div>
       <svg width="0" height="0">
     <filter id="turbulence" x="0" y="0">
