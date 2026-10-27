@@ -86,7 +86,7 @@ export default function Home() {
 
   const router = useRouter();
   const timeoutRef = useRef<number | null>(null);
-  const [activePaw, setActivePaw] = useState<"book1" | "book2" | null>(null);
+  // const [activePaw, setActivePaw] = useState<"book1" | "book2" | null>(null);
 
   useEffect(() => {
     return () => {
@@ -96,12 +96,24 @@ export default function Home() {
     };
   }, []);
 
-const handleBookClick = (bookNumber: 1 | 2, href: string) =>
-    (e: React.MouseEvent) => { e.preventDefault();
-        if (activePaw) return; const paw = bookNumber === 1 ? "book1" : "book2"; 
-          const delay = bookNumber === 1 ? 10000 : 9000; setActivePaw(paw); 
-          timeoutRef.current = window.setTimeout(() => { router.push(href); },
-    delay); };
+// const handleBookClick = (bookNumber: 1 | 2, href: string) =>
+//     (e: React.MouseEvent) => { e.preventDefault();
+//         if (activePaw) return; const paw = bookNumber === 1 ? "book1" : "book2"; 
+//           const delay = bookNumber === 1 ? 10000 : 9000; setActivePaw(paw); 
+//           timeoutRef.current = window.setTimeout(() => { router.push(href); },
+//     delay); };
+
+const [isIOS, setIsIOS] = useState(false);
+
+useEffect(() => {
+  const isAppleDevice =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" &&
+      navigator.maxTouchPoints > 1);
+
+  setIsIOS(isAppleDevice);
+}, []);
+
   //............................pawprint end ................................
   return (
     <>
@@ -149,11 +161,13 @@ const handleBookClick = (bookNumber: 1 | 2, href: string) =>
       {/* /////////////////////////////////////// */}
       {/* <div className={`${styles.book} ${styles["book1"]}`}><a href="/dev/huskaeroonies/flip-book?book=1">Snow Day</a></div> */}
       <div className={`${styles.book} ${styles["book1"]}`}>
-        <a href="/flip-book?book=1" onClick={handleBookClick(1, "/flip-book?book=1")}>Snow Day</a>
+        {/* <a href="/flip-book?book=1" onClick={handleBookClick(1, "/flip-book?book=1")}>Snow Day</a> */}
+        <a href="/flip-book?book=1">Snow Day</a>
       </div>
       {/* <div className={`${styles.book} ${styles["book2"]}`}><a href="/dev/huskaeroonies/flip-book?book=2">Big Race</a></div> */}
       <div className={`${styles.book} ${styles["book2"]}`}>
-        <a href="/flip-book?book=2" onClick={handleBookClick(2, "/flip-book?book=2")}>Big Race</a>
+        {/* <a href="/flip-book?book=2" onClick={handleBookClick(2, "/flip-book?book=2")}>Big Race</a> */}
+        <a href="/flip-book?book=2">Big Race</a>
       </div>
       {/* /////////////////////////////////////////// */}
       
@@ -188,10 +202,10 @@ const handleBookClick = (bookNumber: 1 | 2, href: string) =>
         </div>
       </div>
       {/* ////////////////////////// */}
-      <div className={`${styles.book1Paw} ${activePaw === "book1" ? styles.show : ""}`}>
+      {/* <div className={`${styles.book1Paw} ${activePaw === "book1" ? styles.show : ""}`}> */}
       {/* <div className={styles.book1Paw}> */}
 
-        <video
+        {/* <video
           className={styles.Paw_Pink}
           autoPlay
           muted
@@ -211,7 +225,7 @@ const handleBookClick = (bookNumber: 1 | 2, href: string) =>
           >
           <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/Paw_Blue.webm" type="video/webm" />
         </video>
-      </div>
+      </div> */}
       {/* /////////////////////////// */}
       <Image src={BannerLogo} alt="Bridge" priority className={styles.BannerLogo} />
       <div className={styles.Welcome}>Welcome to Huskyville!</div>
@@ -231,27 +245,46 @@ const handleBookClick = (bookNumber: 1 | 2, href: string) =>
       <feTurbulence baseFrequency="0.03 0.025"></feTurbulence>
       <feDisplacementMap scale="60" in="SourceGraphic"></feDisplacementMap>
     </filter>
-  </svg>
-    <div className={styles.heroVideoContainer}>
-      <video
-          className={styles.GirlDog}
-          autoPlay
-          muted
-          loop
-          playsInline
-          >
-          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/girlDog.webm" type="video/webm" />
-        </video>
-              <video
-          className={styles.BoyDog}
-          autoPlay
-          muted
-          loop
-          playsInline
-          >
-          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/boyDog.webm" type="video/webm" />
-        </video>
-  </div>
+  </svg>   
+<div className={styles.heroVideoContainer}>
+  <video
+    key={`girl-${isIOS ? "ios" : "other"}`}
+    className={styles.GirlDog}
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+  >
+    <source
+      src={
+        isIOS
+          ? "https://dreamlogodesign.net/dev/animationsite/animationHtml/girlDog.mov"
+          : "https://dreamlogodesign.net/dev/animationsite/animationHtml/girlDog.webm"
+      }
+      type={isIOS ? "video/quicktime" : "video/webm"}
+    />
+  </video>
+
+  <video
+    key={`boy-${isIOS ? "ios" : "other"}`}
+    className={styles.BoyDog}
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+  >
+    <source
+      src={
+        isIOS
+          ? "https://dreamlogodesign.net/dev/animationsite/animationHtml/boyDog.mov"
+          : "https://dreamlogodesign.net/dev/animationsite/animationHtml/boyDog.webm"
+      }
+      type={isIOS ? "video/quicktime" : "video/webm"}
+    />
+  </video>
+</div>
   </main>
   <Footer/>
     </>
