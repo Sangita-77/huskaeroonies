@@ -38,6 +38,13 @@ font-size: 1vw; position: relative; padding: 0.7vw 1vw; text-align: left; cursor
 .footerTopSection .footerTopSectionContainer .row .footerTopCol h4 {color: #fff; font-size: 1vw; font-weight: 500; margin-top: 0.5vw;}
 
 /*...................Responsive..................*/
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a > img {width: 100%; height: auto;}
+    .footerWrap .footerBottom .row .footerBottomCenter {padding-top: 6.8vw;}
+    .footerWrap .footerBottom .row .footerBottomRight {padding-top: 5.5vw;}
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .footerTopSection {margin-top: -12.2vw;}
     .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a > img {width: 100%; height: auto;}
