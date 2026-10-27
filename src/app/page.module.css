@@ -259,12 +259,14 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .book1Paw.show, .book2Paw.show { display: flex; }
 /* .............Paw print div............. */
 
-.book3, .book4 {top: 46vw; left: 28vw; /*background: #746b6be3;*/ animation: float 0s ease-in-out infinite; width: 11vw; /*box-shadow: none;*/}
+.book3, .book4 {top: 46vw; left: 28vw; /*background: #746b6be3;*/ /*animation: float 0s ease-in-out infinite;*/ width: 11vw; /*box-shadow: none;*/}
 .book3 a::before, .book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 2vw; /*opacity: .5;*/}
 .book3 a, .book4 a{/*opacity: .5;*/ font-size: 1.3vw; line-height: 1.5vw;}
 .book4 {top: 50vw; left: 77vw;}
 .book1::before{    width: 8.5vw; height: 2.5vw; position: absolute; top: 1.3vw; background: url("../app/Images/ICE_ICON.svg") no-repeat; left: .5vw; background-size: contain;}
 .book2::before{width: 2.5vw; height: 2.5vw; right: 1.1vw; top: 1vw; background: url("../app/Images/FLAG.svg") no-repeat; right: .5vw; background-size: contain;} 
+.book3::before{width: 9.5vw; height: 3.1vw; position: absolute; top: 0.1vw; background: url("../app/Images/neighborhoodpupsicon.svg") no-repeat; left: 1vw; background-size: contain;}
+.book4::before{width: 9.5vw; height: 3.1vw; position: absolute; top: 0.6vw; background: url("../app/Images/campingicon.svg") no-repeat; left: 0.8vw; background-size: contain;}
 .BannerLogo{z-index: 9; width: 36vw; height: 9vw; position: absolute; top: 9.5vw; left: 31vw;}
 .Welcome{z-index: 999; text-shadow: 0 0 20px #000000; color: #fff; font-size: 2.1vw; position: absolute; top: 16.8vw; left: 39vw;}
 /* cloud animation start */
@@ -834,6 +836,7 @@ pointer-events: none;
     .river--2 {top: -0.4vw;}
     .river--3 {top: 50.893vw;}
     /* .river--4 {} */
+    .FireAnimation {top: 56vw;}
 
     .Bridge {top: 37vw;}
     .book3 {top: 48vw;}
