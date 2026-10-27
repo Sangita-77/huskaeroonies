@@ -43,6 +43,7 @@ font-size: 1vw; position: relative; padding: 0.7vw 1vw; text-align: left; cursor
     .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a > img {width: 100%; height: auto;}
     .footerWrap .footerBottom .row .footerBottomCenter {padding-top: 6.8vw;}
     .footerWrap .footerBottom .row .footerBottomRight {padding-top: 5.5vw;}
+    .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button::after {background-size: cover;}
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
