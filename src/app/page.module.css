@@ -236,6 +236,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 .book{z-index: 99;background: #fff; width: 10vw; height: 6.5vw; border-radius: 1.5vw; position: absolute; 	animation: float 6s ease-in-out infinite; display: flex; justify-content: center; align-items: center; padding: .1vw; box-shadow: 0 0 .7vw .2vw #2bbfff;
 }
+.book a{position: relative;}
 .book a::before{content: "";
     background: url("../app/Images/Book.gif");
     width: 3vw;
@@ -885,6 +886,9 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
   }
 .BannerLogo{width: 65vw; height: 18vw; top: 9.5vw; left: 17vw; z-index: 99;}
 .Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
+
+.BannerLogo{width: 65vw; height: 18vw; top: 23.5vw; left: 17vw; z-index: 99;}
+.Welcome{font-size: 4.5vw; position: absolute; top: 38.8vw; left: 30vw;}
 
 /* .SnowFall{} */
 .river--2 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat; mask: none; width: 21.3vw; height: 59.1vw;         top: 146.6vw; left: .9vw; width: 146.3vw; height: 150.1vw; z-index: 50;}
