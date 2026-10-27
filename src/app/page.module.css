@@ -863,14 +863,15 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 /*.........Header End.........*/
 
 /*.........Banner Start.........*/
-.MapHolder {
-  height: 100vh;
-  height: 100dvh;
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-}
+  .MapHolder {
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+  }
+
 .BannerLogo{width: 65vw; height: 18vw; top: 23.5vw; left: 17vw; z-index: 99;}
 .Welcome{font-size: 4.5vw; position: absolute; top: 38.8vw; left: 30vw;}
 
