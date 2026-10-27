@@ -55,6 +55,7 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.flipbook-wrapper .book-meta .page-count) {color: #000; }
 
 
+@media (min-width: 769px) and (max-width: 1024px) {}
 
 @media (max-width: 991px) {
   .scope :global(.flipbook-wrapper) { padding: 80px 0 120px; margin-top: -9vw; background-size: cover; } 

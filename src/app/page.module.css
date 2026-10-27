@@ -258,9 +258,9 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .book1Paw.show, .book2Paw.show { display: flex; }
 /* .............Paw print div............. */
 
-.book3, .book4 {top: 46vw; left: 28vw; background: #746b6be3; animation: float 0s ease-in-out infinite; width: 11vw; box-shadow: none;}
-.book3 a::before, .book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 2vw; opacity: .5;}
-.book3 a, .book4 a{opacity: .5; font-size: 1.1vw;}
+.book3, .book4 {top: 46vw; left: 28vw; /*background: #746b6be3;*/ animation: float 0s ease-in-out infinite; width: 11vw; /*box-shadow: none;*/}
+.book3 a::before, .book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 2vw; /*opacity: .5;*/}
+.book3 a, .book4 a{/*opacity: .5;*/ font-size: 1.3vw; line-height: 1.5vw;}
 .book4 {top: 50vw; left: 77vw;}
 .book1::before{    width: 8.5vw; height: 2.5vw; position: absolute; top: 1.3vw; background: url("../app/Images/ICE_ICON.svg") no-repeat; left: .5vw; background-size: contain;}
 .book2::before{width: 2.5vw; height: 2.5vw; right: 1.1vw; top: 1vw; background: url("../app/Images/FLAG.svg") no-repeat; right: .5vw; background-size: contain;} 
@@ -827,6 +827,19 @@ pointer-events: none;
 }
 
 
+@media (min-width: 769px) and (max-width: 1024px) {
+    .MapHolder { height: 100vh;}
+    .MapImage {margin-top: 0vw;}
+    .river--2 {top: -0.4vw;}
+    .river--3 {top: 50.893vw;}
+    /* .river--4 {} */
+
+    .Bridge {top: 37vw;}
+    .book3 {top: 48vw;}
+
+    .navLink {font-size: 1.5vw;}
+    .headercontainer {gap: 10vw;}
+}
 
 @media (max-width: 768px) {
 /*.........Header Start.........*/
@@ -835,7 +848,7 @@ pointer-events: none;
 .headercontainer {justify-content: end; height: auto; margin: 0 auto; max-width: 100%; 
                   flex-direction: column-reverse; row-gap: 0; align-items: end;}
 .headercontainer > a {margin: 0 auto;}
-.headercontainer > a img {width: 50vw; height: auto; margin-top: -10px;}
+.headercontainer > a img {width: 65vw; height: auto; margin-top: -13px;}
 
 /* Hide desktop navigation */
 .navList { display: none; } 
@@ -870,8 +883,8 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
     overflow-y: auto;
     position: relative;
   }
-.BannerLogo{width: 65vw; height: 18vw; top: 23.5vw; left: 17vw; z-index: 99;}
-.Welcome{font-size: 4.5vw; position: absolute; top: 38.8vw; left: 30vw;}
+.BannerLogo{width: 65vw; height: 18vw; top: 9.5vw; left: 17vw; z-index: 99;}
+.Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
 
 /* .SnowFall{} */
 .river--2 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat; mask: none; width: 21.3vw; height: 59.1vw;         top: 146.6vw; left: .9vw; width: 146.3vw; height: 150.1vw; z-index: 50;}
@@ -909,7 +922,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
   100% { top: -20px; left: 10px; filter: blur(4px); opacity: 0; transform: scale(6); }
 }
 
-.sampleReadBanner {background-image: url("../app/Images/mobileflipbookbanner.webp"); height: 388vw; max-height: 388vw;}
+.sampleReadBanner {background-image: url("../app/Images/mobileflipbookbanner.webp"); height: 388vw; max-height: 388vw; margin-top: 0;}
 
 /* .sampleReadBanner .Sbook {}  */
 .sampleReadBanner .Sbook1 {top: 221vw; left: 28vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
