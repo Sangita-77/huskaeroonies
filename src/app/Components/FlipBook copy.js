@@ -43,25 +43,17 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
       const { PageFlip } = await import('page-flip');
       if (cancelled || !bookElement.current) return;
 
-      const isMobile = window.matchMedia("(max-width: 767px)").matches;
-
       const instance = new PageFlip(bookElement.current, {
         width: 457.5,
         height: 522,
-
-        size: "stretch",
+        size: 'stretch',
         minWidth: 140,
         maxWidth: 457.5,
         minHeight: 160,
         maxHeight: 522,
-
         drawShadow: true,
         flippingTime: 900,
-
-        // Desktop: two-page spread
-        // Mobile: one page at a time
-        usePortrait: isMobile,
-
+        usePortrait: false,
         autoSize: true,
         maxShadowOpacity: 0.55,
         showCover: false,
