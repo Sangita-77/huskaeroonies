@@ -86,7 +86,7 @@ export default function Home() {
 
   const router = useRouter();
   const timeoutRef = useRef<number | null>(null);
-  // const [activePaw, setActivePaw] = useState<"book1" | "book2" | null>(null);
+  const [activePaw, setActivePaw] = useState<"book1" | "book2" | null>(null);
 
   useEffect(() => {
     return () => {
@@ -96,12 +96,27 @@ export default function Home() {
     };
   }, []);
 
-// const handleBookClick = (bookNumber: 1 | 2, href: string) =>
-//     (e: React.MouseEvent) => { e.preventDefault();
-//         if (activePaw) return; const paw = bookNumber === 1 ? "book1" : "book2"; 
-//           const delay = bookNumber === 1 ? 10000 : 9000; setActivePaw(paw); 
-//           timeoutRef.current = window.setTimeout(() => { router.push(href); },
-//     delay); };
+const handleBookClick = (bookNumber: 1 | 2, href: string) =>
+  (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    // Disable paw animation on mobile devices
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      router.push(href);
+      return;
+    }
+
+    if (activePaw) return;
+
+    const paw = bookNumber === 1 ? "book1" : "book2";
+    const delay = bookNumber === 1 ? 10000 : 9000;
+
+    setActivePaw(paw);
+
+    timeoutRef.current = window.setTimeout(() => {
+      router.push(href);
+    }, delay);
+  };
 
 const [isIOS, setIsIOS] = useState(false);
 
@@ -161,13 +176,11 @@ useEffect(() => {
       {/* /////////////////////////////////////// */}
       {/* <div className={`${styles.book} ${styles["book1"]}`}><a href="/dev/huskaeroonies/flip-book?book=1">Snow Day</a></div> */}
       <div className={`${styles.book} ${styles["book1"]}`}>
-        {/* <a href="/flip-book?book=1" onClick={handleBookClick(1, "/flip-book?book=1")}>Snow Day</a> */}
-        <a href="/flip-book?book=1">Snow Day</a>
+        <a href="/flip-book?book=1" onClick={handleBookClick(1, "/flip-book?book=1")}>Snow Day</a>
       </div>
       {/* <div className={`${styles.book} ${styles["book2"]}`}><a href="/dev/huskaeroonies/flip-book?book=2">Big Race</a></div> */}
       <div className={`${styles.book} ${styles["book2"]}`}>
-        {/* <a href="/flip-book?book=2" onClick={handleBookClick(2, "/flip-book?book=2")}>Big Race</a> */}
-        <a href="/flip-book?book=2">Big Race</a>
+        <a href="/flip-book?book=2" onClick={handleBookClick(2, "/flip-book?book=2")}>Big Race</a>
       </div>
       {/* /////////////////////////////////////////// */}
       
@@ -202,10 +215,10 @@ useEffect(() => {
         </div>
       </div>
       {/* ////////////////////////// */}
-      {/* <div className={`${styles.book1Paw} ${activePaw === "book1" ? styles.show : ""}`}> */}
+      <div className={`${styles.book1Paw} ${activePaw === "book1" ? styles.show : ""}`}>
       {/* <div className={styles.book1Paw}> */}
 
-        {/* <video
+        <video
           className={styles.Paw_Pink}
           autoPlay
           muted
@@ -225,7 +238,7 @@ useEffect(() => {
           >
           <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/Paw_Blue.webm" type="video/webm" />
         </video>
-      </div> */}
+      </div>
       {/* /////////////////////////// */}
       <Image src={BannerLogo} alt="Bridge" priority className={styles.BannerLogo} />
       <div className={styles.Welcome}>Welcome to Huskyville!</div>

@@ -6,6 +6,8 @@ import Header from "../Components/header";
 import Footer from "../Components/footer";
 import Image from "next/image";
 import sampleReadWave from "../Images/sampleReadWave.webp";
+import SnowFall from './SnowFall';
+import Clouds from "../Components/Clouds";
 
 const EMPTY_PAGES = [];
 
@@ -108,14 +110,19 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
     <>
       <Header logo={true} />
       <section className={`${styles.sampleReadBanner} ${showIntro ? styles.sampleReadBannerIntro : styles.sampleReadBannerSettled}`}>
+        <Clouds />
         {/* <div onClick={() => { window.location.href = "/dev/huskaeroonies/flip-book?book=1"; }} className={`${styles.Sbook} ${styles["Sbook1"]} ${activeBook === 0 ? styles.isActive : ""}`}>Snow Day</div>
         <div onClick={() => { window.location.href = "/dev/huskaeroonies/flip-book?book=2"; }} className={`${styles.Sbook} ${styles["Sbook2"]} ${activeBook === 1 ? styles.isActive : ""}`}>Big Race</div> */}
         <div onClick={() => { window.location.href = "/flip-book?book=1"; }} className={`${styles.Sbook} ${styles["Sbook1"]} ${activeBook === 0 ? styles.isActive : ""}`}>Snow Day</div>
         <div onClick={() => { window.location.href = "/flip-book?book=2"; }} className={`${styles.Sbook} ${styles["Sbook2"]} ${activeBook === 1 ? styles.isActive : ""}`}>Big Race</div>
         {/* <div className={`${styles.Sbook} ${styles["Sbook3"]}`}>Book3</div>
-        <div className={`${styles.Sbook} ${styles["Sbook4"]}`}>Book4</div> */}
+        <div className={`${styles.Sbook} ${styles["Sbook4"]}`}>Book4</div> */} 
+        <div>
+           <SnowFall count={100}  className={styles.FlipSnowFall}/>
+        </div>
       </section>
       <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible}`}>
+        {activeBook === 0 && <SnowFall count={100} />}
         <div className="SampleBeforewave">
           <Image src={sampleReadWave} alt="Wave" />
         </div>
