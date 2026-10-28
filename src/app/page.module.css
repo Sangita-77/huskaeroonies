@@ -926,13 +926,17 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
   100% { top: -20px; left: 10px; filter: blur(4px); opacity: 0; transform: scale(6); }
 }
 
-.sampleReadBanner {background-image: url("../app/Images/mobileflipbookbanner.webp"); height: 388vw; max-height: 388vw; margin-top: 0;}
+/* .sampleReadBanner {background-image: url("../app/Images/mobileflipbookbanner.webp"); height: 388vw; max-height: 388vw; margin-top: 0;} */
+.sampleReadBanner {background-image: url("../app/Images/mobileflipbookbanner.webp"); height: 80vh; max-height: 80vh; margin-top: 0; background-position: bottom;}
 
 /* .sampleReadBanner .Sbook {}  */
-.sampleReadBanner .Sbook1 {top: 221vw; left: 28vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
-.sampleReadBanner .Sbook2 {top: 318vw; left: 55vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
+/* .sampleReadBanner .Sbook1 {top: 221vw; left: 28vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;} */
+/* .sampleReadBanner .Sbook2 {top: 318vw; left: 55vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;} */
+.sampleReadBanner .Sbook1 {top: 19vw; left: 8vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
+.sampleReadBanner .Sbook2 {top: 101vw; left: 55vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
 .sampleReadBanner .Sbook::before {content: ""; width: 6.18vw; height: 6.18vw; background: url("./Images/BookBlack.svg"); background-size: contain; position: absolute; top: 2.4vw;}
-.FlipSnowFall{height: 40vw !important; width: 100% !important; position: absolute !important; left: 7vw !important; top: 240vw !important;}
+/* .FlipSnowFall{height: 40vw !important; width: 90vw !important; position: absolute !important; left: 7vw !important; top: 240vw !important;} */
+.FlipSnowFall{height: 40vw !important; width: 90vw !important; position: absolute !important; left: 7vw !important; top: 6vw !important;}
 }
 
 
