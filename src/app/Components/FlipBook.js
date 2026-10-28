@@ -36,47 +36,71 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
     return () => window.clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    let cancelled = false;
+useEffect(() => {
+  let cancelled = false;
+  let instance;
 
-    async function createBook() {
-      const { PageFlip } = await import('page-flip');
-      if (cancelled || !bookElement.current) return;
+  async function createBook() {
+    const { PageFlip } = await import("page-flip");
 
-      const instance = new PageFlip(bookElement.current, {
-        width: 457.5,
-        height: 522,
-        size: 'stretch',
-        minWidth: 140,
-        maxWidth: 457.5,
-        minHeight: 160,
-        maxHeight: 522,
-        drawShadow: true,
-        flippingTime: 900,
-        usePortrait: false,
-        autoSize: true,
-        maxShadowOpacity: 0.55,
-        showCover: false,
-        mobileScrollSupport: false,
-        swipeDistance: 24,
-      });
-      instance.on('flip', (event) => {
-        setCurrentPage(Number(event.data));
-        setShowBuyPrompt(false);
-      });
+    if (cancelled || !bookElement.current) return;
 
-      instance.loadFromHTML(bookElement.current.querySelectorAll('.pageflip-page'));
-      pageFlip.current = instance;
-      setReady(true);
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+    instance = new PageFlip(bookElement.current, {
+      width: isMobile ? 320 : 457.5,
+      height: isMobile ? 460 : 522,
+
+      size: "stretch",
+      minWidth: isMobile ? 140 : 140,
+      maxWidth: isMobile ? 320 : 457.5,
+      minHeight: isMobile ? 200 : 160,
+      maxHeight: isMobile ? 460 : 522,
+
+      drawShadow: true,
+      flippingTime: 900,
+
+      // Mobile: one page at a time.
+      // Desktop: two-page spread.
+      usePortrait: window.matchMedia("(max-width: 767px)").matches,
+
+      autoSize: true,
+      maxShadowOpacity: 0.55,
+      showCover: false,
+      mobileScrollSupport: false,
+      swipeDistance: 24,
+    });
+
+    instance.on("flip", (event) => {
+      setCurrentPage(Number(event.data));
+      setShowBuyPrompt(false);
+    });
+
+    instance.loadFromHTML(
+      bookElement.current.querySelectorAll(".pageflip-page")
+    );
+
+    if (cancelled) {
+      instance.destroy();
+      return;
     }
 
-    createBook();
-    return () => {
-      cancelled = true;
-      pageFlip.current?.destroy();
+    pageFlip.current = instance;
+    setReady(true);
+  }
+
+  createBook();
+
+  return () => {
+    cancelled = true;
+    instance?.destroy();
+
+    if (pageFlip.current === instance) {
       pageFlip.current = null;
-    };
-  }, [images]);
+    }
+  };
+}, [images]);
+
 
   const goPrevious = () => pageFlip.current?.flipPrev();
   const goNext = () => {
@@ -149,7 +173,17 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
 
         <div className="book-meta">
           <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}>Previous</button>
-          <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
+
+          <span className="page-count">
+            <span className="desktop-page-count">
+              Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}
+            </span>
+
+            <span className="mobile-page-count">
+              Page {Math.min(currentPage + 1, images.length)} / {images.length}
+            </span>
+          </span>
+          
           <button className="nav-btn" onClick={goNext} disabled={!ready}>Next</button>
         </div>
         {/* <div className="book-carousel-dots" aria-label="Book selection">
