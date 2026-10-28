@@ -6,9 +6,7 @@ export default function SamplePage() {
     <>
     <Header/>
     <main>
-      <section className={styles.sampleReadBannerWrap}>
-        <div className={styles.sampleReadBanner}> </div>
-      </section>
+      <section className={styles.sampleReadBanner}> </section>
     </main>
     </>
   );
