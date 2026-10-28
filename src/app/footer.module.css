@@ -39,8 +39,14 @@ font-size: 1vw; position: relative; padding: 0.7vw 1vw; text-align: left; cursor
 
 /*...................Responsive..................*/
 
+@media (min-width: 1367px) and (max-width: 1500px) {
+    .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:first-child > img {width: 100%; height: auto;}
+}
+
 @media (min-width: 1025px) and (max-width: 1366px) {
+    .footerTopSection {margin-top: -11.2vw;}
     .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a > img {width: 100%; height: auto;}
+    /* .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:last-child > img {width: 240px; max-width: 100%;} */
     .footerWrap .footerBottom .row .footerBottomCenter {padding-top: 6.8vw;}
     .footerWrap .footerBottom .row .footerBottomRight {padding-top: 5.5vw;}
     .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button::after {background-size: cover;}

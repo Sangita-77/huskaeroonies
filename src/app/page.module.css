@@ -13,6 +13,7 @@
 }
 
 
+
 @keyframes gradientWave {
   0% {
     background-position: 0% 20%;
@@ -260,8 +261,9 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 /* .............Paw print div............. */
 
 .book3, .book4 {top: 46vw; left: 28vw; /*background: #746b6be3;*/ /*animation: float 0s ease-in-out infinite;*/ width: 11vw; /*box-shadow: none;*/}
-.book3 a::before, .book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 2vw; /*opacity: .5;*/}
-.book3 a, .book4 a{/*opacity: .5;*/ font-size: 1.3vw; line-height: 1.5vw;}
+/* .book3 a::before, 
+.book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 2vw;} */
+.book3 a, .book4 a{/*opacity: .5;*/ font-size: 1.3vw; /*line-height: 1.5vw;*/}
 .book4 {top: 50vw; left: 77vw;}
 .book1::before{    width: 8.5vw; height: 2.5vw; position: absolute; top: 1.3vw; background: url("../app/Images/ICE_ICON.svg") no-repeat; left: .5vw; background-size: contain;}
 .book2::before{width: 2.5vw; height: 2.5vw; right: 1.1vw; top: 1vw; background: url("../app/Images/FLAG.svg") no-repeat; right: .5vw; background-size: contain;} 
@@ -673,6 +675,7 @@ pointer-events: none;
 .sampleReadBannerSettled { position: relative; z-index: 0;}
 .flipbookWaiting { opacity: 1; transform: translateY(8vw); pointer-events: none; }
 .flipbookVisible { opacity: 1; transform: translateY(0); transition: opacity 1s ease, transform 1s ease; background: #FDEBA3;}
+.FlipSnowFall{height: 11vw !important; width: 20% !important; position: absolute !important; left: 36vw !important; top: 15vw !important;}
 @media (prefers-reduced-motion: reduce) {
   .sampleReadBanner, .flipbookVisible { transition: none; }
 }
@@ -829,9 +832,12 @@ pointer-events: none;
     
 }
 
+@media (min-width: 1025px) and (max-width: 1480px) {
+    .MapHolder {height: auto;}
+}
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .MapHolder { height: 100vh;}
+    .MapHolder { height: auto;}
     .MapImage {margin-top: 0vw;}
     .river--2 {top: -0.4vw;}
     .river--3 {top: 50.893vw;}
@@ -874,19 +880,11 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .mobileNavLink:hover { opacity: 0.6; }
 .MapImage { display: none; }
 .mobileMap { display: block; width: 100vw; max-width: 100%; height: auto; }
-
 .header {margin-bottom: -14.3vw;}
 /*.........Header End.........*/
 
 /*.........Banner Start.........*/
-  .MapHolder {
-    height: 100vh;
-    height: 100dvh;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-  }
+.MapHolder { height: 100vh; height: 100dvh; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
 .BannerLogo{width: 65vw; height: 18vw; top: 9.5vw; left: 17vw; z-index: 99;}
 .Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
 
@@ -915,6 +913,8 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .book2::before {width: 4.5vw; height: 4.5vw; top: 3vw; right: 3.5vw;}
 .book3 {top: 144vw; left: 33vw;}
 .book4 {top: 89vw; left: 54vw;}
+.book3:before {width: 30.5vw; height: 10.1vw; left: 3vw;}
+.book4:before {width: 26.5vw; height: 9.1vw; left: 5vw; top: 1vw;}
 
 .SnowFall {width: 84vw; height: 29vw; top: 260vw; left: 9vw;}
 .FireAnimation {top: 85.8vw; left: 44.5vw;}
@@ -932,8 +932,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .sampleReadBanner .Sbook1 {top: 221vw; left: 28vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
 .sampleReadBanner .Sbook2 {top: 318vw; left: 55vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
 .sampleReadBanner .Sbook::before {content: ""; width: 6.18vw; height: 6.18vw; background: url("./Images/BookBlack.svg"); background-size: contain; position: absolute; top: 2.4vw;}
-
-
+.FlipSnowFall{height: 40vw !important; width: 100% !important; position: absolute !important; left: 7vw !important; top: 240vw !important;}
 }
 
 
