@@ -355,6 +355,7 @@ pointer-events: none;
   opacity: var(--snow-opacity);
   /* filter: blur(var(--snow-blur)) drop-shadow(1px 2px rgb(255, 255, 255)); */
   animation: snowfall var(--snow-duration) linear var(--snow-delay) infinite, snowFlicker 2.8s ease-in-out var(--snow-delay) infinite;
+  -webkit-animation: snowfall var(--snow-duration) linear var(--snow-delay) infinite, snowFlicker 2.8s ease-in-out var(--snow-delay) infinite;
 }
 
 .snowflakeMedium { font-size: 1vw; }
@@ -832,6 +833,12 @@ pointer-events: none;
     
 }
 
+.homePageFlip .scope .app-shell .flipbook-wrapper {z-index: 99 !important; margin-top: -10vw !important;}
+/* .scope :global(.homePageFlip .scope .app-shell .flipbook-wrapper) {z-index: 99 !important; margin-top: -10vw !important;} */
+
+
+
+/* -------- Responsive  */
 @media (min-width: 1025px) and (max-width: 1480px) {
     .MapHolder {height: auto;}
 }
@@ -839,12 +846,10 @@ pointer-events: none;
 @media (min-width: 769px) and (max-width: 1024px) {
     .MapHolder { height: auto;}
     .MapImage {margin-top: 0vw;}
-    .river--2 {top: -0.4vw;}
-    .river--3 {top: 50.893vw;}
-    /* .river--4 {} */
-    .FireAnimation {top: 56vw;}
-
-    .Bridge {top: 37vw;}
+    .river--2 {top: -0.4vw; /*top: -5.4vw;*/}
+    .river--3 {top: 50.893vw; /*top: 45.893vw;*/}
+    .FireAnimation {top: 56vw; /*top: 51vw;*/}
+    .Bridge {top: 37vw; /*top: 32vw;*/}
     .book3 {top: 48vw;}
 
     .navLink {font-size: 1.5vw;}
@@ -937,6 +942,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .sampleReadBanner .Sbook::before {content: ""; width: 6.18vw; height: 6.18vw; background: url("./Images/BookBlack.svg"); background-size: contain; position: absolute; top: 2.4vw;}
 /* .FlipSnowFall{height: 40vw !important; width: 90vw !important; position: absolute !important; left: 7vw !important; top: 240vw !important;} */
 .FlipSnowFall{height: 40vw !important; width: 90vw !important; position: absolute !important; left: 7vw !important; top: 33vw !important;}
+.snowflake {font-size: 3vw;}
 }
 
 

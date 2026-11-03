@@ -58,6 +58,9 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.flipbook-wrapper .book-meta .page-count) {color: #000; }
 
 
+/* .scope :global(.homePageFlip .scope .app-shell .flipbook-wrapper) {z-index: 99 !important; margin-top: -10vw !important;} */
+
+
 @media (min-width: 769px) and (max-width: 1024px) {}
 @media (max-width: 1200px) {
   .scope :global(.book-title) {margin-bottom: 25px;}
