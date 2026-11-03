@@ -1,6 +1,6 @@
 .scope {background: #FDEBA3; position: relative;}
 .scope::after{content: ""; background: url("../Images/WaveSampleRead.webp"); position: absolute;}
-.scope :global(.flipbook-wrapper) {display: grid; gap: 1vw; justify-items: center; width: 100%;}
+.scope :global(.flipbook-wrapper){display: grid; gap: 1vw; justify-items: center; width: 100%; }
 .scope :global(.book-title) { margin: 0; font-size: 1.7vw; }
 .scope :global(.book-carousel) { width: min(1200px, 100%); max-width: 100%; display: grid; grid-template-columns: 2vw minmax(0, 1fr) 2vw; align-items: center; gap: 1vw; height: 640px;  position: relative;}
 

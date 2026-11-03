@@ -14,9 +14,8 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.pageflip-book) { width: 100%; position: relative; }
 .scope :global(.pageflip-content) {display: flex;  justify-content: center; align-items: center; height: 100%; width: 100%;   perspective: 1200px;}
 .scope :global(.pageflip-page){background: #1b76cb00; width: 100%; height: 100%; perspective: 1200px;}
-.scope :global(.mobile-page-count) {
-  display: none;
-}
+.scope :global(.mobile-page-count) { display: none; }
+.HomeFlipBook{position: relative; z-index: 999;}
 /* .scope :global(.pageflip-page.--right) {
   transform-origin: left center;
   transform: perspective(1000px) rotateY(-15deg);
@@ -47,7 +46,7 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 
 
 /* -------- Flip book page ----------  */
-.scope :global(.flipbook-wrapper) {padding: 4vw 0 16vw; position: relative; background: url("../Images/samplereadBg.webp") #fdeba3 no-repeat center; background-size: contain; margin-top: -11vw;}
+.scope :global(.flipbook-wrapper) {padding: 4vw 0 16vw; position: relative; background: url("../Images/samplereadBg.webp") #fdeba3 no-repeat center; background-size: contain; margin-top: -11vw; z-index: 99;}
 .scope :global(.SampleBeforewave) {position: relative; position: absolute; top: 0; left: 0;}
 .scope :global(.SampleBeforewave img) {z-index: 99; width: 99vw; height: auto; position: absolute; top: -3.6vw; left: 0;}
 .scope :global(.book-carousel-dots) {gap: 30px;}
@@ -56,7 +55,7 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.flipbook-wrapper .book-meta) {margin-bottom: 2vw; margin-top: 2vw;}
 .scope :global(.flipbook-wrapper .book-meta .nav-btn) {font-family: var(--font-heading); font-weight: 500; font-size: 17px;}
 .scope :global(.flipbook-wrapper .book-meta .page-count) {color: #000; }
-
+.HomeFlipBook{position: relative; z-index: 999;}
 
 /* .scope :global(.homePageFlip .scope .app-shell .flipbook-wrapper) {z-index: 99 !important; margin-top: -10vw !important;} */
 
