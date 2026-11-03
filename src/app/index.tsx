@@ -17,10 +17,38 @@ import styles from "./page.module.css";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import BannerLogo from "./Images/bannerLogo.svg";
+import HomeFlipBook from "./Components/HomeFlipBook";
+import styless from "./flip-book/flip-book.module.css";
 
-export default function Home() {
+const book1 = [
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_6_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_8.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_10.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_12_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_16.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page _17.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_19_resize.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_27_resize.jpg',
+];
+
+const bookNames = [
+  'Book 1: Snow Day',
+];
+
+const books = [book1];
+
+export default async function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const [initialBook, setInitialBook] = useState(0);
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const requestedBook = Number(params.get("book"));
+
+    if (Number.isInteger(requestedBook) && requestedBook > 0) {
+      setInitialBook(requestedBook - 1);
+    }
+  }, []);
 
   const clouds = useMemo(
   () => [
@@ -258,7 +286,16 @@ useEffect(() => {
       <feTurbulence baseFrequency="0.03 0.025"></feTurbulence>
       <feDisplacementMap scale="60" in="SourceGraphic"></feDisplacementMap>
     </filter>
-  </svg>   
+  </svg> 
+
+  <div className="homePageFlip">
+  <div className={styless.scope}>
+    <div className="app-shell">
+      <HomeFlipBook books={books} bookNames={bookNames} initialBook={initialBook} />
+    </div>
+  </div>
+  </div>
+
 <div className={styles.heroVideoContainer}>
   <video
     key={`girl-${isIOS ? "ios" : "other"}`}
