@@ -41,7 +41,7 @@
   display: none;
   width: 100vw;
   height: auto;
-  margin-top: 1vw;
+  margin-top: -4vw;
   z-index: 0;
   position: relative;
 }
@@ -52,7 +52,7 @@
   max-width: none;
   user-select: none;
   -webkit-user-drag: none;
-  margin-top: -4vw;
+  margin-top: 1vw;
   z-index: 0;
 position: relative;
 filter: contrast(1.05) saturate(1.04) brightness(1.03);
