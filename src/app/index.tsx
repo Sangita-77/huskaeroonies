@@ -37,7 +37,7 @@ const bookNames = [
 
 const books = [book1];
 
-export default async function Home() {
+export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const [initialBook, setInitialBook] = useState(0);
