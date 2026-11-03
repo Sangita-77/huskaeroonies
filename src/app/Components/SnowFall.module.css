@@ -23,6 +23,7 @@
   animation-delay: var(--snow-delay);
 
   will-change: transform;
+  -webkit-animation: snowfall var(--snow-duration) linear var(--snow-delay) infinite, snowFlicker 2.8s ease-in-out var(--snow-delay) infinite;
 }
 
 .snowflakeMedium {
@@ -32,10 +33,26 @@
 .snowflakeLarge {
   font-size: 22px;
 }
+@-webkit-keyframes snowfall {
+    from {
+        -webkit-transform: translate3d(0, 0, 0) rotate(10deg);
+        transform: translate3d(0, 0, 0) rotate(10deg);
+    }
+
+    to {
+        -webkit-transform: translate3d(
+            var(--snow-drift, 20px), 20vw, 0
+        ) rotate(10deg);
+        transform: translate3d(
+            var(--snow-drift, 20px), 20vw, 0
+        ) rotate(10deg);
+    }
+}
 
 @keyframes snowfall {
   0% {
     transform: translate3d(0, -30px, 0) rotate(0deg);
+    -webkit-transform: translate3d(0, -30px, 0) rotate(0deg);
   }
 
   50% {
@@ -44,10 +61,20 @@
       50vh,
       0
     ) rotate(180deg);
+    -webkit-transform: translate3d(
+      calc(var(--snow-drift) * 0.5),
+      50vh,
+      0
+    ) rotate(180deg);
   }
 
   100% {
     transform: translate3d(
+      var(--snow-drift),
+      100vh,
+      0
+    ) rotate(360deg);
+    -webkit-transform: translate3d(
       var(--snow-drift),
       100vh,
       0
