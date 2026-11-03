@@ -34,8 +34,8 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.nav-btn:disabled), .scope :global(.book-carousel-arrow:disabled) { opacity: .45; cursor: not-allowed; }
 .scope :global(.page-count) { color: #d9f7fb; margin: 0 1vw;}
 .scope :global(.book-carousel-dots button) { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(217, 247, 251, .42); }
-.scope :global(.modal-backdrop) { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0, 0, 0, 0.596); }
-.scope :global(.modal-card) { width: min(100vw, 450px); padding: 24px 22px; text-align: center; border: 2px solid rgba(96, 204, 226, 0.966); border-radius: 18px; background: linear-gradient(180deg, #01a6ff, #001d30); }
+.scope :global(.modal-backdrop) { position: fixed; z-index: 999; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0, 0, 0, 0.596); }
+.scope :global(.modal-card) {z-index: 9999; width: min(100vw, 450px); padding: 24px 22px; text-align: center; border: 2px solid rgba(96, 204, 226, 0.966); border-radius: 18px; background: linear-gradient(180deg, #01a6ff, #001d30); }
 .scope :global(.modal-card p) { color: #d0edf5; line-height: 1.55; font-size: 15px; padding-bottom: 20px;}
 .scope :global(.modal-card h2){font-size: 22px; padding-bottom: 10px; color: #000000;}
 .scope :global(.modal-actions){gap: 20px; display: flex; justify-content: center;}
