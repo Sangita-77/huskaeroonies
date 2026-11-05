@@ -7,9 +7,11 @@
 .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap {text-align: center; display: flex; flex-direction: column; align-items: center;}
 .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:last-child > img {margin-top: -1vw;}
 .footerWrap .footerBottom .row .footerBottomCenter {flex: 0 0 34.33%; width: 34.33%; display: flex; justify-content: space-around; padding-top: 9.8vw;}
-.footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol {color: #fff;}
-.footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol h3 {font-size: 1.5vw; text-align: center; margin-bottom: 1vw;}
-.footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li {list-style: none; text-align: center; margin-bottom: 0.8vw; font-size: 1vw;}
+.footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol {color: #fff; padding-left: 0.94vw; border-left: 2px solid #fff;}
+.footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol .footerTitleWrap {display: flex; column-gap: 0.7vw;}
+.footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol h3 {font-size: 1.5vw; text-align: left; margin-bottom: 0.8vw; font-weight: 400;}
+.footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li {list-style: none; text-align: left; margin-bottom: 0.33vw; font-size: 1vw;}
+.footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li:last-child {margin-bottom: 0vw;}
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li a {color: #fff; text-decoration: none;}
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li a:hover {color: #029ffcf5;}
 

@@ -76,7 +76,10 @@ export default function Footer() {
 
               <div className={styles.footerBottomCenter}>
                 <div className={styles.footerBottomCenterCol}>
-                  <h3>Explore</h3>
+                  <div className={styles.footerTitleWrap}>
+                    <Image src={HomeIcon} alt="Home Icon" style={{ width: 32, height: 32 }} />
+                    <h3>Explore</h3>
+                  </div>
                   <ul className={styles.navList}>
                     {exploreLinks.map((link) => (
                       <li key={link.href} className={styles.navItem}>
@@ -93,7 +96,10 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.footerBottomCenterCol}>
-                  <h3>For Parents</h3>
+                  <div className={styles.footerTitleWrap}>
+                    <Image src={HomeIcon} alt="Home Icon" style={{ width: 32, height: 32 }} />
+                    <h3>For Parents</h3>
+                  </div>
                   <ul className={styles.navList}>
                     {parentLinks.map((link) => (
                       <li key={link.href} className={styles.navItem}>
