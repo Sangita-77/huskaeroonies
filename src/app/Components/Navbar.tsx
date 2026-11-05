@@ -2,14 +2,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "../page.module.css";
+
 import BookIcon from "../Images/New/BookIcon.svg";
+import PawIcon from "../Images/New/PawIcon.svg";
+import ParentIcon from "../Images/New/ParentIcon.svg";
+import AboutIcon from "../Images/New/AboutIcon.svg";
+import CartIcon from "../Images/New/CartIcon.svg";
 
 const links = [
-  { title: "Book", href: "#book" },
-  { title: "Meet The Husks", href: "#meet-the-husks" },
-  { title: "For Parents", href: "#for-parents" },
-  { title: "About Us", href: "#about-us" },
-  { title: "Baby Shower Cart", href: "#baby-shower-cart" },
+  { title: "Book", href: "#book", Icon: BookIcon },
+  { title: "Meet The Husks", href: "#meet-the-husks", Icon: PawIcon },
+  { title: "For Parents", href: "#for-parents", Icon: ParentIcon },
+  { title: "About Us", href: "#about-us", Icon: AboutIcon },
+  { title: "Baby Shower Cart", href: "#baby-shower-cart", Icon: CartIcon },
 ];
 
 export default function Navbar() {
@@ -21,9 +26,9 @@ export default function Navbar() {
     <nav className={styles.nav}>
       {/* Desktop Navigation */}
       <ul className={styles.navList}>
-        {links.map(({ title, href }) => (
+        {links.map(({ title, href, Icon }) => (
           <li key={href} className={styles.navItem}>
-            <Image src={BookIcon} alt="" />
+            <Image src={Icon} alt="" />
             <Link
               href={href}
               className={styles.navLink}
