@@ -1,12 +1,12 @@
-.footerWrap {background: url("../app/Images/footer-bg.webp") no-repeat center; background-size: cover; padding: 4vw 0 1.8vw; position: relative;}
+.footerWrap {background: url("../app/Images/New/footerbg.webp") no-repeat Top center; background-size: cover; padding: 18.25vw 0 0vw; position: relative; margin-top: -9vw; z-index: 99;}
 /* .footerWrap::before {content: ''; background: url(../app/Images/footer-before.webp) no-repeat top; width: 100vw; height: auto; } */
 .footerWrap .footerWrapcontainer {max-width: 93vw; padding: 0 0.7vw; margin: 0 auto;}
-.footerWrap .footerBottom {border-bottom: 2px solid #ffffff2e; padding-bottom: 1vw;}
-.footerWrap .footerBottom .row {display: flex;}
-.footerWrap .footerBottom .row .footerBottomLeft {flex: 0 0 30.33%; width: 30.33%;}
+.footerWrap .footerBottom {border-bottom: 1px solid transparent; border-image: linear-gradient(to right, transparent, #fff, transparent) 1; padding-bottom: 1vw;}
+.footerWrap .footerBottom .row {display: flex; align-items: center;}
+.footerWrap .footerBottom .row .footerBottomLeft {flex: 0 0 25.33%; width: 25.33%;}
 .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap {text-align: center; display: flex; flex-direction: column; align-items: center;}
 .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:last-child > img {margin-top: -1vw;}
-.footerWrap .footerBottom .row .footerBottomCenter {flex: 0 0 34.33%; width: 34.33%; display: flex; justify-content: space-around; padding-top: 9.8vw;}
+.footerWrap .footerBottom .row .footerBottomCenter {flex: 0 0 39.33%; width: 39.33%; display: flex; justify-content: space-around; padding-top: 0vw; padding-left: 4vw;}
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol {color: #fff; padding-left: 0.94vw; border-left: 2px solid #fff;}
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol .footerTitleWrap {display: flex; column-gap: 0.7vw;}
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol h3 {font-size: 1.5vw; text-align: left; margin-bottom: 0.8vw; font-weight: 400;}
@@ -15,20 +15,20 @@
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li a {color: #fff; text-decoration: none;}
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li a:hover {color: #029ffcf5;}
 
-.footerWrap .footerBottom .row .footerBottomRight {flex: 0 0 35.33%; width: 35.33%; padding-top: 8.5vw; padding-left: 3vw;}
-.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap {padding: 1.5vw 2.4vw; background: #444979; border-radius: 11px; text-align: center;}
-.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap h3 {color: #fff; font-size: 1.5vw; margin-bottom: 0.7vw;}
-.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap p {color: #fff; font-size: 1vw; margin-bottom: 1.4vw;}
-.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form {display: flex; justify-content: center; align-items: flex-start;}
-.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form input {background-color: #7C80A1; height: 3vw; padding: 1vw; border-radius: 0.4vw; width: 17vw; box-shadow: none;
+.footerWrap .footerBottom .row .footerBottomRight {flex: 0 0 35.33%; width: 35.33%; padding-top: 0vw; padding-left: 0vw;}
+.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap {padding: 6.5vw 2.4vw 1.5vw; background: #444979; border-radius: 11px; text-align: center; background: url("../app/Images/New/newsletterbg.webp") no-repeat Top center; background-size: cover;}
+.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap h3 {color: #fff; font-size: 1.31vw; font-weight: 400; line-height: 1.5vw; margin-bottom: 0vw;}
+.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap p {color: #fff; font-size: 1vw; margin-bottom: 1.1vw;}
+.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form {display: flex; justify-content: center; align-items: center; flex-direction: column; row-gap: 1vw;}
+.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form input {background-color: #7C80A1; height: 3.56vw; padding: 1vw; border-radius: 0.4vw; width: 17vw; box-shadow: none;
     outline: none; border: 1px solid #ffffff96; color: #fff; margin-right: 4px;}
 .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form input::placeholder {color: #fff;}
-.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button {height: 3vw; width: 6.5vw; border-radius: 0.3vw; outline: none; box-shadow: none; border: none; font-family: var(--font-heading); background-color: #fff;
+.footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button {height: 2.94vw; width: 6.5vw; border-radius: 0.3vw; outline: none; box-shadow: none; border: none; font-family: var(--font-heading); background-color: #fff;
 font-size: 1vw; position: relative; padding: 0.7vw 1vw; text-align: left; cursor: pointer; transition: all 0.3s ease-in-out;}
 .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button::after {content: ""; background: url("../app/Images/btn-after.webp") no-repeat; width: 1.4vw; height: 1.2vw; position: absolute; right: 1vw; top: 51%;
     transform: translateY(-50%);}
 .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button:hover {background-color: #ffffffcf;}
-.copyrightText {padding-top: 1.4vw;}
+/* .copyrightText {padding-top: 1.4vw;} */
 .copyrightText p {text-align: center; color: #ffffffa6;}
 .footerWrap .beforeWave {margin-top: -20px;}
 .footerWrap .beforeWave img {width: 99vw; height: auto; position: absolute; top: -3vw; z-index: 101;}
@@ -39,6 +39,12 @@ font-size: 1vw; position: relative; padding: 0.7vw 1vw; text-align: left; cursor
 .footerTopSection .footerTopSectionContainer .row {display: flex;}
 .footerTopSection .footerTopSectionContainer .row .footerTopCol {flex: 0 0 25%; text-align: center;}
 .footerTopSection .footerTopSectionContainer .row .footerTopCol h4 {color: #fff; font-size: 1vw; font-weight: 500; margin-top: 0.5vw;}
+
+.footerWrap .footerBottomWrap {background-color: #013473; }
+.footerWrap .footerBottomWrap .footerBottomContainer {max-width: 93vw; padding: 0.88vw 0.7vw; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;}
+.socialMedialinks {display: flex; column-gap: 0.75vw;}
+.socialMedialinks a img {width: 2.81vw; height: 2.81vw;}
+
 
 /*...................Responsive..................*/
 

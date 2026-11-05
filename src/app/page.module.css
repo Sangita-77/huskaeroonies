@@ -82,7 +82,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 
 
-.headercontainer img{width: 17vw; padding-top: 1.2vw; object-fit: contain; height: 6vw;}
+/* .headercontainer img{width: 17vw; padding-top: 1.2vw; object-fit: contain; height: 6vw;} */
 .nav { display: flex; align-items: center; }
 
 .navList {
@@ -110,9 +110,11 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
     padding: .6vw 2vw;
     border-radius: 4vw;
     border: solid .13vw #fff;}
-
+.navList li{gap: .5vw; display: flex;}
+.navList li img{width: 1.5vw; height: 1.9vw; }
 .navList .navLink:hover { text-shadow: 0 0 23px #000000; transition: .5s; }
 .navList .active { text-shadow: 0 0 23px #000000; }
+
 /* Hide desktop menu */ 
 /* Mobile Burger */
 .burger { display: none;  width: 42px; height: 42px; padding: 8px; border: none; background: transparent; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; position: relative; z-index: 1002;}

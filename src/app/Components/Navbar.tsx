@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import styles from "../page.module.css";
+import BookIcon from "../Images/New/BookIcon.svg";
 
 const links = [
   { title: "Book", href: "#book" },
@@ -13,22 +15,21 @@ const links = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleLinkClick = () => {
-    setMenuOpen(false);
-  };
+  const handleLinkClick = () => setMenuOpen(false);
 
   return (
     <nav className={styles.nav}>
       {/* Desktop Navigation */}
       <ul className={styles.navList}>
-        {links.map((link) => (
-          <li key={link.href} className={styles.navItem}>
+        {links.map(({ title, href }) => (
+          <li key={href} className={styles.navItem}>
+            <Image src={BookIcon} alt="" />
             <Link
-              href={link.href}
+              href={href}
               className={styles.navLink}
               onClick={handleLinkClick}
             >
-              {link.title}
+              {title}
             </Link>
           </li>
         ))}
@@ -37,33 +38,33 @@ export default function Navbar() {
       {/* Mobile Burger Button */}
       <button
         type="button"
-        className={`${styles.burger} ${
-          menuOpen ? styles.burgerOpen : ""
-        }`}
+        className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
         onClick={() => setMenuOpen((prev) => !prev)}
         aria-label={menuOpen ? "Close menu" : "Open menu"}
         aria-expanded={menuOpen}
+        aria-controls="mobile-navigation"
       >
         <span />
         <span />
         <span />
       </button>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation */}
       <div
+        id="mobile-navigation"
         className={`${styles.mobileMenu} ${
           menuOpen ? styles.mobileMenuOpen : ""
         }`}
       >
         <ul className={styles.mobileNavList}>
-          {links.map((link) => (
-            <li key={link.href} className={styles.mobileNavItem}>
+          {links.map(({ title, href }) => (
+            <li key={href} className={styles.mobileNavItem}>
               <Link
-                href={link.href}
+                href={href}
                 className={styles.mobileNavLink}
                 onClick={handleLinkClick}
               >
-                {link.title}
+                {title}
               </Link>
             </li>
           ))}

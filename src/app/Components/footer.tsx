@@ -1,9 +1,9 @@
 import styles from "../footer.module.css";
 import Image from "next/image";
 // import Footerlogo from "../Images/bannerLogo.svg";
-import Footerlogo from "../Images/footerlogonew.svg";
+import Footerlogo from "../Images/New/footerlogo.webp";
 // import FooterDogs from "../Images/footerDogs.webp";
-import FooterDogs from "../Images/footerdogsnew.webp";
+import FooterDogs from "../Images/New/footerdogsnew.webp";
 import FooterBeforewave from "../Images/footer-before.webp";
 import FooterTopBeforewave from "../Images/footer-topbefore.webp";
 import Link from "next/link";
@@ -14,6 +14,11 @@ import HomeIcon from "../Images/home-icon01.svg";
 import BookIcon from "../Images/book-icon01.svg";
 import FavoriteIcon from "../Images/favorite-icon01.svg";
 import ProfileIcon from "../Images/profile-icon01.svg";
+import ExploreIcon from "../Images/New/exploreicon.svg";
+import ParentIcon from "../Images/New/forparenticon.svg";
+import YoutubeIcon from "../Images/New/youtubeicon.svg";
+import FacebbokIcon from "../Images/New/Facebookicon.svg";
+import InstaIcon from "../Images/New/Instagramicon.svg";
 
 const exploreLinks = [
   { title: "All Books", href: "#book" },
@@ -33,7 +38,7 @@ export default function Footer() {
 
   return (
     <>
-      <section className={styles.footerTopSection}>
+      {/* <section className={styles.footerTopSection}>
         <div className={styles.footerTopbeforeWave}>
           <Image src={FooterTopBeforewave} alt="Footer blue Wave" />
         </div>
@@ -57,12 +62,12 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <footer className={styles.footerWrap}>
-        <div className={styles.beforeWave}>
+        {/* <div className={styles.beforeWave}>
           <Image src={FooterBeforewave} alt="Footer Wave" />
-        </div>
+        </div> */}
         <div className={styles.footerWrapcontainer}>
           <div className={styles.footerBottom}>
             <div className={styles.row}>
@@ -77,7 +82,7 @@ export default function Footer() {
               <div className={styles.footerBottomCenter}>
                 <div className={styles.footerBottomCenterCol}>
                   <div className={styles.footerTitleWrap}>
-                    <Image src={HomeIcon} alt="Home Icon" style={{ width: 32, height: 32 }} />
+                    <Image src={ExploreIcon} alt="Home Icon" style={{ width: 32, height: 32 }} />
                     <h3>Explore</h3>
                   </div>
                   <ul className={styles.navList}>
@@ -97,7 +102,7 @@ export default function Footer() {
 
                 <div className={styles.footerBottomCenterCol}>
                   <div className={styles.footerTitleWrap}>
-                    <Image src={HomeIcon} alt="Home Icon" style={{ width: 32, height: 32 }} />
+                    <Image src={ParentIcon} alt="Home Icon" style={{ width: 32, height: 32 }} />
                     <h3>For Parents</h3>
                   </div>
                   <ul className={styles.navList}>
@@ -136,8 +141,17 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className={styles.copyrightText}>
-            <p>© 2026 Huskeroonies. All rights reserved.</p>
+        </div>
+        <div className={styles.footerBottomWrap}>
+          <div className={styles.footerBottomContainer}>
+            <div className={styles.copyrightText}>
+              <p>© 2026 Huskeroonies. All rights reserved.</p>
+            </div>
+            <div className={styles.socialMedialinks}>
+              <a href="https://youtube.com/" target="_blank"><Image src={YoutubeIcon} alt="Youtube Icon"/></a>
+              <a href="https://www.facebook.com/" target="_blank"><Image src={FacebbokIcon} alt="Facebook Icon"/></a>
+              <a href="https://www.instagram.com/" target="_blank"><Image src={InstaIcon} alt="Insta Icon"/></a>
+            </div>
           </div>
         </div>
       </footer>
