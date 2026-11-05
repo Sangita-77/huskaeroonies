@@ -5,6 +5,7 @@
 .footerWrap .footerBottom .row {display: flex;}
 .footerWrap .footerBottom .row .footerBottomLeft {flex: 0 0 30.33%; width: 30.33%;}
 .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap {text-align: center; display: flex; flex-direction: column; align-items: center;}
+.footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:last-child > img {margin-top: -1vw;}
 .footerWrap .footerBottom .row .footerBottomCenter {flex: 0 0 34.33%; width: 34.33%; display: flex; justify-content: space-around; padding-top: 9.8vw;}
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol {color: #fff;}
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol h3 {font-size: 1.5vw; text-align: center; margin-bottom: 1vw;}
