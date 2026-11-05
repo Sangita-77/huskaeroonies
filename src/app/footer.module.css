@@ -29,6 +29,7 @@
 .copyrightText p {text-align: left; color: #ffffffa6;}
 .copyrightText p span {padding-right: 0.7vw; border-right: 1px solid hsla(0, 0%, 100%, 0.5);}
 .copyrightText p a {color: #ffffffa6; text-decoration: none; margin: 0 0.5vw;}
+.copyrightText p a:hover {color: #029ffcf5;}
 .footerWrap .beforeWave {margin-top: -20px;}
 .footerWrap .beforeWave img {width: 99vw; height: auto; position: absolute; top: -3vw; z-index: 101;}
 
