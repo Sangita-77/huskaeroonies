@@ -60,11 +60,7 @@ useEffect(() => {
       const element = bookElement.current;
 
       instance = new PageFlip(element, {
-<<<<<<< HEAD
-       width: 457.5,
-=======
         width: 457.5,
->>>>>>> 1abe3437534500cadb505b9e7828a2a1ff2c8306
         height: 522,
         size: 'stretch',
         minWidth: 280,
