@@ -145,7 +145,7 @@ export default function Footer() {
         <div className={styles.footerBottomWrap}>
           <div className={styles.footerBottomContainer}>
             <div className={styles.copyrightText}>
-              <p>© 2026 Huskeroonies. All rights reserved.</p>
+              <p><span>© 2026 Huskeroonies. All rights reserved.</span> <a href="#" className="bottomLink">Teams & Conditions</a> <a href="#" className="bottomLink">Privacy Policy</a> </p>
             </div>
             <div className={styles.socialMedialinks}>
               <a href="https://youtube.com/" target="_blank"><Image src={YoutubeIcon} alt="Youtube Icon"/></a>
