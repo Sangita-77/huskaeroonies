@@ -60,24 +60,20 @@ useEffect(() => {
       const element = bookElement.current;
 
       instance = new PageFlip(element, {
-        width: isMobile ? 320 : 457.5,
-        height: isMobile ? 460 : 522,
-
-        size: "stretch",
-
-        minWidth: 140,
-        maxWidth: isMobile ? 320 : 457.5,
-
-        minHeight: 200,
-        maxHeight: isMobile ? 460 : 522,
-
+        width: 457.5,
+        height: 522,
+        size: 'stretch',
+        minWidth: 280,
+        maxWidth: 457.5,
+        minHeight: 320,
+        maxHeight: 522,
         drawShadow: true,
         flippingTime: 900,
-        usePortrait: isMobile,
+        usePortrait: true,
         autoSize: true,
         maxShadowOpacity: 0.55,
         showCover: false,
-        mobileScrollSupport: false,
+        mobileScrollSupport: true,
         swipeDistance: 24,
       });
 
