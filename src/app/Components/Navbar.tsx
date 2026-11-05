@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "../page.module.css";
-import BookIcon from "../Images/BookIcon.svg";
+import BookIcon from "../Images/New/BookIcon.svg";
 
 const links = [
   { title: "Book", href: "#book" },
