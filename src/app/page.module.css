@@ -1,3 +1,70 @@
+/* Start Global */
+:root {
+  /* Primary colors */
+  --color-primary: #087fd0;
+  --color-primary-dark: #14265e;
+  --color-secondary: #ffb91d;
+
+  /* Brand colors */
+  --color-navy: #10245b;
+  --color-blue: #08a4ed;
+  --color-yellow: #ffbd18;
+
+  /* Background colors */
+  --color-white: #ffffff;
+  --color-light: #f5f9ff;
+  --color-cream: #fff9e9;
+
+  /* Text colors */
+  --color-text: #10245b;
+  --color-text-light: #52627e;
+  --color-muted: #8995a8;
+
+  /* Border colors */
+  --color-border: #dce6f3;
+
+  /* ==============================
+     GLOBAL FONTS
+  ================================ */
+
+  --font-primary: "Starlight", sans-serif;
+  --font-secondary: Arial, sans-serif;
+
+  /* Font sizes */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 52px;
+
+  /* Font weights */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 900;
+
+  /* ==============================
+     SPACING & RADIUS
+  ================================ */
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 25px;
+  --radius-full: 50px;
+
+  --section-spacing: 80px;
+  --container-width: 1400px;
+
+  /* Shadows */
+  --shadow-sm: 0 3px 8px rgba(16, 36, 91, 0.10);
+  --shadow-md: 0 6px 18px rgba(16, 36, 91, 0.15);
+}
+/* End Global */
+
 
 /* .MapHolder svg{display: none;} */
 .MapHolder {
@@ -88,7 +155,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .navList {
   display: flex;
   align-items: center;
-  gap: 5vw;
+  gap: 3vw;
   list-style: none;
   margin: 0;
   padding: 0;

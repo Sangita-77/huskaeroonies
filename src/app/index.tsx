@@ -19,6 +19,9 @@ import Footer from "./Components/footer";
 import BannerLogo from "./Images/bannerLogo.svg";
 import HomeFlipBook from "./Components/HomeFlipBook";
 import styless from "./flip-book/flip-book.module.css";
+import BookPromo from "../app/Components/bookCard";
+// import BookPromo from "../app/Components/bookCard";
+import SnowDayBookIcon from "./Images/New/SnowDayBookIcon.svg";
 
 const book1 = [
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_6_resize.jpg',
@@ -35,7 +38,28 @@ const bookNames = [
   'Sample Read',
 ];
 
-const books = [book1];
+// const books = [book1];
+
+const books = [
+  {
+    id: 1,
+    bookNumber: "ONE",
+    title: "Neighborhood Pups",
+    bookArt: SnowDayBookIcon,
+    buyNowHref: "/shop/book-one",
+    top: "8vw",
+    left: "40vw",
+  },
+  {
+    id: 2,
+    bookNumber: "TWO",
+    title: "The Snow Day",
+    bookArt: SnowDayBookIcon,
+    buyNowHref: "/shop/book-two",
+    top: "8vw",
+    left: "1vw",
+  },
+];
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -112,7 +136,7 @@ export default function Home() {
 
   // ..................PawPRINT....................
 
-  const router = useRouter();
+  // const router = useRouter();
   const timeoutRef = useRef<number | null>(null);
   const [activePaw, setActivePaw] = useState<"book1" | "book2" | null>(null);
 
@@ -124,27 +148,27 @@ export default function Home() {
     };
   }, []);
 
-const handleBookClick = (bookNumber: 1 | 2, href: string) =>
-  (e: React.MouseEvent) => {
-    e.preventDefault();
+// const handleBookClick = (bookNumber: 1 | 2, href: string) =>
+//   (e: React.MouseEvent) => {
+//     e.preventDefault();
 
-    // Disable paw animation on mobile devices
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      router.push(href);
-      return;
-    }
+//     // Disable paw animation on mobile devices
+//     if (window.matchMedia("(max-width: 768px)").matches) {
+//       router.push(href);
+//       return;
+//     }
 
-    if (activePaw) return;
+//     if (activePaw) return;
 
-    const paw = bookNumber === 1 ? "book1" : "book2";
-    const delay = bookNumber === 1 ? 10000 : 9000;
+//     const paw = bookNumber === 1 ? "book1" : "book2";
+//     const delay = bookNumber === 1 ? 10000 : 9000;
 
-    setActivePaw(paw);
+//     setActivePaw(paw);
 
-    timeoutRef.current = window.setTimeout(() => {
-      router.push(href);
-    }, delay);
-  };
+//     timeoutRef.current = window.setTimeout(() => {
+//       router.push(href);
+//     }, delay);
+//   };
 
 const [isIOS, setIsIOS] = useState(false);
 
@@ -203,13 +227,24 @@ useEffect(() => {
       
       {/* /////////////////////////////////////// */}
       {/* <div className={`${styles.book} ${styles["book1"]}`}><a href="/dev/huskaeroonies/flip-book?book=1">Snow Day</a></div> */}
-      <div className={`${styles.book} ${styles["book1"]}`}>
+      {/* <div className={`${styles.book} ${styles["book1"]}`}>
         <a href="/flip-book?book=1" onClick={handleBookClick(1, "/flip-book?book=1")}>Snow Day</a>
-      </div>
+      </div> */}
       {/* <div className={`${styles.book} ${styles["book2"]}`}><a href="/dev/huskaeroonies/flip-book?book=2">Big Race</a></div> */}
-      <div className={`${styles.book} ${styles["book2"]}`}>
+      {/* <div className={`${styles.book} ${styles["book2"]}`}>
         <a href="/flip-book?book=2" onClick={handleBookClick(2, "/flip-book?book=2")}>Big Race</a>
-      </div>
+      </div> */}
+      <div className={styles.booksContainer}>
+        {books.map((book) => (
+          <BookPromo
+            key={book.id}
+            {...book}
+            onAddToCart={() => {
+              console.log("Added:", book.title);
+            }}
+          />
+        ))}
+      </div> 
       {/* /////////////////////////////////////////// */}
       
       <div className={`${styles.book} ${styles["book3"]}`}><a href="#">Neighborhood Pups</a></div>
