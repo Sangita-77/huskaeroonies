@@ -5,7 +5,8 @@
 .footerWrap .footerBottom .row {display: flex; align-items: center;}
 .footerWrap .footerBottom .row .footerBottomLeft {flex: 0 0 25.33%; width: 25.33%;}
 .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap {text-align: center; display: flex; flex-direction: column; align-items: center; padding-bottom: .75vw;}
-.footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:last-child > img {margin-top: -1vw;}
+.footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:first-child > img {width: 22.88vw; height: auto;}
+.footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:last-child > img {margin-top: -1vw; width: 14.94vw; height: auto;}
 .footerWrap .footerBottom .row .footerBottomCenter {flex: 0 0 38.33%; width: 38.33%; display: flex; justify-content: space-around; padding-top: 0vw; padding-left: 3vw;}
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol {color: #fff; padding-left: 0.94vw; border-left: 2px solid #fff;}
 .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol .footerTitleWrap {display: flex; column-gap: 0.7vw;}
