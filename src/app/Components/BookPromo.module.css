@@ -1,5 +1,5 @@
-.bookPromo {position: absolute; width: 19vw; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 0vw;   padding: .6vw .8vw; border: 3px solid var(--color-primary-dark); border-radius: 30px; background: var( --color-white); z-index: 9999; }
-.bookImage { width: 100%; display: flex; justify-content: center; align-items: center; }
+.bookPromo {position: absolute; width: 18.5vw; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 0vw; padding: .6vw 0.4vw .6vw 0vw; border: .15vw solid var(--color-primary-dark); border-radius: 1.5vw; background: var( --color-white); z-index: 9999;     box-shadow: 2px 5px 12px #000000; animation: float 6s ease-in-out infinite;}
+.bookImage {width: 105%; display: flex; justify-content: center; align-items: center; }
 
 .artwork {
   width: 100%;
@@ -17,27 +17,28 @@
 
 .bookBadge { background: url(../Images/New/BoneYellow.svg) no-repeat; background-size: contain; text-align: center; justify-content: center; display: flex; align-items: center; width: 5vw; height: 1.8vw;
     font-size: .6vw;}
-.bookTitle {background: url(../Images/New/RibbonIcon.svg) no-repeat; background-size: contain; text-align: center; justify-content: center; display: flex; align-items: center; width: 11vw; height: 2.5vw; font-size: 0.9vw; font-weight: bold;}
+.bookTitle {background: url(../Images/New/RibbonIcon.svg) no-repeat; background-size: contain; text-align: center; justify-content: center; display: flex; align-items: center; width: 10vw; height: 2.2vw; font-size: 0.9vw; font-weight: bold;}
 .bookTitle text {
   fill: #000;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 32px;
   letter-spacing: 1px;
 }
 
 
+
 .buyButton,
 .cartButton {
-  width: 100%;
+  width: 92%;
   border-radius: 2vw;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: .5vw;
-  font-weight: 900;
+  font-size: .9vw;
   text-decoration: none;
   cursor: pointer;
   transition: transform 0.2s ease;
+  font-family: var(--font-primary);
 }
 
 .buyButton:hover,
@@ -48,15 +49,27 @@
 .buyButton {
   color: var(--color-white);
   background: linear-gradient(#08a4ed, #0060bd);
-  border-top: .1vw;
-  border: 5px solid #0756a6;
+  border-bottom: .3vw solid #0756a6;
 }
-
+.cartButton img{width: 1.6vw;}
 .cartButton {
   color: #10245b;
   background: #fff;
-  border: 5px solid #14265e;
-  box-shadow: 0 7px 0 #c8c8c8;
+  padding: .1vw;
+  border-bottom: .3vw solid #14265e;
 }
 
-.arrow { font-size: 1.5vw; }
+.arrow { font-size: 1.3vw; }
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+

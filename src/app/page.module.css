@@ -68,7 +68,7 @@
 
 /* .MapHolder svg{display: none;} */
 .MapHolder {
-  height: 147vh;
+  height: 67vw;
   overflow: auto;
   cursor: grab;
   scrollbar-width: none;     
@@ -114,7 +114,7 @@
 }
 .mobileMapOverlay { z-index: 96; position: absolute; top: 0; }
 .MapImage {
-  width: 138vw;
+  width: 130vw;
   height: auto; 
   max-width: none;
   user-select: none;
@@ -126,7 +126,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 }
 
 .header {
-    z-index: 2000;
+    z-index: 20000;
     background: linear-gradient(0deg, #029ffc00 2%, #029ffcf5 36%);
     width: 100%;
     position: sticky;
@@ -150,7 +150,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 
 /* .headercontainer img{width: 17vw; padding-top: 1.2vw; object-fit: contain; height: 6vw;} */
-.nav { display: flex; align-items: center; }
+.nav { display: flex; align-items: center;}
 
 .navList {
   display: flex;
@@ -253,16 +253,6 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
   position: absolute;
   opacity: 0.5;
 }
-/* .river--1 {
-  width: 7.5%;
-  left: 51%;
-  top: 26.5%;
-  height: 13.75%;
-  transform: rotate(-52deg);
-  -webkit-animation: flow 5s infinite linear;
-  animation: flow 5s infinite linear;
-  mix-blend-mode: luminosity
-} */
 .Bridge{z-index: 99; position: absolute; -webkit-user-drag: none; user-select: none;
     width: 33.2vw;
     height: 52vw;
@@ -274,15 +264,11 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .mobileBridge2 {display: none;}
 
 .river--2 {
-  /* top: 40.3vw;
-  left: 33vw; */
   -webkit-animation: flow 5s infinite linear;
   animation: flow 10s infinite linear;
   box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
   -webkit-mask: url("../app/Images/River.svg") center / contain no-repeat;
   mask: url("../app/Images/River.svg") center / contain no-repeat;
-  /* width: 42.4vw;
-  height: 57.4vw; */
     top: -4.4vw;
     left: 25.9vw;
     width: 29.3vw;
@@ -302,42 +288,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
     transform: rotate(-54deg);
 }
 
-
-
-.book{z-index: 99;background: #fff; width: 10vw; height: 6.5vw; border-radius: 1.5vw; position: absolute; 	animation: float 6s ease-in-out infinite; display: flex; justify-content: center; align-items: center; padding: .1vw; box-shadow: 0 0 .7vw .2vw #2bbfff;
-}
-.book a{position: relative;}
-.book a::before{content: "";
-    background: url("../app/Images/Book.gif");
-    width: 3vw;
-    height: 2.8vw;
-    margin-bottom: -.5vw;
-    display: flex;
-    background-size: contain;
-    background-repeat: no-repeat;}
-.book a{text-decoration: none; color: #151B58; font-size: 1.5vw; text-align: center; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; border: solid .2vw #151B58; border-radius: 1.5vw;}
-.book::before{content: ""; width: 1.5vw; height: 1.5vw; position: absolute; background-size: contain;}
-.book1{top: 29vw; left: 31vw;}
-.book2{top: 30vw; left: 78vw;}
-
 /* ....................... Paw print div....................... */
-.Paw_Blue{ height: 42vw; width: 49vw; }
-.Paw_Pink{ z-index: 100; height: 45vw; width: 36vw;}
-.book1Paw{top: 32vw; left: 22vw;} 
-.book2Paw{ top: 35vw; left: 22vw;} 
-.book1Paw , .book2Paw{ display: none; position: absolute; z-index: 100;} 
-.book1Paw.show, .book2Paw.show { display: flex; }
-/* .............Paw print div............. */
-
-.book3, .book4 {top: 46vw; left: 28vw; /*background: #746b6be3;*/ /*animation: float 0s ease-in-out infinite;*/ width: 11vw; /*box-shadow: none;*/}
-/* .book3 a::before, 
-.book4 a::before{background: url("../app/Images/Book.svg") center / contain no-repeat; width: 2vw;} */
-.book3 a, .book4 a{/*opacity: .5;*/ font-size: 1.3vw; /*line-height: 1.5vw;*/}
-.book4 {top: 50vw; left: 77vw;}
-.book1::before{    width: 8.5vw; height: 2.5vw; position: absolute; top: 1.3vw; background: url("../app/Images/ICE_ICON.svg") no-repeat; left: .5vw; background-size: contain;}
-.book2::before{width: 2.5vw; height: 2.5vw; right: 1.1vw; top: 1vw; background: url("../app/Images/FLAG.svg") no-repeat; right: .5vw; background-size: contain;} 
-.book3::before{width: 9.5vw; height: 3.1vw; position: absolute; top: 0.1vw; background: url("../app/Images/neighborhoodpupsicon.svg") no-repeat; left: 1vw; background-size: contain;}
-.book4::before{width: 9.5vw; height: 3.1vw; position: absolute; top: 0.6vw; background: url("../app/Images/campingicon.svg") no-repeat; left: 0.8vw; background-size: contain;}
 .BannerLogo{z-index: 9; width: 36vw; height: 9vw; position: absolute; top: 9.5vw; left: 31vw;}
 .Welcome{z-index: 999; text-shadow: 0 0 20px #000000; color: #fff; font-size: 2.1vw; position: absolute; top: 16.8vw; left: 39vw;}
 /* cloud animation start */
@@ -476,8 +427,8 @@ pointer-events: none;
 
 .FireAnimation {
   position: absolute;
-  top: 52vw;
-  left: 67.5vw;
+  top: 69vw;
+  left: 77.5vw;
   pointer-events: none;
   z-index: 99;
 }
@@ -961,13 +912,12 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .BannerLogo{width: 65vw; height: 18vw; top: 9.5vw; left: 17vw; z-index: 99;}
 .Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
 
-/* .SnowFall{} */
-.river--2 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat; mask: none; width: 21.3vw; height: 59.1vw;         top: 146.6vw; left: .9vw; width: 146.3vw; height: 150.1vw; z-index: 50;}
+/* .river--2 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat; mask: none; width: 21.3vw; height: 59.1vw;         top: 146.6vw; left: .9vw; width: 146.3vw; height: 150.1vw; z-index: 50;}
 .river--3 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile2.svg") center / contain no-repeat; mask: none; top: 44vw; left: 78vw; width: 29.3vw; height: 93.1vw; transform: rotate(0deg); z-index: 50;}
 .river--4 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile2.svg") center / contain no-repeat; mask: none;         width: 68.3vw;
         height: 54.1vw;
         top: 353vw;
-        left: -7vw;  transform: rotate(0deg); z-index: 50;}
+        left: -7vw;  transform: rotate(0deg); z-index: 50;} */
 .heroVideoContainer .GirlDog, .heroVideoContainer .BoyDog{ width: 35vw; top: -42vw; }
 
 /*.........Banner End.........*/
