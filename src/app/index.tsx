@@ -4,7 +4,7 @@ import { useMemo, useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 ////////////////////////////////////////
 import Image from "next/image";
-import Map from "./Images/Banner.webp";
+import Map from "./Images/New/HomeMap.webp";
 import MobileMap from "./Images/MobileMap.webp";
 import MobileMapOverlay from "./Images/MobileMapOverlay.webp";
 import Bridge from "./Images/bridge.svg";
@@ -20,8 +20,9 @@ import BannerLogo from "./Images/bannerLogo.svg";
 import HomeFlipBook from "./Components/HomeFlipBook";
 import styless from "./flip-book/flip-book.module.css";
 import BookPromo from "../app/Components/bookCard";
-// import BookPromo from "../app/Components/bookCard";
 import SnowDayBookIcon from "./Images/New/SnowDayBookIcon.svg";
+import NeighborhoodPups from "./Images/New/NeighborhoodPups.webp";
+import TheBigRace from "./Images/New/TheBigRace.webp";
 
 const book1 = [
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_6_resize.jpg',
@@ -41,24 +42,9 @@ const bookNames = [
 // const books = [book1];
 
 const books = [
-  {
-    id: 1,
-    bookNumber: "ONE",
-    title: "Neighborhood Pups",
-    bookArt: SnowDayBookIcon,
-    buyNowHref: "/shop/book-one",
-    top: "8vw",
-    left: "40vw",
-  },
-  {
-    id: 2,
-    bookNumber: "TWO",
-    title: "The Snow Day",
-    bookArt: SnowDayBookIcon,
-    buyNowHref: "/shop/book-two",
-    top: "8vw",
-    left: "1vw",
-  },
+  { id: 1, bookNumber: "ONE", title: "Neighborhood Pups", bookArt: NeighborhoodPups, buyNowHref: "/shop/book-one", top: "55vw", left: "25vw", },
+  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBookIcon, buyNowHref: "/shop/book-two", top: "36vw", left: "30vw", },
+  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/shop/book-two", top: "43vw", left: "80vw", },
 ];
 
 export default function Home() {
@@ -148,28 +134,6 @@ export default function Home() {
     };
   }, []);
 
-// const handleBookClick = (bookNumber: 1 | 2, href: string) =>
-//   (e: React.MouseEvent) => {
-//     e.preventDefault();
-
-//     // Disable paw animation on mobile devices
-//     if (window.matchMedia("(max-width: 768px)").matches) {
-//       router.push(href);
-//       return;
-//     }
-
-//     if (activePaw) return;
-
-//     const paw = bookNumber === 1 ? "book1" : "book2";
-//     const delay = bookNumber === 1 ? 10000 : 9000;
-
-//     setActivePaw(paw);
-
-//     timeoutRef.current = window.setTimeout(() => {
-//       router.push(href);
-//     }, delay);
-//   };
-
 const [isIOS, setIsIOS] = useState(false);
 
 useEffect(() => {
@@ -220,10 +184,11 @@ useEffect(() => {
           </div>
         ))}
       </div>
-      <div className={`${styles.river} ${styles["river--2"]}`}></div>
+      {/* River Start */}
+      {/* <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
-      <div className={`${styles.river} ${styles["river--4"]}`}></div>
-      {/**/}
+      <div className={`${styles.river} ${styles["river--4"]}`}></div> */}
+      {/* River End */}
       
       {/* /////////////////////////////////////// */}
       {/* <div className={`${styles.book} ${styles["book1"]}`}><a href="/dev/huskaeroonies/flip-book?book=1">Snow Day</a></div> */}
@@ -245,10 +210,6 @@ useEffect(() => {
           />
         ))}
       </div> 
-      {/* /////////////////////////////////////////// */}
-      
-      <div className={`${styles.book} ${styles["book3"]}`}><a href="#">Neighborhood Pups</a></div>
-      <div className={`${styles.book} ${styles["book4"]}`}><a href="#">Camping Day</a></div> 
       <div className={styles.SnowFall} aria-hidden="true">
         {snowflakes.map((snowflake) => (
           <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>
@@ -277,38 +238,12 @@ useEffect(() => {
           </div>
         </div>
       </div>
-      {/* ////////////////////////// */}
-      <div className={`${styles.book1Paw} ${activePaw === "book1" ? styles.show : ""}`}>
-      {/* <div className={styles.book1Paw}> */}
-
-        <video
-          className={styles.Paw_Pink}
-          autoPlay
-          muted
-          loop
-          playsInline
-          >
-          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/Paw_pink.webm" type="video/webm" />
-        </video>
-      </div>
-      <div className={`${styles.book2Paw} ${activePaw === "book2" ? styles.show : ""}`}>
-        <video
-          className={styles.Paw_Blue}
-          autoPlay
-          muted
-          loop
-          playsInline
-          >
-          <source src="https://dreamlogodesign.net/dev/animationsite/animationHtml/Paw_Blue.webm" type="video/webm" />
-        </video>
-      </div>
-      {/* /////////////////////////// */}
       <Image src={BannerLogo} alt="Bridge" priority className={styles.BannerLogo} />
       <div className={styles.Welcome}>Welcome to Huskyville!</div>
-      <Image src={Bridge} alt="Bridge" priority className={styles.Bridge} />
+      {/* <Image src={Bridge} alt="Bridge" priority className={styles.Bridge} />
 
       <Image src={Bridge1} alt="Bridge1" priority className={styles.mobileBridge1} />
-      <Image src={Bridge2} alt="Bridge2" priority className={styles.mobileBridge2} />
+      <Image src={Bridge2} alt="Bridge2" priority className={styles.mobileBridge2} /> */}
 
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
       {/* <Image src={Map} alt="Book Map" priority className={`${styles.MapImage} ${styles.desktopMap}`} /> */}
