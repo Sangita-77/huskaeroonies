@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useId } from "react";
 import defaultBookArt from "../Images/New/SnowDayBookIcon.svg";
 import styles from "./BookPromo.module.css";
+import CartIcon from "../Images/New/CartIcon.svg";
 
 interface BookPromoProps {
   bookArt?: StaticImageData | string;
@@ -44,11 +45,12 @@ export default function BookPromo({
         </div>
 
         <div className={styles.bookTitle}>
-          <svg viewBox="0 0 400 318" preserveAspectRatio="none">
+
+          <svg viewBox="0 0 400 300" preserveAspectRatio="none">
             <defs>
               <path
                 id={curveId}
-                d="M 0,300 A 205,200 0 0 1 400,300"
+                d="M 0,300 A 205,200 0 0 1 402,300"
               />
             </defs>
 
@@ -74,7 +76,7 @@ export default function BookPromo({
           onClick={onAddToCart}
           type="button"
         >
-          <span>ADD TO CART</span>
+          <img src={CartIcon.src} alt="Cart" /><span>ADD TO CART</span>
         </button>
       </div>
     </section>
