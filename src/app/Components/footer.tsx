@@ -10,15 +10,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ROUTES } from "@/constants/routes";
 import { useState } from "react";
-import HomeIcon from "../Images/home-icon01.svg";
-import BookIcon from "../Images/book-icon01.svg";
-import FavoriteIcon from "../Images/favorite-icon01.svg";
-import ProfileIcon from "../Images/profile-icon01.svg";
-import ExploreIcon from "../Images/New/exploreicon.svg";
-import ParentIcon from "../Images/New/forparenticon.svg";
-import YoutubeIcon from "../Images/New/youtubeicon.svg";
-import FacebbokIcon from "../Images/New/Facebookicon.svg";
-import InstaIcon from "../Images/New/Instagramicon.svg";
+// import HomeIcon from "../Images/home-icon01.svg";
+// import BookIcon from "../Images/book-icon01.svg";
+// import FavoriteIcon from "../Images/favorite-icon01.svg";
+// import ProfileIcon from "../Images/profile-icon01.svg";
+import ExploreIcon from "../Images/New/exploreicon.webp";
+import ParentIcon from "../Images/New/forparenticon.webp";
+import YoutubeIcon from "../Images/New/youtubeicon.webp";
+import FacebbokIcon from "../Images/New/facebookicon.webp";
+import InstaIcon from "../Images/New/Instagramicon.webp";
+import JoinPackM from "../Images/New/mobilejoinpack.webp";
+import FooterTopWave from "../Images/New/mobilefootertop.webp";
+import FooterBootomWave from "../Images/New/mobilefooterbg.webp";
 
 const exploreLinks = [
   { title: "All Books", href: "#book" },
@@ -35,6 +38,19 @@ const parentLinks = [
 export default function Footer() {
   const pathname = usePathname();
   const [email, setEmail] = useState("");
+
+
+  const [openAccordion, setOpenAccordion] = useState({
+    explore: true,
+    parents: false,
+  });
+
+  const toggleAccordion = (section: "explore" | "parents") => {
+    setOpenAccordion((prev) => ({
+      explore: section === "explore" ? !prev.explore : false,
+      parents: section === "parents" ? !prev.parents : false,
+    }));
+  };
 
   return (
     <>
@@ -77,12 +93,19 @@ export default function Footer() {
                   <a href="/dev/huskaeroonies"><Image src={Footerlogo} alt="Footer Logo" /></a>
                   <a href="/dev/huskaeroonies"><Image src={FooterDogs} alt="Footer Dogs" /></a>
                 </div>
+                <div className={styles.mobileSocial}>
+                  <div className={styles.socialMedialinks}>
+                    <a href="https://youtube.com/" target="_blank"><Image src={YoutubeIcon} alt="Youtube Icon" /></a>
+                    <a href="https://www.facebook.com/" target="_blank"><Image src={FacebbokIcon} alt="Facebook Icon" /></a>
+                    <a href="https://www.instagram.com/" target="_blank"><Image src={InstaIcon} alt="Insta Icon" /></a>
+                  </div>
+                </div>
               </div>
 
-              <div className={styles.footerBottomCenter}>
+              {/* <div className={styles.footerBottomCenter}>
                 <div className={styles.footerBottomCenterCol}>
                   <div className={styles.footerTitleWrap}>
-                    <Image src={ExploreIcon} alt="Home Icon" style={{ width: 32, height: 32 }} />
+                    <Image src={ExploreIcon} alt="Explore Icon" />
                     <h3>Explore</h3>
                   </div>
                   <ul className={styles.navList}>
@@ -102,7 +125,7 @@ export default function Footer() {
 
                 <div className={styles.footerBottomCenterCol}>
                   <div className={styles.footerTitleWrap}>
-                    <Image src={ParentIcon} alt="Home Icon" style={{ width: 32, height: 32 }} />
+                    <Image src={ParentIcon} alt="Parents Icon" />
                     <h3>For Parents</h3>
                   </div>
                   <ul className={styles.navList}>
@@ -119,9 +142,87 @@ export default function Footer() {
                     ))}
                   </ul>
                 </div>
+              </div> */}
+
+              <div className={styles.footerBottomCenter}>
+                {/* Explore Accordion */}
+                <div className={styles.footerBottomCenterCol}>
+                  <button
+                    type="button"
+                    className={styles.footerTitleWrap}
+                    onClick={() => toggleAccordion("explore")}
+                    aria-expanded={openAccordion.explore}
+                    aria-controls="footer-explore"
+                  >
+                    <div className={styles.footerTitle}>
+                      <Image src={ExploreIcon} alt="Explore Icon" />
+                      <h3>Explore</h3>
+                    </div>
+                    <span className={styles.accordionIcon}>
+                      {openAccordion.explore ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  <ul
+                    id="footer-explore"
+                    className={`${styles.navList} ${openAccordion.explore ? styles.navListActive : ""
+                      }`}
+                  >
+                    {exploreLinks.map((link) => (
+                      <li key={link.href} className={styles.navItem}>
+                        <Link
+                          href={link.href}
+                          className={`${styles.navLink} ${pathname === link.href ? styles.active : ""
+                            }`}
+                        >
+                          {link.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* For Parents Accordion */}
+                <div className={styles.footerBottomCenterCol}>
+                  <button
+                    type="button"
+                    className={styles.footerTitleWrap}
+                    onClick={() => toggleAccordion("parents")}
+                    aria-expanded={openAccordion.parents}
+                    aria-controls="footer-parents"
+                  >
+                    <div className={styles.footerTitle}>
+                      <Image src={ParentIcon} alt="Parents Icon" />
+                      <h3>For Parents</h3>
+                    </div>
+                    <span className={styles.accordionIcon}>
+                      {openAccordion.parents ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  <ul
+                    id="footer-parents"
+                    className={`${styles.navList} ${openAccordion.parents ? styles.navListActive : ""
+                      }`}
+                  >
+                    {parentLinks.map((link) => (
+                      <li key={link.href} className={styles.navItem}>
+                        <Link
+                          href={link.href}
+                          className={`${styles.navLink} ${pathname === link.href ? styles.active : ""
+                            }`}
+                        >
+                          {link.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
               <div className={styles.footerBottomRight}>
+
+                {/* For Desktop  */}
                 <div className={styles.newsletterWrap}>
                   <h3>Join the Pack!</h3>
                   <p>Get updates, new books, and special offers.</p>
@@ -136,6 +237,23 @@ export default function Footer() {
                     <button type="submit" className={styles.button}> Send </button>
                   </form>
                 </div>
+
+                {/* For Mobile  */}
+                <div className={styles.newsletterWrapM}>
+                  <Image src={FooterTopWave} alt="" />
+                  <Image src={JoinPackM} alt="Join the pack" className={styles.joinPackLogo}/>
+                  <form className={styles.form} >
+                    <input type="email"
+                      placeholder="Email Address"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className={styles.input}
+                    />
+                    <button type="submit" className={styles.button}> Subscribe </button>
+                  </form>
+                  <Image src={FooterBootomWave} alt="" />
+                </div>
               </div>
 
             </div>
@@ -148,16 +266,16 @@ export default function Footer() {
               <p><span>© 2026 Huskeroonies. All rights reserved.</span> <a href="#" className="bottomLink">Teams & Conditions</a> <a href="#" className="bottomLink">Privacy Policy</a> </p>
             </div>
             <div className={styles.socialMedialinks}>
-              <a href="https://youtube.com/" target="_blank"><Image src={YoutubeIcon} alt="Youtube Icon"/></a>
-              <a href="https://www.facebook.com/" target="_blank"><Image src={FacebbokIcon} alt="Facebook Icon"/></a>
-              <a href="https://www.instagram.com/" target="_blank"><Image src={InstaIcon} alt="Insta Icon"/></a>
+              <a href="https://youtube.com/" target="_blank"><Image src={YoutubeIcon} alt="Youtube Icon" /></a>
+              <a href="https://www.facebook.com/" target="_blank"><Image src={FacebbokIcon} alt="Facebook Icon" /></a>
+              <a href="https://www.instagram.com/" target="_blank"><Image src={InstaIcon} alt="Insta Icon" /></a>
             </div>
           </div>
         </div>
       </footer>
-    <div>
+      <div>
 
-    </div>
+      </div>
     </>
   );
 }
