@@ -35,7 +35,7 @@ const book1 = [
 ];
 
 const bookNames = [
-  'Book 1: Snow Day',
+  'Sample Read',
 ];
 
 // const books = [book1];
