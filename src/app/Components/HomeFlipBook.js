@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useId } from "react";
 import styles from "../page.module.css";
 // import Header from "../Components/header";
 // import Footer from "../Components/footer";
@@ -48,9 +49,9 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
         height: 522,
         size: 'stretch',
         minWidth: 280,
-        maxWidth: 457.5,
+        maxWidth: 1457.5,
         minHeight: 320,
-        maxHeight: 522,
+        maxHeight: 1522,
         drawShadow: true,
         flippingTime: 900,
         usePortrait: false,
@@ -106,6 +107,8 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
   const firstVisiblePage = Math.min(currentPage + 1, images.length);
   const secondVisiblePage = Math.min(currentPage + 2, images.length);
 
+  const curveId = useId();
+
   return (
     <>
       {/* <Header logo={true} /> */}
@@ -114,9 +117,59 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
         {/* <div className="SampleBeforewave">
           <Image src={sampleReadWave} alt="Wave" />
         </div> */}
-        <h2 className="book-title">
+        
+        {/* <h2 className="book-title">
           {bookNames[activeBook] || `Book ${activeBook + 1}`}
-        </h2>
+        </h2> */}
+
+        <div className="totalPageNoWrap">
+          <div className="totalPageNo">
+            <span>{images.length}</span> Pages
+          </div>
+        </div>
+
+        <div className="bookTitle">
+          <svg className="curveTextWrap" viewBox="0 0 1024 106" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <path
+                id={curveId}
+                d="M 10,80 A 700,400 0 0 1 1024,80"
+              />
+            </defs>
+
+            <text className="curveText">
+              <textPath
+                href={`#${curveId}`}
+                startOffset="50%"
+                textAnchor="middle"
+              >
+                {bookNames[activeBook] || `Book ${activeBook + 1}`}
+              </textPath>
+            </text>
+          </svg>
+        </div>
+        <div className="bookSubTitle">
+          <svg className="curveSubTextWrap" viewBox="0 0 1024 56" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <path
+                id="subText"
+                d="M 10,80 A 800,300 0 0 1 1024,80"
+              />
+            </defs>
+
+            <text className="curveSubText">
+              <textPath
+                href="#subText"
+                startOffset="50%"
+                textAnchor="middle"
+              >
+                Enjoy A Little Story With Our Husky Pals
+              </textPath>
+            </text>
+          </svg>
+          </div>
+
+
         <div className="book-carousel">
           <button className="book-carousel-arrow1 bookLeftBtn1" onClick={() => switchBook(-1)} aria-label="Previous book"></button>
           <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick}>
