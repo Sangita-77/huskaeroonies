@@ -122,16 +122,22 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
           {bookNames[activeBook] || `Book ${activeBook + 1}`}
         </h2> */}
 
-        <div className={styles.bookTitle}>
-          <svg viewBox="0 0 1024 150" preserveAspectRatio="none">
+        <div className="totalPageNoWrap">
+          <div className="totalPageNo">
+            <span>{images.length}</span> Pages
+          </div>
+        </div>
+
+        <div className="bookTitle">
+          <svg className="curveTextWrap" viewBox="0 0 1024 106" preserveAspectRatio="xMidYMid meet">
             <defs>
               <path
                 id={curveId}
-                d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100"
+                d="M 10,80 A 700,400 0 0 1 1024,80"
               />
             </defs>
 
-            <text>
+            <text className="curveText">
               <textPath
                 href={`#${curveId}`}
                 startOffset="50%"
@@ -142,6 +148,26 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
             </text>
           </svg>
         </div>
+        <div className="bookSubTitle">
+          <svg className="curveSubTextWrap" viewBox="0 0 1024 56" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <path
+                id="subText"
+                d="M 10,80 A 800,300 0 0 1 1024,80"
+              />
+            </defs>
+
+            <text className="curveSubText">
+              <textPath
+                href="#subText"
+                startOffset="50%"
+                textAnchor="middle"
+              >
+                Enjoy A Little Story With Our Husky Pals
+              </textPath>
+            </text>
+          </svg>
+          </div>
 
 
         <div className="book-carousel">

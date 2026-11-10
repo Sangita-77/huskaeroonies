@@ -23,8 +23,10 @@ import BookPromo from "../app/Components/bookCard";
 import SnowDayBookIcon from "./Images/New/SnowDayBookIcon.svg";
 import NeighborhoodPups from "./Images/New/NeighborhoodPups.webp";
 import TheBigRace from "./Images/New/TheBigRace.webp";
+import SnowFall from "./Components/SnowFall";
 import Girldog from "./Images/New/girldog.webp";
 import Boydog from "./Images/New/boydog.webp";
+
 
 const book1 = [
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_6_resize.jpg',
@@ -77,22 +79,7 @@ export default function Home() {
   ],
   []
 );
-  const snowflakes = useMemo(() => Array.from({ length: 350 }, (_, index) => {
-    const isMedium = index >= 250 && index < 300;
-    const isLarge = index >= 300;
-    return {
-      id: index,
-      size: isLarge ? styles.snowflakeLarge : isMedium ? styles.snowflakeMedium : "",
-      style: {
-        "--snow-left": `${(index * 47) % 120 - 10}%`,
-        "--snow-drift": `${8 + (index * 13) % 24}px`,
-        "--snow-duration": `${7 + (index * 17) % 12}s`,
-        "--snow-delay": `-${(index * 29) % 19}s`,
-        "--snow-opacity": `${45 + (index * 11) % 50}%`,
-        "--snow-blur": `${(index % 3) - 1}px`,
-      } as React.CSSProperties,
-    };
-  }), []);
+
 
   let isDown = false;
   let startX = 0;
@@ -213,9 +200,7 @@ useEffect(() => {
         ))}
       </div> 
       <div className={styles.SnowFall} aria-hidden="true">
-        {snowflakes.map((snowflake) => (
-          <span key={snowflake.id} className={`${styles.snowflake} ${snowflake.size}`} style={snowflake.style}>❄</span>
-        ))}
+        <SnowFall count={200} className="homepageSnow" />
       </div>
       
       <div className={styles.FireAnimation} aria-hidden="true">

@@ -33,6 +33,9 @@
 .snowflakeLarge {
   font-size: 22px;
 }
+
+/* .flipbook-wrapper .SnowFall {top: 3.13vw !important;} */
+
 @-webkit-keyframes snowfall {
     from {
         -webkit-transform: translate3d(0, 0, 0) rotate(10deg);
