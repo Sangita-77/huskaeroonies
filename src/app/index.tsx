@@ -16,16 +16,20 @@ import Cloud3 from "./Images/cloud3.webp";
 import styles from "./page.module.css";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
-import BannerLogo from "./Images/bannerLogo.svg";
+import BannerLogo from "./Images/New/MainLogo.webp";
 import HomeFlipBook from "./Components/HomeFlipBook";
 import styless from "./flip-book/flip-book.module.css";
 import BookPromo from "../app/Components/bookCard";
-import SnowDayBookIcon from "./Images/New/SnowDayBookIcon.svg";
 import NeighborhoodPups from "./Images/New/NeighborhoodPups.webp";
 import TheBigRace from "./Images/New/TheBigRace.webp";
 import SnowFall from "./Components/SnowFall";
 import Girldog from "./Images/New/girldog.webp";
 import Boydog from "./Images/New/boydog.webp";
+import CampaingDayBookIcon from "./Images/New/CampaingDayBookIcon.webp";
+import FireWood from "./Images/New/FireWood.webp";
+import SnowDayBook from "./Images/New/SnowDayBook.webp";
+
+
 
 
 const book1 = [
@@ -46,9 +50,10 @@ const bookNames = [
 const bookpages = [book1];
 
 const books = [
-  { id: 1, bookNumber: "ONE", title: "Neighborhood Pups", bookArt: NeighborhoodPups, buyNowHref: "/shop/book-one", top: "55vw", left: "25vw", },
-  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBookIcon, buyNowHref: "/shop/book-two", top: "36vw", left: "30vw", },
-  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/shop/book-two", top: "43vw", left: "80vw", },
+  { id: 1, bookNumber: "ONE", title: "Neighborhood Pups", bookArt: NeighborhoodPups, buyNowHref: "/flip-book?book=1", top: "55vw", left: "25vw", },
+  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBook, buyNowHref: "/flip-book?book=2", top: "36vw", left: "30vw", },
+  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/flip-book?book=3", top: "43vw", left: "80vw", },
+  { id: 4, bookNumber: "FOUR", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "70vw", left: "82vw", },
 ];
 
 export default function Home() {
@@ -70,10 +75,7 @@ export default function Home() {
     { id: 2, image: Cloud2, style: { "--cloud-left": "-20vw", "--cloud-top": "12vw", "--cloud-delay": "-4s", "--cloud-duration": "40s" } as React.CSSProperties },
     { id: 3, image: Cloud3, style: { "--cloud-left": "-20vw", "--cloud-top": "8vw", "--cloud-delay": "-10s", "--cloud-duration": "40s" } as React.CSSProperties },
     { id: 4, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "11vw", "--cloud-delay": "-16s", "--cloud-duration": "40s" } as React.CSSProperties },
-    // { id: 5, image: Cloud2, style: { "--cloud-left": "-20vw", "--cloud-top": "14vw", "--cloud-delay": "-16s", "--cloud-duration": "40s" } as React.CSSProperties },
-    // { id: 6, image: Cloud3, style: { "--cloud-left": "-20vw", "--cloud-top": "18vw", "--cloud-delay": "-20s", "--cloud-duration": "40s" } as React.CSSProperties },
     { id: 7, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "13vw", "--cloud-delay": "-24s", "--cloud-duration": "40s" } as React.CSSProperties },
-    // { id: 8, image: Cloud2, style: { "--cloud-left": "-20vw", "--cloud-top": "7vw", "--cloud-delay": "-28s", "--cloud-duration": "40s" } as React.CSSProperties },
     { id: 9, image: Cloud3, style: { "--cloud-left": "-20vw", "--cloud-top": "10vw", "--cloud-delay": "-32s", "--cloud-duration": "40s" } as React.CSSProperties },
     { id: 10, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "18vw", "--cloud-delay": "-36s", "--cloud-duration": "40s" } as React.CSSProperties },
   ],
@@ -202,7 +204,7 @@ useEffect(() => {
       <div className={styles.SnowFall} aria-hidden="true">
         <SnowFall count={200} className="homepageSnow" />
       </div>
-      
+      <Image alt="FireWood" src={FireWood} className={styles.FireWood}/>
       <div className={styles.FireAnimation} aria-hidden="true">
     <div className={styles.smoke_holder}>
       <span></span><span></span><span></span><span></span><span></span><span></span>
