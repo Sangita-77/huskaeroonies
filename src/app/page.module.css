@@ -66,6 +66,20 @@
 /* End Global */
 
 
+
+/* Snow container Start */
+.homepageSnow{ width: 10vw; position: absolute;}
+/* Snow container Start */
+
+
+
+
+
+
+
+
+
+
 /* .MapHolder svg{display: none;} */
 .MapHolder {
   height: 67vw;
@@ -144,6 +158,10 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
     display: flex;
     gap: 16vw;
 }
+
+
+
+
 
 
 
@@ -347,53 +365,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 
 
-/* Hill_BG Start */
-/* Hill_BG End */
-
-
-
-
-
-.SnowFall {pointer-events: none;
-pointer-events: none;
-    z-index: 99;
-    border-radius: 100%;
-    width: 34vw;
-    height: 14vw;
-    position: absolute;
-    top: 19vw;
-    left: 4vw;
-    overflow: hidden;
-  } 
-
-.snowflake {
-  position: absolute;
-  left: var(--snow-left);
-  color: #ffffff;
-  font-size: 1vw;
-  line-height: 1;
-  opacity: var(--snow-opacity);
-  /* filter: blur(var(--snow-blur)) drop-shadow(1px 2px rgb(255, 255, 255)); */
-  animation: snowfall var(--snow-duration) linear var(--snow-delay) infinite, snowFlicker 2.8s ease-in-out var(--snow-delay) infinite;
-  -webkit-animation: snowfall var(--snow-duration) linear var(--snow-delay) infinite, snowFlicker 2.8s ease-in-out var(--snow-delay) infinite;
-}
-
-.snowflakeMedium { font-size: 1vw; }
-.snowflakeLarge { font-size: 2vw; }
-
-@keyframes snowfall {
-  from { transform: translate3d(0, 0, 0) rotate(10deg); }
-  to { transform: translate3d(var(--snow-drift), 20vw, 0) rotate(10deg); }
-}
-
-@keyframes snowFlicker {
-  0%, 5% { opacity: var(--snow-opacity); }
-  50% { opacity: .01; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .snowflake { animation: none; }
-}
+.SnowFall {pointer-events: none; z-index: 3; border-radius: 100%; width: 34vw; height: 16vw; position: absolute; top: 31vw; left: 4vw; overflow: hidden; } 
 
 
 
@@ -960,7 +932,6 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .sampleReadBanner .Sbook::before {content: ""; width: 6.18vw; height: 6.18vw; background: url("./Images/BookBlack.svg"); background-size: contain; position: absolute; top: 2.4vw;}
 /* .FlipSnowFall{height: 40vw !important; width: 90vw !important; position: absolute !important; left: 7vw !important; top: 240vw !important;} */
 .FlipSnowFall{height: 40vw !important; width: 90vw !important; position: absolute !important; left: 7vw !important; top: 33vw !important;}
-.snowflake {font-size: 3vw;}
 }
 
 
