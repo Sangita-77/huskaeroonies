@@ -46,6 +46,15 @@ export default function BookPromo({
 
         <div className={styles.bookTitle}>
 
+
+          {/* <svg viewBox="0 0 400 300" preserveAspectRatio="none">
+            <defs>
+              <path
+                id={curveId}
+                d="M 0,300 A 205,200 0 0 1 402,300"
+              />
+            </defs> */}
+
         <svg viewBox="0 0 1024 150" preserveAspectRatio="none">
           <defs>
             <path
