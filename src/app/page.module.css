@@ -606,8 +606,8 @@ pointer-events: none;
 
 /* Dog Animated Start */
 .heroVideoContainer{position: relative;}
-.heroVideoContainer .GirlDog{z-index: 999; width: 18vw; position: absolute; top: -25vw; left: 1vw;}
-.heroVideoContainer .BoyDog{z-index: 999; width: 18vw; position: absolute; top: -25vw; right: 1vw;}
+.heroVideoContainer .GirlDog{z-index: 99; width: 23.25vw; height: auto; position: absolute; top: -31vw; left: 0vw;}
+.heroVideoContainer .BoyDog{z-index: 99; width: 26.06vw; height: auto; position: absolute; top: -28vw; right: 0vw;}
 /* Dog Animated End */
 
 /* Smoke Start */

@@ -23,6 +23,8 @@ import BookPromo from "../app/Components/bookCard";
 import SnowDayBookIcon from "./Images/New/SnowDayBookIcon.svg";
 import NeighborhoodPups from "./Images/New/NeighborhoodPups.webp";
 import TheBigRace from "./Images/New/TheBigRace.webp";
+import Girldog from "./Images/New/girldog.webp";
+import Boydog from "./Images/New/boydog.webp";
 
 const book1 = [
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_6_resize.jpg',
@@ -39,7 +41,7 @@ const bookNames = [
   'Sample Read',
 ];
 
-// const books = [book1];
+const bookpages = [book1];
 
 const books = [
   { id: 1, bookNumber: "ONE", title: "Neighborhood Pups", bookArt: NeighborhoodPups, buyNowHref: "/shop/book-one", top: "55vw", left: "25vw", },
@@ -261,21 +263,14 @@ useEffect(() => {
   <div className="homePageFlip">
   <div className={styless.scope}>
     <div className="app-shell">
-      <HomeFlipBook books={books} bookNames={bookNames} initialBook={initialBook} />
+      <HomeFlipBook books={bookpages} bookNames={bookNames} initialBook={initialBook} />
     </div>
   </div>
   </div>
 
 <div className={styles.heroVideoContainer}>
-  <video
-    key={`girl-${isIOS ? "ios" : "other"}`}
-    className={styles.GirlDog}
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="auto"
-  >
+  <Image src={Girldog} alt="Girldog" priority className={styles.GirlDog} />
+  {/* <video key={`girl-${isIOS ? "ios" : "other"}`} className={styles.GirlDog} autoPlay muted loop playsInline preload="auto" >
     <source
       src={
         isIOS
@@ -284,17 +279,10 @@ useEffect(() => {
       }
       type={isIOS ? "video/quicktime" : "video/webm"}
     />
-  </video>
+  </video> */}
 
-  <video
-    key={`boy-${isIOS ? "ios" : "other"}`}
-    className={styles.BoyDog}
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="auto"
-  >
+  <Image src={Boydog} alt="Girldog" priority className={styles.BoyDog} />
+  {/* <video key={`boy-${isIOS ? "ios" : "other"}`} className={styles.BoyDog} autoPlay muted loop playsInline preload="auto" >
     <source
       src={
         isIOS
@@ -303,7 +291,7 @@ useEffect(() => {
       }
       type={isIOS ? "video/quicktime" : "video/webm"}
     />
-  </video>
+  </video> */}
 </div>
   </main>
   <Footer/>
