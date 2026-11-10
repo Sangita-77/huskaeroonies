@@ -53,7 +53,7 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
         maxHeight: 522,
         drawShadow: true,
         flippingTime: 900,
-        usePortrait: true,
+        usePortrait: false,
         autoSize: true,
         maxShadowOpacity: 0.55,
         showCover: false,
@@ -109,11 +109,11 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
   return (
     <>
       {/* <Header logo={true} /> */}
-      <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible}`}>
+      <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible} homePageFlipWrap`}>
         {activeBook === 0 && <SnowFall count={100} />}
-        <div className="SampleBeforewave">
+        {/* <div className="SampleBeforewave">
           <Image src={sampleReadWave} alt="Wave" />
-        </div>
+        </div> */}
         <h2 className="book-title">
           {bookNames[activeBook] || `Book ${activeBook + 1}`}
         </h2>
