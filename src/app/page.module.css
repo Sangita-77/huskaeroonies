@@ -69,6 +69,7 @@
 
 /* Snow container Start */
 .homepageSnow{ width: 10vw; position: absolute;}
+.FireWood{position: absolute; z-index: 2; top: 70.8vw; left: 77.2vw; width: 3.5vw; height: auto;}
 /* Snow container Start */
 
 
@@ -307,7 +308,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 }
 
 /* ....................... Paw print div....................... */
-.BannerLogo{z-index: 9; width: 36vw; height: 9vw; position: absolute; top: 9.5vw; left: 31vw;}
+.BannerLogo{z-index: 9; width: 44.5vw; height: auto; position: absolute; top: 9.5vw; left: 27vw; }
 .Welcome{z-index: 999; text-shadow: 0 0 20px #000000; color: #fff; font-size: 2.1vw; position: absolute; top: 16.8vw; left: 39vw;}
 /* cloud animation start */
 
@@ -677,7 +678,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .sampleReadBanner .Sbook1{top: 15vw; left: 28vw; }
 .sampleReadBanner .Sbook2{top: 19vw; left: 70vw;}
 .sampleReadBanner .Sbook.isActive {background: #151B58; color: #fff;}
-.sampleReadBanner .Sbook::before{content: ""; width: 2.4vw; height: 2.4vw; background: url("./Images/BookBlack.svg"); background-size: contain; position: absolute; top: .3vw;}
+
 .sampleReadBanner .Sbook.isActive::before{background: url("./Images/BookWhite.svg");  background-size: contain; }
 /* Sample Read End */
 
@@ -932,7 +933,6 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 /* .sampleReadBanner .Sbook2 {top: 318vw; left: 55vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;} */
 .sampleReadBanner .Sbook1 {top: 19vw; left: 8vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
 .sampleReadBanner .Sbook2 {top: 120vw; left: 55vw; width: 28.64vw; height: 15.67vw; font-size: 3.08vw; padding-top: 6.2vw; border-radius: 1.5vw;}
-.sampleReadBanner .Sbook::before {content: ""; width: 6.18vw; height: 6.18vw; background: url("./Images/BookBlack.svg"); background-size: contain; position: absolute; top: 2.4vw;}
 /* .FlipSnowFall{height: 40vw !important; width: 90vw !important; position: absolute !important; left: 7vw !important; top: 240vw !important;} */
 .FlipSnowFall{height: 40vw !important; width: 90vw !important; position: absolute !important; left: 7vw !important; top: 33vw !important;}
 }

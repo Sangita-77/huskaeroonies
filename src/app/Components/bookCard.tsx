@@ -3,7 +3,7 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useId } from "react";
-import defaultBookArt from "../Images/New/SnowDayBookIcon.svg";
+import defaultBookArt from "../Images/New/SnowDayBook.webp";
 import styles from "./BookPromo.module.css";
 import CartIcon from "../Images/New/CartIcon.svg";
 
@@ -46,16 +46,7 @@ export default function BookPromo({
 
         <div className={styles.bookTitle}>
 
-
-          {/* <svg viewBox="0 0 400 300" preserveAspectRatio="none">
-            <defs>
-              <path
-                id={curveId}
-                d="M 0,300 A 205,200 0 0 1 402,300"
-              />
-            </defs> */}
-
-        <svg viewBox="0 0 1024 150" preserveAspectRatio="none">
+        <svg viewBox="120 0 780 150" preserveAspectRatio="none">
           <defs>
             <path
               id={curveId}
