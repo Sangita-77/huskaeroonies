@@ -46,24 +46,33 @@ export default function BookPromo({
 
         <div className={styles.bookTitle}>
 
-          <svg viewBox="0 0 400 300" preserveAspectRatio="none">
+
+          {/* <svg viewBox="0 0 400 300" preserveAspectRatio="none">
             <defs>
               <path
                 id={curveId}
                 d="M 0,300 A 205,200 0 0 1 402,300"
               />
-            </defs>
+            </defs> */}
 
-            <text>
-              <textPath
-                href={`#${curveId}`}
-                startOffset="50%"
-                textAnchor="middle"
-              >
-                {title}
-              </textPath>
-            </text>
-          </svg>
+        <svg viewBox="0 0 1024 150" preserveAspectRatio="none">
+          <defs>
+            <path
+              id={curveId}
+              d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100"
+            />
+          </defs>
+
+          <text>
+            <textPath
+              href={`#${curveId}`}
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              {title}
+            </textPath>
+          </text>
+        </svg>
         </div>
 
         <Link href={buyNowHref} className={styles.buyButton}>

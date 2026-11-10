@@ -8,6 +8,8 @@ import Image from "next/image";
 import sampleReadWave from "../Images/sampleReadWave.webp";
 import SnowFall from './SnowFall';
 import Clouds from "../Components/Clouds";
+import Girldog from "../Images/New/girldog.webp";
+import Boydog from "../Images/New/boydog.webp";
 
 const EMPTY_PAGES = [];
 
@@ -158,9 +160,9 @@ useEffect(() => {
       </section>
       <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible}`}>
         {activeBook === 0 && <SnowFall count={100} />}
-        <div className="SampleBeforewave">
+        {/* <div className="SampleBeforewave">
           <Image src={sampleReadWave} alt="Wave" />
-        </div>
+        </div> */}
         <h2 className="book-title">
           {bookNames[activeBook] || `Book ${activeBook + 1}`}
         </h2>
@@ -200,6 +202,32 @@ useEffect(() => {
         {/* <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
       </div> */}
+      </div>
+
+      <div className={styles.heroVideoContainer}>
+        <Image src={Girldog} alt="Girldog" priority className={styles.GirlDog} />
+        {/* <video key={`girl-${isIOS ? "ios" : "other"}`} className={styles.GirlDog} autoPlay muted loop playsInline preload="auto" >
+          <source
+            src={
+              isIOS
+                ? "https://dreamlogodesign.net/dev/animationsite/animationHtml/girlDog.mov"
+                : "https://dreamlogodesign.net/dev/animationsite/animationHtml/girlDog.webm"
+            }
+            type={isIOS ? "video/quicktime" : "video/webm"}
+          />
+        </video> */}
+
+        <Image src={Boydog} alt="Girldog" priority className={styles.BoyDog} />
+        {/* <video key={`boy-${isIOS ? "ios" : "other"}`} className={styles.BoyDog} autoPlay muted loop playsInline preload="auto" >
+          <source
+            src={
+              isIOS
+                ? "https://dreamlogodesign.net/dev/animationsite/animationHtml/boyDog.mov"
+                : "https://dreamlogodesign.net/dev/animationsite/animationHtml/boyDog.webm"
+            }
+            type={isIOS ? "video/quicktime" : "video/webm"}
+          />
+        </video> */}
       </div>
 
       {showBuyPrompt && (
