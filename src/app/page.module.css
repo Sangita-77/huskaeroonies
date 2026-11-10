@@ -2,7 +2,7 @@
 :root {
   /* Primary colors */
   --color-primary: #087fd0;
-  --color-primary-dark: #14265e;
+  --color-primary-dark: #041033;
   --color-secondary: #ffb91d;
 
   /* Brand colors */
@@ -70,6 +70,7 @@
 /* Snow container Start */
 .homepageSnow{ width: 10vw; position: absolute;}
 .FireWood{position: absolute; z-index: 2; top: 70.8vw; left: 77.2vw; width: 3.5vw; height: auto;}
+.BlueRibbon{position: absolute; z-index: 2; left: 35vw; top: 15vw; width: 29.1vw; height: auto;}
 /* Snow container Start */
 
 
@@ -309,7 +310,14 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 /* ....................... Paw print div....................... */
 .BannerLogo{z-index: 9; width: 44.5vw; height: auto; position: absolute; top: 9.5vw; left: 27vw; }
-.Welcome{z-index: 999; text-shadow: 0 0 20px #000000; color: #fff; font-size: 2.1vw; position: absolute; top: 16.8vw; left: 39vw;}
+.Welcome{z-index: 999;  position: absolute;top: 14.9vw; left: 34vw; }
+.Welcome svg{ width: 31vw; height: 6vw;} 
+.Welcome text { fill: var(--color-white); letter-spacing: 1px; font-family: inherit; font-size: 52px; text-shadow: 5px 5px 1px var(--color-primary-dark); }
+.Welcome textPath { text-anchor: middle; }
+.PickAdv{position: absolute; top: 19vw; left: 34.3vw; z-index: 9;}
+.PickAdv svg{width: 31vw; height: 6vw;}
+.PickAdv textPath { text-anchor: middle; }
+.PickAdv text { fill: var(--color-primary-dark); letter-spacing: 1px; font-family: inherit; font-size: 27px; text-shadow: 3px 3px 1px var(--color-white); }
 /* cloud animation start */
 
 .frontCloudLayer,
@@ -366,8 +374,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 
 
-.SnowFall {pointer-events: none; z-index: 3; border-radius: 100%; width: 34vw; height: 16vw; position: absolute; top: 31vw; left: 4vw; overflow: hidden; } 
-
+.SnowFall {pointer-events: none; z-index: 3; border-radius: 100%; width: 34vw; height: 20vw; position: absolute; top: 28vw; left: 4vw; overflow: hidden; } 
 
 
 @keyframes float {

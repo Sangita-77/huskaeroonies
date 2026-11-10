@@ -5,9 +5,9 @@
   height: 100%;
   overflow: hidden;
   pointer-events: none;
-  z-index: 10;
+  z-index: 3;
 }
-
+.SnowFall{margin-top: 5vw;}
 .snowflake {
   position: absolute;
   top: -30px;
