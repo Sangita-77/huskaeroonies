@@ -9,6 +9,9 @@ import Image from "next/image";
 import sampleReadWave from "../Images/sampleReadWave.webp";
 import SnowFall from './SnowFall';
 // import Clouds from "../Components/Clouds";
+import Leftfoot from "../Images/New/leftfoot.webp"; 
+import Rightfoot from "../Images/New/rightfoot.webp"; 
+// import Adventuretext from "../Images/New/rightfoot.webp"; 
 
 const EMPTY_PAGES = [];
 
@@ -129,6 +132,7 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
         </div>
 
         <div className="bookTitle">
+          <span className='leftfoot'><Image alt="leftfoot" src={Leftfoot}/></span>
           <svg className="curveTextWrap" viewBox="0 0 1024 106" preserveAspectRatio="xMidYMid meet">
             <defs>
               <path
@@ -147,6 +151,7 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
               </textPath>
             </text>
           </svg>
+          <span className='rightfoot'><Image alt="leftfoot" src={Rightfoot}/></span>
         </div>
         <div className="bookSubTitle">
           <svg className="curveSubTextWrap" viewBox="0 0 1024 56" preserveAspectRatio="xMidYMid meet">
@@ -196,6 +201,8 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
         {/* <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
       </div> */}
+
+      {/* <span className='adventureText'><Image alt="leftfoot" src={Adventuretext}/></span> */}
       </div>
 
       {showBuyPrompt && (
