@@ -1,10 +1,21 @@
 .scope { position: relative;}
 .scope::after{content: ""; background: url("../Images/WaveSampleRead.webp"); position: absolute;}
 .scope :global(.flipbook-wrapper) {display: grid; gap: 1vw; justify-items: center; width: 100%;}
-.scope :global(.book-title) { margin: 0; font-size: 1.7vw; }
+/* .scope :global(.book-title) { margin: 0; font-size: 1.7vw; } */
+.scope :global(.bookTitle) {width: 60vw; height: 9vw; display: flex; justify-content: center; overflow: visible; position: relative; padding-top: 7vw; height: 13vw; justify-content: center;}
+.scope :global(.homePageFlipWrap .bookTitle)::before { content: ""; background: url("../Images/New/sampleunderline.webp") center no-repeat; width: 24.19vw; max-width: 100%; height: 2.75vw; margin: 0 auto; position: absolute; bottom: 0vw; left: 50%; transform: translateX(-50%); background-size: contain; }
+.scope :global(.curveTextWrap) { width: 100%; max-width: 1024px; overflow: visible; margin-bottom: -11vw; z-index: 2;}
+/* .scope :global(.homePageFlipWrap .curveTextWrap) {margin-bottom: -6vw;} */
+.scope :global(.curveText) {font-size: 100px; fill: #1E2780; stroke: #fff; stroke-width: 8px; stroke-linejoin: round; paint-order: stroke fill; filter: drop-shadow(3px 5px 0 #000); position: relative;}
+.scope :global(.curveText)::before {content: ""; background: url("../Images/WaveSampleRead.webp"); position: absolute; left: -1vw;}
+
+.scope :global(.bookSubTitle) {width: 100%; display: flex; justify-content: center; overflow: visible; position: relative;}
+.scope :global(.bookSubTitle .curveSubTextWrap) {width: 100%; max-width: 1024px; overflow: visible; margin-bottom: -2vw; margin-top: -0vw; z-index: 2;}
+.scope :global(.bookSubTitle .curveSubText) {font-size: 1.5vw; fill: #151B58; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 0.13vw;}
+
 .scope :global(.book-carousel) { width: min(1200px, 100%); max-width: 100%; display: grid; grid-template-columns: 2vw minmax(0, 1fr) 2vw; align-items: center; gap: 1vw; height: 640px;  position: relative;}
 
-.scope :global(.book-carousel)::before{content: ""; background: url("../Images/books.webp") center no-repeat; width: 1200px; max-width: 100%;
+.scope :global(.book-carousel)::before {content: ""; background: url("../Images/books.webp") center no-repeat; width: 1200px; max-width: 100%;
 height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; right: 0; background-size: contain;} 
 
 .scope :global(.book-carousel-arrow), 
@@ -62,12 +73,22 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.flipbook-wrapper .book-meta .page-count) {color: #000; }
 .HomeFlipBook {position: relative; z-index: 999;}
 
-.scope :global(.homePageFlipWrap .book-carousel) { width: min(893px, 100%); max-width: 100%; display: grid; grid-template-columns: 5vw minmax(0, 1fr) 5vw; align-items: center; gap: 1vw; height: 493px;  position: relative;}
-.scope :global(.homePageFlipWrap .book-carousel)::before {width: 903px; height: 509px; top: 24px; left: -46.8px; background-size: cover;} 
+.scope :global(.homePageFlipWrap .book-carousel) { width: min(55.81vw, 100%); max-width: 100%; display: grid; grid-template-columns: 5vw minmax(0, 1fr) 5vw; align-items: center; gap: 1vw; height: 30.81vw;  position: relative;}
+.scope :global(.homePageFlipWrap .book-carousel)::before {width: 56.44vw; height: 31.81vw; top: 1.5vw; left: -2.92vw; background-size: cover;} 
 .scope :global(.homePageFlipWrap .bookLeftBtn1),
 .scope :global(.homePageFlipWrap .bookRightBtn1) {visibility: hidden;}
 
+.scope :global(.totalPageNoWrap) {border: 4px solid #fff; border-radius: 50vw; box-shadow: 1.7px 7px 7px 0 rgba(0, 0, 0, 0.5); position: absolute; top: 18.5vw; left: 17vw;}
+.scope :global(.totalPageNoWrap .totalPageNo) {flex-direction: column; font-size: 0.88vw; width: 5.63vw; height: 5.63vw; display: flex; justify-content: center; align-items: center; color: #fff; background: linear-gradient(#151B58, #004DA8); border-bottom: 0.44vw solid #012369; border-radius: 50vw;}
+.scope :global(.totalPageNoWrap .totalPageNo span) {font-size: 1.7vw; line-height: 1.7vw;}
 
+
+@media (max-width: 2480px) {
+  .scope :global(.homePageFlipWrap .bookTitle)::before {bottom: -1.2vw;}
+}
+@media (max-width: 1880px) {
+  .scope :global(.homePageFlipWrap .bookTitle)::before {bottom: -0.5vw;}
+}
 @media (min-width: 769px) and (max-width: 1024px) {}
 @media (max-width: 1200px) {
   .scope :global(.book-title) {margin-bottom: 25px;}

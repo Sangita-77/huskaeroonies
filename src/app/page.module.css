@@ -837,6 +837,9 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 /* .scope :global(.homePageFlip .scope .app-shell .flipbook-wrapper) {z-index: 99 !important; margin-top: -10vw !important;} */
 
 
+
+
+
 /* -------- Responsive  */
 @media (min-width: 1025px) and (max-width: 1480px) {
     .MapHolder {height: auto;}
