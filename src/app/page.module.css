@@ -855,6 +855,9 @@ pointer-events: none;
 
 /* .homePageFlip .scope .app-shell .flipbook-wrapper {z-index: 999 !important; margin-top: -10vw !important;} */
 /* .scope :global(.homePageFlip .scope .app-shell .flipbook-wrapper) {z-index: 99 !important; margin-top: -10vw !important;} */
+.curved-logo { width: 100%; max-width: 550px; overflow: visible; } 
+.logo-text { font-family: 'Lilita One', sans-serif; font-size: 78px; fill: #172779; stroke: #fff; stroke-width: 8px; stroke-linejoin: round; paint-order: stroke fill; filter: drop-shadow(3px 5px 0 #000); }
+.bookTitle {}
 
 
 /* -------- Responsive  */

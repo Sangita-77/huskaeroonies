@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useId } from "react";
 import styles from "../page.module.css";
 // import Header from "../Components/header";
 // import Footer from "../Components/footer";
@@ -106,6 +107,8 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
   const firstVisiblePage = Math.min(currentPage + 1, images.length);
   const secondVisiblePage = Math.min(currentPage + 2, images.length);
 
+  const curveId = useId();
+
   return (
     <>
       {/* <Header logo={true} /> */}
@@ -114,9 +117,33 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
         {/* <div className="SampleBeforewave">
           <Image src={sampleReadWave} alt="Wave" />
         </div> */}
-        <h2 className="book-title">
+        
+        {/* <h2 className="book-title">
           {bookNames[activeBook] || `Book ${activeBook + 1}`}
-        </h2>
+        </h2> */}
+
+        <div className={styles.bookTitle}>
+          <svg viewBox="0 0 1024 150" preserveAspectRatio="none">
+            <defs>
+              <path
+                id={curveId}
+                d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100"
+              />
+            </defs>
+
+            <text>
+              <textPath
+                href={`#${curveId}`}
+                startOffset="50%"
+                textAnchor="middle"
+              >
+                {bookNames[activeBook] || `Book ${activeBook + 1}`}
+              </textPath>
+            </text>
+          </svg>
+        </div>
+
+
         <div className="book-carousel">
           <button className="book-carousel-arrow1 bookLeftBtn1" onClick={() => switchBook(-1)} aria-label="Previous book"></button>
           <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick}>
