@@ -94,7 +94,7 @@
   background-size: 100% 150%;
   animation: gradientWave 10s ease-in-out infinite;
 }
-.homePageFlip .scope .flipbook-wrapper{margin-top: -10vw !important; z-index: 99 !important;}
+.homePageFlip .scope .flipbook-wrapper{margin-top: -26vw !important; z-index: 99 !important;}
 
 
 @keyframes gradientWave {
@@ -122,9 +122,9 @@
 .MapImage { display: block; }
 .mobileMap {
   display: none;
-  width: 100vw;
+  width: 100%;
   height: auto;
-  margin-top: -4vw;
+  margin-top: 22vw;
   z-index: 0;
   position: relative;
 }
@@ -215,7 +215,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .mobileMenu { display: none; }
 
 .river svg{position: absolute; }
-.river{z-index: 99;
+.river{z-index: 2;
   filter: url(#turbulence);
   background: radial-gradient(
         1.5vw 6.28571vw at 1.95vw,
@@ -273,13 +273,8 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
   position: absolute;
   opacity: 0.5;
 }
-.Bridge{z-index: 99; position: absolute; -webkit-user-drag: none; user-select: none;
-    width: 33.2vw;
-    height: 52vw;
-    position: absolute;
-    top: 33vw;
-    left: 25.9vw;
-} 
+.BridgeOne{z-index: 3; -webkit-user-drag: none; -webkit-user-select: none; user-select: none; width: 16vw; height: auto; position: absolute; top: 52vw; left: 44vw; } 
+.BridgeTwo{z-index: 3; -webkit-user-drag: none; -webkit-user-select: none; user-select: none; width: 24vw; height: auto; position: absolute; top: 71vw; left: 34vw; transform: rotate(5deg);} 
 .mobileBridge1 {display: none;}
 .mobileBridge2 {display: none;}
 
@@ -287,37 +282,51 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
   -webkit-animation: flow 5s infinite linear;
   animation: flow 10s infinite linear;
   box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
-  -webkit-mask: url("../app/Images/River.svg") center / contain no-repeat;
-  mask: url("../app/Images/River.svg") center / contain no-repeat;
-    top: -4.4vw;
-    left: 25.9vw;
-    width: 29.3vw;
-    height: 93.1vw;
-      transform: rotate(34deg);
+  -webkit-mask: url("../app/Images/New/RiverMaskOne.webp") center / contain no-repeat;
+  mask: url("../app/Images/New/RiverMaskOne.webp") center / contain no-repeat;
+    top: 28.1vw;
+    left: 42.5vw;
+    width: 9.6vw;
+    height: 45vw;
+      transform: rotate(-34deg);
 }
 .river--3 {
   -webkit-animation: flow 5s infinite linear;
   animation: flow 10s infinite linear;
   box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
-  -webkit-mask: url("../app/Images/River1.svg") center / contain no-repeat;
-  mask: url("../app/Images/River1.svg") center / contain no-repeat;
-    width: 13.09379vw;
-    height: 50.3vw;
-    top: 46.893vw;
-    left: 46.5vw;
-    transform: rotate(-54deg);
+  -webkit-mask: url("../app/Images/New/RiverMaskTwo.webp") center / contain no-repeat;
+  mask: url("../app/Images/New/RiverMaskTwo.webp") center / contain no-repeat;
+    width: 16vw;
+    height: 52vw;
+    top: 41vw;
+    left: 40vw;
+    transform: rotate(30deg);
 }
+
+.river--4 {
+  -webkit-animation: flow 5s infinite linear;
+  animation: flow 10s infinite linear;
+  box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);
+  -webkit-mask: url("../app/Images/New/RiverMaskThree.webp") center / contain no-repeat;
+  mask: url("../app/Images/New/RiverMaskThree.webp") center / contain no-repeat;
+    top: 59vw;
+    left: 45.5vw;
+    width: 24vw;
+    height: 52.5vw;
+    transform: rotate(-36deg);
+}
+
 
 /* ....................... Paw print div....................... */
 .BannerLogo{z-index: 9; width: 44.5vw; height: auto; position: absolute; top: 9.5vw; left: 27vw; }
 .Welcome{z-index: 999;  position: absolute;top: 14.9vw; left: 34vw; }
 .Welcome svg{ width: 31vw; height: 6vw;} 
-.Welcome text { fill: var(--color-white); letter-spacing: 1px; font-family: inherit; font-size: 52px; text-shadow: 5px 5px 1px var(--color-primary-dark); }
+.Welcome text { fill: var(--color-white); letter-spacing: 1px; font-family: inherit; font-size: 52px; text-shadow: 5px 5px 1px var(--color-primary-dark);}
 .Welcome textPath { text-anchor: middle; }
 .PickAdv{position: absolute; top: 19vw; left: 34.3vw; z-index: 9;}
 .PickAdv svg{width: 31vw; height: 6vw;}
 .PickAdv textPath { text-anchor: middle; }
-.PickAdv text { fill: var(--color-primary-dark); letter-spacing: 1px; font-family: inherit; font-size: 27px; text-shadow: 3px 3px 1px var(--color-white); }
+.PickAdv text {fill: var(--color-primary-dark); stroke: var(--color-cream); stroke-width: 5px; stroke-linejoin: round; paint-order: stroke fill; font-size: 26px; letter-spacing: 2px;}
 /* cloud animation start */
 
 .frontCloudLayer,
@@ -891,10 +900,16 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 /*.........Header End.........*/
 
 /*.........Banner Start.........*/
-.MapHolder { height: 100vh; height: 100dvh; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
-.BannerLogo{width: 65vw; height: 18vw; top: 9.5vw; left: 17vw; z-index: 99;}
+.MapHolder { height: 100vh; height: 65dvh; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
+.BannerLogo{z-index: 99; width: 55vw; height: auto; top: 11vw; left: 23vw;}
 .Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
-
+.BlueRibbon{width: 33.1vw; height: auto; top: 18vw; left: 34.7vw;}
+.PickAdv svg{width: 41vw; height: auto;} 
+.PickAdv text{font-size: 29px; stroke-width: 2px;}
+.PickAdv {top: 23vw; left: 31.3vw;}
+.Welcome{top: 17.8vw; left: 33vw;}
+.Welcome svg{width: 37vw; height: auto;}
+.Welcome text{text-shadow: 1px 1px 0px var(--color-primary-dark);}
 /* .river--2 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile1.svg") center / contain no-repeat; mask: none; width: 21.3vw; height: 59.1vw;         top: 146.6vw; left: .9vw; width: 146.3vw; height: 150.1vw; z-index: 50;}
 .river--3 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile2.svg") center / contain no-repeat; mask: none; top: 44vw; left: 78vw; width: 29.3vw; height: 93.1vw; transform: rotate(0deg); z-index: 50;}
 .river--4 { -webkit-animation: flow 5s infinite linear; animation: flow 10s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175); -webkit-mask: url("../app/Images/RiverMobile2.svg") center / contain no-repeat; mask: none;         width: 68.3vw;

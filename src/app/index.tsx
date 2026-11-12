@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation";
 ////////////////////////////////////////
 import Image from "next/image";
 import Map from "./Images/New/HomeMap.webp";
-import MobileMap from "./Images/MobileMap.webp";
-import MobileMapOverlay from "./Images/MobileMapOverlay.webp";
-import Bridge from "./Images/bridge.svg";
+import MobileMap from "./Images/New/MobileMap.webp";
+// import MobileMapOverlay from "./Images/New/MobileMap.webp";
+import BridgeOne from "./Images/New/BridgeOne.webp";
+import BridgeTwo from "./Images/New/BridgeTwo.webp";
 import Bridge1 from "./Images/bridge1.svg";
 import Bridge2 from "./Images/bridge2.svg";
 import Cloud1 from "./Images/cloud1.webp";
@@ -177,9 +178,9 @@ useEffect(() => {
         ))}
       </div>
       {/* River Start */}
-      {/* <div className={`${styles.river} ${styles["river--2"]}`}></div>
+      <div className={`${styles.river} ${styles["river--2"]}`}></div>
       <div className={`${styles.river} ${styles["river--3"]}`}></div>
-      <div className={`${styles.river} ${styles["river--4"]}`}></div> */}
+      <div className={`${styles.river} ${styles["river--4"]}`}></div>
       {/* River End */}
       
       {/* /////////////////////////////////////// */}
@@ -250,16 +251,17 @@ useEffect(() => {
           </text>
         </svg>
         </div>
-      {/* <Image src={Bridge} alt="Bridge" priority className={styles.Bridge} />
+       <Image src={BridgeOne} alt="Bridge" priority className={styles.BridgeOne} />
+       <Image src={BridgeTwo} alt="Bridge" priority className={styles.BridgeTwo} />
 
-      <Image src={Bridge1} alt="Bridge1" priority className={styles.mobileBridge1} />
+      {/*<Image src={Bridge1} alt="Bridge1" priority className={styles.mobileBridge1} />
       <Image src={Bridge2} alt="Bridge2" priority className={styles.mobileBridge2} /> */}
 
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
       {/* <Image src={Map} alt="Book Map" priority className={`${styles.MapImage} ${styles.desktopMap}`} /> */}
 
       <Image src={MobileMap} alt="Book Map" priority className={styles.mobileMap} />
-      <Image src={MobileMapOverlay} alt="Book Map" priority className={`${styles.mobileMap} ${styles.mobileMapOverlay}`} />
+      {/* <Image src={MobileMapOverlay} alt="Book Map" priority className={`${styles.mobileMap} ${styles.mobileMapOverlay}`} /> */}
     </div>
       <svg width="0" height="0">
     <filter id="turbulence" x="0" y="0">
