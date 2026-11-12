@@ -3,12 +3,12 @@
 .scope :global(.flipbook-wrapper) {display: grid; gap: 1vw; justify-items: center; width: 100%;}
 .scope :global(.bookTitle) {width: 60vw; height: 9vw; display: flex; justify-content: center; overflow: visible; position: relative; height: 9vw; justify-content: center; z-index: 9;}
 .scope :global(.curveTextWrap) { width: 45vw; overflow: visible; margin-bottom: 0vw; z-index: 2;}
-.scope :global(.curveText) {font-size: 90px; fill: #1E2780; stroke: #fff; stroke-width: 8px; stroke-linejoin: round; paint-order: stroke fill; filter: drop-shadow(3px 5px 0 #000); position: relative;}
+.scope :global(.curveText) {font-size: 90px; fill: #1E2780; stroke: #fff; stroke-width: 8px; stroke-linejoin: round; paint-order: stroke fill; filter: drop-shadow(0px 3px 4px #0000009e); position: relative;}
 /* .scope :global(.curveText)::before {content: ""; background: url("../Images/New/leftfoot.webp"); position: absolute; left: -1vw; width: 4.06vw; height: 4.06vw;} */
 
-.scope :global(.bookSubTitle) {width: 100%; display: flex; justify-content: center; overflow: visible; position: relative;}
+.scope :global(.bookSubTitle) {width: 100%; display: flex; justify-content: center; overflow: visible; position: relative; margin-top: -5vw;}
 .scope :global(.bookSubTitle .curveSubTextWrap) {width: 40vw; height: 8vw; overflow: visible; margin-bottom: -2vw; margin-top: -0vw; z-index: 2;}
-.scope :global(.bookSubTitle .curveSubText) {font-size: 24px; fill: #151B58; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 4px;}
+.scope :global(.bookSubTitle .curveSubText) {font-size: 24px; fill: #151B58; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 3px;}
 
 .scope :global(.sampleUnderline) {margin-top: -5vw;}
 .scope :global(.sampleUnderline img) {width: 24.19vw; height: auto;}
@@ -19,7 +19,7 @@
 height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; right: 0; background-size: contain;} 
 
 .scope :global(.book-carousel-arrow), 
-.scope :global(.nav-btn) { border: 0; cursor: pointer; color: #fff; font-weight: 700; background: linear-gradient(135deg, #00c3d5, #0f6b8a); box-shadow: 0 6px 18px rgba(0, 132, 153, .35); }
+.scope :global(.nav-btn) { border: none; border-bottom: .3vw solid #151b58; cursor: pointer; font-weight: 700; color: var(--color-white); background: linear-gradient(#029BE3, #004DA8); box-shadow: 0vw 0vw 0vw 0.25vw #fff; }
 .scope :global(.book-carousel-arrow) { width: 52px; height: 52px; padding: 0 0 5px; border: 1px solid rgba(130, 237, 255, .48); border-radius: 50%; font-size: 3rem; line-height: 1; }
 .scope :global(.pageflip-stage) { width: 100%; display: grid; place-items: center;}
 
@@ -42,8 +42,10 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 
 .scope :global(.pageflip-content img) {display: flex; justify-content: center; align-items: center; object-fit: contain; height: 100%;  width: 100%; background: #fff; border-radius: 20px;}
 .scope :global(.page-number) {position: absolute; z-index: 2; bottom: 12px; color: rgba(20, 29, 32, 0); font-size: .78rem; }
-.scope :global(.nav-btn) { padding: 9px 29px; border-radius: 100px; }
-.scope :global(.nav-btn:disabled), .scope :global(.book-carousel-arrow:disabled) { opacity: .45; cursor: not-allowed; }
+.scope :global(.nav-btn) { padding: 1.125vw 1.125vw 0.69vw 1.125vw; border-radius: 50vw; }
+.scope :global(.nav-btn img) {width: 2vw; height: 2vw;}
+.scope :global(.nav-btn:disabled), 
+.scope :global(.book-carousel-arrow:disabled) { opacity: .45; cursor: not-allowed; }
 .scope :global(.page-count) { color: #d9f7fb; margin: 0 1vw;}
 .scope :global(.book-carousel-dots button) { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(217, 247, 251, .42); }
 .scope :global(.modal-backdrop) { position: fixed; z-index: 999; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0, 0, 0, 0.596); }
@@ -68,17 +70,17 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.book-carousel-dots) {gap: 30px;}
 .scope :global(.book-carousel-dots button) {background: #151b584d; width: 14px; height: 14px;}
 .scope :global(.book-carousel-dots button.is-active) {background: #151B58; width: 22px; height: 22px;}
-.scope :global(.flipbook-wrapper .book-meta) {margin-bottom: 6vw; margin-top: 1vw;}
-.scope :global(.flipbook-wrapper .book-meta .nav-btn) {font-family: var(--font-heading); font-weight: 500; font-size: 17px;}
-.scope :global(.flipbook-wrapper .book-meta .page-count) {color: #000; }
+.scope :global(.flipbook-wrapper .book-meta) {margin-bottom: 0.69vw; margin-top: 0.5vw; display: flex; align-items: end; justify-content: center;}
+/* .scope :global(.flipbook-wrapper .book-meta .nav-btn) {font-family: var(--font-heading); font-weight: 500; font-size: 17px;} */
+.scope :global(.flipbook-wrapper .book-meta .page-count) {color: #000; font-size: 1.5vw; background: url("../Images/New/pagebg.webp") no-repeat top center; background-size: cover; width: 15.31vw; height: 6.94vw; display: inline-block; text-align: center; padding: 3.25vw 1.25vw 1.31vw;}
 .HomeFlipBook {position: relative; z-index: 999;}
 
-.scope :global(.homePageFlipWrap .book-carousel) { width: min(55.81vw, 100%); max-width: 100%; display: grid; grid-template-columns: 5vw minmax(0, 1fr) 5vw; align-items: center; gap: 1vw; height: 30.81vw;  position: relative;}
+.scope :global(.homePageFlipWrap .book-carousel) { width: min(55.81vw, 100%); max-width: 100%; display: grid; grid-template-columns: 5vw minmax(0, 1fr) 5vw; align-items: center; gap: 1vw; height: 30.81vw;  position: relative; margin-top: -3vw;}
 .scope :global(.homePageFlipWrap .book-carousel)::before {width: 56.44vw; height: 31.81vw; top: 1.5vw; left: -2.92vw; background-size: cover;} 
 .scope :global(.homePageFlipWrap .bookLeftBtn1),
 .scope :global(.homePageFlipWrap .bookRightBtn1) {visibility: hidden;}
 
-.scope :global(.totalPageNoWrap) {border: 4px solid #fff; border-radius: 50vw; box-shadow: 1.7px 7px 7px 0 rgba(0, 0, 0, 0.5); position: absolute; top: 18.5vw; left: 17vw;}
+.scope :global(.totalPageNoWrap) {border: 4px solid #fff; border-radius: 50vw; box-shadow: 1.7px 7px 7px 0 rgba(0, 0, 0, 0.5); position: absolute; top: 14.5vw; left: 17vw;}
 .scope :global(.totalPageNoWrap .totalPageNo) {flex-direction: column; font-size: 0.88vw; width: 5.63vw; height: 5.63vw; display: flex; justify-content: center; align-items: center; color: #fff; background: linear-gradient(#151B58, #004DA8); border-bottom: 0.44vw solid #012369; border-radius: 50vw;}
 .scope :global(.totalPageNoWrap .totalPageNo span) {font-size: 1.7vw; line-height: 1.7vw;}
 
@@ -87,15 +89,23 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.leftfoot) {position: absolute; left: 10vw; top: 2.5vw;}
 .scope :global(.rightfoot) {position: absolute; right: 10.5vw; top: 2.5vw;}
 
+.scope :global(.homePageFlipWrap .adventureText) {margin-bottom: 6vw; text-align: center;}
+.scope :global(.homePageFlipWrap .adventureText img) {width: 16.25vw; height: auto; margin-bottom: 0.6vw;}
+.scope :global(.homePageFlipWrap .adventureText .exploreBtnWrap ) {transition: all .3s ease-in-out;}
+.scope :global(.homePageFlipWrap .adventureText .exploreBtnWrap ):hover {transform: translateY(-4px);}
+.scope :global(.homePageFlipWrap .adventureText .exploreBtnWrap a) { width: 21.19vw; height: 3.75vw; box-shadow: 0vw 0vw 0.25vw 0.25vw #fff; font-family: var(--font-heading); text-align: left; cursor: pointer; color: var(--color-white); background: linear-gradient(#029BE3, #004DA8); border-bottom: .3vw solid #151B58; border-radius: 10vw; outline: none; padding: .5vw 2vw; font-size: 1.63vw; position: relative; display: block; text-decoration: none; align-content: center; text-transform: uppercase; }
+.scope :global(.homePageFlipWrap .adventureText .exploreBtnWrap a)::after { content: ""; background: url(../Images//New/sendarrowicon.webp) center no-repeat; background-size: contain; width: 2.06vw; height: 1.19vw; position: absolute; top: 50%; right: 1.7vw; transform: translateY(-50%); }
 
 
 
-@media (max-width: 2480px) {
+
+
+/* @media (max-width: 2480px) {
   .scope :global(.homePageFlipWrap .bookTitle)::before {bottom: -1.2vw;}
 }
 @media (max-width: 1880px) {
   .scope :global(.homePageFlipWrap .bookTitle)::before {bottom: -0.5vw;}
-}
+} */
 @media (min-width: 769px) and (max-width: 1024px) {}
 @media (max-width: 1200px) {
   .scope :global(.book-title) {margin-bottom: 25px;}

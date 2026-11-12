@@ -12,7 +12,9 @@ import SnowFall from './SnowFall';
 import Leftfoot from "../Images/New/leftfoot.webp"; 
 import Rightfoot from "../Images/New/rightfoot.webp"; 
 import Sampleunderline from "../Images/New/sampleunderline.webp";
-// import Adventuretext from "../Images/New/rightfoot.webp"; 
+import Adventuretext from "../Images/New/adventure-img.webp"; 
+import Sliderpageprev from "../Images/New/pageleftarrow.webp"; 
+import Sliderpagenext from "../Images/New/pagerightarrow.webp"; 
 
 const EMPTY_PAGES = [];
 
@@ -197,15 +199,20 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
         </div>
 
         <div className="book-meta">
-          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}>Previous</button>
+          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}><Image alt="left Arrow" src={Sliderpageprev}/></button>
           <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
-          <button className="nav-btn" onClick={goNext} disabled={!ready}>Next</button>
+          <button className="nav-btn" onClick={goNext} disabled={!ready}><Image alt="Right Arrow" src={Sliderpagenext}/></button>
         </div>
         {/* <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
       </div> */}
 
-      {/* <span className='adventureText'><Image alt="leftfoot" src={Adventuretext}/></span> */}
+      <div className='adventureText'>
+        <Image alt="leftfoot" src={Adventuretext}/>
+        <div className='exploreBtnWrap'>
+          <a href='#'>Explore The Book</a>
+        </div>
+      </div>
       </div>
 
       {showBuyPrompt && (
