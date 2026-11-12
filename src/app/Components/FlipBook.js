@@ -15,6 +15,11 @@ import NeighborhoodPups from "../Images/New/NeighborhoodPups.webp";
 import TheBigRace from "../Images/New/TheBigRace.webp";
 import SnowDayBook from "../Images/New/SnowDayBook.webp";
 import CampaingDayBookIcon from "../Images/New/CampaingDayBookIcon.webp";
+import Sliderpageprev from "../Images/New/pageleftarrow.webp";
+import Sliderpagenext from "../Images/New/pagerightarrow.webp";
+import Popupfoot from "../Images/New/popupfoot.webp";
+import Teddyimg from "../Images/New/teddypopupimg.webp";
+import Trainimg from "../Images/New/trainpopupimg.webp";
 
 
 const EMPTY_PAGES = [];
@@ -40,6 +45,7 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
   const [ready, setReady] = useState(false);
   const [showBuyPrompt, setShowBuyPrompt] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
+  const activeBookNumber = booksmap[activeBook]?.bookNumber || "";
 
   useEffect(() => {
     setActiveBook(Math.max(0, Math.min(initialBook, bookCollections.length - 1)));
@@ -78,9 +84,9 @@ useEffect(() => {
         height: 522,
         size: 'stretch',
         minWidth: 280,
-        maxWidth: 457.5,
+        maxWidth: 1427.5,
         minHeight: 320,
-        maxHeight: 522,
+        maxHeight: 1522,
         drawShadow: true,
         flippingTime: 900,
         usePortrait: true,
@@ -177,7 +183,7 @@ useEffect(() => {
            <SnowFall count={100}  className={styles.FlipSnowFall}/>
         </div>
       </section>
-      <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible}`}>
+      <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible} flipbookPage`}>
         {activeBook === 0 && <SnowFall count={100} />}
         {/* <div className="SampleBeforewave">
           <Image src={sampleReadWave} alt="Wave" />
@@ -185,12 +191,20 @@ useEffect(() => {
         {/* <h2 className="book-title">
           {bookNames[activeBook] || `Book ${activeBook + 1}`}
         </h2> */}
+        <div className="totalPageNoWrap">
+          <div className="totalPageNo">
+            <span>{images.length}</span> Pages
+          </div>
+        </div>
+        <div className={styles.bookBadge}>
+          BOOK {activeBookNumber}
+        </div>
         <div className="bookTitle">
-          <svg className="curveTextWrap" viewBox="0 0 1024 106" preserveAspectRatio="xMidYMid meet">
+          <svg className="curveTextWrap" viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
             <defs>
               <path
                 id={curveId}
-                d="M 10,80 A 700,400 0 0 1 1024,80"
+                d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100"
               />
             </defs>
 
@@ -207,7 +221,10 @@ useEffect(() => {
         </div>
 
         <div className="book-carousel">
-          <button className="book-carousel-arrow bookLeftBtn" onClick={() => switchBook(-1)} aria-label="Previous book">‹</button>
+          {/* <button className="book-carousel-arrow bookLeftBtn" onClick={() => switchBook(-1)} aria-label="Previous book">‹</button> */}
+          <button className="book-carousel-arrow bookLeftBtn" onClick={() => switchBook(-1)} aria-label="Previous book">
+            <Image alt="Right Arrow" src={Sliderpageprev}/>
+          </button>
           <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick}>
             <div className="pageflip-book" ref={bookElement} key={activeBook}>
               {images.map((image, index) => (
@@ -221,24 +238,30 @@ useEffect(() => {
               ))}
             </div>
           </div>
-          <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">›</button>
+          {/* <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">›</button> */}
+          <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">
+            <Image alt="Right Arrow" src={Sliderpagenext}/>
+          </button>
         </div>
 
-        <div className="book-meta">
-          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}>Previous</button>
-
+        {/* <div className="book-meta">
+          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}>Previous</button>          
           <span className="page-count">
-          <span className="desktop-page-count">
-            Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}
-          </span>
-
-          <span className="mobile-page-count">
-            Page {Math.min(currentPage + 1, images.length)} / {images.length}
-          </span>
-        </span>
-          
+            <span className="desktop-page-count">
+              Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}
+            </span>
+            <span className="mobile-page-count">
+              Page {Math.min(currentPage + 1, images.length)} / {images.length}
+            </span>
+          </span>          
           <button className="nav-btn" onClick={goNext} disabled={!ready}>Next</button>
+        </div> */}
+        <div className="book-meta">
+          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}><Image alt="left Arrow" src={Sliderpageprev}/></button>
+          <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
+          <button className="nav-btn" onClick={goNext} disabled={!ready}><Image alt="Right Arrow" src={Sliderpagenext}/></button>
         </div>
+
         {/* <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
       </div> */}
@@ -270,12 +293,39 @@ useEffect(() => {
         </video> */}
       </div>
 
-      {showBuyPrompt && (
+      {/* {showBuyPrompt && (
         <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="buy-plan-title">
           <div className="modal-card">
             <h2 id="buy-plan-title">Want to read more then buy plan</h2>
             <p>You have finished the current book preview. Upgrade your plan to keep reading.</p>
             <div className="modal-actions"><button className="primary">Buy Plan</button><button className="secondary" onClick={() => setShowBuyPrompt(false)}>Close</button></div>
+          </div>
+        </div>
+      )} */}
+      {showBuyPrompt && (
+        <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="buy-plan-title">
+          <div className="modal-card">
+            <Image className="footImg" alt="" src={Popupfoot}/>
+            {/* <h2 id="buy-plan-title">Want to read more then buy plan</h2> */}
+            <div className='buyPlanTitle'>
+              <svg viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <path
+                    id="popText"
+                    d="M 174.75,100 A 1207.92,1207.92 0 0 1 849.25,100"
+                  />
+                </defs>
+                <text>
+                  <textPath href="#popText" startOffset="50%" textAnchor="middle" >
+                    Want to read more then buy plan
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+            <p>You have finished the current book preview. Upgrade your plan to keep reading.</p>
+            <div className="modal-actions"><button className="primary">Buy Plan</button><button className="secondary" onClick={() => setShowBuyPrompt(false)}>Close</button></div>
+            <Image className="teddyImg" alt="Teddy" src={Teddyimg}/>
+            <Image className="TrainImg" alt="Train" src={Trainimg}/>
           </div>
         </div>
       )}

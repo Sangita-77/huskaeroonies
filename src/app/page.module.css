@@ -882,7 +882,17 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 /* .homePageFlip .scope .app-shell .flipbook-wrapper {z-index: 999 !important; margin-top: -10vw !important;} */
 /* .scope :global(.homePageFlip .scope .app-shell .flipbook-wrapper) {z-index: 99 !important; margin-top: -10vw !important;} */
-
+.bookBadge {
+  text-align: center;
+    background: url(./Images/New/BoneYellow.svg) center no-repeat;
+    background-size: contain;
+    justify-content: center;
+    align-items: center;
+    width: 14.1vw;
+    height: 5.4vw;
+    font-size: 1.5vw;
+    display: flex;
+}
 
 
 
