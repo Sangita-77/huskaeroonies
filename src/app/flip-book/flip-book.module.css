@@ -1,17 +1,17 @@
 .scope { position: relative;}
 .scope::after{content: ""; background: url("../Images/WaveSampleRead.webp"); position: absolute;}
 .scope :global(.flipbook-wrapper) {display: grid; gap: 1vw; justify-items: center; width: 100%;}
-/* .scope :global(.book-title) { margin: 0; font-size: 1.7vw; } */
-.scope :global(.bookTitle) {width: 60vw; height: 9vw; display: flex; justify-content: center; overflow: visible; position: relative; padding-top: 7vw; height: 13vw; justify-content: center; z-index: 9;}
-.scope :global(.homePageFlipWrap .bookTitle)::before { content: ""; background: url("../Images/New/sampleunderline.webp") center no-repeat; width: 24.19vw; max-width: 100%; height: 2.75vw; margin: 0 auto; position: absolute; bottom: 0vw; left: 50%; transform: translateX(-50%); background-size: contain; }
-.scope :global(.curveTextWrap) { width: 100%; max-width: 1024px; overflow: visible; margin-bottom: -11vw; z-index: 2;}
-/* .scope :global(.homePageFlipWrap .curveTextWrap) {margin-bottom: -6vw;} */
-.scope :global(.curveText) {font-size: 100px; fill: #1E2780; stroke: #fff; stroke-width: 8px; stroke-linejoin: round; paint-order: stroke fill; filter: drop-shadow(3px 5px 0 #000); position: relative;}
+.scope :global(.bookTitle) {width: 60vw; height: 9vw; display: flex; justify-content: center; overflow: visible; position: relative; height: 9vw; justify-content: center; z-index: 9;}
+.scope :global(.curveTextWrap) { width: 45vw; overflow: visible; margin-bottom: 0vw; z-index: 2;}
+.scope :global(.curveText) {font-size: 90px; fill: #1E2780; stroke: #fff; stroke-width: 8px; stroke-linejoin: round; paint-order: stroke fill; filter: drop-shadow(3px 5px 0 #000); position: relative;}
 /* .scope :global(.curveText)::before {content: ""; background: url("../Images/New/leftfoot.webp"); position: absolute; left: -1vw; width: 4.06vw; height: 4.06vw;} */
 
 .scope :global(.bookSubTitle) {width: 100%; display: flex; justify-content: center; overflow: visible; position: relative;}
-.scope :global(.bookSubTitle .curveSubTextWrap) {width: 100%; max-width: 1024px; overflow: visible; margin-bottom: -2vw; margin-top: -0vw; z-index: 2;}
-.scope :global(.bookSubTitle .curveSubText) {font-size: 1.5vw; fill: #151B58; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 0.13vw;}
+.scope :global(.bookSubTitle .curveSubTextWrap) {width: 40vw; height: 8vw; overflow: visible; margin-bottom: -2vw; margin-top: -0vw; z-index: 2;}
+.scope :global(.bookSubTitle .curveSubText) {font-size: 24px; fill: #151B58; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 4px;}
+
+.scope :global(.sampleUnderline) {margin-top: -5vw;}
+.scope :global(.sampleUnderline img) {width: 24.19vw; height: auto;}
 
 .scope :global(.book-carousel) { width: min(1200px, 100%); max-width: 100%; display: grid; grid-template-columns: 2vw minmax(0, 1fr) 2vw; align-items: center; gap: 1vw; height: 640px;  position: relative; z-index: 9;}
 
@@ -84,8 +84,9 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 
 .scope :global(.leftfoot img),
 .scope :global(.rightfoot img) {width: 4.06vw; height: 4.06vw;}
-.scope :global(.leftfoot) {position: absolute; left: 10vw; top: 8vw;}
-.scope :global(.rightfoot) {position: absolute; right: 9.5vw; top: 8vw;}
+.scope :global(.leftfoot) {position: absolute; left: 10vw; top: 2.5vw;}
+.scope :global(.rightfoot) {position: absolute; right: 10.5vw; top: 2.5vw;}
+
 
 
 

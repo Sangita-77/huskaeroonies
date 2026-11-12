@@ -11,6 +11,7 @@ import SnowFall from './SnowFall';
 // import Clouds from "../Components/Clouds";
 import Leftfoot from "../Images/New/leftfoot.webp"; 
 import Rightfoot from "../Images/New/rightfoot.webp"; 
+import Sampleunderline from "../Images/New/sampleunderline.webp";
 // import Adventuretext from "../Images/New/rightfoot.webp"; 
 
 const EMPTY_PAGES = [];
@@ -133,11 +134,11 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
 
         <div className="bookTitle">
           <span className='leftfoot'><Image alt="leftfoot" src={Leftfoot}/></span>
-          <svg className="curveTextWrap" viewBox="0 0 1024 106" preserveAspectRatio="xMidYMid meet">
+          <svg className="curveTextWrap" viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
             <defs>
               <path
                 id={curveId}
-                d="M 10,80 A 700,400 0 0 1 1024,80"
+                d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100"
               />
             </defs>
 
@@ -153,15 +154,17 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
           </svg>
           <span className='rightfoot'><Image alt="leftfoot" src={Rightfoot}/></span>
         </div>
+        <div className='sampleUnderline'>
+          <Image alt="Sampleunderline" src={Sampleunderline}/>
+        </div>
         <div className="bookSubTitle">
-          <svg className="curveSubTextWrap" viewBox="0 0 1024 56" preserveAspectRatio="xMidYMid meet">
+          <svg className="curveSubTextWrap" viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
             <defs>
               <path
                 id="subText"
-                d="M 10,80 A 800,300 0 0 1 1024,80"
+                d="M 174.75,100 A 1207.92,1207.92 0 0 1 849.25,100"
               />
             </defs>
-
             <text className="curveSubText">
               <textPath
                 href="#subText"

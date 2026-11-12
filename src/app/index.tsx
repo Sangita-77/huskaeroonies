@@ -1,6 +1,6 @@
 "use client";
 ///////////////////////////////////////
-import { useMemo, useRef, useState, useEffect } from "react";
+import { useMemo, useRef, useState, useEffect, useId } from "react";
 import { useRouter } from "next/navigation";
 ////////////////////////////////////////
 import Image from "next/image";
@@ -17,6 +17,7 @@ import styles from "./page.module.css";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import BannerLogo from "./Images/New/MainLogo.webp";
+import BlueRibbon from "./Images/New/BlueRibbon.webp";
 import HomeFlipBook from "./Components/HomeFlipBook";
 import styless from "./flip-book/flip-book.module.css";
 import BookPromo from "../app/Components/bookCard";
@@ -135,7 +136,7 @@ useEffect(() => {
 
   setIsIOS(isAppleDevice);
 }, []);
-
+  const curveId = useId();
   //............................pawprint end ................................
   return (
     <>
@@ -228,7 +229,27 @@ useEffect(() => {
         </div>
       </div>
       <Image src={BannerLogo} alt="Bridge" priority className={styles.BannerLogo} />
-      <div className={styles.Welcome}>Welcome to Huskyville!</div>
+      <Image src={BlueRibbon} alt="Bridge" priority className={styles.BlueRibbon} />
+      <div className={styles.Welcome}>         
+        <svg className="curved-text" viewBox="120 0 790 150" preserveAspectRatio="none" >
+          <defs> <path id={curveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
+          <text> 
+            <textPath href={`#${curveId}`} startOffset="50%">
+              Welcome to Huskyville!
+            </textPath> 
+          </text>
+        </svg>
+        </div>
+       <div className={styles.PickAdv}>         
+        <svg className="curved-text" viewBox="120 0 790 150" preserveAspectRatio="none" >
+          <defs> <path id={curveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
+          <text> 
+            <textPath href={`#${curveId}`} startOffset="50%">
+              Pick An Adventure And Start Reading
+            </textPath> 
+          </text>
+        </svg>
+        </div>
       {/* <Image src={Bridge} alt="Bridge" priority className={styles.Bridge} />
 
       <Image src={Bridge1} alt="Bridge1" priority className={styles.mobileBridge1} />
