@@ -49,13 +49,15 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.page-count) { color: #d9f7fb; margin: 0 1vw;}
 .scope :global(.book-carousel-dots button) { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(217, 247, 251, .42); }
 .scope :global(.modal-backdrop) { position: fixed; z-index: 999; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0, 0, 0, 0.596); }
-.scope :global(.modal-card) {z-index: 9999; width: min(100vw, 44.75vw); padding: 1.5vw 1.38vw; text-align: center; border: 0.38vw solid #029FFC; border-radius: 1.56vw; background: #01A0FF; background: linear-gradient(180deg,rgba(1, 160, 255, 1) 15%, rgba(102, 198, 255, 1) 45%, rgba(1, 115, 184, 1) 100%); box-shadow: 0 0 0 0.38vw #fff; }
-.scope :global(.modal-card p) { color: #d0edf5; line-height: 1.55; font-size: 15px; padding-bottom: 20px;}
-.scope :global(.modal-card h2){font-size: 22px; padding-bottom: 10px; color: #000000;}
-.scope :global(.modal-actions){gap: 20px; display: flex; justify-content: center;}
-.scope :global(.modal-actions button) { padding: 10px 16px; border: 0; border-radius: 10px; cursor: pointer; }
-.scope :global(.modal-actions .primary) { color: #1c0f00; background: #ffb64d; }
-.scope :global(.modal-actions .secondary) { color: #000000; border: 1px solid rgba(255,255,255,.18); background: #fff; }
+.scope :global(.modal-card) {position: relative; z-index: 9999; width: min(100vw, 44.75vw); padding: 1.19vw 1.38vw; text-align: center; border: 0.38vw solid #029FFC; border-radius: 2.56vw; background: #01A0FF; background: linear-gradient(180deg,rgba(1, 160, 255, 1) 15%, rgba(102, 198, 255, 1) 45%, rgba(1, 115, 184, 1) 100%); box-shadow: 0 0 0 0.38vw #fff; }
+.scope :global(.modal-card p) { color: #fff; line-height: 2.13vw; font-size: 1.5vw; padding-bottom: 2vw; width: 31.38vw; margin: 0 auto;}
+.scope :global(.modal-card h2) {font-size: 22px; padding-bottom: 10px; color: #000000;}
+.scope :global(.modal-actions) {gap: 1.19vw; display: flex; justify-content: center; margin-bottom: 3.06vw;}
+.scope :global(.modal-actions button) {transition: all .3s ease-in-out;}
+.scope :global(.modal-actions button):hover {transform: translateY(-0.25vw);}
+.scope :global(.modal-actions .primary) { border: 0; font-family: var(--font-heading); text-align: left; cursor: pointer; color: var(--color-white); text-transform: uppercase; background: linear-gradient(#F8A928, #FF5300); border-bottom: .3vw solid #E04900; border-radius: 10vw; outline: none; align-content: center; padding: .5vw 2vw .3vw; font-size: 1.25vw; text-decoration: none; display: block; position: relative; box-shadow: 0 0 0 .25vw #fff; letter-spacing: 0.06vw; cursor: pointer; }
+.scope :global(.modal-actions .secondary) { border: 0; font-family: var(--font-heading); text-align: left; cursor: pointer; color: #151B58; text-transform: uppercase; background: #fff; border-bottom: .3vw solid #CFE9FE; border-radius: 10vw; outline: none; align-content: center; padding: .5vw 2vw .3vw; font-size: 1.25vw; text-decoration: none; display: block; position: relative; box-shadow: 0 0 0 .25vw #151B58; letter-spacing: 0.06vw; cursor: pointer; }
+
 @media (max-width: 340px) { 
   .scope :global(.app-shell) { padding: 16px; } 
   .scope :global(.book-carousel) { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 6px; } 
@@ -64,13 +66,13 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 
 
 /* -------- Flip book page ----------  */
-.scope :global(.flipbook-wrapper) {padding: 8vw 0 3vw; position: relative; background: url("../Images/New/flipbookbgnew1.webp") no-repeat top center; background-size: cover; margin-top: -26vw; z-index: 99;}
+.scope :global(.flipbook-wrapper) {padding: 8vw 0 3vw; position: relative; background: url("../Images/New/flipbookbgnew2.webp") no-repeat top center; background-size: cover; margin-top: -26vw; z-index: 99;}
 .scope :global(.SampleBeforewave) {position: relative; position: absolute; top: 0; left: 0;}
 .scope :global(.SampleBeforewave img) {z-index: 99; width: 99vw; height: auto; position: absolute; top: -3.6vw; left: 0;}
 .scope :global(.book-carousel-dots) {gap: 30px;}
 .scope :global(.book-carousel-dots button) {background: #151b584d; width: 14px; height: 14px;}
 .scope :global(.book-carousel-dots button.is-active) {background: #151B58; width: 22px; height: 22px;}
-.scope :global(.flipbook-wrapper .book-meta) {margin-bottom: 0.69vw; margin-top: 0.5vw; display: flex; align-items: end; justify-content: center;}
+.scope :global(.flipbook-wrapper .book-meta) {margin-bottom: 5.69vw; margin-top: 0.5vw; display: flex; align-items: end; justify-content: center;}
 /* .scope :global(.flipbook-wrapper .book-meta .nav-btn) {font-family: var(--font-heading); font-weight: 500; font-size: 17px;} */
 .scope :global(.flipbook-wrapper .book-meta .page-count) {color: #000; font-size: 1.5vw; background: url("../Images/New/pagebg.webp") no-repeat top center; background-size: cover; width: 15.31vw; height: 6.94vw; display: inline-block; text-align: center; padding: 3.25vw 1.25vw 1.31vw;}
 .HomeFlipBook {position: relative; z-index: 999;}
@@ -79,6 +81,7 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.homePageFlipWrap .book-carousel)::before {width: 56.44vw; height: 31.81vw; top: 1.5vw; left: -2.92vw; background-size: cover;} 
 .scope :global(.homePageFlipWrap .bookLeftBtn1),
 .scope :global(.homePageFlipWrap .bookRightBtn1) {visibility: hidden;}
+.scope :global(.homePageFlipWrap .book-meta) {margin-bottom: 0.69vw;}
 
 .scope :global(.totalPageNoWrap) {border: 4px solid #fff; border-radius: 50vw; box-shadow: 1.7px 7px 7px 0 rgba(0, 0, 0, 0.5); position: absolute; top: 14.5vw; left: 17vw;}
 .scope :global(.totalPageNoWrap .totalPageNo) {flex-direction: column; font-size: 0.88vw; width: 5.63vw; height: 5.63vw; display: flex; justify-content: center; align-items: center; color: #fff; background: linear-gradient(#151B58, #004DA8); border-bottom: 0.44vw solid #012369; border-radius: 50vw;}
@@ -93,8 +96,15 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.homePageFlipWrap .adventureText img) {width: 16.25vw; height: auto; margin-bottom: 0.6vw;}
 .scope :global(.homePageFlipWrap .adventureText .exploreBtnWrap ) {transition: all .3s ease-in-out;}
 .scope :global(.homePageFlipWrap .adventureText .exploreBtnWrap ):hover {transform: translateY(-4px);}
-.scope :global(.homePageFlipWrap .adventureText .exploreBtnWrap a) { width: 21.19vw; height: 3.75vw; box-shadow: 0vw 0vw 0.25vw 0.25vw #fff; font-family: var(--font-heading); text-align: left; cursor: pointer; color: var(--color-white); background: linear-gradient(#029BE3, #004DA8); border-bottom: .3vw solid #151B58; border-radius: 10vw; outline: none; padding: .5vw 2vw; font-size: 1.63vw; position: relative; display: block; text-decoration: none; align-content: center; text-transform: uppercase; }
+.scope :global(.homePageFlipWrap .adventureText .exploreBtnWrap a) { width: 21.19vw; height: 3.75vw; box-shadow: 0vw 0vw 0vw 0.25vw #fff; font-family: var(--font-heading); text-align: left; cursor: pointer; color: var(--color-white); background: linear-gradient(#029BE3, #004DA8); border-bottom: .3vw solid #151B58; border-radius: 10vw; outline: none; padding: .5vw 2vw; font-size: 1.63vw; position: relative; display: block; text-decoration: none; align-content: center; text-transform: uppercase; }
 .scope :global(.homePageFlipWrap .adventureText .exploreBtnWrap a)::after { content: ""; background: url(../Images//New/sendarrowicon.webp) center no-repeat; background-size: contain; width: 2.06vw; height: 1.19vw; position: absolute; top: 50%; right: 1.7vw; transform: translateY(-50%); }
+
+.scope :global(.buyPlanTitle) {width: 100%; display: flex; justify-content: center; overflow: visible; position: relative; margin-top: -0.8vw;}
+.scope :global(.buyPlanTitle svg) {width: 42.19vw; height: 8vw; overflow: visible; margin-bottom: -2vw; margin-top: -0vw; z-index: 2;}
+.scope :global(.buyPlanTitle text) {font-size: 44px; fill: #151B58; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 3px; text-transform: capitalize;}
+.scope :global(.footImg) {width: 5.13vw; height: auto;}
+.scope :global(.teddyImg) {position: absolute; bottom: 1vw; left: 1vw; width: 10.06vw; height: auto;}
+.scope :global(.TrainImg) {position: absolute; bottom: 1vw; right: 0vw; width: 11.19vw; height: auto;}
 
 
 

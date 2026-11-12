@@ -13,9 +13,12 @@ import Leftfoot from "../Images/New/leftfoot.webp";
 import Rightfoot from "../Images/New/rightfoot.webp"; 
 import Sampleunderline from "../Images/New/sampleunderline.webp";
 import Adventuretext from "../Images/New/adventure-img.webp"; 
-import Sliderpageprev from "../Images/New/pageleftarrow.webp"; 
-import Sliderpagenext from "../Images/New/pagerightarrow.webp"; 
-import Popupfoot from "../Images/New/popupfoot.webp"; 
+import Sliderpageprev from "../Images/New/pageleftarrow.webp";
+import Sliderpagenext from "../Images/New/pagerightarrow.webp";
+import Popupfoot from "../Images/New/popupfoot.webp";
+import Teddyimg from "../Images/New/teddypopupimg.webp";
+import Trainimg from "../Images/New/trainpopupimg.webp";
+import Link from "next/link";
 
 const EMPTY_PAGES = [];
 
@@ -219,10 +222,27 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
       {showBuyPrompt && (
         <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="buy-plan-title">
           <div className="modal-card">
-            <Image alt="" src={Popupfoot}/>
-            <h2 id="buy-plan-title">Want to read more then buy plan</h2>
+            <Image className="footImg" alt="" src={Popupfoot}/>
+            {/* <h2 id="buy-plan-title">Want to read more then buy plan</h2> */}
+            <div className='buyPlanTitle'>
+              <svg viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <path
+                    id="popText"
+                    d="M 174.75,100 A 1207.92,1207.92 0 0 1 849.25,100"
+                  />
+                </defs>
+                <text>
+                  <textPath href="#popText" startOffset="50%" textAnchor="middle" >
+                    Want to read more then buy plan
+                  </textPath>
+                </text>
+              </svg>
+            </div>
             <p>You have finished the current book preview. Upgrade your plan to keep reading.</p>
             <div className="modal-actions"><button className="primary">Buy Plan</button><button className="secondary" onClick={() => setShowBuyPrompt(false)}>Close</button></div>
+            <Image className="teddyImg" alt="Teddy" src={Teddyimg}/>
+            <Image className="TrainImg" alt="Train" src={Trainimg}/>
           </div>
         </div>
       )}
