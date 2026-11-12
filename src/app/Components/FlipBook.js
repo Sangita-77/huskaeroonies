@@ -3,17 +3,27 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useId } from "react";
 import styles from "../page.module.css";
-import Header from "../Components/header";
-import Footer from "../Components/footer";
+import Header from "./header";
+import Footer from "./footer";
 import Image from "next/image";
-import sampleReadWave from "../Images/sampleReadWave.webp";
 import SnowFall from './SnowFall';
-import Clouds from "../Components/Clouds";
+import Clouds from "./Clouds";
 import Girldog from "../Images/New/girldog.webp";
 import Boydog from "../Images/New/boydog.webp";
+import BookPromo from "../Components/bookCard";
+import NeighborhoodPups from "../Images/New/NeighborhoodPups.webp";
+import TheBigRace from "../Images/New/TheBigRace.webp";
+import SnowDayBook from "../Images/New/SnowDayBook.webp";
+import CampaingDayBookIcon from "../Images/New/CampaingDayBookIcon.webp";
 
 
 const EMPTY_PAGES = [];
+
+const booksmap = [
+  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBook, buyNowHref: "/flip-book?book=2", top: "20vw", left: "51vw", readNow: true},
+  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/flip-book?book=3", top: "28vw", left: "80vw", readNow: true},
+  { id: 4, bookNumber: "FOUR", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "24vw", left: "12vw", readNow: true},
+];
 
 export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, bookNames = EMPTY_PAGES, initialBook = 0 }) {
   const bookCollections = useMemo(() => {
@@ -152,12 +162,17 @@ useEffect(() => {
       <Header logo={true} />
       <section className={`${styles.sampleReadBanner} ${showIntro ? styles.sampleReadBannerIntro : styles.sampleReadBannerSettled}`}>
         <Clouds />
-        {/* <div onClick={() => { window.location.href = "/dev/huskaeroonies/flip-book?book=1"; }} className={`${styles.Sbook} ${styles["Sbook1"]} ${activeBook === 0 ? styles.isActive : ""}`}>Snow Day</div>
-        <div onClick={() => { window.location.href = "/dev/huskaeroonies/flip-book?book=2"; }} className={`${styles.Sbook} ${styles["Sbook2"]} ${activeBook === 1 ? styles.isActive : ""}`}>Big Race</div> */}
-        <div onClick={() => { window.location.href = "/flip-book?book=1"; }} className={`${styles.Sbook} ${styles["Sbook1"]} ${activeBook === 0 ? styles.isActive : ""}`}>Snow Day</div>
-        <div onClick={() => { window.location.href = "/flip-book?book=2"; }} className={`${styles.Sbook} ${styles["Sbook2"]} ${activeBook === 1 ? styles.isActive : ""}`}>Big Race</div>
-        {/* <div className={`${styles.Sbook} ${styles["Sbook3"]}`}>Book3</div>
-        <div className={`${styles.Sbook} ${styles["Sbook4"]}`}>Book4</div> */} 
+        <div className={styles.booksContainer}>
+          {booksmap.map((book) => (
+            <BookPromo
+              key={book.id}
+              {...book}
+              onAddToCart={() => {
+                console.log("Added:", book.title);
+              }}
+            />
+          ))}
+        </div> 
         <div>
            <SnowFall count={100}  className={styles.FlipSnowFall}/>
         </div>
