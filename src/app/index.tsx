@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Map from "./Images/New/HomeMap.webp";
 import MobileMap from "./Images/New/MobileMap.webp";
-// import MobileMapOverlay from "./Images/New/MobileMap.webp";
 import BridgeOne from "./Images/New/BridgeOne.webp";
 import BridgeTwo from "./Images/New/BridgeTwo.webp";
 import Cloud1 from "./Images/cloud1.webp";
@@ -28,6 +27,7 @@ import Boydog from "./Images/New/boydog.webp";
 import CampaingDayBookIcon from "./Images/New/CampaingDayBookIcon.webp";
 import FireWood from "./Images/New/FireWood.webp";
 import SnowDayBook from "./Images/New/SnowDayBook.webp";
+import BridgeTwoM from "./Images/New/BridgeTwoM.webp";
 
 
 
@@ -50,10 +50,10 @@ const bookNames = [
 const bookpages = [book1];
 
 const books = [
-  { id: 1, bookNumber: "ONE", title: "Neighborhood Pups", bookArt: NeighborhoodPups, buyNowHref: "/flip-book?book=1", top: "55vw", left: "25vw", },
-  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBook, buyNowHref: "/flip-book?book=2", top: "36vw", left: "30vw", },
-  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/flip-book?book=3", top: "43vw", left: "80vw", },
-  { id: 4, bookNumber: "FOUR", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "70vw", left: "82vw", },
+  { id: 1, bookNumber: "ONE", title: "Neighborhood Pups", bookArt: NeighborhoodPups, buyNowHref: "/flip-book?book=1", top: "55vw", left: "25vw", mobileTop: "132vw",},
+  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBook, buyNowHref: "/flip-book?book=2", top: "36vw", left: "30vw",  mobileTop: "256vw", mobileLeft: "10vw",},
+  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/flip-book?book=3", top: "43vw", left: "80vw", mobileTop: "368vw", mobileLeft: "10vw",},
+  { id: 4, bookNumber: "FOUR", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "70vw", left: "82vw", mobileLeft: "10vw", mobileTop: "54vw",},
 ];
 
 export default function Home() {
@@ -252,8 +252,8 @@ useEffect(() => {
        <Image src={BridgeOne} alt="Bridge" priority className={styles.BridgeOne} />
        <Image src={BridgeTwo} alt="Bridge" priority className={styles.BridgeTwo} />
 
-      {/*<Image src={Bridge1} alt="Bridge1" priority className={styles.mobileBridge1} />
-      <Image src={Bridge2} alt="Bridge2" priority className={styles.mobileBridge2} /> */}
+      <Image src={BridgeTwoM} alt="Bridge1" priority className={styles.mobileBridge1} />
+      <Image src={BridgeTwoM} alt="Bridge2" priority className={styles.mobileBridge2} />
 
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
       {/* <Image src={Map} alt="Book Map" priority className={`${styles.MapImage} ${styles.desktopMap}`} /> */}
