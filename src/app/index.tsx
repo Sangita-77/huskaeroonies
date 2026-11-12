@@ -9,8 +9,6 @@ import MobileMap from "./Images/New/MobileMap.webp";
 // import MobileMapOverlay from "./Images/New/MobileMap.webp";
 import BridgeOne from "./Images/New/BridgeOne.webp";
 import BridgeTwo from "./Images/New/BridgeTwo.webp";
-import Bridge1 from "./Images/bridge1.svg";
-import Bridge2 from "./Images/bridge2.svg";
 import Cloud1 from "./Images/cloud1.webp";
 import Cloud2 from "./Images/cloud2.webp";
 import Cloud3 from "./Images/cloud3.webp";
@@ -40,7 +38,7 @@ const book1 = [
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_10.jpg',
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_12_resize.jpg',
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_16.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page _17.jpg',
+  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_17.jpg',
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_19_resize.jpg',
   'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_27_resize.jpg',
 ];

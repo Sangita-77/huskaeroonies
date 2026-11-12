@@ -1,11 +1,8 @@
-.bookPromo {position: absolute; width: 18.5vw; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 0vw; padding: .6vw 0.4vw .6vw 0vw; border: .15vw solid var(--color-primary-dark); border-radius: 1.5vw; background: var( --color-white); z-index: 9;     box-shadow: 2px 5px 12px #000000; animation: float 6s ease-in-out infinite;}
+.bookPromo {position: absolute; width: 18.5vw; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 0vw; padding: .6vw 0.4vw .6vw 0vw; border: .15vw solid var(--color-primary-dark); border-radius: 1.5vw; background: var( --color-white); z-index: 9; box-shadow: 2px 5px 12px #000000; animation: float 6s ease-in-out infinite; top: var(--desktop-top); left: var(--desktop-left);}
 .bookImage {width: 105%; display: flex; justify-content: center; align-items: center; }
 
-.artwork {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
+.artwork { width: 100%; height: auto; object-fit: contain; }
+.readNowArtwork { width: 86%; height: auto; object-fit: contain; }
 
 .bookContent {
   display: flex;
@@ -68,3 +65,18 @@
 	}
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .bookPromo {
+    top: var(--tablet-top);
+    left: var(--tablet-left);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .bookPromo {
+    top: var(--mobile-top);
+    left: var(--mobile-left);
+  }
+}

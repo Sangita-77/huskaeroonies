@@ -3,17 +3,32 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useId } from "react";
 import styles from "../page.module.css";
-import Header from "../Components/header";
-import Footer from "../Components/footer";
+import Header from "./header";
+import Footer from "./footer";
 import Image from "next/image";
-import sampleReadWave from "../Images/sampleReadWave.webp";
 import SnowFall from './SnowFall';
-import Clouds from "../Components/Clouds";
+import Clouds from "./Clouds";
 import Girldog from "../Images/New/girldog.webp";
 import Boydog from "../Images/New/boydog.webp";
+import BookPromo from "../Components/bookCard";
+import NeighborhoodPups from "../Images/New/NeighborhoodPups.webp";
+import TheBigRace from "../Images/New/TheBigRace.webp";
+import SnowDayBook from "../Images/New/SnowDayBook.webp";
+import CampaingDayBookIcon from "../Images/New/CampaingDayBookIcon.webp";
+import Sliderpageprev from "../Images/New/pageleftarrow.webp";
+import Sliderpagenext from "../Images/New/pagerightarrow.webp";
+import Popupfoot from "../Images/New/popupfoot.webp";
+import Teddyimg from "../Images/New/teddypopupimg.webp";
+import Trainimg from "../Images/New/trainpopupimg.webp";
 
 
 const EMPTY_PAGES = [];
+
+const booksmap = [
+  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBook, buyNowHref: "/flip-book?book=2", top: "20vw", left: "51vw", readNow: true},
+  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/flip-book?book=3", top: "28vw", left: "80vw", readNow: true},
+  { id: 4, bookNumber: "FOUR", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "24vw", left: "12vw", readNow: true},
+];
 
 export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, bookNames = EMPTY_PAGES, initialBook = 0 }) {
   const bookCollections = useMemo(() => {
@@ -152,12 +167,17 @@ useEffect(() => {
       <Header logo={true} />
       <section className={`${styles.sampleReadBanner} ${showIntro ? styles.sampleReadBannerIntro : styles.sampleReadBannerSettled}`}>
         <Clouds />
-        {/* <div onClick={() => { window.location.href = "/dev/huskaeroonies/flip-book?book=1"; }} className={`${styles.Sbook} ${styles["Sbook1"]} ${activeBook === 0 ? styles.isActive : ""}`}>Snow Day</div>
-        <div onClick={() => { window.location.href = "/dev/huskaeroonies/flip-book?book=2"; }} className={`${styles.Sbook} ${styles["Sbook2"]} ${activeBook === 1 ? styles.isActive : ""}`}>Big Race</div> */}
-        <div onClick={() => { window.location.href = "/flip-book?book=1"; }} className={`${styles.Sbook} ${styles["Sbook1"]} ${activeBook === 0 ? styles.isActive : ""}`}>Snow Day</div>
-        <div onClick={() => { window.location.href = "/flip-book?book=2"; }} className={`${styles.Sbook} ${styles["Sbook2"]} ${activeBook === 1 ? styles.isActive : ""}`}>Big Race</div>
-        {/* <div className={`${styles.Sbook} ${styles["Sbook3"]}`}>Book3</div>
-        <div className={`${styles.Sbook} ${styles["Sbook4"]}`}>Book4</div> */} 
+        <div className={styles.booksContainer}>
+          {booksmap.map((book) => (
+            <BookPromo
+              key={book.id}
+              {...book}
+              onAddToCart={() => {
+                console.log("Added:", book.title);
+              }}
+            />
+          ))}
+        </div> 
         <div>
            <SnowFall count={100}  className={styles.FlipSnowFall}/>
         </div>
@@ -209,21 +229,24 @@ useEffect(() => {
           <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">›</button>
         </div>
 
-        <div className="book-meta">
-          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}>Previous</button>
-
+        {/* <div className="book-meta">
+          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}>Previous</button>          
           <span className="page-count">
-          <span className="desktop-page-count">
-            Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}
-          </span>
-
-          <span className="mobile-page-count">
-            Page {Math.min(currentPage + 1, images.length)} / {images.length}
-          </span>
-        </span>
-          
+            <span className="desktop-page-count">
+              Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}
+            </span>
+            <span className="mobile-page-count">
+              Page {Math.min(currentPage + 1, images.length)} / {images.length}
+            </span>
+          </span>          
           <button className="nav-btn" onClick={goNext} disabled={!ready}>Next</button>
+        </div> */}
+        <div className="book-meta">
+          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}><Image alt="left Arrow" src={Sliderpageprev}/></button>
+          <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
+          <button className="nav-btn" onClick={goNext} disabled={!ready}><Image alt="Right Arrow" src={Sliderpagenext}/></button>
         </div>
+
         {/* <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
       </div> */}
@@ -255,12 +278,39 @@ useEffect(() => {
         </video> */}
       </div>
 
-      {showBuyPrompt && (
+      {/* {showBuyPrompt && (
         <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="buy-plan-title">
           <div className="modal-card">
             <h2 id="buy-plan-title">Want to read more then buy plan</h2>
             <p>You have finished the current book preview. Upgrade your plan to keep reading.</p>
             <div className="modal-actions"><button className="primary">Buy Plan</button><button className="secondary" onClick={() => setShowBuyPrompt(false)}>Close</button></div>
+          </div>
+        </div>
+      )} */}
+      {showBuyPrompt && (
+        <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="buy-plan-title">
+          <div className="modal-card">
+            <Image className="footImg" alt="" src={Popupfoot}/>
+            {/* <h2 id="buy-plan-title">Want to read more then buy plan</h2> */}
+            <div className='buyPlanTitle'>
+              <svg viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <path
+                    id="popText"
+                    d="M 174.75,100 A 1207.92,1207.92 0 0 1 849.25,100"
+                  />
+                </defs>
+                <text>
+                  <textPath href="#popText" startOffset="50%" textAnchor="middle" >
+                    Want to read more then buy plan
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+            <p>You have finished the current book preview. Upgrade your plan to keep reading.</p>
+            <div className="modal-actions"><button className="primary">Buy Plan</button><button className="secondary" onClick={() => setShowBuyPrompt(false)}>Close</button></div>
+            <Image className="teddyImg" alt="Teddy" src={Teddyimg}/>
+            <Image className="TrainImg" alt="Train" src={Trainimg}/>
           </div>
         </div>
       )}
