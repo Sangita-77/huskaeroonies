@@ -49,7 +49,7 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 .scope :global(.page-count) { color: #d9f7fb; margin: 0 1vw;}
 .scope :global(.book-carousel-dots button) { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(217, 247, 251, .42); }
 .scope :global(.modal-backdrop) { position: fixed; z-index: 999; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0, 0, 0, 0.596); }
-.scope :global(.modal-card) {z-index: 9999; width: min(100vw, 450px); padding: 24px 22px; text-align: center; border: 2px solid rgba(96, 204, 226, 0.966); border-radius: 18px; background: linear-gradient(180deg, #01a6ff, #001d30); }
+.scope :global(.modal-card) {z-index: 9999; width: min(100vw, 44.75vw); padding: 1.5vw 1.38vw; text-align: center; border: 0.38vw solid #029FFC; border-radius: 1.56vw; background: #01A0FF; background: linear-gradient(180deg,rgba(1, 160, 255, 1) 15%, rgba(102, 198, 255, 1) 45%, rgba(1, 115, 184, 1) 100%); box-shadow: 0 0 0 0.38vw #fff; }
 .scope :global(.modal-card p) { color: #d0edf5; line-height: 1.55; font-size: 15px; padding-bottom: 20px;}
 .scope :global(.modal-card h2){font-size: 22px; padding-bottom: 10px; color: #000000;}
 .scope :global(.modal-actions){gap: 20px; display: flex; justify-content: center;}
@@ -64,7 +64,7 @@ height: 664px; margin: 0 auto; position: absolute; top: 32px; left: -60.8px; rig
 
 
 /* -------- Flip book page ----------  */
-.scope :global(.flipbook-wrapper) {padding: 8vw 0 3vw; position: relative; background: url("../Images/New/flipbookbgnew1.webp") no-repeat top center; background-size: cover; margin-top: -12vw; z-index: 99;}
+.scope :global(.flipbook-wrapper) {padding: 8vw 0 3vw; position: relative; background: url("../Images/New/flipbookbgnew1.webp") no-repeat top center; background-size: cover; margin-top: -26vw; z-index: 99;}
 .scope :global(.SampleBeforewave) {position: relative; position: absolute; top: 0; left: 0;}
 .scope :global(.SampleBeforewave img) {z-index: 99; width: 99vw; height: auto; position: absolute; top: -3.6vw; left: 0;}
 .scope :global(.book-carousel-dots) {gap: 30px;}

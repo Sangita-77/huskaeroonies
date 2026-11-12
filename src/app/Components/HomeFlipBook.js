@@ -15,6 +15,7 @@ import Sampleunderline from "../Images/New/sampleunderline.webp";
 import Adventuretext from "../Images/New/adventure-img.webp"; 
 import Sliderpageprev from "../Images/New/pageleftarrow.webp"; 
 import Sliderpagenext from "../Images/New/pagerightarrow.webp"; 
+import Popupfoot from "../Images/New/popupfoot.webp"; 
 
 const EMPTY_PAGES = [];
 
@@ -208,7 +209,7 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
       </div> */}
 
       <div className='adventureText'>
-        <Image alt="leftfoot" src={Adventuretext}/>
+        <Image alt="Love the adventure" src={Adventuretext}/>
         <div className='exploreBtnWrap'>
           <a href='#'>Explore The Book</a>
         </div>
@@ -218,6 +219,7 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
       {showBuyPrompt && (
         <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="buy-plan-title">
           <div className="modal-card">
+            <Image alt="" src={Popupfoot}/>
             <h2 id="buy-plan-title">Want to read more then buy plan</h2>
             <p>You have finished the current book preview. Upgrade your plan to keep reading.</p>
             <div className="modal-actions"><button className="primary">Buy Plan</button><button className="secondary" onClick={() => setShowBuyPrompt(false)}>Close</button></div>
