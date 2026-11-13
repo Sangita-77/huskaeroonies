@@ -956,7 +956,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .river--4 {-webkit-mask: url("../app/Images/New/RiverMaskThreeM.png") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskThreeM.png") center / contain no-repeat; width: 111.5vw; height: 106.2vw; top: 288vw; left: -22.1vw;  transform: rotate(-65deg); z-index: 3;}
 
 .heroVideoContainer .GirlDog, 
-.heroVideoContainer .BoyDog { width: 26vw; top: -38vw; }
+.heroVideoContainer .BoyDog { width: 23vw; top: -38vw; }
 .FireWood{width: 5.3vw; height: auto; top: 92.5vw; left: 49.8vw;}
 /*.........Banner End.........*/
 

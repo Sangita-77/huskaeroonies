@@ -163,7 +163,13 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
 
   .scope :global(.modal-card) {width: 80.75vw;}
   .scope :global(.footImg) {width: 9.13vw;}
-  .scope :global(.buyPlanTitle svg) {width: 71.19vw; height: 14vw;}
+  .scope :global(.buyPlanTitle svg) {width: 78.19vw; height: 15vw;}
+  .scope :global(.modal-card p) {width: 66.38vw; font-size: 4vw; line-height: 4.13vw; padding-bottom: 4vw;}
+  .scope :global(.modal-actions) {gap: 2.19vw;}
+  .scope :global(.modal-actions .primary) {padding: 1vw 3vw 1vw; font-size: 3vw;}
+  .scope :global(.modal-actions .secondary) {padding: 1vw 3vw 1vw; font-size: 3vw;}
+  .scope :global(.teddyImg) {width: 13.06vw;}
+  .scope :global(.TrainImg) {width: 15.19vw;}
 
 }
 @media (max-width: 489px) {}
