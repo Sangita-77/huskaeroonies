@@ -155,7 +155,7 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
 @media (max-width: 768px) {
   /* ---------- Home flip ----------   */
   .scope :global(.flipbook-wrapper) {padding: 15vw 0 15vw;}
-  .scope :global(.flipbook-wrapper.flipbookPage) {margin-top: -11vw; padding: 15vw 0 20vw;}
+  .scope :global(.flipbook-wrapper.flipbookPage) {margin-top: -13vw; padding: 15vw 0 20vw;}
   .scope :global(.bookTitle) {width: 85vw; height: 17vw;}
   .scope :global(.curveTextWrap) {width: 84vw;}
 
