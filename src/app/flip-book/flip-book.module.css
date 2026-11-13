@@ -39,98 +39,26 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   transform-origin: right center;
   transform: perspective(1000px) rotateY(15deg);
 } */
-.scope :global(.flipbook-wrapper .FullScreen){gap: 2vw; display: flex;}
-.scope :global(.book-zoom-btn) {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 99999;
 
-  width: 48px;
-  height: 48px;
-  border: none;
-  border-radius: 50%;
-  background: white;
-  color: #333;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.scope :global(.bookZoomed .pageflip-book) {
-  transform: scale(1.5);
-  transform-origin: center center;
-}
+.scope :global(.flipbook-wrapper .FullScreen) {display: flex; padding-top: 5.13vw; align-items: center;}
+.scope :global(.book-zoom-btn) { position: fixed; top: 20px; right: 20px; z-index: 99999; width: 48px; height: 48px; border: none; border-radius: 50%; background: white; color: #333; font-size: 30px; cursor: pointer; }
+.scope :global(.bookZoomed .pageflip-book) { transform: scale(1.5); transform-origin: center center; } 
+.scope :global(.magnifier-glass) { position: fixed; width: 250px; height: 250px; border: 8px solid #fff; border-radius: 50%; overflow: hidden; z-index: 99999; pointer-events: none; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; } 
+.scope :global(.magnifier-content) { width: 100%; height: 100%; overflow: hidden; } 
+.scope :global(.magnifier-content img) { width: 100%; height: 100%; object-fit: cover; transform: scale(2); } 
+.scope :global(.pageflip-stage) { position: relative; } 
+.scope :global(.magnifier-glass) { position: absolute; width: 220px; height: 220px; border: 7px solid #fff; border-radius: 50%; overflow: hidden; z-index: 99999; pointer-events: none; transform: translate(-50%, -50%); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); background: #fff; } 
+.scope :global(.magnifier-glass img) { position: absolute; width: 200%; height: 200%; max-width: none; object-fit: fill; transform: translate(-50%, -50%); pointer-events: none; } 
+.book-zoom-btn { cursor: pointer; z-index: 100000; }
+.scope :global(.flipbook-wrapper .FullScreen .swipeText) {justify-content: center; align-items: center; column-gap: 1.5vw; display: flex; padding-right: 10px; border-right: 1px solid hsl(0deg 0% 60%);}
+.scope :global(.flipbook-wrapper .FullScreen .swipeText p) {font-size: 3.56vw; color: hsl(0deg 0% 0% / 75%);}
+.scope :global(.flipbook-wrapper .FullScreen button) {background: transparent; border: none; outline: none; box-shadow: none; display: flex; justify-content: center; align-items: end; column-gap: 2vw; padding-left: 3.33vw;}
+.scope :global(.flipbookPage .FullScreen) {padding-top: 2.13vw; margin-bottom: 3.13vw;}
 
 
-.scope :global(.magnifier-glass) {
-  position: fixed;
-  width: 250px;
-  height: 250px;
-  border: 8px solid #fff;
-  border-radius: 50%;
-  overflow: hidden;
-  z-index: 99999;
-  pointer-events: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-}
-
-.scope :global(.magnifier-content) {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.scope :global(.magnifier-content img) {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(2);
-}
-
-.scope :global(.pageflip-stage) {
-  position: relative;
-}
-
-.scope :global(.magnifier-glass) {
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  border: 7px solid #fff;
-  border-radius: 50%;
-  overflow: hidden;
-  z-index: 99999;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  background: #fff;
-}
-
-.scope :global(.magnifier-glass img) {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  max-width: none;
-  object-fit: fill;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-.book-zoom-btn {
-  cursor: pointer;
-  z-index: 100000;
-}
-
-@media (max-width: 768px) {
-  .scope :global(.magnifier-glass) {
-    width: 160px;
-    height: 160px;
-    border-width: 5px;
-  }
-}
+/* @media (max-width: 768px) {
+  .scope :global(.magnifier-glass) { width: 160px; height: 160px; border-width: 5px; }
+} */
 
 
 .scope :global(.pageflip-page.--right)::after{content: ""; background: #00000070; width: 0px; height: 90%; position: absolute; top: 5%; left: 3%; box-shadow: 14px 0px 35px 10px #00000059; border-radius: 15px; }
@@ -268,6 +196,9 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   .scope :global(.modal-actions .secondary) {padding: 1vw 3vw 1vw; font-size: 3vw;}
   .scope :global(.teddyImg) {width: 13.06vw;}
   .scope :global(.TrainImg) {width: 15.19vw;}
+
+  /* -----------  */
+  .scope :global(.magnifier-glass) { width: 160px; height: 160px; border-width: 5px; }
 
 }
 @media (max-width: 489px) {}

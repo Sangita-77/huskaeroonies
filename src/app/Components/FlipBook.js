@@ -20,6 +20,8 @@ import Sliderpagenext from "../Images/New/pagerightarrow.webp";
 import Popupfoot from "../Images/New/popupfoot.webp";
 import Teddyimg from "../Images/New/teddypopupimg.webp";
 import Trainimg from "../Images/New/trainpopupimg.webp";
+import Swipeimg from "../Images/New/swipehand.webp";
+import Fullscreenimg from "../Images/New/fullsecreen.webp";
 
 
 const EMPTY_PAGES = [];
@@ -46,6 +48,56 @@ export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, boo
   const [showBuyPrompt, setShowBuyPrompt] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
   const activeBookNumber = booksmap[activeBook]?.bookNumber || "";
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [magnifierPosition, setMagnifierPosition] = useState({
+    x: 50,
+    y: 50,
+  });
+
+const handleMagnifierMove = (e) => {
+  if (!isZoomed) return;
+
+  const bounds = e.currentTarget.getBoundingClientRect();
+
+  const x = ((e.clientX - bounds.left) / bounds.width) * 100;
+  const y = ((e.clientY - bounds.top) / bounds.height) * 100;
+
+  setMagnifierPosition({
+    x: Math.max(0, Math.min(100, x)),
+    y: Math.max(0, Math.min(100, y)),
+  });
+};
+
+
+const toggleFullscreen = async () => {
+  const bookWrapper = document.querySelector(".flipbook-wrapper");
+
+  if (!bookWrapper) return;
+
+  try {
+    if (!document.fullscreenElement) {
+      await bookWrapper.requestFullscreen();
+    } else {
+      await document.exitFullscreen();
+    }
+  } catch (error) {
+    console.error("Fullscreen error:", error);
+  }
+};
+
+useEffect(() => {
+  const handleFullscreenChange = () => {
+    setIsFullscreen(!!document.fullscreenElement);
+    setIsZoomed(false);
+  };
+
+  document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+  return () => {
+    document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  };
+}, []);
 
   useEffect(() => {
     setActiveBook(Math.max(0, Math.min(initialBook, bookCollections.length - 1)));
@@ -237,6 +289,26 @@ useEffect(() => {
                 </article>
               ))}
             </div>
+
+            {isFullscreen && isZoomed && (
+              <div
+                className="magnifier-glass"
+                style={{
+                  left: `${magnifierPosition.x}%`,
+                  top: `${magnifierPosition.y}%`,
+                }}
+              >
+                <img
+                  src={images[currentPage] || images[0]}
+                  alt="Magnified book page"
+                  style={{
+                    left: `${magnifierPosition.x}%`,
+                    top: `${magnifierPosition.y}%`,
+                  }}
+                />
+              </div>
+            )}
+
           </div>
           {/* <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">›</button> */}
           <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">
@@ -256,11 +328,32 @@ useEffect(() => {
           </span>          
           <button className="nav-btn" onClick={goNext} disabled={!ready}>Next</button>
         </div> */}
+        <div className="FullScreen">
+          <div className="swipeText"><Image alt="Swipe Icon" src={Swipeimg}/><p>Swipe to turn the page</p></div>
+          <button onClick={toggleFullscreen}>
+            <Image alt="Swipe Icon" src={Fullscreenimg}/>
+            {isFullscreen ? "Exit Full Screen" : "Full Screen"}
+          </button>
+        </div>
+
+        {isFullscreen && (
+          <button
+            type="button"
+            className="book-zoom-btn"
+            onClick={() => setIsZoomed((prev) => !prev)}
+            aria-label={isZoomed ? "Hide magnifier" : "Show magnifier"}
+          >
+            {isZoomed ? "×" : "⌕"}
+          </button>
+        )}
+
         <div className="book-meta">
           <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}><Image alt="left Arrow" src={Sliderpageprev}/></button>
           <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
           <button className="nav-btn" onClick={goNext} disabled={!ready}><Image alt="Right Arrow" src={Sliderpagenext}/></button>
         </div>
+
+        
 
         {/* <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}

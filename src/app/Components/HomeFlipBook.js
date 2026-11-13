@@ -18,6 +18,8 @@ import Sliderpagenext from "../Images/New/pagerightarrow.webp";
 import Popupfoot from "../Images/New/popupfoot.webp";
 import Teddyimg from "../Images/New/teddypopupimg.webp";
 import Trainimg from "../Images/New/trainpopupimg.webp";
+import Swipeimg from "../Images/New/swipehand.webp";
+import Fullscreenimg from "../Images/New/fullsecreen.webp";
 import Link from "next/link";
 
 const EMPTY_PAGES = [];
@@ -290,10 +292,11 @@ useEffect(() => {
           <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
           <button className="nav-btn" onClick={goNext} disabled={!ready}><Image alt="Right Arrow" src={Sliderpagenext}/></button>
         </div>
-        <div className="FullScreen">
-          <text>Swipe to turn the page</text>
 
+        <div className="FullScreen">
+          <div className="swipeText"><Image alt="Swipe Icon" src={Swipeimg}/><p>Swipe to turn the page</p></div>
           <button onClick={toggleFullscreen}>
+            <Image alt="Swipe Icon" src={Fullscreenimg}/>
             {isFullscreen ? "Exit Full Screen" : "Full Screen"}
           </button>
         </div>
