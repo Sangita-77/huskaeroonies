@@ -28,6 +28,7 @@ import CampaingDayBookIcon from "./Images/New/CampaingDayBookIcon.webp";
 import FireWood from "./Images/New/FireWood.webp";
 import SnowDayBook from "./Images/New/SnowDayBook.webp";
 import BridgeTwoM from "./Images/New/BridgeTwoM.webp";
+import BridgeOneM from "./Images/New/BridgeOneM.webp";
 
 
 
@@ -252,7 +253,7 @@ useEffect(() => {
        <Image src={BridgeOne} alt="Bridge" priority className={styles.BridgeOne} />
        <Image src={BridgeTwo} alt="Bridge" priority className={styles.BridgeTwo} />
 
-      <Image src={BridgeTwoM} alt="Bridge1" priority className={styles.mobileBridge1} />
+      <Image src={BridgeOneM} alt="Bridge1" priority className={styles.mobileBridge1} />
       <Image src={BridgeTwoM} alt="Bridge2" priority className={styles.mobileBridge2} />
 
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
