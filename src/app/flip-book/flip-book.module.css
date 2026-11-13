@@ -55,6 +55,9 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
 .scope :global(.flipbook-wrapper .FullScreen button) {background: transparent; border: none; outline: none; box-shadow: none; display: flex; justify-content: center; align-items: end; column-gap: 2vw; padding-left: 3.33vw;}
 .scope :global(.flipbookPage .FullScreen) {padding-top: 2.13vw; margin-bottom: 3.13vw;}
 
+.scope :global(.fullScreenWrap) {display: flex !important; flex-direction: column; justify-content: center; align-items: center;}
+.scope :global(.fullScreenWrap .bookSubTitle) {margin-top: -4vw;}
+.scope :global(.FullScreen) {display: none !important;}
 
 /* @media (max-width: 768px) {
   .scope :global(.magnifier-glass) { width: 160px; height: 160px; border-width: 5px; }
@@ -198,6 +201,7 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   .scope :global(.TrainImg) {width: 15.19vw;}
 
   /* -----------  */
+  .scope :global(.FullScreen) {display: flex !important;}
   .scope :global(.magnifier-glass) { width: 160px; height: 160px; border-width: 5px; }
 
 }

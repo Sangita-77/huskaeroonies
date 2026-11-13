@@ -235,7 +235,7 @@ useEffect(() => {
            <SnowFall count={100}  className={styles.FlipSnowFall}/>
         </div>
       </section>
-      <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible} flipbookPage`}>
+      <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible} flipbookPage ${isFullscreen ? "fullScreenWrap" : ""}`}>
         {activeBook === 0 && <SnowFall count={100} />}
         {/* <div className="SampleBeforewave">
           <Image src={sampleReadWave} alt="Wave" />

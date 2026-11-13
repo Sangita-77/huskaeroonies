@@ -175,7 +175,8 @@ useEffect(() => {
   return (
     <>
       {/* <Header logo={true} /> */}
-      <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible} homePageFlipWrap`}>
+      {/* <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible} homePageFlipWrap`}> */}
+      <div className={`flipbook-wrapper ${ showIntro ? styles.flipbookWaiting : styles.flipbookVisible } homePageFlipWrap ${isFullscreen ? "fullScreenWrap" : ""}`} >
         {activeBook === 0 && <SnowFall count={100} />}
         {/* <div className="SampleBeforewave">
           <Image src={sampleReadWave} alt="Wave" />
