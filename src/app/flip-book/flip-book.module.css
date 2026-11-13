@@ -115,15 +115,49 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
 
 
 
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 991px) {}
+
+@media (max-width: 768px) {
+  /* ---------- Home flip ----------   */
+  .scope :global(.flipbook-wrapper) {padding: 15vw 0 15vw;}
+  .scope :global(.bookTitle) {width: 85vw; height: 17vw;}
+  .scope :global(.curveTextWrap) {width: 84vw;}
+
+  .scope :global(.leftfoot img),
+  .scope :global(.rightfoot img) {width: 7.26vw; height: 7.26vw;}
+  .scope :global(.leftfoot) {position: absolute; left: 8vw; top: 4.5vw;}
+  .scope :global(.rightfoot) {position: absolute; right: 8vw; top: 4.5vw;}
+
+  .scope :global(.totalPageNoWrap) {top: 16.5vw; left: 2vw; border: 3px solid #fff;}
+  .scope :global(.totalPageNoWrap .totalPageNo) {width: 10.63vw; height: 10.63vw; font-size: 2.88vw;}
+  .scope :global(.totalPageNoWrap .totalPageNo span) {font-size: 5.7vw; line-height: 3.7vw;}
+  .scope :global(.sampleUnderline) {margin-top: -9vw;}
+  .scope :global(.sampleUnderline img) {width: 41.19vw;}
+  .scope :global(.bookSubTitle) {width: 63vw;}
+  .scope :global(.bookSubTitle .curveSubTextWrap) {width: 73vw; height: 14vw;}
+  .scope :global(.bookSubTitle .curveSubText) {letter-spacing: 2px; font-size: 29px;}
+
+  /* .scope :global(.homePageFlipWrap .book-carousel) {width: min(84.81vw, 100%); height: 47.81vw;} */
+  .scope :global(.book-carousel) {width: min(84.81vw, 100%) !important; height: 47.81vw !important;}
+  .scope :global(.book-carousel)::before {width: 89.44vw !important; height: 49.81vw !important;}
+
+}
+@media (max-width: 489px) {}
 
 
-
+/* 
 
 @media (min-width: 769px) and (max-width: 1024px) {}
 @media (max-width: 1200px) {
   .scope :global(.book-title) {margin-bottom: 25px;}
   .scope :global(.book-carousel) { width: 100%; height: auto; min-height: 0; display: grid; grid-template-columns: 11vw minmax(0, 1fr) 11vw; align-items: center; gap: 4px; padding: 0 5px; box-sizing: border-box; } 
-  .scope :global(.book-carousel)::before { width: 100vw; max-width: 100vw; height: 56vw; top: -28px; left: 50%; transform: translateX(-52.7%); background-size: contain; background-position: center; background-repeat: no-repeat; pointer-events: none; } 
+  .scope :global(.book-carousel)::before { width: 100vw; max-width: 100vw; height: 56vw; top: -28px; background-size: contain; background-position: center; background-repeat: no-repeat; pointer-events: none; } 
   .scope :global(.book-carousel-arrow) {z-index: 9; margin: 0 auto;}
   .scope :global(.flipbook-wrapper .book-meta) {margin-top: 3vw; margin-bottom: 2vw;}
 }
@@ -132,15 +166,13 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   .scope :global(.book-title) {margin-bottom: 25px;}
   .scope :global(.book-carousel-arrow) {z-index: 9; margin: 0 auto;}
   .scope :global(.book-carousel) { width: 100%; height: auto; min-height: 0; display: grid; grid-template-columns: 90px minmax(0, 1fr) 90px; align-items: center; gap: 4px; padding: 0 5px; box-sizing: border-box; } 
-  .scope :global(.book-carousel)::before { width: 106vw; max-width: 106vw; height: 58vw; top: -24px; left: 50%; transform: translateX(-52.7%); background-size: contain; background-position: center; background-repeat: no-repeat; pointer-events: none; } 
+  .scope :global(.book-carousel)::before { width: 106vw; max-width: 106vw; height: 58vw; top: -24px; background-size: contain; background-position: center; background-repeat: no-repeat; pointer-events: none; } 
   .scope :global(.flipbook-wrapper .book-meta) {margin-top: 3vw; margin-bottom: 2vw;}
 }
 
 @media (max-width: 991px) {
   .scope :global(.flipbook-wrapper) { padding: 80px 20px 120px; margin-top: -9vw; background-size: cover; } 
-  .scope :global(.book-title) { font-size: 26px; line-height: 1.2; margin-bottom: 25px; } 
-  /* .scope :global(.book-carousel) { width: 100%; min-height: 0; grid-template-columns: 75px minmax(0, 1fr) 75px; gap: 8px; padding: 0 10px; } 
-  .scope :global(.book-carousel)::before { width: 100%; height: 100%; top: 0; background-size: contain; }  */
+  .scope :global(.book-title) { font-size: 26px; line-height: 1.2; margin-bottom: 25px; }   
   .scope :global(.pageflip-stage) { width: 100%; min-width: 0; display: flex; justify-content: center; } 
   .scope :global(.pageflip-book) { width: 100%; max-width: 915px; aspect-ratio: 915 / 522; } 
   .scope :global(.book-carousel-arrow) { width: 42px; height: 42px; font-size: 2.3rem; z-index: 9; margin: 0 auto;} 
@@ -150,7 +182,7 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   .scope :global(.flipbook-wrapper .book-meta .page-count) { font-size: 14px; } 
 
   .scope :global(.book-carousel) { width: 100%; height: auto; min-height: 0; display: grid; grid-template-columns: 70px minmax(0, 1fr) 70px; align-items: center; gap: 4px; padding: 0 5px; box-sizing: border-box; } 
-  .scope :global(.book-carousel)::before { width: 106vw; max-width: 106vw; height: 58vw; top: -24px; left: 50%; transform: translateX(-52.7%); background-size: contain; background-position: center; background-repeat: no-repeat; pointer-events: none; } 
+  .scope :global(.book-carousel)::before { width: 106vw; max-width: 106vw; height: 58vw; top: -24px; background-size: contain; background-position: center; background-repeat: no-repeat; pointer-events: none; } 
 
 }
 
@@ -163,13 +195,13 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   .scope :global(.pageflip-content img) { object-fit: contain; }
   .scope :global(.desktop-page-count) { display: none; } 
   .scope :global(.mobile-page-count) { display: inline; }
-  .scope :global(.flipbook-wrapper) { width: 100%; padding: 30px 0 70px; margin-top: -8vw; background-size: cover; background-position: left; /*overflow: hidden;*/ } 
+  .scope :global(.flipbook-wrapper) { width: 100%; padding: 30px 0 70px; margin-top: -8vw; background-size: cover; background-position: left; } 
   .scope :global(.book-title) { font-size: 24px; line-height: 1.2; margin: 0 0 -10px; padding: 0 15px; text-align: center; } 
   .scope :global(.book-carousel) { width: 100%; height: auto; min-height: 0; display: grid; grid-template-columns: 38px minmax(0, 1fr) 38px; align-items: center; gap: 6px; padding: 0 5px; box-sizing: border-box; } 
-  /* .scope :global(.book-carousel)::before { width: 104vw; max-width: 104vw; height: 58vw; top: -13px; left: 50%; transform: translateX(-50%); background-size: contain; background-position: center; background-repeat: no-repeat; pointer-events: none; }  */
+
   .scope :global(.pageflip-stage) { width: 100%; min-width: 0; display: flex; justify-content: center; align-items: center; overflow: visible; }
 
-  /* Single-page book dimensions on mobile */
+
   .scope :global(.pageflip-book) { width: 100%; max-width: 320px; aspect-ratio: 320 / 460; margin: 0 auto; } 
   .scope :global(.pageflip-page) { width: 100%; height: 100%; } 
   .scope :global(.pageflip-content) { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; } 
@@ -184,25 +216,22 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   .scope :global(.modal-card) { width: min(100vw, 340px); } 
   .scope :global(.modal-backdrop) { z-index: 999; }
 
-  .scope :global(.book-carousel)::before{content: ""; background: url("../Images/singlebookpage.png") center no-repeat; width: 100vw;
-        max-width: 100vw;  height: 90vw; margin: 0 auto; position: absolute; top: 35px; left: 50%; transform: translateX(-51%); right: 0; background-size: contain;} 
+  .scope :global(.book-carousel)::before{content: ""; background: url("../Images/singlebookpage.png") center no-repeat; width: 100vw; max-width: 100vw;  height: 90vw; margin: 0 auto; position: absolute; top: 35px; right: 0; background-size: contain;} 
 
 }
 
 @media (max-width: 689px) {
-  .scope :global(.book-carousel) {grid-template-columns: 60px minmax(0, 1fr) 60px;}
-  /* .scope :global(.book-carousel)::before {width: 104vw; max-width: 104vw; height: 58vw; top: -18px;} */
+  .scope :global(.book-carousel) {grid-template-columns: 60px minmax(0, 1fr) 60px;}  
 }
+
 @media (max-width: 489px) {
-  .scope :global(.book-carousel) {grid-template-columns: 9vw minmax(0, 1fr) 9vw;}
-  /* .scope :global(.book-carousel)::before {width: 104vw; max-width: 104vw; height: 58vw; top: -13px;} */
+  .scope :global(.book-carousel) {grid-template-columns: 9vw minmax(0, 1fr) 9vw;}  
   .scope :global(.book-carousel)::before {height: 94vw; top: 8vw;}
 }
 
-@media (max-width: 360px) {
-  /* .scope :global(.book-carousel)::before {top: -11px;} */
+@media (max-width: 360px) {  
   .scope :global(.modal-card) {width: min(100vw, 325px);} 
 }
-
+ */
 
 

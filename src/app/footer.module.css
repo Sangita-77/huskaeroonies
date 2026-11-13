@@ -80,6 +80,7 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .footerTopSection {margin-top: -12.2vw;}
+    .footerWrap {margin-top: -11vw;}
     .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a > img {width: 100%; height: auto;}
     .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap form button::after {background-size: cover;}
     .footerTopSection .footerTopSectionContainer .row .footerTopCol h4 {font-size: 1.8vw;}
@@ -87,7 +88,7 @@
     .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol h3 {font-size: 2vw;}
     .footerWrap .footerBottom .row .footerBottomCenter .footerBottomCenterCol ul li {font-size: 1.6vw; line-height: 1.8vw;}
     .footerWrap .footerBottom .row .footerBottomRight {padding-top: 6.5vw;}
-    .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap {padding: 1.5vw 1.4vw;}
+    .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap {padding: 7.5vw 4vw 2vw;}
     .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap h3 {font-size: 2vw;}
     .footerWrap .footerBottom .row .footerBottomRight .newsletterWrap p {font-size: 1.3vw;}
 }
