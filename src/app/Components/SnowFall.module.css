@@ -1,3 +1,4 @@
+
 .SnowFall {
   position: absolute;
   inset: 0;
@@ -6,24 +7,39 @@
   overflow: hidden;
   pointer-events: none;
   z-index: 3;
+  margin-top: 5vw;
+
+  /* Safari support */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  isolation: isolate;
 }
-.SnowFall{margin-top: 5vw;}
+
 .snowflake {
   position: absolute;
   top: -30px;
   left: var(--snow-left);
 
+  display: block;
   color: #fff;
   font-size: 10px;
-  opacity: var(--snow-opacity);
+  line-height: 1;
 
+  opacity: var(--snow-opacity);
   filter: blur(var(--snow-blur));
 
-  animation: snowfall var(--snow-duration) linear infinite;
-  animation-delay: var(--snow-delay);
+  /* Safari and Chrome */
+  -webkit-animation: snowfall var(--snow-duration) linear
+    var(--snow-delay) infinite;
+
+  animation: snowfall var(--snow-duration) linear
+    var(--snow-delay) infinite;
+
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 
   will-change: transform;
-  -webkit-animation: snowfall var(--snow-duration) linear var(--snow-delay) infinite, snowFlicker 2.8s ease-in-out var(--snow-delay) infinite;
+  pointer-events: none;
 }
 
 .snowflakeMedium {
@@ -34,37 +50,37 @@
   font-size: 22px;
 }
 
-/* .flipbook-wrapper .SnowFall {top: 3.13vw !important;} */
+/* Snowfall animation */
 
 @-webkit-keyframes snowfall {
-    from {
-        -webkit-transform: translate3d(0, 0, 0) rotate(10deg);
-        transform: translate3d(0, 0, 0) rotate(10deg);
-    }
+  0% {
+    -webkit-transform: translate3d(0, -30px, 0) rotate(0deg);
+  }
 
-    to {
-        -webkit-transform: translate3d(
-            var(--snow-drift, 20px), 20vw, 0
-        ) rotate(10deg);
-        transform: translate3d(
-            var(--snow-drift, 20px), 20vw, 0
-        ) rotate(10deg);
-    }
+  50% {
+    -webkit-transform: translate3d(
+      calc(var(--snow-drift) * 0.5),
+      50vh,
+      0
+    ) rotate(180deg);
+  }
+
+  100% {
+    -webkit-transform: translate3d(
+      var(--snow-drift),
+      100vh,
+      0
+    ) rotate(360deg);
+  }
 }
 
 @keyframes snowfall {
   0% {
     transform: translate3d(0, -30px, 0) rotate(0deg);
-    -webkit-transform: translate3d(0, -30px, 0) rotate(0deg);
   }
 
   50% {
     transform: translate3d(
-      calc(var(--snow-drift) * 0.5),
-      50vh,
-      0
-    ) rotate(180deg);
-    -webkit-transform: translate3d(
       calc(var(--snow-drift) * 0.5),
       50vh,
       0
@@ -77,16 +93,40 @@
       100vh,
       0
     ) rotate(360deg);
-    -webkit-transform: translate3d(
-      var(--snow-drift),
-      100vh,
-      0
-    ) rotate(360deg);
   }
 }
 
+/* iPhone / iPad */
+
+@supports (height: 100dvh) {
+  @keyframes snowfall {
+    0% {
+      transform: translate3d(0, -30px, 0) rotate(0deg);
+    }
+
+    50% {
+      transform: translate3d(
+        calc(var(--snow-drift) * 0.5),
+        50dvh,
+        0
+      ) rotate(180deg);
+    }
+
+    100% {
+      transform: translate3d(
+        var(--snow-drift),
+        100dvh,
+        0
+      ) rotate(360deg);
+    }
+  }
+}
+
+/* Accessibility */
+
 @media (prefers-reduced-motion: reduce) {
   .snowflake {
+    -webkit-animation: none;
     animation: none;
     display: none;
   }
