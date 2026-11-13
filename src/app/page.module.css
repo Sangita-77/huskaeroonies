@@ -883,8 +883,8 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 /* .homePageFlip .scope .app-shell .flipbook-wrapper {z-index: 999 !important; margin-top: -10vw !important;} */
 /* .scope :global(.homePageFlip .scope .app-shell .flipbook-wrapper) {z-index: 99 !important; margin-top: -10vw !important;} */
-.bookBadge { text-align: center; background: url(./Images/New/BoneYellow.svg) center no-repeat; background-size: contain; justify-content: center; align-items: center; width: 14.1vw; height: 5.4vw; font-size: 1.5vw; display: flex; }
-
+.bookBadge { text-align: center; background: url(./Images/New/BoneYellow.svg) center no-repeat; background-size: contain; justify-content: center; align-items: center; width: 14.1vw !important; height: 5.4vw !important; font-size: 1.5vw !important; display: flex; }
+/* .bookBadge {width: 16.1vw; height: 5.4vw; font-size: 1.5vw;} */
 
 
 
@@ -998,9 +998,9 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .FlipSnowFall{height: 40vw !important; width: 90vw !important; position: absolute !important; left: 7vw !important; top: 33vw !important;}
 .fire{height: 3vw; width: 3vw;}
 .BridgeOne, .BridgeTwo{display: none;}
+.bookBadge {width: 25.1vw !important; height: 9.4vw !important; font-size: 2.5vw !important;}
 }
 
-.bookBadge {width: 25.1vw; height: 9.4vw; font-size: 2.5vw;}
 
 
 
