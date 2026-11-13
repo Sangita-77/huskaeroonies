@@ -25,9 +25,9 @@ import Trainimg from "../Images/New/trainpopupimg.webp";
 const EMPTY_PAGES = [];
 
 const booksmap = [
-  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBook, buyNowHref: "/flip-book?book=2", top: "20vw", left: "51vw", readNow: true},
-  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/flip-book?book=3", top: "28vw", left: "80vw", readNow: true},
-  { id: 4, bookNumber: "FOUR", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "24vw", left: "12vw", readNow: true},
+  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBook, buyNowHref: "/flip-book?book=1", top: "20vw", left: "51vw", readNow: true, mobileLeft: "10vw", mobileTop: "20vw",},
+  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/flip-book?book=2 ", top: "28vw", left: "80vw", readNow: true, mobileLeft: "20vw", mobileTop: "110vw", },
+  { id: 4, bookNumber: "FOUR", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "24vw", left: "12vw", readNow: true, mobileTop: "-56vw",},
 ];
 
 export default function FlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, bookNames = EMPTY_PAGES, initialBook = 0 }) {

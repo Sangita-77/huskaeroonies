@@ -51,10 +51,10 @@ const bookNames = [
 const bookpages = [book1];
 
 const books = [
-  { id: 1, bookNumber: "ONE", title: "Neighborhood Pups", bookArt: NeighborhoodPups, buyNowHref: "/flip-book?book=1", top: "55vw", left: "25vw", mobileTop: "132vw",},
-  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBook, buyNowHref: "/flip-book?book=2", top: "36vw", left: "30vw",  mobileTop: "256vw", mobileLeft: "10vw",},
-  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/flip-book?book=3", top: "43vw", left: "80vw", mobileTop: "368vw", mobileLeft: "10vw",},
-  { id: 4, bookNumber: "FOUR", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "70vw", left: "82vw", mobileLeft: "10vw", mobileTop: "54vw",},
+  { id: 2, bookNumber: "TWO", title: "Neighborhood Pups", bookArt: NeighborhoodPups, buyNowHref: "/flip-book?book=3", top: "55vw", left: "25vw", mobileTop: "132vw",},
+  { id: 3, bookNumber: "THREE", title: "The Snow Day", bookArt: SnowDayBook, buyNowHref: "/flip-book?book=1", top: "36vw", left: "30vw",  mobileTop: "256vw", mobileLeft: "10vw",},
+  { id: 4, bookNumber: "FOUR", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/flip-book?book=2", top: "43vw", left: "80vw", mobileTop: "368vw", mobileLeft: "10vw",},
+  { id: 1, bookNumber: "ONE", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "70vw", left: "82vw", mobileLeft: "10vw", mobileTop: "49vw",},
 ];
 
 export default function Home() {

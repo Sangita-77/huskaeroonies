@@ -91,13 +91,9 @@ export default function BookPromo({
         </div>
 
         {readNow ? (
-          <button
-            className={styles.cartButton}
-            onClick={onAddToCart}
-            type="button"
-          >
+         <Link href={buyNowHref} className={styles.buyButton}>
             <span>READ NOW</span>
-          </button>
+          </Link>
         ) : (
           <>
             <Link href={buyNowHref} className={styles.buyButton}>
