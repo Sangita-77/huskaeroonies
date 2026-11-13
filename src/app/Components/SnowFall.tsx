@@ -7,7 +7,7 @@ interface SnowFallProps {
 }
 
 export default function SnowFall({
-  count = 350,
+  count = 200,
   className = "",
 }: SnowFallProps) {
   const snowflakes = useMemo(
@@ -24,12 +24,12 @@ export default function SnowFall({
               ? styles.snowflakeMedium
               : "",
           style: {
-            "--snow-left": `${(index * 47) % 100 - 10}%`,
+            "--snow-left": `${(index * 47) % 100}%`,
             "--snow-drift": `${8 + ((index * 13) % 4)}vw`,
             "--snow-duration": `${10 + ((index * 17) % 12)}s`,
             "--snow-delay": `-${(index * 29) % 19}s`,
-            "--snow-opacity": `${45 + ((index * 11) % 50)}%`,
-            "--snow-blur": `${(index % 3) - 1}px`,
+            "--snow-opacity": `${0.45 + ((index * 11) % 50) / 100}`,
+            "--snow-blur": `${index % 3 === 0 ? 0.5 : 0}px`,
           } as React.CSSProperties,
         };
       }),
@@ -47,7 +47,7 @@ export default function SnowFall({
           className={`${styles.snowflake} ${snowflake.size}`}
           style={snowflake.style}
         >
-          ❄
+          {"❄︎"}
         </span>
       ))}
     </div>
