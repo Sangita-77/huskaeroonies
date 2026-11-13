@@ -76,11 +76,11 @@
 /* Mobile */
 @media (max-width: 767px) {
   .bookPromo { top: var(--mobile-top); left: var(--mobile-left);  }
-  .bookPromo {width: 50vw; display: grid; padding: .6vw 0.4vw .6vw 0vw; border: .15vw solid var(--color-primary-dark); border-radius: 1.5vw;}
+  .bookPromo {width: 60vw; display: grid; padding: .6vw 0.4vw .6vw 0vw; border: .15vw solid var(--color-primary-dark); border-radius: 1.5vw;}
   .bookBadge{width: 13.5vw; height: 5vw; font-size: 1.6vw; line-height: 1vw;}
-  .bookTitle{width: 27vw; height: 6.2vw;}
-  .buyButton, .cartButton{font-size: 3vw;}
+  .bookTitle{width: 37vw; height: 8.3vw;}
+  .buyButton, .cartButton{font-size: 4vw;}
   .arrow{font-size: 3vw;}
-  .cartButton img{width: 2.5vw;}
+  .cartButton img{width: 4vw;}
   .bookContent{gap: 1.3vw;}
 }

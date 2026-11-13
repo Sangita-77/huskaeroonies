@@ -901,7 +901,6 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
     .FireAnimation {top: 56vw; /*top: 51vw;*/}
     .Bridge {top: 37vw; /*top: 32vw;*/}
     .book3 {top: 48vw;}
-
     .navLink {font-size: 1.5vw;}
     .headercontainer {gap: 10vw;}
 }
@@ -953,7 +952,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .river--2, .river--3, .river--4{-webkit-animation: flow 30s infinite linear; animation: flow 30s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);}
 .river--2 { -webkit-mask: url("../app/Images/New/RiverMaskOneM.webp") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskOneM.webp") center / contain no-repeat;        width: 95vw; height: 125vw; top: 67.6vw; left: -10.1vw; z-index: 3; transform: rotate(-36deg);} 
 .river--3 {  -webkit-mask: url("../app/Images/New/RiverMaskTwoM.webp") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskTwoM.webp") center / contain no-repeat; width: 158vw; height: 178vw; top: 132vw; left: -29vw; transform: rotate(0deg); z-index: 3; transform: rotate(45deg);}
-.river--4 {-webkit-mask: url("../app/Images/New/RiverMaskThreeM.png") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskThreeM.png") center / contain no-repeat; width: 111.5vw; height: 106.2vw; top: 288vw; left: -22.1vw;  transform: rotate(-65deg); z-index: 3;}
+.river--4 {-webkit-mask: url("../app/Images/New/RiverMaskThreeM.webp") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskThreeM.webp") center / contain no-repeat; width: 111.5vw; height: 106.2vw; top: 288vw; left: -22.1vw;  transform: rotate(-65deg); z-index: 3;}
 
 .heroVideoContainer .GirlDog, .heroVideoContainer .BoyDog{ width: 35vw; top: -42vw; }
 .FireWood{width: 5.3vw; height: auto; top: 92.5vw; left: 49.8vw;}
