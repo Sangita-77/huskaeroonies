@@ -9,6 +9,7 @@ import ParentIcon from "../Images/New/ParentIcon.svg";
 import AboutIcon from "../Images/New/AboutIcon.svg";
 import CartIcon from "../Images/New/CartIcon.svg";
 
+
 const links = [
   { title: "Book", href: "#book", Icon: BookIcon },
   { title: "Meet The Husks", href: "#meet-the-husks", Icon: PawIcon },
@@ -52,6 +53,7 @@ export default function Navbar() {
         <span />
         <span />
         <span />
+
       </button>
 
       {/* Mobile Navigation */}
