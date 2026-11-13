@@ -37,6 +37,57 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
   const [ready, setReady] = useState(false);
   const [showBuyPrompt, setShowBuyPrompt] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [magnifierPosition, setMagnifierPosition] = useState({
+    x: 50,
+    y: 50,
+  });
+
+const handleMagnifierMove = (e) => {
+  if (!isZoomed) return;
+
+  const bounds = e.currentTarget.getBoundingClientRect();
+
+  const x = ((e.clientX - bounds.left) / bounds.width) * 100;
+  const y = ((e.clientY - bounds.top) / bounds.height) * 100;
+
+  setMagnifierPosition({
+    x: Math.max(0, Math.min(100, x)),
+    y: Math.max(0, Math.min(100, y)),
+  });
+};
+
+
+const toggleFullscreen = async () => {
+  const bookWrapper = document.querySelector(".flipbook-wrapper");
+
+  if (!bookWrapper) return;
+
+  try {
+    if (!document.fullscreenElement) {
+      await bookWrapper.requestFullscreen();
+    } else {
+      await document.exitFullscreen();
+    }
+  } catch (error) {
+    console.error("Fullscreen error:", error);
+  }
+};
+
+useEffect(() => {
+  const handleFullscreenChange = () => {
+    setIsFullscreen(!!document.fullscreenElement);
+    setIsZoomed(false);
+  };
+
+  document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+  return () => {
+    document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  };
+}, []);
+
 
   useEffect(() => {
     setActiveBook(Math.max(0, Math.min(initialBook, bookCollections.length - 1)));
@@ -186,18 +237,50 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
 
         <div className="book-carousel">
           <button className="book-carousel-arrow1 bookLeftBtn1" onClick={() => switchBook(-1)} aria-label="Previous book"></button>
-          <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick}>
-            <div className="pageflip-book" ref={bookElement} key={activeBook}>
+          <div
+            className="pageflip-stage"
+            aria-busy={!ready}
+            onClick={handleBookClick}
+            onPointerMove={handleMagnifierMove}
+          >
+            <div
+              className="pageflip-book"
+              ref={bookElement}
+              key={activeBook}
+            >
               {images.map((image, index) => (
                 <article className="pageflip-page" key={`${image}-${index}`}>
                   <div className="pageflip-content">
                     <div className="page-loader" />
-                    <img src={image} alt={`Book page ${index + 1}`} decoding="async" />
+                    <img
+                      src={image}
+                      alt={`Book page ${index + 1}`}
+                      decoding="async"
+                    />
                     <span className="page-number">{index + 1}</span>
                   </div>
                 </article>
               ))}
             </div>
+
+            {isFullscreen && isZoomed && (
+              <div
+                className="magnifier-glass"
+                style={{
+                  left: `${magnifierPosition.x}%`,
+                  top: `${magnifierPosition.y}%`,
+                }}
+              >
+                <img
+                  src={images[currentPage] || images[0]}
+                  alt="Magnified book page"
+                  style={{
+                    left: `${magnifierPosition.x}%`,
+                    top: `${magnifierPosition.y}%`,
+                  }}
+                />
+              </div>
+            )}
           </div>
           <button className="book-carousel-arrow1 bookRightBtn1" onClick={() => switchBook(1)} aria-label="Next book"></button>
         </div>
@@ -207,6 +290,24 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
           <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
           <button className="nav-btn" onClick={goNext} disabled={!ready}><Image alt="Right Arrow" src={Sliderpagenext}/></button>
         </div>
+        <div className="FullScreen">
+          <text>Swipe to turn the page</text>
+
+          <button onClick={toggleFullscreen}>
+            {isFullscreen ? "Exit Full Screen" : "Full Screen"}
+          </button>
+        </div>
+
+        {isFullscreen && (
+          <button
+            type="button"
+            className="book-zoom-btn"
+            onClick={() => setIsZoomed((prev) => !prev)}
+            aria-label={isZoomed ? "Hide magnifier" : "Show magnifier"}
+          >
+            {isZoomed ? "×" : "⌕"}
+          </button>
+        )}
         {/* <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
       </div> */}
@@ -214,7 +315,7 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
       <div className='adventureText'>
         <Image alt="Love the adventure" src={Adventuretext}/>
         <div className='exploreBtnWrap'>
-          <a href='#'>Explore The Book</a>
+          <a href='/flip-book'>Explore The Book</a>
         </div>
       </div>
       </div>
