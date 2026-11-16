@@ -1,7 +1,12 @@
-
 .SnowFall {
   position: absolute;
-  inset: 0;
+
+  /* Use individual offsets for older iOS Safari versions. */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -9,10 +14,9 @@
   z-index: 3;
   margin-top: 5vw;
 
-  /* Safari support */
+  /* Safari/iOS rendering support. */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  isolation: isolate;
 }
 
 .snowflake {
@@ -24,16 +28,22 @@
   color: #fff;
   font-size: 10px;
   line-height: 1;
-
   opacity: var(--snow-opacity);
-  filter: blur(var(--snow-blur));
 
-  /* Safari and Chrome */
-  -webkit-animation: snowfall var(--snow-duration) linear
-    var(--snow-delay) infinite;
+  /* Avoid filter: blur(var(...)); the original component did not define
+     --snow-blur, and blur filters are unnecessary for this effect. */
 
-  animation: snowfall var(--snow-duration) linear
-    var(--snow-delay) infinite;
+  -webkit-animation-name: snowfall;
+  -webkit-animation-duration: var(--snow-duration);
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: var(--snow-delay);
+  -webkit-animation-iteration-count: infinite;
+
+  animation-name: snowfall;
+  animation-duration: var(--snow-duration);
+  animation-timing-function: linear;
+  animation-delay: var(--snow-delay);
+  animation-iteration-count: infinite;
 
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -50,84 +60,47 @@
   font-size: 22px;
 }
 
-/* Snowfall animation */
-
+/* Keep prefixed and standard keyframes for older Safari. */
 @-webkit-keyframes snowfall {
   0% {
     -webkit-transform: translate3d(0, -30px, 0) rotate(0deg);
+    transform: translate3d(0, -30px, 0) rotate(0deg);
   }
 
   50% {
-    -webkit-transform: translate3d(
-      calc(var(--snow-drift) * 0.5),
-      50vh,
-      0
-    ) rotate(180deg);
+    -webkit-transform: translate3d(var(--snow-drift-half), 50vh, 0) rotate(180deg);
+    transform: translate3d(var(--snow-drift-half), 50vh, 0) rotate(180deg);
   }
 
   100% {
-    -webkit-transform: translate3d(
-      var(--snow-drift),
-      100vh,
-      0
-    ) rotate(360deg);
+    -webkit-transform: translate3d(var(--snow-drift), 100vh, 0) rotate(360deg);
+    transform: translate3d(var(--snow-drift), 100vh, 0) rotate(360deg);
   }
 }
 
 @keyframes snowfall {
   0% {
+    -webkit-transform: translate3d(0, -30px, 0) rotate(0deg);
     transform: translate3d(0, -30px, 0) rotate(0deg);
   }
 
   50% {
-    transform: translate3d(
-      calc(var(--snow-drift) * 0.5),
-      50vh,
-      0
-    ) rotate(180deg);
+    -webkit-transform: translate3d(var(--snow-drift-half), 50vh, 0) rotate(180deg);
+    transform: translate3d(var(--snow-drift-half), 50vh, 0) rotate(180deg);
   }
 
   100% {
-    transform: translate3d(
-      var(--snow-drift),
-      100vh,
-      0
-    ) rotate(360deg);
+    -webkit-transform: translate3d(var(--snow-drift), 100vh, 0) rotate(360deg);
+    transform: translate3d(var(--snow-drift), 100vh, 0) rotate(360deg);
   }
 }
 
-/* iPhone / iPad */
-
-@supports (height: 100dvh) {
-  @keyframes snowfall {
-    0% {
-      transform: translate3d(0, -30px, 0) rotate(0deg);
-    }
-
-    50% {
-      transform: translate3d(
-        calc(var(--snow-drift) * 0.5),
-        50dvh,
-        0
-      ) rotate(180deg);
-    }
-
-    100% {
-      transform: translate3d(
-        var(--snow-drift),
-        100dvh,
-        0
-      ) rotate(360deg);
-    }
-  }
-}
-
-/* Accessibility */
-
+/* Respect the device accessibility setting. */
 @media (prefers-reduced-motion: reduce) {
   .snowflake {
+    display: block !important;
     -webkit-animation: none;
     animation: none;
-    display: none;
+    opacity: 1;
   }
 }
