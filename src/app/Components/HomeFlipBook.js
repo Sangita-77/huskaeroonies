@@ -319,7 +319,7 @@ useEffect(() => {
       <div className='adventureText'>
         <Image alt="Love the adventure" src={Adventuretext}/>
         <div className='exploreBtnWrap'>
-          <a href='/flip-book'>Explore The Book</a>
+          <a href='/dev/huskaeroonies/flip-book'>Explore The Book</a>
         </div>
       </div>
       </div>

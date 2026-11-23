@@ -40,8 +40,9 @@ export default function BookPromo({
   const curveId = useId();
 
   return (
-    <section
-        className={styles.bookPromo}
+    <>
+      <section
+        className={`${styles.bookPromo} ${styles.bookPromoDesk}`}
         style={{
           "--desktop-top": top,
           "--desktop-left": left,
@@ -50,68 +51,92 @@ export default function BookPromo({
           "--mobile-top": mobileTop ?? tabletTop ?? top,
           "--mobile-left": mobileLeft ?? tabletLeft ?? left,
         } as React.CSSProperties}
-    >
-      <div className={styles.bookImage}>
-        <Image
-          src={bookArt}
-          alt={`The Huskeroonies - ${title}`}
-          priority
+      >
+        <div className={styles.bookImage}>
+          <Image
+            src={bookArt}
+            alt={`The Huskeroonies - ${title}`}
+            priority
             className={
               readNow
                 ? styles.readNowArtwork
                 : styles.artwork
             }
-        />
-      </div>
-
-      <div className={styles.bookContent}>
-        <div className={styles.bookBadge}>
-          BOOK {bookNumber}
+          />
         </div>
 
-        <div className={styles.bookTitle}>
-          <svg viewBox="120 0 780 150" preserveAspectRatio="none">
-            <defs>
-              <path
-                id={curveId}
-                d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100"
-              />
-            </defs>
+        <div className={styles.bookContent}>
+          <div className={styles.bookBadge}>
+            BOOK {bookNumber}
+          </div>
 
-            <text>
-              <textPath
-                href={`#${curveId}`}
-                startOffset="50%"
-                textAnchor="middle"
-              >
-                {title}
-              </textPath>
-            </text>
-          </svg>
-        </div>
+          <div className={styles.bookTitle}>
+            <svg viewBox="120 0 780 150" preserveAspectRatio="none">
+              <defs>
+                <path
+                  id={curveId}
+                  d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100"
+                />
+              </defs>
 
-        {readNow ? (
-         <Link href={buyNowHref} className={styles.buyButton}>
-            <span>READ NOW</span>
-          </Link>
-        ) : (
-          <>
+              <text>
+                <textPath
+                  href={`#${curveId}`}
+                  startOffset="50%"
+                  textAnchor="middle"
+                >
+                  {title}
+                </textPath>
+              </text>
+            </svg>
+          </div>
+
+          {readNow ? (
             <Link href={buyNowHref} className={styles.buyButton}>
-              <span>BUY NOW</span>
-              <span className={styles.arrow}>→</span>
+              <span>READ NOW</span>
             </Link>
+          ) : (
+            <>
+              <Link href={buyNowHref} className={styles.buyButton}>
+                <span>BUY NOW</span>
+                <span className={styles.arrow}>→</span>
+              </Link>
 
-            <button
-              className={styles.cartButton}
-              onClick={onAddToCart}
-              type="button"
-            >
-              <img src={CartIcon.src} alt="Cart" />
-              <span>ADD TO CART</span>
-            </button>
-          </>
-        )}
-      </div>
-    </section>
+              <button
+                className={styles.cartButton}
+                onClick={onAddToCart}
+                type="button"
+              >
+                <img src={CartIcon.src} alt="Cart" />
+                <span>ADD TO CART</span>
+              </button>
+            </>
+          )}
+        </div>
+      </section>
+
+      <section className={`${styles.bookPromoMob} ${styles.bookPromo}`}
+        style={{
+          "--desktop-top": top,
+          "--desktop-left": left,
+          "--tablet-top": tabletTop ?? top,
+          "--tablet-left": tabletLeft ?? left,
+          "--mobile-top": mobileTop ?? tabletTop ?? top,
+          "--mobile-left": mobileLeft ?? tabletLeft ?? left,
+        } as React.CSSProperties}
+      >
+        <div className={styles.bookImage}>
+          <Image src={bookArt} alt={`The Huskeroonies - ${title}`} priority className={readNow ? styles.readNowArtwork : styles.artwork} />
+        </div>
+        <div className={styles.bookContent}>
+          <Link href={buyNowHref} className={styles.bookTitle1}>
+            <span>{title}</span>
+            <span className={styles.arrow}>→</span>
+          </Link>
+        </div>
+
+
+      </section>
+    </>
   );
 }
