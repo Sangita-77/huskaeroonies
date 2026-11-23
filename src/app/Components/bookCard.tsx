@@ -126,7 +126,9 @@ export default function BookPromo({
         } as React.CSSProperties}
       >
         <div className={styles.bookImage}>
-          <Image src={bookArt} alt={`The Huskeroonies - ${title}`} priority className={readNow ? styles.readNowArtwork : styles.artwork} />
+          <Link href={buyNowHref}>
+            <Image src={bookArt} alt={`The Huskeroonies - ${title}`} priority className={readNow ? styles.readNowArtwork : styles.artwork} />
+          </Link>
         </div>
         <div className={styles.bookContent}>
           <Link href={buyNowHref} className={styles.bookTitle1}>
