@@ -88,5 +88,37 @@
 
   
 .bookPromoDesk {display: none;}
-.bookPromoMob {display: block;}
+.bookPromoMob {display: flex; padding: 6vw 3vw 10vw 11px; width: 47vw; background: url(../Images/New/bubble-img.webp) no-repeat center; background-size: contain; border: none; box-shadow: none; border-radius: 0vw;}
+.bookPromoMob .bookImage {flex: 0 0 65px;}
+.bookPromoMob .bookContent {margin-left: 10px;}
+.bookPromoMob .arrow {font-size: 4vw; margin-left: 1vw;}
+
+
+/* ----Popup---- */
+.popupOverlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.75); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 5.13vw; } 
+.popupContent { position: relative; width: 95vw; max-width: 95vw; padding: 0vw; animation: popupOpen 0.3s ease; }
+.popupBookPromo { position: relative !important; top: auto !important; left: auto !important; transform: none !important; margin: 0 auto; width: 95vw; border-radius: 5.5vw; border: 2px solid #041033; display: flex; padding: 4vw 2vw 4vw 2vw;} 
+.popupClose { position: absolute; top: 0vw; right: 0vw; z-index: 10; width: 8.97vw; height: 8.97vw; border: 2px solid #041033; border-radius: 50%; background: #fff; color: #041033; font-size: 6.67vw; line-height: 1; cursor: pointer; }
+.popupBookPromo .bookImage {flex: 0 0 41.03vw;}
+.popupBookPromo .bookBadge {width: 25.5vw; height: 9vw; font-size: 3vw;}
+.popupBookPromo .bookTitle {width: 49vw; height: 11.3vw;}
+.popupBookPromo .arrow {font-size: 5vw; line-height: 5vw; margin-left: 1.28vw;}
+.popupBookPromo .buyButton,
+.popupBookPromo .cartButton {font-size: 5vw; border-radius: 3.59vw; padding: 1.03vw 1.28vw;}
+.popupBookPromo .cartButton img {width: 6vw; margin-right: 1.28vw;}
+
+/* Popup Animation */
+@keyframes popupOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 }
