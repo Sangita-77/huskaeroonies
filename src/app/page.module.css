@@ -102,7 +102,7 @@
 
 /* .MapHolder svg{display: none;} */
 .MapHolder {
-  height: 67vw;
+  height: 75vw;
   overflow: auto;
   cursor: grab;
   scrollbar-width: none;     
@@ -956,7 +956,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 /*.........Header End.........*/
 
 /*.........Banner Start.........*/
-.MapHolder { height: 100vh; height: 65dvh; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
+.MapHolder { height: auto; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
 .BannerLogo{width:85vw; height: auto; top: 10vw; left: 7vw; }
 .Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
 .BlueRibbon{width: 58.1vw; height: auto; top: 20vw; left: 22vw;}
@@ -995,7 +995,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .book3:before {width: 30.5vw; height: 10.1vw; left: 3vw;}
 .book4:before {width: 26.5vw; height: 9.1vw; left: 5vw; top: 1vw;}
 
-.SnowFall {width: 84vw; height: 46vw; top: 267vw; left: 9vw;}
+.SnowFall {width: 84vw; height: 46vw; top: 277vw; left: 9vw;}
 .FireAnimation {top: 99.8vw;left: 50.5vw;}
 
 @keyframes smokie {

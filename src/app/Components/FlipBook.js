@@ -277,7 +277,7 @@ useEffect(() => {
           <button className="book-carousel-arrow bookLeftBtn" onClick={() => switchBook(-1)} aria-label="Previous book">
             <Image alt="Right Arrow" src={Sliderpageprev}/>
           </button>
-          <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick}>
+          <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick} onPointerMove={handleMagnifierMove}>
             <div className="pageflip-book" ref={bookElement} key={activeBook}>
               {images.map((image, index) => (
                 <article className="pageflip-page" key={`${image}-${index}`}>
