@@ -20,7 +20,21 @@ import Teddyimg from "../Images/New/teddypopupimg.webp";
 import Trainimg from "../Images/New/trainpopupimg.webp";
 import Swipeimg from "../Images/New/swipehand.webp";
 import Fullscreenimg from "../Images/New/fullsecreen.webp";
+
 import Link from "next/link";
+import AdventurePlanModal from './Modal';
+
+import Logo from "../Images/New/MainLogo.webp";
+import LeftDog from '../Images/New/LeftDog.webp';
+import RightDog from '../Images/New/RightDog.webp';
+import BookSeries from '../Images/New/book-series.webp';
+import AnnualPass from '../Images/New/annual-pass.webp';
+
+import BookIcon from '../Images/New/book-icon.webp';
+import HeartIcon from '../Images/New/heart-icon.webp';
+import ScreenIcon from '../Images/New/screen-icon.webp';
+import CalendarIcon from '../Images/New/calendar-icon.webp';
+
 
 const EMPTY_PAGES = [];
 
@@ -171,6 +185,9 @@ useEffect(() => {
   const secondVisiblePage = Math.min(currentPage + 2, images.length);
 
   const curveId = useId();
+
+// const [showAdventureModal, setShowAdventureModal] = useState(true);
+
 
   return (
     <>
@@ -324,33 +341,27 @@ useEffect(() => {
       </div>
       </div>
 
-      {showBuyPrompt && (
-        <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="buy-plan-title">
-          <div className="modal-card">
-            <Image className="footImg" alt="" src={Popupfoot}/>
-            {/* <h2 id="buy-plan-title">Want to read more then buy plan</h2> */}
-            <div className='buyPlanTitle'>
-              <svg viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
-                <defs>
-                  <path
-                    id="popText"
-                    d="M 174.75,100 A 1207.92,1207.92 0 0 1 849.25,100"
-                  />
-                </defs>
-                <text>
-                  <textPath href="#popText" startOffset="50%" textAnchor="middle" >
-                    Want to read more then buy plan
-                  </textPath>
-                </text>
-              </svg>
-            </div>
-            <p>You have finished the current book preview. Upgrade your plan to keep reading.</p>
-            <div className="modal-actions"><button className="primary">Buy Plan</button><button className="secondary" onClick={() => setShowBuyPrompt(false)}>Close</button></div>
-            <Image className="teddyImg" alt="Teddy" src={Teddyimg}/>
-            <Image className="TrainImg" alt="Train" src={Trainimg}/>
-          </div>
-        </div>
-      )}
+        <AdventurePlanModal
+          isOpen={showBuyPrompt}
+          onClose={() => setShowBuyPrompt(false)}
+          onBuySeries={() => {
+            // Navigate to 5-book series purchase
+          }}
+          onBuyAnnual={() => {
+            // Navigate to annual pass purchase
+          }}
+          assets={{
+            logo: Logo,
+            leftDog: LeftDog,
+            rightDog: RightDog,
+            bookSeries: BookSeries,
+            annualPass: AnnualPass,
+            bookIcon: BookIcon,
+            heartIcon: HeartIcon,
+            screenIcon: ScreenIcon,
+            calendarIcon: CalendarIcon,
+          }}
+        />
       {/* <Footer /> */}
     </>
   );
