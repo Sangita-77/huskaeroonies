@@ -147,12 +147,12 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
 /* --------new-------- */
 .scope :global(.pageflip-stage) { position: relative; width: 100%; display: flex; justify-content: center; align-items: center; overflow: visible; } 
 .scope :global(.pageflip-book) { position: relative; margin: 0 auto; } 
-.scope :global(.pageflip-page) { margin: 0 !important; /*padding: 0.44vw !important;*/ padding: 0.44vw !important; overflow: hidden; box-sizing: border-box; background: transparent;} 
+.scope :global(.pageflip-page) { margin: 0 !important; /*padding: 0.44vw !important;*/ padding: 0.2vw .44vw 1vw !important; overflow: hidden; box-sizing: border-box; background: transparent;} 
 .scope :global(.pageflip-content) { width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; } 
 .scope :global(.pageflip-content img) { display: block; width: 100%; height: 100%; object-fit: fill; }
 .scope :global(.pageflip-page.--right)::after{content: ""; background: #00000070; width: 0px; height: 80%; position: absolute; top: 12%; left: 3%; box-shadow: 14px 0px 35px 10px #00000059; border-radius: 15px; }
 .scope :global(.pageflip-page.--left)::after{content: ""; background: #00000070; width: 0px; height: 80%; position: absolute; top: 12%; right: 3%; box-shadow: -14px 0px 35px 10px #00000059; border-radius: 15px; }
-
+.scope :global(.page-number) {color: #000; bottom: -1.31vw; font-size: 1rem;}
 
 
 
