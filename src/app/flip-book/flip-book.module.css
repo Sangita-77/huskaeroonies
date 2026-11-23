@@ -203,8 +203,24 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   /* -----------  */
   .scope :global(.FullScreen) {display: flex !important;}
   .scope :global(.magnifier-glass) { width: 160px; height: 160px; border-width: 5px; }
-
+.pageflip-stage {
+  position: relative;
+  overflow: hidden;
 }
+
+.pageflip-book {
+  position: relative;
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+}
+
+.pageflip-book.book-magnified {
+  transform: scale(1.6);
+  transform-origin: var(--zoom-x) var(--zoom-y);
+  cursor: zoom-in;
+}
+}
+
 @media (max-width: 489px) {}
 
 
@@ -290,5 +306,4 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   .scope :global(.modal-card) {width: min(100vw, 325px);} 
 }
  */
-
 

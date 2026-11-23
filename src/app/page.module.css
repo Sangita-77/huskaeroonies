@@ -102,7 +102,7 @@
 
 /* .MapHolder svg{display: none;} */
 .MapHolder {
-  height: 67vw;
+  height: 75vw;
   overflow: auto;
   cursor: grab;
   scrollbar-width: none;     
@@ -956,7 +956,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 /*.........Header End.........*/
 
 /*.........Banner Start.........*/
-.MapHolder { height: 100vh; height: 65dvh; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
+.MapHolder { height: 107vh; height: 107dvh; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
 .BannerLogo{width: 71vw; height: auto; top: 10vw; left: 15vw; }
 .Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
 .BlueRibbon{width: 48.1vw; height: auto; top: 19vw; left: 27vw;}
