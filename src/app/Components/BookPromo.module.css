@@ -65,6 +65,8 @@
 	}
 }
 
+.bookPromoMob {display: none;}
+
 /* Tablet */
 @media (max-width: 1024px) {
   .bookPromo {
@@ -83,4 +85,8 @@
   .arrow{font-size: 3vw;}
   .cartButton img{width: 4vw;}
   .bookContent{gap: 1.3vw;}
+
+  
+.bookPromoDesk {display: none;}
+.bookPromoMob {display: block;}
 }

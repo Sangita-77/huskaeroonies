@@ -930,7 +930,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .headercontainer {justify-content: end; height: auto; margin: 0 auto; max-width: 100%; 
                   flex-direction: column-reverse; row-gap: 0; align-items: end;}
 .headercontainer > a {margin: 0 auto;}
-.headercontainer > a img {width: 65vw; height: auto; margin-top: -13px;}
+.headercontainer > a img {width: 75vw; height: auto; margin-top: -13px;}
 
 /* Hide desktop navigation */
 .navList { display: none; } 
@@ -957,30 +957,31 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 
 /*.........Banner Start.........*/
 .MapHolder { height: 100vh; height: 65dvh; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
-.BannerLogo{width: 71vw; height: auto; top: 10vw; left: 15vw; }
+.BannerLogo{width:85vw; height: auto; top: 10vw; left: 7vw; }
 .Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
-.BlueRibbon{width: 48.1vw; height: auto; top: 19vw; left: 27vw;}
-.PickAdv svg{width: 47vw; height: auto;} 
+.BlueRibbon{width: 58.1vw; height: auto; top: 20vw; left: 22vw;}
+.PickAdv svg{width: 65vw; height: auto;} 
 .PickAdv text{font-size: 29px; stroke-width: 2px;}
-.PickAdv {top: 26vw; left: 27.8vw;}
-.Welcome{top: 18.8vw; left: 27vw;}
-.Welcome svg{width: 49vw; height: auto;}
+.PickAdv {top: 28vw; left: 19vw;}
+.Welcome{top: 19.8vw; left: 18.8vw;}
+.Welcome svg{width: 65vw; height: auto;}
 .Welcome text{text-shadow: 1px 1px 0px var(--color-primary-dark);}
+.mobileMap {margin-top: 32vw;}
 
 .river--2, .river--3, .river--4{-webkit-animation: flow 30s infinite linear; animation: flow 30s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);}
-.river--2 { -webkit-mask: url("../app/Images/New/RiverMaskOneM.webp") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskOneM.webp") center / contain no-repeat;        width: 95vw; height: 125vw; top: 67.6vw; left: -10.1vw; z-index: 3; transform: rotate(-36deg);} 
-.river--3 {  -webkit-mask: url("../app/Images/New/RiverMaskTwoM.webp") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskTwoM.webp") center / contain no-repeat; width: 158vw; height: 178vw; top: 132vw; left: -29vw; transform: rotate(0deg); z-index: 3; transform: rotate(45deg);}
-.river--4 {-webkit-mask: url("../app/Images/New/RiverMaskThreeM.webp") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskThreeM.webp") center / contain no-repeat; width: 111.5vw; height: 106.2vw; top: 288vw; left: -22.1vw;  transform: rotate(-65deg); z-index: 3;}
+.river--2 { -webkit-mask: url("../app/Images/New/RiverMaskOneM.webp") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskOneM.webp") center / contain no-repeat;        width: 95vw; height: 125vw; top: 77.6vw; left: -10.1vw; z-index: 3; transform: rotate(-36deg);} 
+.river--3 {  -webkit-mask: url("../app/Images/New/RiverMaskTwoM.webp") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskTwoM.webp") center / contain no-repeat; width: 158vw; height: 178vw; top: 142vw; left: -29vw; transform: rotate(0deg); z-index: 3; transform: rotate(45deg);}
+.river--4 {-webkit-mask: url("../app/Images/New/RiverMaskThreeM.webp") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskThreeM.webp") center / contain no-repeat; width: 111.5vw; height: 106.2vw; top: 298vw; left: -22.1vw;  transform: rotate(-65deg); z-index: 3;}
 
 .heroVideoContainer .GirlDog, 
 .heroVideoContainer .BoyDog { width: 23vw; top: -38vw; }
-.FireWood{width: 5.3vw; height: auto; top: 92.5vw; left: 49.8vw;}
+.FireWood{width: 5.3vw; height: auto; top: 102.5vw; left: 49.8vw;}
 /*.........Banner End.........*/
 
 /* .Bridge {display: none;} */
 .Bridge {display: none;}
-.mobileBridge1 {display: block; z-index: 3; position: absolute; -webkit-user-drag: none; user-select: none; width: 33vw; height: auto; display: block; position: absolute; top: 124vw; left: 23.9vw; }
-.mobileBridge2 {display: block; z-index: 99; position: absolute; -webkit-user-drag: none; user-select: none; position: absolute;  width: 52vw; height: auto; display: block; position: absolute; top: 223vw; left: 34.9vw;}
+.mobileBridge1 {display: block; z-index: 3; position: absolute; -webkit-user-drag: none; user-select: none; width: 33vw; height: auto; display: block; position: absolute; top: 134vw; left: 23.9vw; }
+.mobileBridge2 {display: block; z-index: 99; position: absolute; -webkit-user-drag: none; user-select: none; position: absolute;  width: 52vw; height: auto; display: block; position: absolute; top: 233vw; left: 34.9vw;}
 
 .book {width: 35.64vw; height: 16.67vw;}
 .book a {font-size: 3.08vw;}
@@ -995,7 +996,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .book4:before {width: 26.5vw; height: 9.1vw; left: 5vw; top: 1vw;}
 
 .SnowFall {width: 84vw; height: 46vw; top: 267vw; left: 9vw;}
-.FireAnimation {top: 89.8vw;left: 50.5vw;}
+.FireAnimation {top: 99.8vw;left: 50.5vw;}
 
 @keyframes smokie {
   25%, 75% {left: 10px; top: 0;}
@@ -1017,6 +1018,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .fire{height: 3vw; width: 3vw;}
 .BridgeOne, .BridgeTwo{display: none;}
 .bookBadge {width: 25.1vw !important; height: 9.4vw !important; font-size: 2.5vw !important;}
+
 }
 
 
