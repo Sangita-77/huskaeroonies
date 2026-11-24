@@ -1,14 +1,39 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Image from "next/image";
 import Logo from "../Images/New/MainLogo.webp";
 import styles from "../page.module.css";
 
-export default function Header({ logo = true }) {
+interface HeaderProps {
+  logo?: boolean;
+}
+
+export default function Header({ logo = true }: HeaderProps) {
+  const [showLogo, setShowLogo] = useState(logo);
+
+  useEffect(() => {
+    if (logo) {
+      setShowLogo(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      setShowLogo(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [logo]);
+
   return (
     <header className={styles.header}>
       <div className={styles.headercontainer}>
-        {logo && (
-          // <a href="/dev/huskaeroonies">
+        {showLogo && (
           <a href="/">
             <Image
               src={Logo}
