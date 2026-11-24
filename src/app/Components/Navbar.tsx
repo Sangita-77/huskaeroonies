@@ -7,7 +7,7 @@ import BookIcon from "../Images/New/BookIcon.webp";
 import ShowIcon from "../Images/New/ShowIcon.webp";
 import ShopIcon from "../Images/New/ShopIcon.webp";
 import BetterMeIcon from "../Images/New/BetterMeIcon.webp";
-import CartIcon from "../Images/New/CartIcon.svg";
+import DogIcon from "../Images/New/DogIcon.webp";
 
 
 const links = [
@@ -39,7 +39,16 @@ export default function Navbar() {
             </Link>
           </li>
         ))}
-        <li></li>
+        <li className={`${styles.navItem} ${styles.ProfileNav}`}>
+          <Image src={DogIcon} alt="DogIcon" />
+            <Link
+              href="/"
+              className={styles.navLink}
+              onClick={handleLinkClick}
+            >
+             Blue & Aluna today
+            </Link>
+        </li>
       </ul>
 
       {/* Mobile Burger Button */}
@@ -67,6 +76,7 @@ export default function Navbar() {
         <ul className={styles.mobileNavList}>
           {links.map(({ title, href }) => (
             <li key={href} className={styles.mobileNavItem}>
+              {/* <Image src={Icon} alt="" /> */}
               <Link
                 href={href}
                 className={styles.mobileNavLink}
