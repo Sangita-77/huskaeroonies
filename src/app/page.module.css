@@ -180,7 +180,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
     margin: 0 auto;
     padding: 1.5vw .65vw 3.25vw;
     display: flex;
-    gap: 5vw;
+    gap: 3vw;
 }
  .headercontainer a img{width: 19vw; height: auto;}
 
@@ -201,6 +201,15 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
     transform: scale(1.04);
 }
 
+.active {
+  background-color: #b9e5ff;
+  border-radius: 50px;
+}
+
+.active .navLink {
+  color: #101d50;
+  font-weight: 700;
+}
 /* Header End */
 
 
@@ -212,7 +221,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .navList {
   display: flex;
   align-items: center;
-  gap: 3vw;
+  gap: 0.8vw;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -231,12 +240,12 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
   transition: color 0.3s ease;
 }
 .headercontainer .nav{background: #fff;
-    padding: .4vw 2vw;
+    padding: .4vw 1vw;
     border-radius: 4vw;
     border: solid .13vw #65acf3;}
 .navList li{gap: .5vw; display: flex; justify-content: center; align-items: center;}
 /* .navList li img{width: 3vw; height: auto; } */
-.navList .navLink:hover { text-shadow: 0 0 23px #000000; transition: .5s; }
+/* .navList .navLink:hover { text-shadow: 0 0 23px #000000; transition: .5s; } */
 .navList .active { text-shadow: 0 0 23px #000000; }
 
 /* Hide desktop menu */ 
@@ -924,6 +933,17 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 /* .scope :global(.homePageFlip .scope .app-shell .flipbook-wrapper) {z-index: 99 !important; margin-top: -10vw !important;} */
 .bookBadge { text-align: center; background: url(./Images/New/BoneYellow.svg) center no-repeat; background-size: contain; justify-content: center; align-items: center; width: 14.1vw !important; height: 5.4vw !important; font-size: 1.5vw !important; display: flex; }
 /* .bookBadge {width: 16.1vw; height: 5.4vw; font-size: 1.5vw;} */
+.navItem {padding: 0.23vw 0.75vw; border-radius: 3.13vw;}
+.navItem:hover {background-color: #abdcfd;}
+.navItem img {width: 2.81vw; height: auto;}
+.userNav {background-color: #42aaf7; padding: 0.5vw 1.06vw; border-radius: 3.13vw; }
+.userNav a {color: #fff;}
+.userNav img {width: 20px; height: auto;}
+.navItem.ProfileNav img {width: 3.44vw;}
+.navItem.ProfileNav a {font-size: 1.2vw;}
+.navItem.ProfileNav a h5 {font-size: 0.75vw;}
+.navItem .dropdownIcon,
+.navItem.ProfileNav .dropdownIcon {width: 0.94vw;}
 
 
 
