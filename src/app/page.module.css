@@ -652,8 +652,10 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 /* Dog Animated Start */
 .heroVideoContainer{position: relative;}
-.heroVideoContainer .GirlDog{z-index: 99; width: 23.25vw; height: auto; position: absolute; top: -31vw; left: 0vw;}
-.heroVideoContainer .BoyDog{z-index: 99; width: 26.06vw; height: auto; position: absolute; top: -28vw; right: 0vw;}
+.heroVideoContainer .GirlDog{z-index: 99; width: 23.25vw; height: auto; position: absolute; top: -31vw; left: 0vw; -webkit-user-drag: none;
+    user-select: none;}
+.heroVideoContainer .BoyDog{z-index: 99; width: 26.06vw; height: auto; position: absolute; top: -28vw; right: 0vw; -webkit-user-drag: none;
+    user-select: none;}
 /* Dog Animated End */
 
 /* Smoke Start */
@@ -956,14 +958,10 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 /*.........Header End.........*/
 
 /*.........Banner Start.........*/
-<<<<<<< HEAD
-.MapHolder { height: 107vh; height: 107dvh; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
-.BannerLogo{width: 71vw; height: auto; top: 10vw; left: 15vw; }
 
-=======
-.MapHolder { height: auto; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
+.MapHolder { height: 107vh; height: 107dvh; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
 .BannerLogo{width:85vw; height: auto; top: 10vw; left: 7vw; }
->>>>>>> 49cbe13cee7c3825d01b602ac0f6b7d070d06f04
+
 .Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
 .BlueRibbon{width: 58.1vw; height: auto; top: 20vw; left: 22vw;}
 .PickAdv svg{width: 65vw; height: auto;} 
