@@ -1,397 +1,100 @@
 
-.popupOverlay {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.667vw;
-  background: rgba(0, 0, 0, 0.65);
-  overflow-y: auto;
-}
+.popupOverlay { position: fixed; inset: 0; z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 1.667vw; background: rgba(0, 0, 0, 0.65); overflow-y: auto; } 
+.popupContainer { background: #fff; border: .5vw solid #079df4; border-radius: 5.417vw; flex-direction: column; align-items: center; width: 70%; max-width: 100vw; padding: .6vw 6% .6vw; display: flex; position: relative; box-shadow: 0 1.667vw 2.917vw #00000059; }
 
-.popupContainer {
-  background: #fff;
-  border: .5vw solid #079df4;
-  border-radius: 5.417vw;
-  flex-direction: column;
-    align-items: center;
-    width: 70%;
-    max-width: 100vw;
-    padding: .6vw 6% .6vw;
-    display: flex;
-    position: relative;
-    box-shadow: 0 1.667vw 2.917vw #00000059;
-}
+/* Header */ 
+.popupHeader { width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 2; } 
+.logo { width: 33.333vw; max-width: 35%; height: auto; object-fit: contain; } 
+.sampleunderline { width: 8.9vw; height: auto; position: absolute; top: 2.7vw; left: 22.8vw; }
 
-/* Header */
-
-.popupHeader {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.logo {
-  width: 33.333vw;
-  max-width: 35%;
-  height: auto;
-  object-fit: contain;
-}
-
-.sampleunderline {
-    width: 8.9vw;
-    height: auto;
-    position: absolute;
-    top: 2.7vw;
-    left: 22.8vw;
-}
-
-/* Husky Characters */
-
+/* Husky Characters */ 
 .leftDog,
-.rightDog {
-z-index: 4;
-object-fit: contain;
-width: 14vw;
-height: 10vw;
-position: absolute;
-top: 5.333vw;
-}
+.rightDog { z-index: 4; object-fit: contain; width: 14vw; height: 10vw; position: absolute; top: 5.333vw; } 
+.leftDog { left: 5%; } 
+.rightDog { right: 3%; }
 
-.leftDog {
-  left: 5%;
-}
+/* Plans Wrapper */ 
+.plansWrapper { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 3vw; position: relative; z-index: 2; }
 
-.rightDog {
-  right: 3%;
-}
+/* Plan Card */ 
+.planCard { position: relative; min-width: 0; padding: 2.083vw 2.5vw 1.833vw; border: 0.125vw solid #079df4; border-radius: 1.5vw; display: flex; flex-direction: column; align-items: center; text-align: center; } 
+.seriesCard { background: #d9efff; } 
+.annualCard { background: #fff; }
 
-/* Plans Wrapper */
+/* Annual Badge */ 
+.annualBadge { position: absolute; top: -1.333vw; left: 50%; transform: translateX(-50%); width: max-content; max-width: 90%; padding: .45vw 1.2vw; font-size: .95vw; background: #f2c632; color: #171c5c; border-radius: 2.5vw; white-space: nowrap; z-index: 5; }
 
-.plansWrapper {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3vw;
-  position: relative;
-  z-index: 2;
-}
+/* Plan Images */ 
+.planImage { width: 100%; height: 8.75vw; display: flex; align-items: center; justify-content: center; margin-bottom: 0.333vw; } 
+.planImage img { width: 100%; height: 100%; object-fit: contain; } 
+.planCard h3 { color: #171c5c; font-size: clamp(1.4vw, 1vw, 1.167vw); font-weight: 900; line-height: 1; margin: .5vw 0 1vw; }
 
-/* Plan Card */
+/* Price */ 
+.priceWrap { width: 80%; display: flex; align-items: center; justify-content: center; background: #ffe99d; border: 0.083vw solid #e7ce75; border-radius: 3.333vw; overflow: hidden; margin-bottom: 1.25vw; } 
+.price { flex: 1; color: #171c5c; font-size: clamp(1.5vw, 2vw, 2.5vw); white-space: nowrap; } 
+.priceDescription { color: #171c5c; border-left: .083vw solid #d5bd69; flex: 0 0 45%; padding: .3vw .667vw .3vw .667vw; font-size: 1.217vw; font-weight: 500; line-height: 1; }
 
-.planCard {
-  position: relative;
-  min-width: 0;
-  padding: 2.083vw 2.5vw 1.833vw;
-  border: 0.125vw solid #079df4;
-  border-radius: 1.5vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+/* Features */ 
+.features { display: flex; text-align: left; flex-direction: column; gap: .4vw; width: 80%; max-width: 22vw; margin: 0 auto .6vw; } 
+.feature { display: flex; align-items: center; gap: 1vw; color: #454545; font-size: .95vw; line-height: 1; } 
+.feature img { width: 1.7vw; height: 1.7vw; object-fit: contain; flex-shrink: 0; }
 
-.seriesCard {
-  background: #d9efff;
-}
+/* Buttons */ 
+.planButton { color: #fff; cursor: pointer; border: .25vw solid #fff; border-radius: 2.917vw; justify-content: center; align-items: center; gap: 1vw; margin-top: auto; padding: .5vw .8vw; font-size: .8vw; font-weight: 900; transition: transform .2s, box-shadow .2s; display: flex; box-shadow: 0 .333vw .417vw #00000059; } 
+.planButton:hover { transform: translateY(-0.25vw); box-shadow: 0 0.583vw 0.75vw rgba(0, 0, 0, 0.25); } 
+.planButton span { font-size: 1.5vw; font-weight: 400; line-height: 1; } 
+.seriesButton { background: #009ff5; } 
+.annualButton { background: #171c5c; }
 
-.annualCard {
-  background: #fff;
-}
-
-/* Annual Badge */
-
-.annualBadge {
-  position: absolute;
-  top: -1.333vw;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-  max-width: 90%;
-  padding: .45vw 1.2vw;
-  font-size: .95vw;
-  background: #f2c632;
-  color: #171c5c;
-  border-radius: 2.5vw;
-  white-space: nowrap;
-  z-index: 5;
-}
-
-/* Plan Images */
-
-.planImage {
-  width: 100%;
-  height: 8.75vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.333vw;
-}
-
-.planImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.planCard h3 {
-  color: #171c5c;
-  font-size: clamp(1.4vw, 1vw, 1.167vw);
-  font-weight: 900;
-  line-height: 1;
-  margin: .5vw 0 1vw;
-}
-
-/* Price */
-
-.priceWrap {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffe99d;
-  border: 0.083vw solid #e7ce75;
-  border-radius: 3.333vw;
-  overflow: hidden;
-  margin-bottom: 1.25vw;
-}
-
-.price {
-  flex: 1;
-  color: #171c5c;
-  font-size: clamp(1.5vw, 2vw, 2.5vw);
-  white-space: nowrap;
-}
-
-.priceDescription {
-   color: #171c5c;
-    border-left: .083vw solid #d5bd69;
-    flex: 0 0 45%;
-    padding: .3vw .667vw .3vw .667vw;
-    font-size: 1.217vw;
-    font-weight: 500;
-    line-height: 1;
-}
-
-/* Features */
-
-.features {
-  display: flex;
-  text-align: left;
-  flex-direction: column;
-  gap: .4vw;
-  width: 80%;
-  max-width: 22vw;
-  margin: 0 auto .6vw;
-}
-
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 1vw;
-  color: #454545;
-  font-size: .95vw;
-  line-height: 1;
-}
-
-.feature img {
-width: 1.7vw;
-height: 1.7vw;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-/* Buttons */
-
-.planButton {
-    color: #fff;
-    cursor: pointer;
-    border: .25vw solid #fff;
-    border-radius: 2.917vw;
-    justify-content: center;
-    align-items: center;
-    gap: 1vw;
-    margin-top: auto;
-    padding: .5vw .8vw;
-    font-size: .8vw;
-    font-weight: 900;
-    transition: transform .2s, box-shadow .2s;
-    display: flex;
-    box-shadow: 0 .333vw .417vw #00000059;
-}
-
-.planButton:hover {
-  transform: translateY(-0.25vw);
-  box-shadow: 0 0.583vw 0.75vw rgba(0, 0, 0, 0.25);
-}
-
-.planButton span {
-  font-size: 1.5vw;
-  font-weight: 400;
-  line-height: 1;
-}
-
-.seriesButton {
-  background: #009ff5;
-}
-
-.annualButton {
-  background: #171c5c;
-}
-
-/* Maybe Later */
-
-.maybeLater {
-  margin-top: 1vw;
-  background: transparent;
-  border: none;
-  color: #009ff5;
-  font-size: 1vw;
-  font-weight: 600;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.maybeLater:hover {
-  color: #171c5c;
-}
-
+/* Maybe Later */ 
+.maybeLater { margin-top: 1vw; background: transparent; border: none; color: #009ff5; font-size: 1vw; font-weight: 600; text-decoration: underline; cursor: pointer; } 
+.maybeLater:hover { color: #171c5c; } 
 .popupHeader h4{color: #009ff5; margin-bottom: 2vw;}
 
 /* Tablet */
 
 @media (max-width: 900px) {
-  .popupContainer {
-    min-height: auto;
-    padding: 3.333vw 4% 2.222vw;
-    border-radius: 5vw;
-  }
-
-
+  .logo {max-width: 55%;}
+  .popupContainer { min-height: auto; padding: 3.333vw 4% 2.222vw; border-radius: 5vw; } 
   .leftDog,
-  .rightDog {
-    top: 12.778vw;
-    width: 13.889vw;
-    height: 16.111vw;
-  }
-
-  .plansWrapper {
-    gap: 2.222vw;
-  }
-
-  .planCard {
-    padding: 2.444vw 1.667vw;
-    min-height: 50vw;
-  }
-
-  .planImage {
-    height: 15vw;
-  }
-
-  .feature {
-    font-size: 1.444vw;
-  }
-
-  .planButton {
-    font-size: 1.333vw;
-  }
+  .rightDog { top: 16.5vw; width: 10.889vw; height: 10.111vw; } 
+  .plansWrapper { gap: 2.222vw; } 
+  .planCard { padding: 2.444vw 0.8vw; min-height: 42vw; }
+  .planImage { height: 15vw; } 
+  .feature { font-size: 1.444vw; } 
+  .planButton { font-size: 1.333vw; }
+  .sampleunderline {width: 18.9vw; top: 4.7vw; left: 20.8vw;}
+  
 }
 
 /* Mobile */
 
 @media (max-width: 650px) {
-  .popupOverlay {
-    align-items: flex-start;
-    padding: 1.846vw;
-  }
-
-  .popupContainer {
-    padding: 1.846vw 1.308vw 1.308vw;
-    border: 1.077vw solid #079df4;
-    border-radius: 1.615vw;
-  }
-
-  .logo {
-    max-width: 55%;
-  }
-
-
+  .popupOverlay { align-items: flex-start; padding: 1.846vw; } 
+  .popupContainer { padding: 1.846vw 1.308vw 1.308vw; border: 1.077vw solid #079df4; border-radius: 6.615vw; width: 90%;} 
+  .logo { max-width: 80%; width: 55vw;} 
   .leftDog,
-  .rightDog {
-    top: 10.615vw;
-    width: 10.077vw;
-    height: 12.385vw;
-  }
+  .rightDog { top: 10.615vw; width: 10.077vw; height: 12.385vw; } 
+  .leftDog { left: 0; } 
+  .rightDog { right: 0; } 
+  .plansWrapper { grid-template-columns: 1fr; gap: 1.615vw; } 
+  .planCard { padding: 1.385vw 2.769vw; } 
+  .planImage { height: 18.077vw; } 
+  .planCard h3 { font-size: 1.538vw; } 
+  .priceWrap { max-width: 42.692vw; } 
+  .price { font-size: 3.231vw; } 
+  .feature { font-size: 2.154vw; } 
+  .planButton { max-width: 42.692vw; font-size: 1vw; } 
+  .maybeLater { margin-top: 1.308vw; }
 
-  .leftDog {
-    left: 0;
-  }
 
-  .rightDog {
-    right: 0;
-  }
-
-  .plansWrapper {
-    grid-template-columns: 1fr;
-    gap: 1.615vw;
-  }
-
-  .planCard {
-    padding: 1.385vw 2.769vw;
-  }
-
-  .planImage {
-    height: 18.077vw;
-  }
-
-  .planCard h3 {
-    font-size: 1.538vw;
-  }
-
-  .priceWrap {
-    max-width: 42.692vw;
-  }
-
-  .price {
-    font-size: 3.231vw;
-  }
-
-  .feature {
-    font-size: 2.154vw;
-  }
-
-  .planButton {
-    max-width: 42.692vw;
-    font-size: 1vw;
-  }
-
-  .maybeLater {
-    margin-top: 1.308vw;
-  }
 }
 
 @media (max-width: 380px) {
   .leftDog,
-  .rightDog {
-    width: 18.421vw;
-    height: 22.368vw;
-  }
-
-  .planCard {
-    padding-left: 3.158vw;
-    padding-right: 3.158vw;
-  }
-
-  .annualBadge {
-    font-size: 3.158vw;
-    padding: 2.105vw 3.947vw;
-  }
+  .rightDog { width: 18.421vw; height: 22.368vw; } 
+  .planCard { padding-left: 3.158vw; padding-right: 3.158vw; } 
+  .annualBadge { font-size: 3.158vw; padding: 2.105vw 3.947vw; }
 }
 
 
@@ -403,9 +106,7 @@ height: 1.7vw;
 
 /* Overlay open */
 
-.popupOpen {
-  animation: overlayOpen 0.35s ease forwards;
-}
+.popupOpen { animation: overlayOpen 0.35s ease forwards; }
 
 @keyframes overlayOpen {
   from {
@@ -421,9 +122,7 @@ height: 1.7vw;
 
 /* Overlay close */
 
-.popupClosing {
-  animation: overlayClose 0.35s ease forwards;
-}
+.popupClosing { animation: overlayClose 0.35s ease forwards; }
 
 @keyframes overlayClose {
   from {
@@ -439,9 +138,7 @@ height: 1.7vw;
 
 /* Popup opening */
 
-.popupOpen .popupContainer {
-  animation: popupEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
+.popupOpen .popupContainer { animation: popupEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
 @keyframes popupEnter {
   0% {
@@ -462,9 +159,7 @@ height: 1.7vw;
 
 /* Popup closing */
 
-.popupClosing .popupContainer {
-  animation: popupExit 0.3s ease-in forwards;
-}
+.popupClosing .popupContainer { animation: popupExit 0.3s ease-in forwards; }
 
 @keyframes popupExit {
   from {
@@ -480,13 +175,8 @@ height: 1.7vw;
 
 /* Plan cards entrance */
 
-.popupOpen .seriesCard {
-  animation: cardEnter 0.55s 0.15s ease both;
-}
-
-.popupOpen .annualCard {
-  animation: cardEnter 0.55s 0.25s ease both;
-}
+.popupOpen .seriesCard { animation: cardEnter 0.55s 0.15s ease both; } 
+.popupOpen .annualCard { animation: cardEnter 0.55s 0.25s ease both; }
 
 @keyframes cardEnter {
   from {
@@ -502,13 +192,8 @@ height: 1.7vw;
 
 /* Husky entrance */
 
-.popupOpen .leftDog {
-  animation: dogLeftEnter 0.7s 0.2s ease-out both;
-}
-
-.popupOpen .rightDog {
-  animation: dogRightEnter 0.7s 0.3s ease-out both;
-}
+.popupOpen .leftDog { animation: dogLeftEnter 0.7s 0.2s ease-out both; } 
+.popupOpen .rightDog { animation: dogRightEnter 0.7s 0.3s ease-out both; }
 
 @keyframes dogLeftEnter {
   from {
@@ -544,7 +229,5 @@ height: 1.7vw;
   .popupOpen .seriesCard,
   .popupOpen .annualCard,
   .popupOpen .leftDog,
-  .popupOpen .rightDog {
-    animation: none !important;
-  }
+  .popupOpen .rightDog { animation: none !important; }
 }
