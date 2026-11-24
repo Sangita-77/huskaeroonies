@@ -82,7 +82,7 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
 .scope :global(.page-count) { color: #d9f7fb; margin: 0 1vw;}
 .scope :global(.book-carousel-dots button) { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(217, 247, 251, .42); }
 .scope :global(.modal-backdrop) { position: fixed; z-index: 999; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0, 0, 0, 0.596); }
-.scope :global(.modal-card) {position: relative; z-index: 9999; width: min(100vw, 44.75vw); padding: 1.19vw 1.38vw; text-align: center; border: 0.38vw solid #029FFC; border-radius: 2.56vw; background: #01A0FF; background: linear-gradient(180deg,rgba(1, 160, 255, 1) 15%, rgba(102, 198, 255, 1) 45%, rgba(1, 115, 184, 1) 100%); box-shadow: 0 0 0 0.38vw #fff; }
+.scope :global(.modal-card) {position: relative; z-index: 9999; width: min(100vw, 44.75vw); padding: 1.19vw 1.38vw; text-align: center; border: 0.38vw solid #029FFC; border-radius: 2.56vw; background: #fff; box-shadow: 0 0 0 0.38vw #fff; }
 .scope :global(.modal-card p) { color: #fff; line-height: 2.13vw; font-size: 1.5vw; padding-bottom: 2vw; width: 31.38vw; margin: 0 auto;}
 .scope :global(.modal-card h2) {font-size: 22px; padding-bottom: 10px; color: #000000;}
 .scope :global(.modal-actions) {gap: 1.19vw; display: flex; justify-content: center; margin-bottom: 3.06vw;}
@@ -134,9 +134,9 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
 .scope :global(.homePageFlipWrap .adventureText .exploreBtnWrap a)::after { content: ""; background: url(../Images//New/sendarrowicon.webp) center no-repeat; background-size: contain; width: 2.06vw; height: 1.19vw; position: absolute; top: 50%; right: 1.7vw; transform: translateY(-50%); }
 
 .scope :global(.buyPlanTitle) {width: 100%; display: flex; justify-content: center; overflow: visible; position: relative; margin-top: -0.8vw;}
-.scope :global(.buyPlanTitle svg) {width: 42.19vw; height: 8vw; overflow: visible; margin-bottom: -2vw; margin-top: -0vw; z-index: 2;}
-.scope :global(.buyPlanTitle text) {font-size: 44px; fill: #151B58; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 3px; text-transform: capitalize;}
-.scope :global(.footImg) {width: 5.13vw; height: auto;}
+.scope :global(.buyPlanTitle svg) {    z-index: 2; width: 42.19vw; height: 8vw; margin-top: 0; margin-bottom: -3.5vw; overflow: visible;}
+.scope :global(.buyPlanTitle text) {font-size: 44px; fill: #151B58; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 3px; text-transform: capitalize; font-weight: 900;}
+.scope :global(.footImg) {width: 20vw; height: auto;}
 .scope :global(.teddyImg) {position: absolute; bottom: 1vw; left: 1vw; width: 10.06vw; height: auto;}
 .scope :global(.TrainImg) {position: absolute; bottom: 1vw; right: 0vw; width: 11.19vw; height: auto;}
 
