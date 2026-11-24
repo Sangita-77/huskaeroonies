@@ -5,6 +5,7 @@ import { useId, useState } from "react";
 import defaultBookArt from "../Images/New/SnowDayBook.webp";
 import styles from "./BookPromo.module.css";
 import CartIcon from "../Images/New/CartIcon.svg";
+import CardArrow from "../Images/New/cardrightarrow.svg";
 import { useRouter } from "next/navigation";
 
 
@@ -147,7 +148,10 @@ export default function BookPromo({
         <div className={styles.bookContent}>
           <div className={styles.bookTitle1}>
             <span>{title}</span>
-            <span className={styles.arrow}>→</span>
+            {/* <span className={styles.arrow}>→</span> */}
+            <span className={styles.arrow}> 
+              <img src={CardArrow.src} alt="Right Arrow" />
+            </span>
           </div>
         </div>
         

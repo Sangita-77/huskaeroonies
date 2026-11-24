@@ -88,10 +88,12 @@
 
   
 .bookPromoDesk {display: none;}
-.bookPromoMob {display: flex; padding: 6vw 3vw 10vw 11px; width: 47vw; background: url(../Images/New/bubble-img.webp) no-repeat center; background-size: contain; border: none; box-shadow: none; border-radius: 0vw;}
+.bookPromoMob {display: flex; padding: 6vw 3vw 10vw 11px; width: 48vw; background: url(../Images/New/bubble-img.webp) no-repeat center; background-size: contain; border: none; box-shadow: none; border-radius: 0vw;}
 .bookPromoMob .bookImage {flex: 0 0 65px;}
-.bookPromoMob .bookContent {margin-left: 10px;}
-.bookPromoMob .arrow {font-size: 4vw; margin-left: 1vw;}
+.bookPromoMob .bookContent {margin-left: 4px;}
+.bookPromoMob .bookTitle1 {display: flex; justify-content: center; align-items: center; font-size: 3.85vw; line-height: 5.13vw; text-align: center;}
+.bookPromoMob .arrow {margin-left: 1.6vw;}
+.bookPromoMob .arrow img {width: 2.31vw;}
 
 
 /* ----Popup---- */
