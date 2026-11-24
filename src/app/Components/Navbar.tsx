@@ -3,19 +3,19 @@ import Image from "next/image";
 import { useState } from "react";
 import styles from "../page.module.css";
 
-import BookIcon from "../Images/New/BookIcon.svg";
-import PawIcon from "../Images/New/PawIcon.svg";
-import ParentIcon from "../Images/New/ParentIcon.svg";
-import AboutIcon from "../Images/New/AboutIcon.svg";
+import BookIcon from "../Images/New/BookIcon.webp";
+import ShowIcon from "../Images/New/ShowIcon.webp";
+import ShopIcon from "../Images/New/ShopIcon.webp";
+import BetterMeIcon from "../Images/New/BetterMeIcon.webp";
 import CartIcon from "../Images/New/CartIcon.svg";
 
 
 const links = [
   { title: "Book", href: "#book", Icon: BookIcon },
-  { title: "Meet The Husks", href: "#meet-the-husks", Icon: PawIcon },
-  { title: "For Parents", href: "#for-parents", Icon: ParentIcon },
-  { title: "About Us", href: "#about-us", Icon: AboutIcon },
-  { title: "Baby Shower Cart", href: "#baby-shower-cart", Icon: CartIcon },
+  { title: "Show", href: "#meet-the-husks", Icon: ShowIcon },
+  { title: "Shop", href: "#for-parents", Icon: ShopIcon },
+  { title: "Better Me", href: "#about-us", Icon: BetterMeIcon },
+  // { title: "Baby Shower Cart", href: "#baby-shower-cart", Icon: CartIcon },
 ];
 
 export default function Navbar() {
@@ -39,6 +39,7 @@ export default function Navbar() {
             </Link>
           </li>
         ))}
+        <li></li>
       </ul>
 
       {/* Mobile Burger Button */}
