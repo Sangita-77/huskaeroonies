@@ -71,22 +71,26 @@
 
 @media (max-width: 650px) {
   .popupOverlay { align-items: flex-start; padding: 1.846vw; } 
-  .popupContainer { padding: 1.846vw 1.308vw 1.308vw; border: 1.077vw solid #079df4; border-radius: 6.615vw; width: 90%;} 
+  .popupContainer { padding: 1.846vw 1.308vw 1.308vw; border: 1.077vw solid #079df4; border-radius: 8.615vw; width: 90%;} 
   .logo { max-width: 80%; width: 55vw;} 
   .leftDog,
-  .rightDog { top: 10.615vw; width: 10.077vw; height: 12.385vw; } 
+  .rightDog { top: 27.5vw; width: 16.077vw; height: 15.385vw; }
   .leftDog { left: 0; } 
   .rightDog { right: 0; } 
-  .plansWrapper { grid-template-columns: 1fr; gap: 1.615vw; } 
-  .planCard { padding: 1.385vw 2.769vw; } 
+  .plansWrapper { grid-template-columns: 1fr; gap: 1.615vw; width: 95%;} 
+  .planCard { padding: 1.385vw 2.769vw; border-radius: 3.5vw;} 
   .planImage { height: 18.077vw; } 
-  .planCard h3 { font-size: 1.538vw; } 
-  .priceWrap { max-width: 42.692vw; } 
-  .price { font-size: 3.231vw; } 
-  .feature { font-size: 2.154vw; } 
-  .planButton { max-width: 42.692vw; font-size: 1vw; } 
+  .planCard h3 { font-size: 4.538vw; } 
+  .priceWrap { max-width: 50.692vw; margin-top: 1.54vw;} 
+  .price { font-size: 6.231vw; flex: 0 0 50%;} 
+  .priceDescription {font-size: 2.717vw; line-height: 3vw; flex: 0 0 50%;}
+  .features { max-width: 48vw; gap: 1.28vw; margin: 1vw auto 2vw;} 
+  .feature { font-size: 3vw; gap: 1.5vw;} 
+  .feature img { width: 3.7vw; height: 3.7vw; } 
+  .planButton { max-width: 55.692vw; font-size: 1vw; padding: 1vw 4vw;} 
   .maybeLater { margin-top: 1.308vw; }
-
+  .sampleunderline {width: 28.9vw; top: 6.7vw; left: 26.8vw;}
+  .popupHeader h4 {width: 57vw;}
 
 }
 
