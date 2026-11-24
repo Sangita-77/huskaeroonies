@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import styles from "../page.module.css";
 
 import BookIcon from "../Images/New/BookIcon.webp";
@@ -11,7 +12,7 @@ import DogIcon from "../Images/New/DogIcon.webp";
 
 
 const links = [
-  { title: "Book", href: "#book", Icon: BookIcon },
+  { title: "Book", href: "/flip-book", Icon: BookIcon },
   { title: "Show", href: "#meet-the-husks", Icon: ShowIcon },
   { title: "Shop", href: "#for-parents", Icon: ShopIcon },
   { title: "Better Me", href: "#about-us", Icon: BetterMeIcon },
@@ -20,7 +21,7 @@ const links = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const pathname = usePathname();
   const handleLinkClick = () => setMenuOpen(false);
 
   return (
@@ -28,16 +29,21 @@ export default function Navbar() {
       {/* Desktop Navigation */}
       <ul className={styles.navList}>
         {links.map(({ title, href, Icon }) => (
-          <li key={href} className={styles.navItem}>
-            <Image src={Icon} alt="" />
-            <Link
-              href={href}
-              className={styles.navLink}
-              onClick={handleLinkClick}
-            >
-              {title}
-            </Link>
-          </li>
+        <li
+          key={href}
+          className={`${styles.navItem} ${
+            pathname === href ? styles.active : ""
+          }`}
+        >
+          <Image src={Icon} alt="" />
+          <Link
+            href={href}
+            className={styles.navLink}
+            onClick={handleLinkClick}
+          >
+            {title}
+          </Link>
+        </li>
         ))}
         <li className={`${styles.navItem} ${styles.ProfileNav}`}>
           <Image src={DogIcon} alt="DogIcon" />

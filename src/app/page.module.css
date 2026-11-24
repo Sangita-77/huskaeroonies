@@ -201,6 +201,15 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
     transform: scale(1.04);
 }
 
+.active {
+  background-color: #b9e5ff;
+  border-radius: 50px;
+}
+
+.active .navLink {
+  color: #101d50;
+  font-weight: 700;
+}
 /* Header End */
 
 
