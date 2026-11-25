@@ -412,6 +412,19 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .PickAdv svg{width: 31vw; height: 6vw;}
 .PickAdv textPath { text-anchor: middle; }
 .PickAdv text {fill: var(--color-primary-dark); stroke: var(--color-cream); stroke-width: 5px; stroke-linejoin: round; paint-order: stroke fill; font-size: 26px; letter-spacing: 2px;}
+
+/* ....................... swipeRightTxt print div....................... */
+.swipeRightTxt{z-index: 9; position: absolute; top: 32vw; left: 27vw;}
+.swipeRightTxt svg{width: 15.3vw; height: 2.7vw;}
+.swipeRightTxt textPath { text-anchor: middle; }
+.swipeRightTxt text {fill: var(--color-light); stroke: var(--color-cream); stroke-width: 0px; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 5px; font-size: 75px; text-shadow: 1px 4px 1px var(--color-primary-dark);}
+
+.TurnThePage{z-index: 9; position: absolute; top: 33.5vw; left: 27.3vw;}
+.TurnThePage svg{width: 15.3vw; height: 2.7vw;}
+.TurnThePage textPath { text-anchor: middle; }
+.TurnThePage text {fill: #fdd706; stroke: var(--color-cream); stroke-width: 0; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 1px; text-shadow: 1px 4px 1px var(--color-primary-dark); font-size: 65px;}
+
+
 /* cloud animation start */
 
 .frontCloudLayer,

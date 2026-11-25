@@ -6,7 +6,7 @@ import styles from "../page.module.css";
 // import Header from "../Components/header";
 // import Footer from "../Components/footer";
 import Image from "next/image";
-import sampleReadWave from "../Images/sampleReadWave.webp";
+import swipeRight from "../Images/New/swipeRight.webp";
 import SnowFall from './SnowFall';
 // import Clouds from "../Components/Clouds";
 import Leftfoot from "../Images/New/leftfoot.webp"; 
@@ -15,13 +15,13 @@ import Sampleunderline from "../Images/New/sampleunderline.webp";
 import Adventuretext from "../Images/New/adventure-img.webp"; 
 import Sliderpageprev from "../Images/New/pageleftarrow.webp";
 import Sliderpagenext from "../Images/New/pagerightarrow.webp";
-import Popupfoot from "../Images/New/popupfoot.webp";
-import Teddyimg from "../Images/New/teddypopupimg.webp";
-import Trainimg from "../Images/New/trainpopupimg.webp";
+// import Popupfoot from "../Images/New/popupfoot.webp";
+// import Teddyimg from "../Images/New/teddypopupimg.webp";
+// import Trainimg from "../Images/New/trainpopupimg.webp";
 import Swipeimg from "../Images/New/swipehand.webp";
 import Fullscreenimg from "../Images/New/fullsecreen.webp";
 
-import Link from "next/link";
+// import Link from "next/link";
 import AdventurePlanModal from './Modal';
 
 import Logo from "../Images/New/MainLogo.webp";
@@ -282,7 +282,6 @@ useEffect(() => {
                 </article>
               ))}
             </div>
-
             {isFullscreen && isZoomed && (
               <div
                 className="magnifier-glass"
@@ -304,6 +303,17 @@ useEffect(() => {
           </div>
           <button className="book-carousel-arrow1 bookRightBtn1" onClick={() => switchBook(1)} aria-label="Next book"></button>
         </div>
+        <Image src={swipeRight} alt="swipeRight" className='swipeRight'/>
+        {/* <svg className='curved-text' viewBox="120 0 790 150" preserveAspectRatio="none">
+          <defs> 
+            <path id="_R_4lrlb_" d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100">
+            </path> 
+          </defs>
+          <text>
+            <textPath href="#_R_4lrlb_" startOffset="50%">Welcome to Huskyville!</textPath>
+          </text>
+        </svg> */}
+
 
         <div className="book-meta">
           <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}><Image alt="left Arrow" src={Sliderpageprev}/></button>
