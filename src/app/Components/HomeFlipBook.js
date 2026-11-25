@@ -302,8 +302,32 @@ useEffect(() => {
             )}
           </div>
           <button className="book-carousel-arrow1 bookRightBtn1" onClick={() => switchBook(1)} aria-label="Next book"></button>
+
+
+          <Image src={swipeRight} alt="swipeRight" className='swipeRight homeswipeRight'/>
+          <div className={`${styles.swipeRightTxt} ${styles.homeSwipeRightTxt}`}>
+            <svg className="curved-text" viewBox="120 0 790 150" preserveAspectRatio="none" >
+              <defs> <path id={curveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
+              <text> 
+                <textPath href={`#${curveId}`} startOffset="50%">
+                  Swipe Right To
+                </textPath> 
+              </text>
+            </svg>
+          </div>
+          <div className={`${styles.TurnThePage} ${styles.homeTurnThePage}`}>
+            <svg className="curved-text" viewBox="120 0 790 150" preserveAspectRatio="none" >
+              <defs> <path id={curveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
+              <text> 
+                <textPath href={`#${curveId}`} startOffset="50%">
+                  Turn The Page
+                </textPath> 
+              </text>
+            </svg>
+          </div>
+
         </div>
-        <Image src={swipeRight} alt="swipeRight" className='swipeRight'/>
+        {/* <Image src={swipeRight} alt="swipeRight" className='swipeRight'/> */}
         {/* <svg className='curved-text' viewBox="120 0 790 150" preserveAspectRatio="none">
           <defs> 
             <path id="_R_4lrlb_" d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100">

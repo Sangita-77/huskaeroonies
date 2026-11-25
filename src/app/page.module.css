@@ -208,7 +208,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 .active .navLink {
   color: #101d50;
-  font-weight: 700;
+  /* font-weight: 700; */
 }
 /* Header End */
 
@@ -253,8 +253,8 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 .burger {
   display: none;
-  width: 56px;
-  height: 56px;
+  width: 46px;
+  height: 46px;
   padding: 0;
   border: 2px solid #ffffff;
   border-radius: 50%;
@@ -275,7 +275,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 .burger span {
   display: block;
-  width: 27px;
+  width: 22px;
   height: 3px;
   border-radius: 3px;
   background: #ffffff;
@@ -424,6 +424,8 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .TurnThePage textPath { text-anchor: middle; }
 .TurnThePage text {fill: #fdd706; stroke: var(--color-cream); stroke-width: 0; stroke-linejoin: round; paint-order: stroke fill; letter-spacing: 1px; text-shadow: 1px 4px 1px var(--color-primary-dark); font-size: 65px;}
 
+.homeSwipeRightTxt {top: 26.44vw; left: 20.31vw;}
+.homeTurnThePage {top: 27.94vw; left: 20.3vw;}
 
 /* cloud animation start */
 
@@ -1003,20 +1005,28 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .mobileMenuOpen { opacity: 1; visibility: visible; transform: translateY(0);}
 
 /* Menu list */
-.mobileNavList { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 35px; list-style: none; margin: 0; }
+.mobileNavList { width: 60vw; display: flex; flex-direction: column; align-items: flex-start; gap: 8.97vw; list-style: none; margin: 0; }
 .mobileNavItem { list-style: none; display: flex; align-items: center; background: #102d6885; width: 60vw; padding: 1.54vw 5.13vw; border-radius: 12.82vw;}
 .mobileNavItem:hover,
 .mobileNavItem.active {background: #aadbfc;}
-.mobileNavLink {display: block; text-decoration: none; color: white; font-size: 28px; font-weight: 500; text-align: center; padding: 5px 10px; transition: opacity 0.2s ease; letter-spacing: 5px;}
-.mobileNavItem.active .mobileNavLink {color: #1b1b50;}
+.mobileNavLink {display: block; text-decoration: none; color: white; font-size: 7.18vw; font-weight: 500; text-align: center; padding: 1.28vw 2.56vw; transition: opacity 0.2s ease; letter-spacing: 5px;}
+/* .mobileNavItem.active .mobileNavLink,
+.mobileNavItem:hover .mobileNavLink {color: #1b1b50;} */
 .MapImage { display: none; }
 .mobileMap { display: block;height: auto; }
 .header {margin-bottom: -14.3vw;}
 
 .mobileNavList .mobileNavItem img {width: auto; height: 8.97vw;}
 .mobileNavList .mobileProfileNav {column-gap: 3.85vw; width: 66vw;}
-.mobileNavList .mobileProfileNav .navLink {color: #fff; font-size: 4.3vw;}
+.mobileNavList .mobileProfileNav .navLink {color: #fff; font-size: 4.3vw; position: relative;}
+.mobileNavList .mobileProfileNav .navLink::before {content: ""; background: #69c554; border-radius: 3.13vw; width: 1.63vw; height: 1.63vw; position: absolute; top: 2.5vw; left: -2.8vw;}
+.mobileNavList .mobileProfileNav .navLink h5 {font-size: 3.3vw; font-weight: 400;}
 .mobileNavList .mobileProfileNav .dropdownIcon {width: 4.36vw; height: auto;}
+
+.mobileNavList .userNav {column-gap: 2.56vw; width: auto; height: 14.1vw; padding: 1.54vw 6.13vw 1.54vw 8.13vw;}
+.mobileNavList .userNav img {width: 5vw; height: auto;}
+.mobileNavList .userNav .navLink {font-size: 5.64vw; padding: 1.28vw 1.28vw 1.28vw 1.54vw; letter-spacing: 2px;}
+.mobileNavList .userNav .dropdownIcon {width: 4.36vw; height: auto;}
 
 /*.........Header End.........*/
 
@@ -1084,6 +1094,9 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .BridgeOne, .BridgeTwo{display: none;}
 .bookBadge {width: 25.1vw !important; height: 9.4vw !important; font-size: 2.5vw !important;}
 
+.swipeRightTxt,
+.TurnThePage {display: none;}
+
 }
 
 
@@ -1094,8 +1107,8 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 ========================= */
 
 @media (max-width: 480px) {
-  .mobileNavList { gap: 20px; }
-  .mobileNavLink { font-size: 22px; letter-spacing: 1px;}
+  .mobileNavList { gap: 5.13vw; }
+  .mobileNavLink { font-size: 5.64vw; letter-spacing: 1px;}
 }
 
   /* Header End */
