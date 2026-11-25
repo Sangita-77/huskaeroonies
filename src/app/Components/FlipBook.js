@@ -18,10 +18,11 @@ import CampaingDayBookIcon from "../Images/New/CampaingDayBookIcon.webp";
 import Sliderpageprev from "../Images/New/pageleftarrow.webp";
 import Sliderpagenext from "../Images/New/pagerightarrow.webp";
 // import Popupfoot from "../Images/New/popupfoot.webp";
-import Teddyimg from "../Images/New/teddypopupimg.webp";
-import Trainimg from "../Images/New/trainpopupimg.webp";
+// import Teddyimg from "../Images/New/teddypopupimg.webp";
+// import Trainimg from "../Images/New/trainpopupimg.webp";
 import Swipeimg from "../Images/New/swipehand.webp";
 import Fullscreenimg from "../Images/New/fullsecreen.webp";
+import swipeRight from "../Images/New/swipeRight.webp";
 
 import AdventurePlanModal from './Modal';
 
@@ -289,6 +290,7 @@ useEffect(() => {
           <button className="book-carousel-arrow bookLeftBtn" onClick={() => switchBook(-1)} aria-label="Previous book">
             <Image alt="Right Arrow" src={Sliderpageprev}/>
           </button>
+
           <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick} onPointerMove={handleMagnifierMove}>
             <div className="pageflip-book" ref={bookElement} key={activeBook}>
               {images.map((image, index) => (
@@ -326,6 +328,27 @@ useEffect(() => {
           <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">
             <Image alt="Right Arrow" src={Sliderpagenext}/>
           </button>
+          <Image src={swipeRight} alt="swipeRight" className='swipeRight'/>
+          <div className={styles.swipeRightTxt}>         
+            <svg className="curved-text" viewBox="120 0 790 150" preserveAspectRatio="none" >
+              <defs> <path id={curveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
+              <text> 
+                <textPath href={`#${curveId}`} startOffset="50%">
+                  Swipe Right To
+                </textPath> 
+              </text>
+            </svg>
+          </div>
+          <div className={styles.TurnThePage}>         
+            <svg className="curved-text" viewBox="120 0 790 150" preserveAspectRatio="none" >
+              <defs> <path id={curveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
+              <text> 
+                <textPath href={`#${curveId}`} startOffset="50%">
+                  Turn The Page
+                </textPath> 
+              </text>
+            </svg>
+          </div>
         </div>
 
         {/* <div className="book-meta">

@@ -51,6 +51,9 @@
 .maybeLater:hover { color: #171c5c; } 
 .popupHeader h4{color: #009ff5; margin-bottom: 2vw;}
 
+
+
+
 /* Tablet */
 
 @media (max-width: 900px) {
@@ -93,7 +96,6 @@
   .sampleunderline {width: 28.9vw; top: 6.7vw; left: 26.8vw;}
   .popupHeader h4 {width: 57vw;}
   .annualBadge {top: -2.333vw; padding: .45vw 4vw; font-size: 2.95vw;}
-
 }
 
 @media (max-width: 380px) {
