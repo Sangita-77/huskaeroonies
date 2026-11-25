@@ -38,12 +38,12 @@ export default function Navbar() {
             pathname === href ? styles.active : ""
           }`}
         >
-          <Image src={Icon} alt="" />
-          <Link
+        <Link
             href={href}
             className={styles.navLink}
             onClick={handleLinkClick}
           >
+            <Image src={Icon} alt="" />
             {title}
           </Link>
         </li>
@@ -96,9 +96,9 @@ export default function Navbar() {
         }`}
       >
         <ul className={styles.mobileNavList}>
-          {links.map(({ title, href }) => (
-            <li key={href} className={styles.mobileNavItem}>
-              {/* <Image src={Icon} alt="" /> */}
+          {links.map(({ title, href, Icon }) => (
+            <li key={href} className={`${styles.mobileNavItem} ${ pathname === href ? styles.active : "" }`}>
+              <Image src={Icon} alt="" />
               <Link
                 href={href}
                 className={styles.mobileNavLink}
@@ -108,6 +108,19 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+            <li className={`${styles.mobileNavItem} ${styles.mobileProfileNav}`}>
+            <Image src={DogIcon} alt="DogIcon" />
+              <Link href="/" className={styles.navLink} onClick={handleLinkClick} > 
+                Blue & Aluna today
+                <h5>Exploring the woods</h5>
+              </Link>
+              <Image src={DropdownIconW} className={styles.dropdownIcon} alt="Dropdown Icon" />
+          </li>
+          <li className={`${styles.navItem} ${styles.userNav}`}>
+          <Image src={UserIcon} alt="User Icon" />
+            <Link href="/" className={styles.navLink} onClick={handleLinkClick} > Account </Link>
+            <Image src={DropdownIconW} className={styles.dropdownIcon} alt="Dropdown Icon" />
+        </li>
         </ul>
       </div>
     </nav>

@@ -246,7 +246,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 .navList li{gap: .5vw; display: flex; justify-content: center; align-items: center;}
 /* .navList li img{width: 3vw; height: auto; } */
 /* .navList .navLink:hover { text-shadow: 0 0 23px #000000; transition: .5s; } */
-.navList .active { text-shadow: 0 0 23px #000000; }
+/* .navList .active { text-shadow: 0 0 23px #000000; } */
 
 /* Hide desktop menu */ 
 /* Mobile Burger */
@@ -935,12 +935,14 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 /* .bookBadge {width: 16.1vw; height: 5.4vw; font-size: 1.5vw;} */
 .navItem {padding: 0.23vw 0.75vw; border-radius: 3.13vw;}
 .navItem:hover {background-color: #abdcfd;}
-.navItem img {width: 2.81vw; height: auto;}
+.navItem a.navLink {display: flex; align-items: center; column-gap: 0.44vw;}
+.navItem a img {width: 2.81vw; height: auto;}
 .userNav {background-color: #42aaf7; padding: 0.5vw 1.06vw; border-radius: 3.13vw; }
 .userNav a {color: #fff;}
 .userNav img {width: 20px; height: auto;}
-.navItem.ProfileNav img {width: 3.44vw;}
-.navItem.ProfileNav a {font-size: 1.2vw;}
+.navItem.ProfileNav img {width: 3.44vw; height: auto;}
+.navItem.ProfileNav a {font-size: 1vw; flex-direction: column; align-items: flex-start; margin-left: 0.69vw; position: relative;}
+.navItem.ProfileNav a::before { content: ""; background: #69c554; width: 0.63vw; height: 0.63vw; position: absolute; left: -0.88vw; top: 0.38vw; border-radius: 3.13vw; }
 .navItem.ProfileNav a h5 {font-size: 0.75vw;}
 .navItem .dropdownIcon,
 .navItem.ProfileNav .dropdownIcon {width: 0.94vw;}
@@ -961,7 +963,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
     .Bridge {top: 37vw; /*top: 32vw;*/}
     .book3 {top: 48vw;}
     .navLink {font-size: 1.5vw;}
-    .headercontainer {gap: 5vw;}
+    .headercontainer {gap: 2vw;}
 }
 
 @media (max-width: 768px) {
@@ -988,12 +990,20 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 
 /* Menu list */
 .mobileNavList { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 35px; list-style: none; margin: 0; }
-.mobileNavItem { list-style: none; display: flex;}
-.mobileNavLink {display: block; text-decoration: none; color: white; font-size: 28px; font-weight: 500; text-align: center; padding: 10px 10px; transition: opacity 0.2s ease; letter-spacing: 5px;}
-.mobileNavLink:hover { opacity: 0.6; }
+.mobileNavItem { list-style: none; display: flex; align-items: center; background: #102d6885; width: 60vw; padding: 1.54vw 5.13vw; border-radius: 12.82vw;}
+.mobileNavItem:hover,
+.mobileNavItem.active {background: #aadbfc;}
+.mobileNavLink {display: block; text-decoration: none; color: white; font-size: 28px; font-weight: 500; text-align: center; padding: 5px 10px; transition: opacity 0.2s ease; letter-spacing: 5px;}
+.mobileNavItem.active .mobileNavLink {color: #1b1b50;}
 .MapImage { display: none; }
 .mobileMap { display: block;height: auto; }
 .header {margin-bottom: -14.3vw;}
+
+.mobileNavList .mobileNavItem img {width: auto; height: 8.97vw;}
+.mobileNavList .mobileProfileNav {column-gap: 3.85vw; width: 66vw;}
+.mobileNavList .mobileProfileNav .navLink {color: #fff; font-size: 4.3vw;}
+.mobileNavList .mobileProfileNav .dropdownIcon {width: 4.36vw; height: auto;}
+
 /*.........Header End.........*/
 
 /*.........Banner Start.........*/
@@ -1071,7 +1081,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 
 @media (max-width: 480px) {
   .mobileNavList { gap: 20px; }
-  .mobileNavLink { font-size: 24px; letter-spacing: 3px;}
+  .mobileNavLink { font-size: 22px; letter-spacing: 1px;}
 }
 
   /* Header End */
