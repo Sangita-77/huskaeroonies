@@ -116,7 +116,7 @@ export default function Navbar() {
               </Link>
               <Image src={DropdownIconW} className={styles.dropdownIcon} alt="Dropdown Icon" />
           </li>
-          <li className={`${styles.navItem} ${styles.userNav}`}>
+          <li className={`${styles.mobileNavItem} ${styles.userNav}`}>
           <Image src={UserIcon} alt="User Icon" />
             <Link href="/" className={styles.navLink} onClick={handleLinkClick} > Account </Link>
             <Image src={DropdownIconW} className={styles.dropdownIcon} alt="Dropdown Icon" />
