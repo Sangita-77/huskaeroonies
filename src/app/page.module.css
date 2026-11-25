@@ -1010,7 +1010,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 
 .mobileNavList .userNav {column-gap: 2.56vw; width: auto; height: 14.1vw; padding: 1.54vw 6.13vw 1.54vw 8.13vw;}
 .mobileNavList .userNav img {width: 5vw; height: auto;}
-.mobileNavList .userNav .navLink {font-size: 5.64vw; padding: 1.28vw 1.28vw 1.28vw 1.54vw;}
+.mobileNavList .userNav .navLink {font-size: 5.64vw; padding: 1.28vw 1.28vw 1.28vw 1.54vw; letter-spacing: 2px;}
 .mobileNavList .userNav .dropdownIcon {width: 4.36vw; height: auto;}
 
 /*.........Header End.........*/
