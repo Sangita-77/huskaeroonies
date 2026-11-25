@@ -43,6 +43,10 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
 } */
 
 .scope :global(.flipbook-wrapper .FullScreen) {display: none; padding-top: 5.13vw; align-items: center;}
+/* .scope :global(.fingerSlide){width: 18vw; position: absolute; bottom: -13vw; right: 2vw; top: 14vw; } */
+.scope :global(.fingerSlide){ width: 18vw; position: absolute; bottom: -13vw; right: 2vw; top: 14vw; height: auto; cursor: pointer; opacity: 1; transition: opacity 0.5s ease; user-select: none; -webkit-user-drag: none;}
+.scope :global(.fingerSlide.Home){ width: 10vw;}
+.scope :global(.fingerSlide.hide) { opacity: 0; }
 .scope :global(.book-zoom-btn) { position: fixed; top: 20px; right: 20px; z-index: 99999; width: 48px; height: 48px; border: none; border-radius: 50%; background: white; color: #333; font-size: 30px; cursor: pointer; }
 .scope :global(.bookZoomed .pageflip-book) { transform: scale(1.5); transform-origin: center center; } 
 .scope :global(.magnifier-glass) { position: fixed; width: 250px; height: 250px; border: 8px solid #fff; border-radius: 50%; overflow: hidden; z-index: 99999; pointer-events: none; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; } 
@@ -175,7 +179,7 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
 
 @media (max-width: 768px) {
   /* ---------- Home flip ----------   */
-
+.scope :global(.fingerSlide){display: none;}
   .scope :global(.flipbook-wrapper) {padding: 20vw 0 15vw;}
   .scope :global(.flipbook-wrapper.flipbookPage) {margin-top: -13vw; padding: 15vw 0 20vw;}
   .scope :global(.bookTitle) {width: 85vw; height: 17vw;}

@@ -17,7 +17,7 @@ import SnowDayBook from "../Images/New/SnowDayBook.webp";
 import CampaingDayBookIcon from "../Images/New/CampaingDayBookIcon.webp";
 import Sliderpageprev from "../Images/New/pageleftarrow.webp";
 import Sliderpagenext from "../Images/New/pagerightarrow.webp";
-// import Popupfoot from "../Images/New/popupfoot.webp";
+import FingerSlide from "../Images/New/FingerSlide.svg";
 // import Teddyimg from "../Images/New/teddypopupimg.webp";
 // import Trainimg from "../Images/New/trainpopupimg.webp";
 import Swipeimg from "../Images/New/swipehand.webp";
@@ -227,6 +227,7 @@ useEffect(() => {
   const secondVisiblePage = Math.min(currentPage + 2, images.length);
 
   const curveId = useId();
+  const [showFinger, setShowFinger] = useState(true);
 
   return (
     <>
@@ -328,7 +329,20 @@ useEffect(() => {
           <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">
             <Image alt="Right Arrow" src={Sliderpagenext}/>
           </button>
-          <Image src={swipeRight} alt="swipeRight" className='swipeRight'/>
+
+            <Image src={swipeRight} alt="swipeRight" className='swipeRight'/>
+            <>
+                {showFinger && (
+                  <Image
+                    src={FingerSlide}
+                    alt="Finger Slide"
+                    className="fingerSlide"
+                    onPointerDown={() => setShowFinger(false)}
+                  />
+                )}
+            </>
+
+
           <div className={styles.swipeRightTxt}>         
             <svg className="curved-text" viewBox="120 0 790 150" preserveAspectRatio="none" >
               <defs> <path id={curveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>

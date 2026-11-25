@@ -20,6 +20,7 @@ import Sliderpagenext from "../Images/New/pagerightarrow.webp";
 // import Trainimg from "../Images/New/trainpopupimg.webp";
 import Swipeimg from "../Images/New/swipehand.webp";
 import Fullscreenimg from "../Images/New/fullsecreen.webp";
+import FingerSlide from "../Images/New/FingerSlide.svg";
 
 // import Link from "next/link";
 import AdventurePlanModal from './Modal';
@@ -185,7 +186,7 @@ useEffect(() => {
   const secondVisiblePage = Math.min(currentPage + 2, images.length);
 
   const curveId = useId();
-
+  const [showFinger, setShowFinger] = useState(true);
 // const [showAdventureModal, setShowAdventureModal] = useState(true);
 
 
@@ -305,6 +306,16 @@ useEffect(() => {
 
 
           <Image src={swipeRight} alt="swipeRight" className='swipeRight homeswipeRight'/>
+          <>
+                {showFinger && (
+                  <Image
+                    src={FingerSlide}
+                    alt="Finger Slide"
+                    className="fingerSlide Home"
+                    onPointerDown={() => setShowFinger(false)}
+                  />
+                )}
+          </>
           <div className={`${styles.swipeRightTxt} ${styles.homeSwipeRightTxt}`}>
             <svg className="curved-text" viewBox="120 0 790 150" preserveAspectRatio="none" >
               <defs> <path id={curveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
