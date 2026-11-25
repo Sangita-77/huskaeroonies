@@ -41,7 +41,7 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   transform: perspective(1000px) rotateY(15deg);
 } */
 
-.scope :global(.flipbook-wrapper .FullScreen) {display: flex; padding-top: 5.13vw; align-items: center;}
+.scope :global(.flipbook-wrapper .FullScreen) {display: none; padding-top: 5.13vw; align-items: center;}
 .scope :global(.book-zoom-btn) { position: fixed; top: 20px; right: 20px; z-index: 99999; width: 48px; height: 48px; border: none; border-radius: 50%; background: white; color: #333; font-size: 30px; cursor: pointer; }
 .scope :global(.bookZoomed .pageflip-book) { transform: scale(1.5); transform-origin: center center; } 
 .scope :global(.magnifier-glass) { position: fixed; width: 250px; height: 250px; border: 8px solid #fff; border-radius: 50%; overflow: hidden; z-index: 99999; pointer-events: none; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; } 
