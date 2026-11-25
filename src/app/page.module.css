@@ -253,8 +253,8 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 .burger {
   display: none;
-  width: 56px;
-  height: 56px;
+  width: 46px;
+  height: 46px;
   padding: 0;
   border: 2px solid #ffffff;
   border-radius: 50%;
@@ -275,7 +275,7 @@ filter: contrast(1.05) saturate(1.04) brightness(1.03);
 
 .burger span {
   display: block;
-  width: 27px;
+  width: 22px;
   height: 3px;
   border-radius: 3px;
   background: #ffffff;
