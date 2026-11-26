@@ -1011,7 +1011,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .mobileNavItem:hover .mobileNavLink {color: #1b1b50;} */
 .MapImage { display: none; }
 .mobileMap { display: block;height: auto; }
-.header {margin-bottom: -14.3vw;}
+.header {margin-bottom: -11vw; background: linear-gradient(0deg, #029ffc00 2%, #02a0fc 36%);}
 
 .mobileNavList .mobileNavItem img {width: auto; height: 8.97vw;}
 .mobileNavList .mobileProfileNav {column-gap: 2.85vw; width: 66vw;}
@@ -1061,7 +1061,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 
 /*.........Banner Start.........*/
 .MapHolder { height: auto; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
-.BannerLogo{width:85vw; height: auto; top: 10vw; left: 7vw; }
+.BannerLogo{width:85vw; height: auto; top: 10vw; left: 7vw; z-index: 99;}
 .Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
 .BlueRibbon{width: 58.1vw; height: auto; top: 20vw; left: 22vw;}
 .PickAdv svg{width: 65vw; height: auto;} 

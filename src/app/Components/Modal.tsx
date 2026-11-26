@@ -90,6 +90,8 @@ const AdventurePlanModal: React.FC<AdventurePlanModalProps> = ({
         aria-labelledby="adventure-popup-title"
         onClick={(event) => event.stopPropagation()}
         >
+
+        <button type="button" className={styles.flipbookPopupClose} onClick={onClose} > × </button>
         {/* Header */}
         <div className={styles.popupHeader}>
           <Image

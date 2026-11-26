@@ -50,6 +50,7 @@
 .maybeLater { margin-top: 1vw; background: transparent; border: none; color: #009ff5; font-size: 1vw; font-weight: 600; text-decoration: underline; cursor: pointer; } 
 .maybeLater:hover { color: #171c5c; } 
 .popupHeader h4{color: #009ff5; margin-bottom: 2vw;}
+.flipbookPopupClose { color: #ffffff; cursor: pointer; background: #08a4ed; border: none; border-radius: 50%; width: 3.13vw; height: 3.13vw; font-size: 2vw; line-height: 2vw; position: absolute; top: 2vw; right: 2vw; z-index: 99;}
 
 
 
@@ -96,6 +97,8 @@
   .sampleunderline {width: 28.9vw; top: 6.7vw; left: 26.8vw;}
   .popupHeader h4 {width: 57vw;}
   .annualBadge {top: -2.333vw; padding: .45vw 4vw; font-size: 2.95vw;}
+
+  .flipbookPopupClose {width: 6.13vw; height: 6.13vw; font-size: 7vw; top: 3vw; right: 3vw;}
 }
 
 @media (max-width: 380px) {
