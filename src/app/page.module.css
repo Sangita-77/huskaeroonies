@@ -1047,8 +1047,12 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .mobileNavList .mobileNavItem:nth-child(5) {background: url(../app/Images/New/pupsbg.webp) no-repeat center; background-size: contain; width: 91.44vw; height: 28.67vw; padding-left: 13.77vw;}
 .mobileNavList .mobileNavItem:nth-child(5) .mobileNavLink {rotate: -4.52deg; margin-top: -1.79vw;}
 .mobileNavList .mobileNavItem:nth-child(5) .dropdownIconM {top: 41%; right: 8vw;}
+.mobileNavList .mobileNavItem:nth-child(5):hover::before,
+.mobileNavList .mobileNavItem:nth-child(5).active::before {width: 78.77vw; height: 15.08vw;}
 .mobileNavList .mobileNavItem:nth-child(6) {background: url(../app/Images/New/accountbg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw; padding-left: 12.77vw;}
 .mobileNavList .mobileNavItem:nth-child(6) .dropdownIconM {top: 41%; right: 8vw;}
+.mobileNavList .mobileNavItem:nth-child(6):hover::before,
+.mobileNavList .mobileNavItem:nth-child(6).active::before {width: 55.77vw; height: 8.08vw;}
 
 
 /*.........Header End.........*/
