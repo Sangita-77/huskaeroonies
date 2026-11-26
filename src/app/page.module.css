@@ -1026,7 +1026,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .mobileNavList .userNav .navLink {font-size: 6.15vw; padding: 1.28vw 1.28vw 1.28vw 1.54vw; letter-spacing: 2px; color: #151B58; rotate: -3.45deg; margin-top: -1.79vw;}
 .mobileNavList .userNav .dropdownIcon {width: 4.36vw; height: auto;}
 
-.logoM {width: 70vw; height: auto;}
+.logoM {width: 70vw !important; height: auto;}
 .woodenPole {width: 23.33vw; height: 179.74vw;}
 .mobileGrass {position: absolute; bottom: 4vw; left: 36vw;}
 .mobilePups {position: absolute; bottom: 0vw; left: 7vw;}

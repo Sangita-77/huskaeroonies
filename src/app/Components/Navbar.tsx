@@ -102,7 +102,7 @@ export default function Navbar() {
           menuOpen ? styles.mobileMenuOpen : ""
         }`}
       >
-        <Image src={Logo} alt="Logo" className={styles.logoM} />
+        <a href="/"><Image src={Logo} alt="Logo" className={styles.logoM} /></a>
         <Image src={WoodenPole} alt="wooden Pole" className={styles.woodenPole} />
         <ul className={styles.mobileNavList}>
           {links.map(({ title, href, Icon }) => (
