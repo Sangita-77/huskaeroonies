@@ -1016,7 +1016,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .mobileNavList .mobileNavItem img {width: auto; height: 8.97vw;}
 .mobileNavList .mobileProfileNav {column-gap: 2.85vw; width: 66vw;}
 .mobileNavList .mobileProfileNav img {height: 12.97vw;}
-.mobileNavList .mobileProfileNav .navLink {color: #fff; font-size: 5.5vw; position: relative; text-align: center; rotate: -3.52deg; margin-top: -3.33vw;}
+.mobileNavList .mobileProfileNav .navLink {color: #fff; font-size: 5.5vw; position: relative; text-align: center; rotate: -3.52deg; margin-top: -3.33vw; text-shadow: 0px 4px 3px var(--color-primary-dark);}
 /* .mobileNavList .mobileProfileNav .navLink::before {content: ""; background: #69c554; border-radius: 3.13vw; width: 1.63vw; height: 1.63vw; position: absolute; top: 2.5vw; left: -2.8vw;} */
 .mobileNavList .mobileProfileNav .navLink h5 {font-size: 4vw; font-weight: 400;}
 .mobileNavList .mobileProfileNav .dropdownIcon {width: 4.36vw; height: auto;}
@@ -1036,7 +1036,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .mobileNavList .mobileNavItem.active::before {content: ""; z-index: -1; width: 60.77vw; height: 13.08vw; position: absolute; left: 5.38vw; box-shadow: 0 2px 29px 17px #ffffffba; rotate: -5deg; border-radius: 12.82vw;}
 .mobileNavList .mobileNavItem img {rotate: -3.94deg; margin-bottom: -1.54vw;}
 .mobileNavList .mobileNavItem .dropdownIconM { width: 5.38vw; height: 5.38vw; position: absolute; right: 6vw; top: 43%; transform: translateY(-50%); rotate: 2deg; }
-.mobileNavList .mobileNavItem .mobileNavLink {font-size: 7.18vw; rotate: -2.73deg;}
+.mobileNavList .mobileNavItem .mobileNavLink {font-size: 7.18vw; rotate: -2.73deg; text-shadow: 0px 4px 3px var(--color-primary-dark);}
 
 .mobileNavList .mobileNavItem:nth-child(2) {background: url(../app/Images/New/showbg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw; padding-left: 10.77vw;}
 .mobileNavList .mobileNavItem:nth-child(2) .mobileNavLink {rotate: -4.52deg; margin-top: -1.79vw;}
