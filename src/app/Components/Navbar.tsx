@@ -12,6 +12,13 @@ import DogIcon from "../Images/New/DogIcon.webp";
 import UserIcon from "../Images/New/navusericon.svg";
 import DropdownIconW from "../Images/New/dropdowniconwhite.svg";
 import DropdownIconB from "../Images/New/dropdowniconblack.svg";
+import Logo from "../Images/New/MainLogo.webp";
+import WoodenPole from "../Images/New/woodenPoleimg.webp";
+import Mobilegrass from "../Images/New/mobilegrass.webp";
+import Mobilepups from "../Images/New/mobilepups.webp";
+import mobileDropdownIconW from "../Images/New/mobilenavarrow.webp";
+import mobileDropdownIconB from "../Images/New/mobilenavarrowb.webp";
+import mobUserIcon from "../Images/New/mobileusericon.webp";
 
 
 const links = [
@@ -95,6 +102,8 @@ export default function Navbar() {
           menuOpen ? styles.mobileMenuOpen : ""
         }`}
       >
+        <Image src={Logo} alt="Logo" className={styles.logoM} />
+        <Image src={WoodenPole} alt="wooden Pole" className={styles.woodenPole} />
         <ul className={styles.mobileNavList}>
           {links.map(({ title, href, Icon }) => (
             <li key={href} className={`${styles.mobileNavItem} ${ pathname === href ? styles.active : "" }`}>
@@ -106,6 +115,7 @@ export default function Navbar() {
               >
                 {title}
               </Link>
+              <Image src={mobileDropdownIconW} className={styles.dropdownIconM} alt="Dropdown Icon" />
             </li>
           ))}
             <li className={`${styles.mobileNavItem} ${styles.mobileProfileNav}`}>
@@ -114,14 +124,18 @@ export default function Navbar() {
                 Blue & Aluna today
                 <h5>Exploring the woods</h5>
               </Link>
-              <Image src={DropdownIconW} className={styles.dropdownIcon} alt="Dropdown Icon" />
+              {/* <Image src={DropdownIconW} className={styles.dropdownIcon} alt="Dropdown Icon" /> */}
+              <Image src={mobileDropdownIconW} className={styles.dropdownIconM} alt="Dropdown Icon" />
           </li>
           <li className={`${styles.mobileNavItem} ${styles.userNav}`}>
-          <Image src={UserIcon} alt="User Icon" />
+            <Image src={mobUserIcon} alt="User Icon" />
             <Link href="/" className={styles.navLink} onClick={handleLinkClick} > Account </Link>
-            <Image src={DropdownIconW} className={styles.dropdownIcon} alt="Dropdown Icon" />
-        </li>
+            <Image src={mobileDropdownIconB} className={styles.dropdownIconM} alt="Dropdown Icon" />
+          </li>
         </ul>
+
+        <Image src={Mobilegrass} alt="Grass" className={styles.mobileGrass} />
+        <Image src={Mobilepups} alt="Pups" className={styles.mobilePups} />
       </div>
     </nav>
   );
