@@ -1033,11 +1033,13 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .mobileNavList .mobileNavItem {background: url(../app/Images/New/bookbg.webp) no-repeat center; background-size: contain; padding: 5.9vw 13.05vw; width: 73.33vw; height: 24.36vw; margin: -2.56vw auto 0; position: relative;}
 /* .mobileNavList .mobileNavItem::before {content: ''; width: 237px; height: 51px; position: absolute; left: 21px; z-index: -1; box-shadow: 0px 2px 29px 6px #ffffffba;} */
 .mobileNavList .mobileNavItem:hover::before,
-.mobileNavList .mobileNavItem.active::before {content: ""; z-index: -1; width: 60.77vw; height: 13.08vw; position: absolute; left: 5.38vw; box-shadow: 0 2px 29px 17px #ffffffba; rotate: -5deg; border-radius: 12.82vw;}
+.mobileNavList .mobileNavItem.active::before {content: ""; z-index: -1; width: 57.77vw; height: 13.08vw; position: absolute; left: 5.38vw; box-shadow: 0 2px 29px 17px #ffffffba; rotate: -5deg; border-radius: 12.82vw;}
 .mobileNavList .mobileNavItem img {rotate: -3.94deg; margin-bottom: -1.54vw;}
 .mobileNavList .mobileNavItem .dropdownIconM { width: 5.38vw; height: 5.38vw; position: absolute; right: 6vw; top: 43%; transform: translateY(-50%); rotate: 2deg; }
 .mobileNavList .mobileNavItem .mobileNavLink {font-size: 7.18vw; rotate: -2.73deg; text-shadow: 0px 4px 3px var(--color-primary-dark);}
 
+.mobileNavList .mobileNavItem:nth-child(1):hover::before,
+.mobileNavList .mobileNavItem:nth-child(1).active::before {width: 60.77vw;}
 .mobileNavList .mobileNavItem:nth-child(2) {background: url(../app/Images/New/showbg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw; padding-left: 10.77vw;}
 .mobileNavList .mobileNavItem:nth-child(2) .mobileNavLink {rotate: -4.52deg; margin-top: -1.79vw;}
 .mobileNavList .mobileNavItem:nth-child(3) {background: url(../app/Images/New/shopbg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw; padding-left: 10.77vw;}
