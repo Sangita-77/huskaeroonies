@@ -29,26 +29,33 @@ import FireWood from "./Images/New/FireWood.webp";
 import SnowDayBook from "./Images/New/SnowDayBook.webp";
 import BridgeTwoM from "./Images/New/BridgeTwoM.webp";
 import BridgeOneM from "./Images/New/BridgeOneM.webp";
-
+import SnowDayPage1 from "./Images/Books/snow_day_1.webp";
+import SnowDayPage2 from "./Images/Books/snow_day_2.webp";
+import SnowDayPage3 from "./Images/Books/snow_day_3.webp";
+import SnowDayPage4 from "./Images/Books/snow_day_4.webp";
+import SnowDayPage5 from "./Images/Books/snow_day_5.webp";
+import SnowDayPage6 from "./Images/Books/snow_day_6.webp";
+import SnowDayPage7 from "./Images/Books/snow_day_7.webp";
+import SnowDayPage8 from "./Images/Books/snow_day_8.webp";
 
 
 
 const book1 = [
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_6_resize.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_8.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_10.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_12_resize.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_16.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_17.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_19_resize.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_27_resize.jpg',
+  SnowDayPage1.src,
+  SnowDayPage2.src,
+  SnowDayPage3.src,
+  SnowDayPage4.src,
+  SnowDayPage5.src,
+  SnowDayPage6.src,
+  SnowDayPage7.src,
+  SnowDayPage8.src,
 ];
 
 const bookNames = [
   'Sample Read',
 ];
 
-const bookpages = [book1];
+// const bookpages = [book1];
 
 const books = [
   { id: 2, bookNumber: "TWO", title: "Neighborhood Pups", bookArt: NeighborhoodPups, buyNowHref: "/flip-book?book=3", top: "55vw", left: "25vw", mobileTop: "144vw",},
@@ -272,7 +279,11 @@ useEffect(() => {
   <div className="homePageFlip">
   <div className={styless.scope}>
     <div className="app-shell">
-      <HomeFlipBook books={bookpages} bookNames={bookNames} initialBook={initialBook} />
+      <HomeFlipBook
+        pages={book1}
+        bookNames={bookNames}
+        initialBook={0}
+      />
     </div>
   </div>
   </div>

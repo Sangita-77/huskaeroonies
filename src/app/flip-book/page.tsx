@@ -1,16 +1,25 @@
 import FlipBook from '../Components/FlipBook';
 import styles from "./flip-book.module.css";
 
+import SnowDayPage1 from "../Images/Books/snow_day_1.webp";
+import SnowDayPage2 from "../Images/Books/snow_day_2.webp";
+import SnowDayPage3 from "../Images/Books/snow_day_3.webp";
+import SnowDayPage4 from "../Images/Books/snow_day_4.webp";
+import SnowDayPage5 from "../Images/Books/snow_day_5.webp";
+import SnowDayPage6 from "../Images/Books/snow_day_6.webp";
+import SnowDayPage7 from "../Images/Books/snow_day_7.webp";
+import SnowDayPage8 from "../Images/Books/snow_day_8.webp";
+
 
 const book1 = [
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_6_resize.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_8.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_10.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_12_resize.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_16.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/Snow_Day_page_17.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_19_resize.jpg',
-  'https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book11/snow_day_page_27_resize.jpg',
+  SnowDayPage1.src,
+  SnowDayPage2.src,
+  SnowDayPage3.src,
+  SnowDayPage4.src,
+  SnowDayPage5.src,
+  SnowDayPage6.src,
+  SnowDayPage7.src,
+  SnowDayPage8.src,
 ];
 
 const book2 = [
@@ -56,7 +65,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ b
     <div className={styles.scope}>
     <main className="app-shell">
       {/* <FlipBook books={books} /> */}
-      <FlipBook books={books} bookNames={bookNames} initialBook={initialBook} />
+      {/* <FlipBook books={books} bookNames={bookNames} initialBook={initialBook} /> */}
+      <FlipBook books={books} bookNames={bookNames} initialBook={0} />
     </main>
     </div>
   );

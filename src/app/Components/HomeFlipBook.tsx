@@ -1,0 +1,466 @@
+'use client';
+
+import { useEffect, useMemo, useRef, useState, useId } from 'react';
+import type { MouseEvent, PointerEvent } from 'react';
+import styles from "../page.module.css";
+// import Header from "../Components/header";
+// import Footer from "../Components/footer";
+import Image from "next/image";
+import swipeRight from "../Images/New/swipeRight.webp";
+import SnowFall from './SnowFall';
+// import Clouds from "../Components/Clouds";
+import Leftfoot from "../Images/New/leftfoot.webp"; 
+import Rightfoot from "../Images/New/rightfoot.webp"; 
+import Sampleunderline from "../Images/New/sampleunderline.webp";
+import Adventuretext from "../Images/New/adventure-img.webp"; 
+import Sliderpageprev from "../Images/New/pageleftarrow.webp";
+import Sliderpagenext from "../Images/New/pagerightarrow.webp";
+// import Popupfoot from "../Images/New/popupfoot.webp";
+// import Teddyimg from "../Images/New/teddypopupimg.webp";
+// import Trainimg from "../Images/New/trainpopupimg.webp";
+import Swipeimg from "../Images/New/swipehand.webp";
+import Fullscreenimg from "../Images/New/fullsecreen.webp";
+import FingerSlide from "../Images/New/FingerSlide.svg";
+
+// import Link from "next/link";
+import AdventurePlanModal from './Modal';
+
+import Logo from "../Images/New/MainLogo.webp";
+import LeftDog from '../Images/New/LeftDog.webp';
+import RightDog from '../Images/New/RightDog.webp';
+import BookSeries from '../Images/New/book-series.webp';
+import AnnualPass from '../Images/New/annual-pass.webp';
+
+import BookIcon from '../Images/New/book-icon.webp';
+import HeartIcon from '../Images/New/heart-icon.webp';
+import ScreenIcon from '../Images/New/screen-icon.webp';
+import CalendarIcon from '../Images/New/calendar-icon.webp';
+
+
+type HomeFlipBookProps = {
+  pages?: string[];
+  books?: string[][];
+  bookNames?: string[];
+  initialBook?: number;
+};
+
+type FlipEvent = {
+  data: number;
+};
+
+const EMPTY_PAGES: string[] = [];
+const EMPTY_BOOKS: string[][] = [];
+
+export default function HomeFlipBook({
+  pages = EMPTY_PAGES,
+  books = EMPTY_BOOKS,
+  bookNames = EMPTY_PAGES,
+  initialBook = 0,
+}: HomeFlipBookProps) {
+  const bookCollections = useMemo(() => {
+    const validBooks = Array.isArray(books)
+      ? books.filter(Array.isArray).map((book) => book.filter(Boolean)).filter((book) => book.length)
+      : [];
+    return validBooks.length ? validBooks : [pages.filter(Boolean)];
+  }, [books, pages]);
+  const [activeBook, setActiveBook] = useState(() => Math.max(0, Math.min(initialBook, bookCollections.length - 1)));
+  const images = bookCollections[activeBook] ?? [];
+  const bookElement = useRef<HTMLDivElement | null>(null);
+  const pageFlip = useRef<any>(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [ready, setReady] = useState(false);
+  const [showBuyPrompt, setShowBuyPrompt] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [magnifierPosition, setMagnifierPosition] = useState({
+    x: 50,
+    y: 50,
+  });
+
+const handleMagnifierMove = (e: PointerEvent<HTMLDivElement>) => {
+  if (!isZoomed) return;
+
+  const bounds = e.currentTarget.getBoundingClientRect();
+
+  const x = ((e.clientX - bounds.left) / bounds.width) * 100;
+  const y = ((e.clientY - bounds.top) / bounds.height) * 100;
+
+  setMagnifierPosition({
+    x: Math.max(0, Math.min(100, x)),
+    y: Math.max(0, Math.min(100, y)),
+  });
+};
+
+
+const toggleFullscreen = async () => {
+  const bookWrapper = document.querySelector(".flipbook-wrapper");
+
+  if (!bookWrapper) return;
+
+  try {
+    if (!document.fullscreenElement) {
+      await bookWrapper.requestFullscreen();
+    } else {
+      await document.exitFullscreen();
+    }
+  } catch (error) {
+    console.error("Fullscreen error:", error);
+  }
+};
+
+useEffect(() => {
+  const handleFullscreenChange = () => {
+    setIsFullscreen(!!document.fullscreenElement);
+    setIsZoomed(false);
+  };
+
+  document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+  return () => {
+    document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  };
+}, []);
+
+
+  useEffect(() => {
+    setActiveBook(Math.max(0, Math.min(initialBook, bookCollections.length - 1)));
+  }, [initialBook, bookCollections.length]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setShowIntro(false), 1000);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function createBook() {
+    const PageFlipModule = await import('page-flip');
+    const PageFlip = PageFlipModule.PageFlip;
+      if (cancelled || !bookElement.current) return;
+
+      const instance = new PageFlip(bookElement.current, {
+        width: 457.5,
+        height: 522,
+        size: 'stretch',
+        minWidth: 130,
+        maxWidth: 1500,
+        minHeight: 140,
+        maxHeight: 1800,
+        drawShadow: true,
+        flippingTime: 900,
+        usePortrait: false,
+        autoSize: true,
+        maxShadowOpacity: 0.55,
+        showCover: false,
+        mobileScrollSupport: true,
+        swipeDistance: 1,
+      });
+      instance.on('flip', (event: FlipEvent) => {
+        setCurrentPage(Number(event.data));
+        setShowBuyPrompt(false);
+      });
+
+      instance.loadFromHTML(bookElement.current.querySelectorAll('.pageflip-page'));
+      pageFlip.current = instance;
+      setReady(true);
+    }
+
+    createBook();
+    return () => {
+      cancelled = true;
+      pageFlip.current?.destroy();
+      pageFlip.current = null;
+    };
+  }, [images]);
+
+  const goPrevious = () => pageFlip.current?.flipPrev();
+  const goNext = () => {
+    const flipBook = pageFlip.current;
+    if (!flipBook) return;
+    if (flipBook.getCurrentPageIndex() >= images.length - 2) {
+      setShowBuyPrompt(true);
+      return;
+    }
+    flipBook.flipNext();
+  };
+
+  const switchBook = (direction: number) => {
+    setReady(false);
+    setCurrentPage(0);
+    setShowBuyPrompt(false);
+    setActiveBook((book: number) => (book + direction + bookCollections.length) % bookCollections.length);
+  };
+
+  const handleBookClick = (event: MouseEvent<HTMLDivElement>) => {
+    const flipBook = pageFlip.current;
+    if (!flipBook || flipBook.getCurrentPageIndex() < Math.max(0, images.length - 2)) return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    if (event.clientX > bounds.left + bounds.width / 2) setShowBuyPrompt(true);
+  };
+
+  const firstVisiblePage = Math.min(currentPage + 1, images.length);
+  const secondVisiblePage = Math.min(currentPage + 2, images.length);
+
+  const titleCurveId = useId();
+  const swipeCurveId = useId();
+  const turnCurveId = useId();
+  const [showFinger, setShowFinger] = useState(true);
+// const [showAdventureModal, setShowAdventureModal] = useState(true);
+
+
+  return (
+    <>
+      {/* <Header logo={true} /> */}
+      {/* <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible} homePageFlipWrap`}> */}
+      <div className={`flipbook-wrapper ${ showIntro ? styles.flipbookWaiting : styles.flipbookVisible } homePageFlipWrap ${isFullscreen ? "fullScreenWrap" : ""}`} >
+        {activeBook === 0 && <SnowFall count={100} />}
+        {/* <div className="SampleBeforewave">
+          <Image src={sampleReadWave} alt="Wave" />
+        </div> */}
+        
+        {/* <h2 className="book-title">
+          {bookNames[activeBook] || `Book ${activeBook + 1}`}
+        </h2> */}
+
+        <div className="totalPageNoWrap">
+          <div className="totalPageNo">
+            <span>{images.length}</span> Pages
+          </div>
+        </div>
+
+        <div className="bookTitle">
+          <span className='leftfoot'><Image alt="leftfoot" src={Leftfoot}/></span>
+          <svg className="curveTextWrap" viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <path
+                id={titleCurveId}
+                d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100"
+              />
+            </defs>
+
+            <text className="curveText">
+              <textPath
+                href={`#${titleCurveId}`}
+                startOffset="50%"
+                textAnchor="middle"
+              >
+                {bookNames[activeBook] || `Book ${activeBook + 1}`}
+              </textPath>
+            </text>
+          </svg>
+          <span className='rightfoot'><Image alt="leftfoot" src={Rightfoot}/></span>
+        </div>
+        <div className='sampleUnderline'>
+          <Image alt="Sampleunderline" src={Sampleunderline}/>
+        </div>
+        <div className="bookSubTitle">
+          <svg className="curveSubTextWrap" viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <path
+                id="subText"
+                d="M 174.75,100 A 1207.92,1207.92 0 0 1 849.25,100"
+              />
+            </defs>
+            <text className="curveSubText">
+              <textPath
+                href="#subText"
+                startOffset="50%"
+                textAnchor="middle"
+              >
+                Enjoy A Little Story With Our Husky Pals
+              </textPath>
+            </text>
+          </svg>
+          </div>
+
+
+        <div className="book-carousel">
+          <button className="book-carousel-arrow1 bookLeftBtn1" onClick={() => switchBook(-1)} aria-label="Previous book"></button>
+          <div
+            className="pageflip-stage"
+            aria-busy={!ready}
+            onClick={handleBookClick}
+            onPointerMove={handleMagnifierMove}
+          >
+            <div
+              className="pageflip-book"
+              ref={bookElement}
+              key={activeBook}
+            >
+              {images.map((image: string, index: number) => (
+                <article className="pageflip-page" key={`${image}-${index}`}>
+                  <div className="pageflip-content">
+                    <div className="page-loader" />
+                    <img
+                      src={image}
+                      alt={`Book page ${index + 1}`}
+                      decoding="async"
+                    />
+                    <span className="page-number">{index + 1}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+            {isFullscreen && isZoomed && (
+              <div
+                className="magnifier-glass"
+                style={{
+                  left: `${magnifierPosition.x}%`,
+                  top: `${magnifierPosition.y}%`,
+                }}
+              >
+                <img
+                  src={images[currentPage] || images[0]}
+                  alt="Magnified book page"
+                  style={{
+                    left: `${magnifierPosition.x}%`,
+                    top: `${magnifierPosition.y}%`,
+                  }}
+                />
+              </div>
+            )}
+          </div>
+          <button className="book-carousel-arrow1 bookRightBtn1" onClick={() => switchBook(1)} aria-label="Next book"></button>
+
+    {showFinger && (
+      <>
+          <Image src={swipeRight} alt="swipeRight" className='swipeRight homeswipeRight'/>
+
+              
+                <Image
+                  src={swipeRight}
+                  alt="swipeRight"
+                  className="swipeRight homeswipeRight"
+                />
+
+                <Image
+                  src={FingerSlide}
+                  alt="Finger Slide"
+                  className="fingerSlide Home"
+                  onPointerDown={() => setShowFinger(false)}
+                />
+
+                <div
+                  className={`${styles.swipeRightTxt} ${styles.homeSwipeRightTxt}`}
+                  onPointerDown={() => setShowFinger(false)}
+                >
+                  <svg
+                    className="curved-text"
+                    viewBox="120 0 790 150"
+                    preserveAspectRatio="none"
+                  >
+                    <defs>
+                      <path
+                        id={swipeCurveId}
+                        d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100"
+                      />
+                    </defs>
+                    <text>
+                      <textPath href={`#${swipeCurveId}`} startOffset="50%">
+                        Swipe Right To
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+
+                <div className={`${styles.TurnThePage} ${styles.homeTurnThePage}`}>
+                  <svg
+                    className="curved-text"
+                    viewBox="120 0 790 150"
+                    preserveAspectRatio="none"
+                  >
+                    <defs>
+                      <path
+                        id={turnCurveId}
+                        d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100"
+                      />
+                    </defs>
+                    <text>
+                      <textPath href={`#${turnCurveId}`} startOffset="50%">
+                        Turn The Page
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+          
+            </>
+                    )}
+        </div>
+
+        {/* <Image src={swipeRight} alt="swipeRight" className='swipeRight'/> */}
+        {/* <svg className='curved-text' viewBox="120 0 790 150" preserveAspectRatio="none">
+          <defs> 
+            <path id="_R_4lrlb_" d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100">
+            </path> 
+          </defs>
+          <text>
+            <textPath href="#_R_4lrlb_" startOffset="50%">Welcome to Huskyville!</textPath>
+          </text>
+        </svg> */}
+
+
+        <div className="book-meta">
+          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}><Image alt="left Arrow" src={Sliderpageprev}/></button>
+          <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
+          <button className="nav-btn" onClick={goNext} disabled={!ready}><Image alt="Right Arrow" src={Sliderpagenext}/></button>
+        </div>
+
+        <div className="FullScreen">
+          <div className="swipeText"><Image alt="Swipe Icon" src={Swipeimg}/><p>Swipe to turn the page</p></div>
+          <button onClick={toggleFullscreen}>
+            <Image alt="Swipe Icon" src={Fullscreenimg}/>
+            {isFullscreen ? "Exit Full Screen" : "Full Screen"}
+          </button>
+        </div>
+
+        {isFullscreen && (
+          <button
+            type="button"
+            className="book-zoom-btn"
+            onClick={() => setIsZoomed((prev) => !prev)}
+            aria-label={isZoomed ? "Hide magnifier" : "Show magnifier"}
+          >
+            {isZoomed ? "×" : "⌕"}
+          </button>
+        )}
+        {/* <div className="book-carousel-dots" aria-label="Book selection">
+        {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
+      </div> */}
+
+      <div className='adventureText'>
+        <Image alt="Love the adventure" src={Adventuretext}/>
+        <div className='exploreBtnWrap'>
+          {/* <a href='/dev/huskaeroonies/flip-book'>Explore The Book</a> */}
+          <a href='/flip-book'>Explore The Book</a>
+
+        </div>
+      </div>
+      </div>
+
+        <AdventurePlanModal
+          isOpen={showBuyPrompt}
+          onClose={() => setShowBuyPrompt(false)}
+          onBuySeries={() => {
+            // Navigate to 5-book series purchase
+          }}
+          onBuyAnnual={() => {
+            // Navigate to annual pass purchase
+          }}
+          assets={{
+            logo: Logo,
+            leftDog: LeftDog,
+            rightDog: RightDog,
+            bookSeries: BookSeries,
+            annualPass: AnnualPass,
+            bookIcon: BookIcon,
+            heartIcon: HeartIcon,
+            screenIcon: ScreenIcon,
+            calendarIcon: CalendarIcon,
+          }}
+        />
+      {/* <Footer /> */}
+    </>
+  );
+}

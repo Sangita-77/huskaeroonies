@@ -1,31 +1,30 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { useId } from "react";
+import React, { useEffect, useMemo, useRef, useState, useId } from 'react';
 import styles from "../page.module.css";
-// import Header from "../Components/header";
-// import Footer from "../Components/footer";
+import Header from "./header";
+import Footer from "./footer";
 import Image from "next/image";
-import swipeRight from "../Images/New/swipeRight.webp";
 import SnowFall from './SnowFall';
-// import Clouds from "../Components/Clouds";
-import Leftfoot from "../Images/New/leftfoot.webp"; 
-import Rightfoot from "../Images/New/rightfoot.webp"; 
-import Sampleunderline from "../Images/New/sampleunderline.webp";
-import Adventuretext from "../Images/New/adventure-img.webp"; 
+import Clouds from "./Clouds";
+import Girldog from "../Images/New/girldog.webp";
+import Boydog from "../Images/New/boydog.webp";
+import BookPromo from "../Components/bookCard";
+import Logo from "../Images/New/MainLogo.webp";
+import TheBigRace from "../Images/New/TheBigRace.webp";
+import SnowDayBook from "../Images/New/SnowDayBook.webp";
+import CampaingDayBookIcon from "../Images/New/CampaingDayBookIcon.webp";
 import Sliderpageprev from "../Images/New/pageleftarrow.webp";
 import Sliderpagenext from "../Images/New/pagerightarrow.webp";
-// import Popupfoot from "../Images/New/popupfoot.webp";
+import FingerSlide from "../Images/New/FingerSlide.svg";
 // import Teddyimg from "../Images/New/teddypopupimg.webp";
 // import Trainimg from "../Images/New/trainpopupimg.webp";
 import Swipeimg from "../Images/New/swipehand.webp";
 import Fullscreenimg from "../Images/New/fullsecreen.webp";
-import FingerSlide from "../Images/New/FingerSlide.svg";
+import swipeRight from "../Images/New/swipeRight.webp";
 
-// import Link from "next/link";
 import AdventurePlanModal from './Modal';
 
-import Logo from "../Images/New/MainLogo.webp";
 import LeftDog from '../Images/New/LeftDog.webp';
 import RightDog from '../Images/New/RightDog.webp';
 import BookSeries from '../Images/New/book-series.webp';
@@ -37,9 +36,36 @@ import ScreenIcon from '../Images/New/screen-icon.webp';
 import CalendarIcon from '../Images/New/calendar-icon.webp';
 
 
-const EMPTY_PAGES = [];
+type FlipBookProps = {
+  pages?: string[];
+  books?: string[][];
+  bookNames?: string[];
+  initialBook?: number;
+};
 
-export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES, bookNames = EMPTY_PAGES, initialBook = 0 }) {
+type PageFlipInstance = {
+  on: (event: string, callback: (event: { data: number }) => void) => void;
+  loadFromHTML: (elements: NodeListOf<Element>) => void;
+  destroy: () => void;
+  flipPrev: () => void;
+  flipNext: () => void;
+  getCurrentPageIndex: () => number;
+};
+
+const EMPTY_PAGES: string[] = [];
+
+const booksmap = [
+  { id: 2, bookNumber: "TWO", title: "The Snow Day", bookArt: SnowDayBook, buyNowHref: "/flip-book?book=1", top: "20vw", left: "51vw", readNow: true, mobileLeft: "10vw", mobileTop: "20vw",},
+  { id: 3, bookNumber: "THREE", title: "The Big Race", bookArt: TheBigRace, buyNowHref: "/flip-book?book=2 ", top: "28vw", left: "80vw", readNow: true, mobileLeft: "20vw", mobileTop: "110vw", },
+  { id: 4, bookNumber: "FOUR", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "24vw", left: "12vw", readNow: true, mobileTop: "-56vw",},
+];
+
+export default function FlipBook({
+  pages = EMPTY_PAGES,
+  books = [],
+  bookNames = [],
+  initialBook = 0,
+}: FlipBookProps) {
   const bookCollections = useMemo(() => {
     const validBooks = Array.isArray(books)
       ? books.filter(Array.isArray).map((book) => book.filter(Boolean)).filter((book) => book.length)
@@ -48,12 +74,13 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
   }, [books, pages]);
   const [activeBook, setActiveBook] = useState(() => Math.max(0, Math.min(initialBook, bookCollections.length - 1)));
   const images = bookCollections[activeBook] ?? [];
-  const bookElement = useRef(null);
-  const pageFlip = useRef(null);
+  const bookElement = useRef<HTMLDivElement | null>(null);
+  const pageFlip = useRef<PageFlipInstance | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [ready, setReady] = useState(false);
   const [showBuyPrompt, setShowBuyPrompt] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
+  const activeBookNumber = booksmap[activeBook]?.bookNumber || "";
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
   const [magnifierPosition, setMagnifierPosition] = useState({
@@ -61,7 +88,7 @@ export default function HomeFlipBook({ pages = EMPTY_PAGES, books = EMPTY_PAGES,
     y: 50,
   });
 
-const handleMagnifierMove = (e) => {
+const handleMagnifierMove = (e: React.PointerEvent<HTMLDivElement>) => {
   if (!isZoomed) return;
 
   const bounds = e.currentTarget.getBoundingClientRect();
@@ -77,7 +104,7 @@ const handleMagnifierMove = (e) => {
 
 
 const toggleFullscreen = async () => {
-  const bookWrapper = document.querySelector(".flipbook-wrapper");
+  const bookWrapper = document.querySelector<HTMLElement>(".flipbook-wrapper");
 
   if (!bookWrapper) return;
 
@@ -105,7 +132,6 @@ useEffect(() => {
   };
 }, []);
 
-
   useEffect(() => {
     setActiveBook(Math.max(0, Math.min(initialBook, bookCollections.length - 1)));
   }, [initialBook, bookCollections.length]);
@@ -115,19 +141,31 @@ useEffect(() => {
     return () => window.clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    let cancelled = false;
+useEffect(() => {
+  let cancelled = false;
+  let instance: PageFlipInstance | null = null;
 
-    async function createBook() {
-      const { PageFlip } = await import('page-flip');
+  async function createBook() {
+    if (!bookElement.current || images.length === 0) {
+      setReady(false);
+      return;
+    }
+
+    setReady(false);
+
+    try {
+      const { PageFlip } = await import("page-flip");
+
       if (cancelled || !bookElement.current) return;
 
-      const instance = new PageFlip(bookElement.current, {
+      const element = bookElement.current;
+
+      instance = new PageFlip(element, {
         width: 457.5,
         height: 522,
         size: 'stretch',
         minWidth: 130,
-        maxWidth: 1457.5,
+        maxWidth: 1427.5,
         minHeight: 140,
         maxHeight: 1522,
         drawShadow: true,
@@ -138,24 +176,43 @@ useEffect(() => {
         showCover: false,
         mobileScrollSupport: true,
         swipeDistance: 24,
-      });
-      instance.on('flip', (event) => {
+      }) as unknown as PageFlipInstance;
+
+      instance.on("flip", (event) => {
         setCurrentPage(Number(event.data));
         setShowBuyPrompt(false);
       });
 
-      instance.loadFromHTML(bookElement.current.querySelectorAll('.pageflip-page'));
+      instance.loadFromHTML(
+        element.querySelectorAll(".pageflip-page")
+      );
+
+      if (cancelled) {
+        instance.destroy();
+        return;
+      }
+
       pageFlip.current = instance;
       setReady(true);
+    } catch (error) {
+      console.error("Failed to initialize FlipBook:", error);
+      setReady(false);
     }
+  }
 
-    createBook();
-    return () => {
-      cancelled = true;
-      pageFlip.current?.destroy();
+  createBook();
+
+  return () => {
+    cancelled = true;
+
+    instance?.destroy();
+
+    if (pageFlip.current === instance) {
       pageFlip.current = null;
-    };
-  }, [images]);
+    }
+  };
+}, [activeBook, images.length]);
+
 
   const goPrevious = () => pageFlip.current?.flipPrev();
   const goNext = () => {
@@ -168,14 +225,14 @@ useEffect(() => {
     flipBook.flipNext();
   };
 
-  const switchBook = (direction) => {
+  const switchBook = (direction: number) => {
     setReady(false);
     setCurrentPage(0);
     setShowBuyPrompt(false);
     setActiveBook((book) => (book + direction + bookCollections.length) % bookCollections.length);
   };
 
-  const handleBookClick = (event) => {
+  const handleBookClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const flipBook = pageFlip.current;
     if (!flipBook || flipBook.getCurrentPageIndex() < Math.max(0, images.length - 2)) return;
     const bounds = event.currentTarget.getBoundingClientRect();
@@ -186,32 +243,47 @@ useEffect(() => {
   const secondVisiblePage = Math.min(currentPage + 2, images.length);
 
   const curveId = useId();
+  const swipeCurveId = useId();
+  const turnCurveId = useId();
   const [showFinger, setShowFinger] = useState(true);
-// const [showAdventureModal, setShowAdventureModal] = useState(true);
-
 
   return (
     <>
-      {/* <Header logo={true} /> */}
-      {/* <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible} homePageFlipWrap`}> */}
-      <div className={`flipbook-wrapper ${ showIntro ? styles.flipbookWaiting : styles.flipbookVisible } homePageFlipWrap ${isFullscreen ? "fullScreenWrap" : ""}`} >
+      <Header logo={true} />
+      <section className={`${styles.sampleReadBanner} ${showIntro ? styles.sampleReadBannerIntro : styles.sampleReadBannerSettled}`}>
+        <Clouds />
+        <div className={styles.booksContainer}>
+          {booksmap.map((book) => (
+            <BookPromo
+              key={book.id}
+              {...book}
+              onAddToCart={() => {
+                console.log("Added:", book.title);
+              }}
+            />
+          ))}
+        </div> 
+        <div>
+           <SnowFall count={100}  className={styles.FlipSnowFall}/>
+        </div>
+      </section>
+      <div className={`flipbook-wrapper ${showIntro ? styles.flipbookWaiting : styles.flipbookVisible} flipbookPage ${isFullscreen ? "fullScreenWrap" : ""}`}>
         {activeBook === 0 && <SnowFall count={100} />}
         {/* <div className="SampleBeforewave">
           <Image src={sampleReadWave} alt="Wave" />
         </div> */}
-        
         {/* <h2 className="book-title">
           {bookNames[activeBook] || `Book ${activeBook + 1}`}
         </h2> */}
-
         <div className="totalPageNoWrap">
           <div className="totalPageNo">
             <span>{images.length}</span> Pages
           </div>
         </div>
-
+        <div className={styles.bookBadge}>
+          BOOK {activeBookNumber}
+        </div>
         <div className="bookTitle">
-          <span className='leftfoot'><Image alt="leftfoot" src={Leftfoot}/></span>
           <svg className="curveTextWrap" viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
             <defs>
               <path
@@ -230,59 +302,27 @@ useEffect(() => {
               </textPath>
             </text>
           </svg>
-          <span className='rightfoot'><Image alt="leftfoot" src={Rightfoot}/></span>
         </div>
-        <div className='sampleUnderline'>
-          <Image alt="Sampleunderline" src={Sampleunderline}/>
-        </div>
-        <div className="bookSubTitle">
-          <svg className="curveSubTextWrap" viewBox="120 0 790 150" preserveAspectRatio="xMidYMid meet">
-            <defs>
-              <path
-                id="subText"
-                d="M 174.75,100 A 1207.92,1207.92 0 0 1 849.25,100"
-              />
-            </defs>
-            <text className="curveSubText">
-              <textPath
-                href="#subText"
-                startOffset="50%"
-                textAnchor="middle"
-              >
-                Enjoy A Little Story With Our Husky Pals
-              </textPath>
-            </text>
-          </svg>
-          </div>
-
 
         <div className="book-carousel">
-          <button className="book-carousel-arrow1 bookLeftBtn1" onClick={() => switchBook(-1)} aria-label="Previous book"></button>
-          <div
-            className="pageflip-stage"
-            aria-busy={!ready}
-            onClick={handleBookClick}
-            onPointerMove={handleMagnifierMove}
-          >
-            <div
-              className="pageflip-book"
-              ref={bookElement}
-              key={activeBook}
-            >
+          {/* <button className="book-carousel-arrow bookLeftBtn" onClick={() => switchBook(-1)} aria-label="Previous book">‹</button> */}
+          <button className="book-carousel-arrow bookLeftBtn" onClick={() => switchBook(-1)} aria-label="Previous book">
+            <Image alt="Right Arrow" src={Sliderpageprev}/>
+          </button>
+
+          <div className="pageflip-stage" aria-busy={!ready} onClick={handleBookClick} onPointerMove={handleMagnifierMove}>
+            <div className="pageflip-book" ref={bookElement} key={activeBook}>
               {images.map((image, index) => (
                 <article className="pageflip-page" key={`${image}-${index}`}>
                   <div className="pageflip-content">
                     <div className="page-loader" />
-                    <img
-                      src={image}
-                      alt={`Book page ${index + 1}`}
-                      decoding="async"
-                    />
+                    <img src={image} alt={`Book page ${index + 1}`} decoding="async" />
                     <span className="page-number">{index + 1}</span>
                   </div>
                 </article>
               ))}
             </div>
+
             {isFullscreen && isZoomed && (
               <div
                 className="magnifier-glass"
@@ -301,61 +341,63 @@ useEffect(() => {
                 />
               </div>
             )}
+
           </div>
-          <button className="book-carousel-arrow1 bookRightBtn1" onClick={() => switchBook(1)} aria-label="Next book"></button>
-
-
-          <Image src={swipeRight} alt="swipeRight" className='swipeRight homeswipeRight'/>
-          <>
+          {/* <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">›</button> */}
+          <button className="book-carousel-arrow bookRightBtn" onClick={() => switchBook(1)} aria-label="Next book">
+            <Image alt="Right Arrow" src={Sliderpagenext}/>
+          </button>
                 {showFinger && (
+                   <>
+            <Image src={swipeRight} alt="swipeRight" className='swipeRight' onPointerDown={() => setShowFinger(false)}/>
+           
+
                   <Image
                     src={FingerSlide}
                     alt="Finger Slide"
-                    className="fingerSlide Home"
+                    className="fingerSlide"
                     onPointerDown={() => setShowFinger(false)}
                   />
-                )}
-          </>
-          <div className={`${styles.swipeRightTxt} ${styles.homeSwipeRightTxt}`}>
+
+            
+
+
+          <div className={styles.swipeRightTxt}>         
             <svg className="curved-text" viewBox="120 0 790 150" preserveAspectRatio="none" >
-              <defs> <path id={curveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
+              <defs> <path id={swipeCurveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
               <text> 
-                <textPath href={`#${curveId}`} startOffset="50%">
+                <textPath href={`#${swipeCurveId}`} startOffset="50%">
                   Swipe Right To
                 </textPath> 
               </text>
             </svg>
           </div>
-          <div className={`${styles.TurnThePage} ${styles.homeTurnThePage}`}>
+          <div className={styles.TurnThePage}>         
             <svg className="curved-text" viewBox="120 0 790 150" preserveAspectRatio="none" >
-              <defs> <path id={curveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
+              <defs> <path id={turnCurveId} d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100" /> </defs>
               <text> 
-                <textPath href={`#${curveId}`} startOffset="50%">
+                <textPath href={`#${turnCurveId}`} startOffset="50%">
                   Turn The Page
                 </textPath> 
               </text>
             </svg>
           </div>
-
-        </div>
-        {/* <Image src={swipeRight} alt="swipeRight" className='swipeRight'/> */}
-        {/* <svg className='curved-text' viewBox="120 0 790 150" preserveAspectRatio="none">
-          <defs> 
-            <path id="_R_4lrlb_" d="M 274.75,100 A 897.92,897.92 0 0 1 749.25,100">
-            </path> 
-          </defs>
-          <text>
-            <textPath href="#_R_4lrlb_" startOffset="50%">Welcome to Huskyville!</textPath>
-          </text>
-        </svg> */}
-
-
-        <div className="book-meta">
-          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}><Image alt="left Arrow" src={Sliderpageprev}/></button>
-          <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
-          <button className="nav-btn" onClick={goNext} disabled={!ready}><Image alt="Right Arrow" src={Sliderpagenext}/></button>
+          </>
+                          )}
         </div>
 
+        {/* <div className="book-meta">
+          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}>Previous</button>          
+          <span className="page-count">
+            <span className="desktop-page-count">
+              Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}
+            </span>
+            <span className="mobile-page-count">
+              Page {Math.min(currentPage + 1, images.length)} / {images.length}
+            </span>
+          </span>          
+          <button className="nav-btn" onClick={goNext} disabled={!ready}>Next</button>
+        </div> */}
         <div className="FullScreen">
           <div className="swipeText"><Image alt="Swipe Icon" src={Swipeimg}/><p>Swipe to turn the page</p></div>
           <button onClick={toggleFullscreen}>
@@ -374,20 +416,55 @@ useEffect(() => {
             {isZoomed ? "×" : "⌕"}
           </button>
         )}
+
+        <div className="book-meta">
+          <button className="nav-btn" onClick={goPrevious} disabled={!ready || currentPage === 0}><Image alt="left Arrow" src={Sliderpageprev}/></button>
+          <span className="page-count">Pages {firstVisiblePage}–{secondVisiblePage} / {images.length}</span>
+          <button className="nav-btn" onClick={goNext} disabled={!ready}><Image alt="Right Arrow" src={Sliderpagenext}/></button>
+        </div>
+
+        
+
         {/* <div className="book-carousel-dots" aria-label="Book selection">
         {bookCollections.map((_, index) => <button key={index} className={index === activeBook ? 'is-active' : ''} onClick={() => switchBook(index - activeBook)} aria-label={`Open book ${index + 1}`} />)}
       </div> */}
+      </div>
 
-      <div className='adventureText'>
-        <Image alt="Love the adventure" src={Adventuretext}/>
-        <div className='exploreBtnWrap'>
-          {/* <a href='/dev/huskaeroonies/flip-book'>Explore The Book</a> */}
-          <a href='/flip-book'>Explore The Book</a>
+      <div className={styles.heroVideoContainer}>
+        <Image src={Girldog} alt="Girldog" priority className={styles.GirlDog} />
+        {/* <video key={`girl-${isIOS ? "ios" : "other"}`} className={styles.GirlDog} autoPlay muted loop playsInline preload="auto" >
+          <source
+            src={
+              isIOS
+                ? "https://dreamlogodesign.net/dev/animationsite/animationHtml/girlDog.mov"
+                : "https://dreamlogodesign.net/dev/animationsite/animationHtml/girlDog.webm"
+            }
+            type={isIOS ? "video/quicktime" : "video/webm"}
+          />
+        </video> */}
 
+        <Image src={Boydog} alt="Girldog" priority className={styles.BoyDog} />
+        {/* <video key={`boy-${isIOS ? "ios" : "other"}`} className={styles.BoyDog} autoPlay muted loop playsInline preload="auto" >
+          <source
+            src={
+              isIOS
+                ? "https://dreamlogodesign.net/dev/animationsite/animationHtml/boyDog.mov"
+                : "https://dreamlogodesign.net/dev/animationsite/animationHtml/boyDog.webm"
+            }
+            type={isIOS ? "video/quicktime" : "video/webm"}
+          />
+        </video> */}
+      </div>
+
+      {/* {showBuyPrompt && (
+        <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="buy-plan-title">
+          <div className="modal-card">
+            <h2 id="buy-plan-title">Want to read more then buy plan</h2>
+            <p>You have finished the current book preview. Upgrade your plan to keep reading.</p>
+            <div className="modal-actions"><button className="primary">Buy Plan</button><button className="secondary" onClick={() => setShowBuyPrompt(false)}>Close</button></div>
+          </div>
         </div>
-      </div>
-      </div>
-
+      )} */}
         <AdventurePlanModal
           isOpen={showBuyPrompt}
           onClose={() => setShowBuyPrompt(false)}
@@ -409,7 +486,7 @@ useEffect(() => {
             calendarIcon: CalendarIcon,
           }}
         />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

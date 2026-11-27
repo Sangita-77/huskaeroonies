@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 330" width="432" height="356" role="img" aria-label="Swipe left to right">
+  <defs>
+    <linearGradient id="arrowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9be7ff" />
+      <stop offset="38%" stop-color="#1fb6ff" />
+      <stop offset="100%" stop-color="#0072ff" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd8bd" />
+      <stop offset="100%" stop-color="#f6b186" />
+    </linearGradient>
+    <linearGradient id="cuffGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0052e0" />
+      <stop offset="45%" stop-color="#0a7cff" />
+      <stop offset="100%" stop-color="#299eff" />
+    </linearGradient>
+    <filter id="rippleGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <mask id="arrowRevealMask">
+      <path class="arrow-mask-stroke" d="M 24,180 Q 130,78 328,74" fill="none" stroke="#ffffff" stroke-width="120" stroke-linecap="round" />
+    </mask>
+    <path id="arrowShape" d="M 32,175 Q 125,65 255,62 L 255,34 Q 255,26 263,31 L 316,71 Q 323,76 316,82 L 263,116 Q 255,121 255,113 L 255,94 Q 140,95 32,175 Z" />
+    <g id="handSilhouette">
+      <path d="M -14,82 L -14,14 A 14,14 0 0,1 14,14 L 14,60 C 14,48 33,48 33,60 C 33,51 51,51 51,64 C 51,57 68,58 68,74 L 68,108 C 68,132 58,146 52,155 L -6,155 C -12,144 -28,132 -32,110 C -36,92 -26,78 -14,82 Z" />
+      <rect x="-12" y="150" width="70" height="34" rx="10" />
+    </g>
+  </defs>
+  <style>
+    :root { --swipe-duration: 2.3s; }
+    .arrow-mask-stroke {
+      stroke-dasharray: 340;
+      stroke-dashoffset: 340;
+      animation: drawArrow var(--swipe-duration) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .arrow-group {
+      animation: fadeArrow var(--swipe-duration) ease-in-out infinite;
+    }
+    .hand-mover {
+      animation: swipeHand var(--swipe-duration) cubic-bezier(0.42, 0, 0.2, 1) infinite;
+    }
+    .ripple-outer {
+      transform-origin: 0px 12px;
+      animation: ripplePulseOuter var(--swipe-duration) ease-out infinite;
+    }
+    .ripple-inner {
+      transform-origin: 0px 12px;
+      animation: ripplePulseInner var(--swipe-duration) ease-out infinite;
+    }
+    @keyframes ripplePulseOuter {
+      0%, 16% { opacity: 0; transform: scale(0.5); }
+      24% { opacity: 0.95; transform: scale(1); }
+      66% { opacity: 0.7; transform: scale(1.18); }
+      78%, 100% { opacity: 0; transform: scale(1.35); }
+    }
+    @keyframes ripplePulseInner {
+      0%, 16% { opacity: 0; transform: scale(0.5); }
+      24% { opacity: 1; transform: scale(0.95); }
+      66% { opacity: 0.85; transform: scale(1.05); }
+      78%, 100% { opacity: 0; transform: scale(1.2); }
+    }
+    @keyframes drawArrow {
+      0%, 18% { stroke-dashoffset: 340; }
+      68%, 100% { stroke-dashoffset: 0; }
+    }
+    @keyframes fadeArrow {
+      0%, 14% { opacity: 0; }
+      22%, 78% { opacity: 1; }
+      92%, 100% { opacity: 0; }
+    }
+    @keyframes swipeHand {
+      0% { opacity: 0; transform: translate(96px, 162px) rotate(-30deg) scale(0.86); }
+      12% { opacity: 1; transform: translate(96px, 158px) rotate(-28deg) scale(0.84); }
+      22% { opacity: 1; transform: translate(100px, 155px) rotate(-27deg) scale(0.79); }
+      45% { opacity: 1; transform: translate(185px, 124px) rotate(-20deg) scale(0.79); }
+      68% { opacity: 1; transform: translate(266px, 120px) rotate(-13deg) scale(0.80); }
+      80% { opacity: 1; transform: translate(272px, 114px) rotate(-11deg) scale(0.85); }
+      92%, 100% { opacity: 0; transform: translate(276px, 110px) rotate(-10deg) scale(0.86); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .arrow-mask-stroke, .arrow-group, .hand-mover, .ripple-outer, .ripple-inner { animation: none; }
+      .arrow-mask-stroke { stroke-dashoffset: 0; }
+      .hand-mover { transform: translate(185px, 128px) rotate(-22deg) scale(0.82); }
+    }
+  </style>
+  <g>
+    <g class="arrow-group" mask="url(#arrowRevealMask)">
+      <use href="#arrowShape" fill="none" stroke="#cbd5e1" stroke-width="20" stroke-linejoin="round" />
+      <use href="#arrowShape" fill="none" stroke="#ffffff" stroke-width="15" stroke-linejoin="round" />
+      <use href="#arrowShape" fill="url(#arrowGrad)" />
+    </g>
+    <g class="hand-mover">
+      <g filter="url(#rippleGlow)">
+        <circle class="ripple-outer" cx="0" cy="12" r="38" fill="none" stroke="#38d3ff" stroke-width="4.5" />
+        <circle class="ripple-inner" cx="0" cy="12" r="25" fill="none" stroke="#a5f3fc" stroke-width="3.5" />
+      </g>
+      <use href="#handSilhouette" fill="none" stroke="#cbd5e1" stroke-width="23" stroke-linejoin="round" />
+      <use href="#handSilhouette" fill="none" stroke="#ffffff" stroke-width="18" stroke-linejoin="round" />
+      <path d="M -14,82 L -14,14 A 14,14 0 0,1 14,14 L 14,60 C 14,48 33,48 33,60 C 33,51 51,51 51,64 C 51,57 68,58 68,74 L 68,108 C 68,132 58,146 52,155 L -6,155 C -12,144 -28,132 -32,110 C -36,92 -26,78 -14,82 Z" fill="url(#skinGrad)" stroke="#4a140c" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" />
+      <path d="M -8,18 L -8,12 A 8,8 0 0,1 8,12 L 8,18 Q 0,22 -8,18 Z" fill="#ffefe4" />
+      <path d="M 14,60 L 14,76" fill="none" stroke="#4a140c" stroke-width="4" stroke-linecap="round" />
+      <path d="M 33,60 L 33,77" fill="none" stroke="#4a140c" stroke-width="4" stroke-linecap="round" />
+      <path d="M 51,64 L 51,80" fill="none" stroke="#4a140c" stroke-width="4" stroke-linecap="round" />
+      <path d="M -14,82 Q -9,95 -16,108" fill="none" stroke="#4a140c" stroke-width="4" stroke-linecap="round" />
+      <rect x="-12" y="150" width="70" height="34" rx="10" fill="url(#cuffGrad)" stroke="#001a4d" stroke-width="4.5" stroke-linejoin="round" />
+      <rect x="6" y="155" width="46" height="24" rx="6" fill="#38b6ff" opacity="0.22" />
+    </g>
+  </g>
+</svg>
