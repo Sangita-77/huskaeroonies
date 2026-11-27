@@ -107,15 +107,17 @@ export default function Navbar() {
         <ul className={styles.mobileNavList}>
           {links.map(({ title, href, Icon }) => (
             <li key={href} className={`${styles.mobileNavItem} ${ pathname === href ? styles.active : "" }`}>
-              <Image src={Icon} alt="" />
+              {/* <Image src={Icon} alt="" /> */}
               <Link
                 href={href}
                 className={styles.mobileNavLink}
                 onClick={handleLinkClick}
               >
+                <Image src={Icon} alt="" />
                 {title}
+                <Image src={mobileDropdownIconW} className={styles.dropdownIconM} alt="Dropdown Icon" />
               </Link>
-              <Image src={mobileDropdownIconW} className={styles.dropdownIconM} alt="Dropdown Icon" />
+              {/* <Image src={mobileDropdownIconW} className={styles.dropdownIconM} alt="Dropdown Icon" /> */}
             </li>
           ))}
             <li className={`${styles.mobileNavItem} ${styles.mobileProfileNav}`}>
@@ -125,12 +127,14 @@ export default function Navbar() {
                 <h5>Exploring the woods</h5>
               </Link>
               {/* <Image src={DropdownIconW} className={styles.dropdownIcon} alt="Dropdown Icon" /> */}
-              <Image src={mobileDropdownIconW} className={styles.dropdownIconM} alt="Dropdown Icon" />
+              <Link href="/" className={styles.navLink} onClick={handleLinkClick} ><Image src={mobileDropdownIconW} className={styles.dropdownIconM} alt="Dropdown Icon" /></Link>
           </li>
           <li className={`${styles.mobileNavItem} ${styles.userNav}`}>
-            <Image src={mobUserIcon} alt="User Icon" />
-            <Link href="/" className={styles.navLink} onClick={handleLinkClick} > Account </Link>
-            <Image src={mobileDropdownIconB} className={styles.dropdownIconM} alt="Dropdown Icon" />
+            <Link href="/" className={styles.navLink} onClick={handleLinkClick} >
+             <Image src={mobUserIcon} alt="User Icon" />
+              Account 
+             <Image src={mobileDropdownIconB} className={styles.dropdownIconM} alt="Dropdown Icon" />
+            </Link>
           </li>
         </ul>
 

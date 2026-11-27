@@ -1016,43 +1016,44 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .mobileNavList .mobileNavItem img {width: auto; height: 8.97vw;}
 .mobileNavList .mobileProfileNav {column-gap: 2.85vw; width: 66vw;}
 .mobileNavList .mobileProfileNav img {height: 12.97vw;}
-.mobileNavList .mobileProfileNav .navLink {color: #fff; font-size: 5.5vw; position: relative; text-align: center; rotate: -3.52deg; margin-top: -3.33vw; text-shadow: 0px 4px 3px var(--color-primary-dark);}
+.mobileNavList .mobileProfileNav .navLink {color: #fff; font-size: 5.5vw; position: relative; text-align: center; rotate: -2.52deg; margin-top: -3.33vw; text-shadow: 0px 4px 3px var(--color-primary-dark);}
 /* .mobileNavList .mobileProfileNav .navLink::before {content: ""; background: #69c554; border-radius: 3.13vw; width: 1.63vw; height: 1.63vw; position: absolute; top: 2.5vw; left: -2.8vw;} */
 .mobileNavList .mobileProfileNav .navLink h5 {font-size: 4vw; font-weight: 400;}
 .mobileNavList .mobileProfileNav .dropdownIcon {width: 4.36vw; height: auto;}
 
 .mobileNavList .userNav {column-gap: 2.56vw; width: auto; height: 14.1vw; padding: 1.54vw 6.13vw 1.54vw 8.13vw;}
-.mobileNavList .userNav img {width: 7.72vw; height: auto; rotate: 0deg !important;}
-.mobileNavList .userNav .navLink {font-size: 6.15vw; padding: 1.28vw 1.28vw 1.28vw 1.54vw; letter-spacing: 2px; color: #151B58; rotate: -3.45deg; margin-top: -1.79vw;}
+.mobileNavList .userNav img {width: auto; height: 9vw; rotate: 1.06deg !important;}
+.mobileNavList .userNav .navLink {font-size: 6.15vw; padding: 1.28vw 1.28vw 1.28vw 1.54vw; letter-spacing: 2px; color: #151B58; rotate: -2.45deg; margin-top: -0.79vw; width: 100%; display: flex; column-gap: 3vw;}
 .mobileNavList .userNav .dropdownIcon {width: 4.36vw; height: auto;}
 
 .logoM {width: 70vw !important; height: auto;}
 .woodenPole {width: 23.33vw; height: 179.74vw;}
 .mobileGrass {position: absolute; bottom: 4vw; left: 36vw;}
 .mobilePups {position: absolute; bottom: 0vw; left: 7vw;}
-.mobileNavList .mobileNavItem {background: url(../app/Images/New/bookbg.webp) no-repeat center; background-size: contain; padding: 5.9vw 13.05vw; width: 73.33vw; height: 24.36vw; margin: -2.56vw auto 0; position: relative;}
+.mobileNavList .mobileNavItem {background: url(../app/Images/New/bookbg.webp) no-repeat center; background-size: contain; /*padding: 5.9vw 13.05vw;*/ width: 73.33vw; height: 24.36vw; margin: -2.56vw auto 0; position: relative;}
 /* .mobileNavList .mobileNavItem::before {content: ''; width: 237px; height: 51px; position: absolute; left: 21px; z-index: -1; box-shadow: 0px 2px 29px 6px #ffffffba;} */
 .mobileNavList .mobileNavItem:hover::before,
 .mobileNavList .mobileNavItem.active::before {content: ""; z-index: -1; width: 57.77vw; height: 13.08vw; position: absolute; left: 5.38vw; box-shadow: 0 2px 29px 17px #ffffffba; rotate: -5deg; border-radius: 12.82vw;}
 .mobileNavList .mobileNavItem img {rotate: -3.94deg; margin-bottom: -1.54vw;}
-.mobileNavList .mobileNavItem .dropdownIconM { width: 5.38vw; height: 5.38vw; position: absolute; right: 6vw; top: 43%; transform: translateY(-50%); rotate: 2deg; }
-.mobileNavList .mobileNavItem .mobileNavLink {font-size: 7.18vw; rotate: -2.73deg; text-shadow: 0px 4px 3px var(--color-primary-dark);}
+.mobileNavList .mobileNavItem .dropdownIconM { width: 5.38vw; height: 5.38vw; position: absolute; right: 2vw; top: 47%; transform: translateY(-50%); rotate: 2deg; }
+.mobileNavList .mobileNavItem .mobileNavLink {font-size: 7.18vw; rotate: -2.73deg; text-shadow: 0px 4px 3px var(--color-primary-dark);
+width: 100%; display: flex; align-items: center; justify-content: start; column-gap: 2.56vw; padding: 2.9vw 7.05vw 4.9vw;}
 
 .mobileNavList .mobileNavItem:nth-child(1):hover::before,
 .mobileNavList .mobileNavItem:nth-child(1).active::before {width: 60.77vw;}
-.mobileNavList .mobileNavItem:nth-child(2) {background: url(../app/Images/New/showbg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw; padding-left: 10.77vw;}
-.mobileNavList .mobileNavItem:nth-child(2) .mobileNavLink {rotate: -4.52deg; margin-top: -1.79vw;}
-.mobileNavList .mobileNavItem:nth-child(3) {background: url(../app/Images/New/shopbg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw; padding-left: 10.77vw;}
-.mobileNavList .mobileNavItem:nth-child(3) .mobileNavLink {rotate: -4.52deg; margin-top: -1.79vw;}
+.mobileNavList .mobileNavItem:nth-child(2) {background: url(../app/Images/New/showbg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw;}
+.mobileNavList .mobileNavItem:nth-child(2) .mobileNavLink {rotate: -2.52deg; margin-top: 0vw; padding-left: 4.77vw;}
+.mobileNavList .mobileNavItem:nth-child(3) {background: url(../app/Images/New/shopbg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw;}
+.mobileNavList .mobileNavItem:nth-child(3) .mobileNavLink {rotate: -3.52deg; margin-top: -0.79vw; padding-left: 6.77vw;}
 .mobileNavList .mobileNavItem:nth-child(4) {background: url(../app/Images/New/bettermebg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw; padding-left: 7.77vw;}
-.mobileNavList .mobileNavItem:nth-child(4) .mobileNavLink {rotate: -4.52deg; margin-top: -1.79vw;}
+.mobileNavList .mobileNavItem:nth-child(4) .mobileNavLink {rotate: -3.52deg; margin-top: -0.79vw; padding-left: 1vw;}
 .mobileNavList .mobileNavItem:nth-child(5) {background: url(../app/Images/New/pupsbg.webp) no-repeat center; background-size: contain; width: 91.44vw; height: 28.67vw; padding-left: 13.77vw;}
 .mobileNavList .mobileNavItem:nth-child(5) .mobileNavLink {rotate: -4.52deg; margin-top: -1.79vw;}
-.mobileNavList .mobileNavItem:nth-child(5) .dropdownIconM {top: 41%; right: 8vw;}
+.mobileNavList .mobileNavItem:nth-child(5) .dropdownIconM {right: -5.9vw; display: block;}
 .mobileNavList .mobileNavItem:nth-child(5):hover::before,
 .mobileNavList .mobileNavItem:nth-child(5).active::before {width: 78.77vw; height: 15.08vw;}
-.mobileNavList .mobileNavItem:nth-child(6) {background: url(../app/Images/New/accountbg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw; padding-left: 12.77vw;}
-.mobileNavList .mobileNavItem:nth-child(6) .dropdownIconM {top: 41%; right: 8vw;}
+.mobileNavList .mobileNavItem:nth-child(6) {background: url(../app/Images/New/accountbg.webp) no-repeat center; background-size: contain; width: 66.92vw; height: 21.03vw; padding-left: 9.77vw;}
+.mobileNavList .mobileNavItem:nth-child(6) .dropdownIconM {top: 50%; right: 2vw;}
 .mobileNavList .mobileNavItem:nth-child(6):hover::before,
 .mobileNavList .mobileNavItem:nth-child(6).active::before {width: 55.77vw; height: 8.08vw;}
 
@@ -1060,7 +1061,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 /*.........Header End.........*/
 
 /*.........Banner Start.........*/
-.MapHolder { height: auto; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; }
+.MapHolder { height: 470.82vw; width: 100%; overflow-x: hidden; overflow-y: auto; position: relative; background: url('../app/Images//New/MobileMap.webp') #029ffc no-repeat top center; animation: none; background-size: contain; background-position: 100% 31.79vw;}
 .BannerLogo{width:85vw; height: auto; top: 10vw; left: 7vw; z-index: 99;}
 .Welcome{font-size: 4.5vw; position: absolute; top: 24.8vw; left: 30vw;}
 .BlueRibbon{width: 58.1vw; height: auto; top: 20vw; left: 22vw;}
@@ -1070,7 +1071,7 @@ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; backgr
 .Welcome{top: 19.8vw; left: 18.8vw;}
 .Welcome svg{width: 65vw; height: auto;}
 .Welcome text{text-shadow: 1px 1px 0px var(--color-primary-dark);}
-.mobileMap {margin-top: 32vw;}
+.mobileMap {margin-top: 32vw; display: none;}
 
 .river--2, .river--3, .river--4{-webkit-animation: flow 30s infinite linear; animation: flow 30s infinite linear; box-shadow: 0 1rvw 3rvw rgba(0,0,0,.175);}
 .river--2 { -webkit-mask: url("../app/Images/New/RiverMaskOneM.webp") center / contain no-repeat; mask: url("../app/Images/New/RiverMaskOneM.webp") center / contain no-repeat;        width: 95vw; height: 125vw; top: 77.6vw; left: -10.1vw; z-index: 3; transform: rotate(-36deg);} 

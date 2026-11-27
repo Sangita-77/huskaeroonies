@@ -47,7 +47,7 @@
 .annualButton { background: #171c5c; }
 
 /* Maybe Later */ 
-.maybeLater { margin-top: 1vw; background: transparent; border: none; color: #009ff5; font-size: 1vw; font-weight: 600; text-decoration: underline; cursor: pointer; } 
+.maybeLater { margin-top: 1vw; background: transparent; border: none; color: #009ff5; font-size: 1.1vw; font-weight: 500; text-decoration: underline; cursor: pointer; font-family: var(--font-starlight) "starlight", "starlight Fallback" , sans-serif; letter-spacing: 0.1vw;} 
 .maybeLater:hover { color: #171c5c; } 
 .popupHeader h4{color: #009ff5; margin-bottom: 2vw;}
 .flipbookPopupClose { color: #ffffff; cursor: pointer; background: #08a4ed; border: none; border-radius: 50%; width: 3.13vw; height: 3.13vw; font-size: 2vw; line-height: 2vw; position: absolute; top: 2vw; right: 2vw; z-index: 99;}
@@ -93,7 +93,7 @@
   .feature img { width: 3.7vw; height: 3.7vw; } 
   .planButton { max-width: 55.692vw; font-size: 2.5vw; padding: 1vw 4vw; border: 0.7vw solid #fff; align-items: normal; border-radius: 4.917vw;}
   .planButton span {font-size: 3vw; font-weight: 400; line-height: 3vw;} 
-  .maybeLater { margin-top: 1.308vw; font-size: 3vw;}
+  .maybeLater { margin-top: 1.308vw; font-size: 3.4vw;}
   .sampleunderline {width: 28.9vw; top: 6.7vw; left: 26.8vw;}
   .popupHeader h4 {width: 57vw;}
   .annualBadge {top: -2.333vw; padding: .45vw 4vw; font-size: 2.95vw;}
