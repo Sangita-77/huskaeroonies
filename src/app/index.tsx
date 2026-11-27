@@ -77,6 +77,7 @@ export default function Home() {
     }
   }, []);
 
+
   const clouds = useMemo(
   () => [
     { id: 1, image: Cloud1, style: { "--cloud-left": "-20vw", "--cloud-top": "10vw", "--cloud-delay": "-0s", "--cloud-duration": "40s" } as React.CSSProperties },
@@ -282,7 +283,7 @@ useEffect(() => {
       <HomeFlipBook
         pages={book1}
         bookNames={bookNames}
-        initialBook={0}
+        initialBook={initialBook}
       />
     </div>
   </div>
