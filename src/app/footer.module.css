@@ -135,7 +135,8 @@
     .footerWrap .footerBottom .row .footerBottomRight .newsletterWrapM form button::before { content: ""; background: url(../app/Images/New/subscribearrow.webp) left no-repeat; width: 4.87vw; height: 2.82vw; position: absolute; top: 50%; left: 3.2vw; transform: translateY(-50%); }
 
     .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:first-child > img {width: 69.49vw;}
-    .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:last-child > img {margin-top: -3.5vw; width: 40.26vw;}
+    /* .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:last-child > img {margin-top: -3.5vw; width: 40.26vw;} */
+    .footerWrap .footerBottom .row .footerBottomLeft .footerLogoWrap > a:last-child > img {width: auto; margin-top: -3.5vw; padding: 0 17vw;}
 
     .mobileSocial {display: block;}
     .mobileSocial .socialMedialinks {justify-content: center; margin-top: 1vw; column-gap: 2.08vw;}

@@ -266,7 +266,7 @@ useEffect(() => {
       <Image src={Map} alt="Book Map" priority className={styles.MapImage} />
       {/* <Image src={Map} alt="Book Map" priority className={`${styles.MapImage} ${styles.desktopMap}`} /> */}
 
-      <Image src={MobileMap} alt="Book Map" priority className={styles.mobileMap} />
+      {/* <Image src={MobileMap} alt="Book Map" priority className={styles.mobileMap} /> */}
       {/* <Image src={MobileMapOverlay} alt="Book Map" priority className={`${styles.mobileMap} ${styles.mobileMapOverlay}`} /> */}
     </div>
       <svg width="0" height="0">
