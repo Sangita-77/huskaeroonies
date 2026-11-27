@@ -22,15 +22,35 @@ const book1 = [
   SnowDayPage8.src,
 ];
 
+// const book2 = [
+//   "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_race_page_2_resize.jpg",
+//   "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Bigrace_page_7_resize.jpg",
+//   "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_Race_page_9_resize.jpg",
+//   "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_Race_page_10_resize.jpg",
+//   "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big _Race_page_12_resize.jpg",
+//   "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big Race_page14_resize.jpg",
+//   "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_race_page_16_resize.jpg",
+//   "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_race_page_18_resize.jpg",
+// ];
+
+import Bigracepage1 from "../Images/Books/Big_race_page_1.webp";
+import Bigracepage2 from "../Images/Books/Big_race_page_2.webp";
+import Bigracepage3 from "../Images/Books/Big_race_page_3.webp";
+import Bigracepage4 from "../Images/Books/Big_race_page_4.webp";
+import Bigracepage5 from "../Images/Books/Big_race_page_5.webp";
+import Bigracepage6 from "../Images/Books/Big_race_page_6.webp";
+import Bigracepage7 from "../Images/Books/Big_race_page_7.webp";
+import Bigracepage8 from "../Images/Books/Big_race_page_8.webp";
+
 const book2 = [
-  "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_race_page_2_resize.jpg",
-  "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Bigrace_page_7_resize.jpg",
-  "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_Race_page_9_resize.jpg",
-  "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_Race_page_10_resize.jpg",
-  "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big _Race_page_12_resize.jpg",
-  "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big Race_page14_resize.jpg",
-  "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_race_page_16_resize.jpg",
-  "https://dreamlogodesign.net/dev/animationsite/animationHtml/Huskeroonies/Books/Book22/Big_race_page_18_resize.jpg",
+  Bigracepage1.src,
+  Bigracepage2.src,
+  Bigracepage3.src,
+  Bigracepage4.src,
+  Bigracepage5.src,
+  Bigracepage6.src,
+  Bigracepage7.src,
+  Bigracepage8.src,
 ];
 
 const books = [book1, book2];
