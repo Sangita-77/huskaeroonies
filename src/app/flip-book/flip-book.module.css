@@ -42,7 +42,7 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
   transform: perspective(1000px) rotateY(15deg);
 } */
 
-.scope :global(.flipbook-wrapper .FullScreen) {display: none; padding-top: 5.13vw; align-items: center;}
+.scope :global(.flipbook-wrapper .FullScreen) {display: none; padding-top: 5.13vw; align-items: center; }
 /* .scope :global(.fingerSlide){width: 18vw; position: absolute; bottom: -13vw; right: 2vw; top: 14vw; } */
 .scope :global(.fingerSlide){cursor: pointer; opacity: 1; -webkit-user-select: none; user-select: none; -webkit-user-drag: none; width: 19vw; height: auto; transition: opacity .5s; position: absolute;bottom: 2vw; right: 4vw; }
 .scope :global(.fingerSlide.Home){ width: 12vw;}
@@ -58,7 +58,7 @@ height: 40.5vw; margin: 0 auto; position: absolute; top: 0.8vw; left: -3.6vw; ri
 .book-zoom-btn { cursor: pointer; z-index: 100000; }
 .scope :global(.flipbook-wrapper .FullScreen .swipeText) {justify-content: center; align-items: center; column-gap: 1.5vw; display: flex; padding-right: 10px; border-right: 1px solid hsl(0deg 0% 60%);}
 .scope :global(.flipbook-wrapper .FullScreen .swipeText p) {font-size: 3.56vw; color: hsl(0deg 0% 0% / 75%);}
-.scope :global(.flipbook-wrapper .FullScreen button) { border: none; outline: none; box-shadow: none; display: flex; justify-content: center; align-items: center; column-gap: 2vw; margin-left: 3.33vw; background: #fff; border-radius: 10px; padding: 4px 10px;}
+.scope :global(.flipbook-wrapper .FullScreen button) { border: none; outline: none; box-shadow: none; display: flex; justify-content: center; align-items: center; column-gap: 2vw; margin-left: 3.33vw; background: #fff; border-radius: 10px; padding: 4px 10px; font-family: var(--font-heading);}
 .scope :global(.flipbook-wrapper .FullScreen button img) {width: 15px; height: auto;}
 .scope :global(.flipbookPage .FullScreen) {padding-top: 2.13vw; margin-bottom: 3.13vw;}
 

@@ -104,3 +104,10 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+ .SnowFall { margin-top: 13vw;} 
+}
+
+
+

@@ -60,6 +60,8 @@ const booksmap = [
   { id: 4, bookNumber: "FOUR", title: "The Camping Day", bookArt: CampaingDayBookIcon, buyNowHref: "/flip-book?book=4", top: "24vw", left: "12vw", readNow: true, mobileTop: "-56vw",},
 ];
 
+
+
 export default function FlipBook({
   pages = EMPTY_PAGES,
   books = [],
